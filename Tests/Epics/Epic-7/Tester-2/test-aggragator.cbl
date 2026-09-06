@@ -1,5 +1,5 @@
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. E1T1Ag.
+       PROGRAM-ID. E7T2Ag.
        AUTHOR. Ian Koratsky.
 
        DATA DIVISION.
@@ -16,7 +16,7 @@
               05 LSTestsFailed PIC 9(5).
 
        PROCEDURE DIVISION USING LSTestOutputs.
-           CALL "EXT1CXX" USING TestOutputs.
+           CALL "EXT2CXX" USING TestOutputs.
                ADD TestsPassed TO CountTestsPassed.
                ADD TestsFailed TO CountTestsFailed.
 

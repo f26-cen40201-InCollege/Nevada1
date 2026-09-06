@@ -13,71 +13,99 @@
        PROGRAM-ID. Tests.
        AUTHOR. Ian Koratsky.
 
-       ENVIRONMENT DIVISION.
-       INPUT-OUTPUT SECTION.
-    *>    FILE-CONTROL.
-    *>        SELECT test-main ASSIGNED TO Test-Cases.
-    *>        ORGANIZATION IS SEQUENTIAL.
 
        DATA DIVISION.
        WORKING-STORAGE SECTION.
-           01 TestOutputs.
-              05 TestsPassed PIC 9(5) VALUE 0.
-              05 TestsFailed PIC 9(5) VALUE 0.
-           
            01 TotalTestsPassed PIC 9(5) VALUE 0.
            01 TotalTestsFailed PIC 9(5) VALUE 0.
+
+           01 TestOutputs.
+              05 TestsPassed PIC 9(5).
+              05 TestsFailed PIC 9(5).
 
        PROCEDURE DIVISION.
 
       *    EPIC 1 
-           CALL "Epics/Epic-1/test-aggragator" USING TestOutputs
-              ADD TestOutputs(1) TO TotalTestsPassed
-              ADD TestOutputs(2) TO TotalTestsFailed
+           CALL "E1T1Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
+           CALL "E1T2Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
 
       *    EPIC 2
-           CALL "Epics/Epic-2/test-aggragator" USING TestOutputs
-              ADD TestOutputs(1) TO TotalTestsPassed
-              ADD TestOutputs(2) TO TotalTestsFailed
+           CALL "E2T1Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
+           CALL "E2T2Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
 
       *    EPIC 3 
-           CALL "Epics/Epic-3/test-aggragator" USING TestOutputs
-              ADD TestOutputs(1) TO TotalTestsPassed
-              ADD TestOutputs(2) TO TotalTestsFailed
+           CALL "E3T1Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
+           CALL "E3T2Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
 
       *    EPIC 4
-           CALL "Epics/Epic-4/test-aggragator" USING TestOutputs
-              ADD TestOutputs(1) TO TotalTestsPassed
-              ADD TestOutputs(2) TO TotalTestsFailed
+           CALL "E4T1Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
+           CALL "E4T2Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
 
       *    EPIC 5
-           CALL "Epics/Epic-5/test-aggragator" USING TestOutputs
-              ADD TestOutputs(1) TO TotalTestsPassed
-              ADD TestOutputs(2) TO TotalTestsFailed
+           CALL "E5T1Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
+           CALL "E5T2Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
 
       *    EPIC 6
-           CALL "Epics/Epic-6/test-aggragator" USING TestOutputs
-              ADD TestOutputs(1) TO TotalTestsPassed
-              ADD TestOutputs(2) TO TotalTestsFailed
+           CALL "E6T1Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
+           CALL "E6T2Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
 
       *    EPIC 7
-           CALL "Epics/Epic-7/test-aggragator" USING TestOutputs
-              ADD TestOutputs(1) TO TotalTestsPassed
-              ADD TestOutputs(2) TO TotalTestsFailed
+           CALL "E7T1Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
+           CALL "E7T2Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
 
       *    EPIC 8
-           CALL "Epics/Epic-8/test-aggragator" USING TestOutputs
-              ADD TestOutputs(1) TO TotalTestsPassed
-              ADD TestOutputs(2) TO TotalTestsFailed
+           CALL "E8T1Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
+           CALL "E8T2Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
 
       *    EPIC 9
-           CALL "Epics/Epic-9/test-aggragator" USING TestOutputs
-              ADD TestOutputs(1) TO TotalTestsPassed
-              ADD TestOutputs(2) TO TotalTestsFailed
+           CALL "E9T1Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
+           CALL "E9T2Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
 
       *    EPIC 10
-           CALL "Epics/Epic-10/test-aggragator" USING TestOutputs
-              ADD TestOutputs(1) TO TotalTestsPassed
-              ADD TestOutputs(2) TO TotalTestsFailed
+           CALL "E10T1Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
+           CALL "E10T2Ag" USING TestOutputs.
+              ADD TestsPassed TO TotalTestsPassed.
+              ADD TestsFailed TO TotalTestsFailed.
 
+       DISPLAY "Total Tests Passed: " TotalTestsPassed.
+       DISPLAY "Total Tests Failed: " TotalTestsFailed.
+       STOP RUN.
            
