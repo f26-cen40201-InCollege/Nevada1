@@ -2,6 +2,7 @@ Welcome to InCollege!
 1. Log-In
 2. Create New Account
 Enter your choice:
+<<<<<<< Updated upstream
 1sponge
 Invalid Option, Try Again
 1. Log-In
@@ -21,8 +22,540 @@ Welcome, Johnny!
 Enter your choice:
 1
 Job search/internship is under construction.
+=======
+1234asDF!
+Please enter your username:
+1234asDF!
+Please enter your password:
+IanKoratsky
+Incorrect username/password, please try again
+Please enter your username:
+2
+Please enter your password:
+IanKoratsky
+Incorrect username/password, please try again
+Please enter your username:
+1234asDF!
+Please enter your password:
+2
+Incorrect username/password, please try again
+Please enter your username:
+
+Please enter your password:
+1234asDF!
+You have successfully logged in.
+Welcome, !
 1. Search for a job
 2. Find someone you know
 3. Learn a new skill
 4. Logout
 Enter your choice:
+2
+Find someone you know is under construction.
+>>>>>>> Stashed changes
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+1234asDF!
+Job search/internship is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+IanKoratsky1234
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+IanKoratsky1234
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+IanKoratsky1234
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+1234asDF!
+Job search/internship is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+1234asDF!
+Job search/internship is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+1234asDF!
+Job search/internship is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+IanKoratsky1234
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+            1
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+IanKoratsky1234
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+3
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+sponge
+Invalid Option, Try Again
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+99999999999999999999999999999999999999999999999999
+Invalid Option, Try Again
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+9999999999999999999999
+Invalid Option, Try Again
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+1
+This skill is under construction.
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+IanKoratsky
+Invalid Option, Try Again
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+1234asDF!
+This skill is under construction.
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+GOBACK.
+Invalid Option, Try Again
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+'GOBACK.
+Invalid Option, Try Again
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+5
+This skill is under construction.
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+0
+Invalid Option, Try Again
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+sponge
+Invalid Option, Try Again
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+1
+This skill is under construction.
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+2
+This skill is under construction.
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+3
+This skill is under construction.
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+GOBACK.
+Invalid Option, Try Again
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+'GOBACK.
+Invalid Option, Try Again
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+5
+This skill is under construction.
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+0
+Invalid Option, Try Again
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+sponge
+Invalid Option, Try Again
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+1
+This skill is under construction.
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+2
+This skill is under construction.
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+3
+This skill is under construction.
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+4
+This skill is under construction.
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+5
+This skill is under construction.
+Learn a New Skill:
+1. Financial Literacy
+2. Public Speaking
+3. Time Management
+4. Coding Fundamentals
+5. Networking Skills
+6. Go Back
+Enter your choice:
+6
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+4

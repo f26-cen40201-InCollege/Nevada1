@@ -1,13 +1,12 @@
-       IDENTIFICATION DIVISION.
-       PROGRAM-ID. INCOLLEGE.
-       AUTHOR. Ian Koratsky.
-       DATE-WRITTEN. 9/8/2026.
 
-<<<<<<< Updated upstream
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. INCOLLEGE-CORE.
+       DATE-WRITTEN. 9/3/2026.
+
        ENVIRONMENT DIVISION.
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
-           SELECT INPUT-FILE ASSIGN TO "InCollege-Input.txt"
+           SELECT IN-FILE ASSIGN TO IN-FILE
                ORGANIZATION IS LINE SEQUENTIAL
                FILE STATUS IS WS-INPUT-STAT.
 
@@ -21,7 +20,7 @@
 
        DATA DIVISION.
        FILE SECTION.
-       FD INPUT-FILE.
+       FD IN-FILE.
        01 INPUT-LINE    PIC X(50).
 
        FD OUTPUT-FILE.
@@ -56,7 +55,7 @@
 
        01 WS-INPUT-LINE     PIC X(50).
        01 WS-OUTPUT-LINE    PIC X(100).
-       01 WS-CHOICE         PIC X(5).
+       01 WS-CHOICE         PIC X.
        01 WS-NEW-USER       PIC X(20).
        01 WS-NEW-PASS       PIC X(12).
        01 WS-LOGIN-USER     PIC X(20).
@@ -77,7 +76,6 @@
        01  WS-PASSWORD-MATCH    PIC X       VALUE "N".
            88  PASSWORD-MATCHES             VALUE "Y".
 
-       01  WS-USER-LEN           PIC 9(3).
        01  WS-PW-LEN             PIC 9(3).
        01  WS-PW-IDX             PIC 9(3).
        01  WS-PW-CHAR            PIC X.
@@ -88,7 +86,12 @@
        01  WS-SKILL-GO-BACK      PIC X       VALUE "N".
            88  SKILL-GO-BACK                 VALUE "Y".
        
-       PROCEDURE DIVISION.
+       LINKAGE SECTION.
+       01  LS-INPUT   PIC X(50).
+
+       PROCEDURE DIVISION USING LS-INPUT.
+
+           MOVE LS-INPUT TO WS-INPUT-LINE
 
            PERFORM START-FILES
            MOVE "Welcome to InCollege!" TO WS-OUTPUT-LINE
@@ -111,13 +114,13 @@
 
            PERFORM CLOSE-FILES
 
-           STOP RUN.
+           GOBACK.
 
 
 
 
        START-FILES.
-           OPEN INPUT INPUT-FILE
+           OPEN INPUT IN-FILE
            IF WS-INPUT-STAT NOT = "00"
                STOP RUN
            END-IF.
@@ -145,7 +148,7 @@
            CLOSE ACCOUNTS-FILE.
 
        CLOSE-FILES.
-           CLOSE INPUT-FILE
+           CLOSE IN-FILE
            CLOSE OUTPUT-FILE.
 
        WRITE-OUTPUT.
@@ -153,7 +156,7 @@
            WRITE OUTPUT-LINE FROM WS-OUTPUT-LINE.
 
        READ-INPUT.
-           READ INPUT-FILE INTO WS-INPUT-LINE
+           READ IN-FILE INTO WS-INPUT-LINE
                AT END
                    MOVE "Y" TO WS-INPUT-EOF
                    MOVE SPACES TO WS-INPUT-LINE
@@ -181,7 +184,7 @@
                        PERFORM CREATE-ACCOUNT
                    WHEN OTHER
                        MOVE "Invalid Option, Try Again"
-                           TO WS-OUTPUT-LINE
+                           TO WS-INPUT-LINE
                        PERFORM WRITE-OUTPUT
                END-EVALUATE
            END-IF.
@@ -236,10 +239,6 @@
                PERFORM WRITE-OUTPUT
                PERFORM READ-INPUT
                MOVE WS-INPUT-LINE TO WS-NEW-USER
-
-               COMPUTE WS-USER-LEN = 
-                   FUNCTION LENGTH(FUNCTION TRIM(WS-INPUT-LINE))
-
                MOVE WS-NEW-USER TO WS-SEARCH-USERNAME
                PERFORM FIND-ACCOUNT-BY-USERNAME
 
@@ -249,37 +248,28 @@
                        TO WS-OUTPUT-LINE
                    PERFORM WRITE-OUTPUT
                ELSE
-                   IF WS-USER-LEN = 0
-                       MOVE "Blank Usernames Not Allowed" 
-                           TO WS-OUTPUT-LINE
-                       PERFORM WRITE-OUTPUT
-                   ELSE
-                       MOVE "Please enter your password:" 
-                           TO WS-OUTPUT-LINE
-                       PERFORM WRITE-OUTPUT
-                       PERFORM READ-INPUT
+                   MOVE "Please enter your password:" TO WS-OUTPUT-LINE
+                   PERFORM WRITE-OUTPUT
+                   PERFORM READ-INPUT
+                   MOVE WS-INPUT-LINE TO WS-NEW-PASS
+
+                   PERFORM PASSWORD-VALIDATION
+
+                   IF PASSWORD-VALID
                        MOVE WS-INPUT-LINE TO WS-NEW-PASS
-
-                       PERFORM PASSWORD-VALIDATION
-
-                       IF PASSWORD-VALID
-                           MOVE WS-INPUT-LINE TO WS-NEW-PASS
-                           ADD 1 TO WS-TOTAL-ACCOUNTS
-                           MOVE WS-NEW-USER
-                               TO WS-USERNAME(WS-TOTAL-ACCOUNTS)
-                           MOVE WS-NEW-PASS
-                               TO WS-PASSWORD(WS-TOTAL-ACCOUNTS)
-                           PERFORM SAVE-TO-ACCOUNTS
-                           MOVE "Account Created!" TO WS-OUTPUT-LINE
-                           PERFORM WRITE-OUTPUT
-                           MOVE "Y" TO WS-LOGGED-IN
-                           MOVE WS-NEW-USER TO WS-LOGIN-USER
-                       ELSE 
-                           MOVE
-               "Password doesn't satisfy requirements, try again"
-                               TO WS-OUTPUT-LINE
-                           PERFORM WRITE-OUTPUT
-                       END-IF
+                       ADD 1 TO WS-TOTAL-ACCOUNTS
+                       MOVE WS-NEW-USER
+                           TO WS-USERNAME(WS-TOTAL-ACCOUNTS)
+                       MOVE WS-NEW-PASS
+                           TO WS-PASSWORD(WS-TOTAL-ACCOUNTS)
+                       PERFORM SAVE-TO-ACCOUNTS
+                       MOVE "Account Created!" TO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                   ELSE 
+                       MOVE
+           "Password doesn't satisfy requirements, try again"
+                           TO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
                    END-IF
                END-IF
            END-IF.
@@ -426,10 +416,3 @@
 
 
       
-=======
-       PROCEDURE DIVISION.
-           CALL 'INCOLLEGE-CORE' USING "InCollege-Input.txt".
-           STOP RUN.
-
-       
->>>>>>> Stashed changes
