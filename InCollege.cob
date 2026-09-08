@@ -5,6 +5,6 @@
 
        PROCEDURE DIVISION.
            CALL 'INCOLLEGE-CORE' USING "InCollege-Input.txt".
-           STOP RUN.
+           GOBACK.
 
        
