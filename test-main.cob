@@ -83,8 +83,8 @@
            MOVE "INCOLLEGE-CORE" TO WS-TEST-CODE. 
       
       * For Each test, copy this once and change the folder:
-           MOVE "tests/epic-1/tester-1/account-creation/" TO WS-FOLDER.
-           PERFORM COUNTER-UPDATE.
+        *>    MOVE "tests/epic-1/tester-1/account-creation-neg-1/" TO WS-FOLDER.
+        *>    PERFORM COUNTER-UPDATE.
       * And we're done with this test!
       
       * See how you don't need to change the WS-TEST-CODE?
@@ -92,7 +92,37 @@
       * Until you need to change it!
 
       * Now just copy the below as often as you need:
-           MOVE "tests/epic-1/tester-1/menus/" TO WS-FOLDER.
+
+           MOVE "tests/epic-1/tester-1/account-creation-pos-1/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-1/tester-1/account-creation-pos-2/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-1/tester-1/account-creation-neg-3/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-1/tester-1/account-creation-neg-4/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-1/tester-1/account-creation-neg-1/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-1/tester-1/account-creation-neg-2/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+           
+
+           MOVE "tests/epic-1/tester-1/menus-pos-1/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-1/tester-1/menus-pos-2/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-1/tester-1/menus-neg-1/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-1/tester-1/menus-neg-2/" TO WS-FOLDER.
            PERFORM COUNTER-UPDATE.
 
 
