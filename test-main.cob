@@ -93,22 +93,20 @@
 
       * Now just copy the below as often as you need:
 
-           MOVE "tests/epic-1/tester-1/account-creation-pos-1/" TO WS-FOLDER.
+           MOVE "tests/epic-1/tester-1/account-creation-pos-1/" 
+               TO WS-FOLDER.
            PERFORM COUNTER-UPDATE.
 
-           MOVE "tests/epic-1/tester-1/account-creation-pos-2/" TO WS-FOLDER.
+           MOVE "tests/epic-1/tester-1/account-creation-pos-2/" 
+               TO WS-FOLDER.
            PERFORM COUNTER-UPDATE.
 
-           MOVE "tests/epic-1/tester-1/account-creation-neg-3/" TO WS-FOLDER.
+           MOVE "tests/epic-1/tester-1/account-creation-neg-1/" 
+               TO WS-FOLDER.
            PERFORM COUNTER-UPDATE.
 
-           MOVE "tests/epic-1/tester-1/account-creation-neg-4/" TO WS-FOLDER.
-           PERFORM COUNTER-UPDATE.
-
-           MOVE "tests/epic-1/tester-1/account-creation-neg-1/" TO WS-FOLDER.
-           PERFORM COUNTER-UPDATE.
-
-           MOVE "tests/epic-1/tester-1/account-creation-neg-2/" TO WS-FOLDER.
+           MOVE "tests/epic-1/tester-1/account-creation-neg-2/" 
+               TO WS-FOLDER.
            PERFORM COUNTER-UPDATE.
 
            
@@ -123,6 +121,14 @@
            PERFORM COUNTER-UPDATE.
 
            MOVE "tests/epic-1/tester-1/menus-neg-2/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-1/tester-1/menus-neg-3/" 
+               TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-1/tester-1/menus-neg-4/" 
+               TO WS-FOLDER.
            PERFORM COUNTER-UPDATE.
 
 

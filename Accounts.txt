@@ -1,6 +1,0 @@
-<<<<<<< Updated upstream
-Johnny              Samplepa1.
-=======
-IanKoratsky         1234asDF!
-                    1234asDF!
->>>>>>> Stashed changes
