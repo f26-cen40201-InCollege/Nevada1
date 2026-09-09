@@ -6,11 +6,11 @@
        ENVIRONMENT DIVISION.
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
-           SELECT IN-FILE ASSIGN TO WS-INPUT-LINE
+           SELECT IN-FILE ASSIGN TO WS-INPUT-FILE
                ORGANIZATION IS LINE SEQUENTIAL
                FILE STATUS IS WS-INPUT-STAT.
 
-           SELECT OUTPUT-FILE ASSIGN TO "InCollege-Output.txt"
+           SELECT OUTPUT-FILE ASSIGN TO WS-OUTPUT-FILE
                ORGANIZATION IS LINE SEQUENTIAL
                FILE STATUS IS WS-OUTPUT-STAT.
 
@@ -21,7 +21,7 @@
        DATA DIVISION.
        FILE SECTION.
        FD IN-FILE.
-       01 INPUT-LINE    PIC X(50).
+       01 INPUT-LINE    PIC X(100).
 
        FD OUTPUT-FILE.
        01 OUTPUT-LINE   PIC X(100).
@@ -53,8 +53,10 @@
                10   WS-USERNAME     PIC X(20).
                10   WS-PASSWORD     PIC X(20).
 
-       01 WS-INPUT-LINE     PIC X(50).
+       01 WS-INPUT-LINE     PIC X(100).
+       01  WS-INPUT-FILE  PIC X(100).
        01 WS-OUTPUT-LINE    PIC X(100).
+       01 WS-OUTPUT-FILE PIC X(100).
        01 WS-CHOICE         PIC X.
        01 WS-NEW-USER       PIC X(20).
        01 WS-NEW-PASS       PIC X(12).
@@ -87,11 +89,13 @@
            88  SKILL-GO-BACK                 VALUE "Y".
        
        LINKAGE SECTION.
-       01  LS-INPUT   PIC X(50).
+       01  LS-INPUT   PIC X(100).
+       01  LS-OUTPUT  PIC X(100).
 
-       PROCEDURE DIVISION USING LS-INPUT.
+       PROCEDURE DIVISION USING LS-INPUT LS-OUTPUT.
 
-           MOVE LS-INPUT TO WS-INPUT-LINE
+           MOVE LS-INPUT TO WS-INPUT-FILE
+           MOVE LS-OUTPUT TO WS-OUTPUT-FILE
 
            PERFORM START-FILES
            MOVE "Welcome to InCollege!" TO WS-OUTPUT-LINE
@@ -122,13 +126,18 @@
        START-FILES.
            OPEN INPUT IN-FILE
            IF WS-INPUT-STAT NOT = "00"
+                DISPLAY "Error opening input file: " WS-INPUT-FILE
+                DISPLAY "File status: " WS-INPUT-STAT
                STOP RUN
            END-IF.
 
            OPEN OUTPUT OUTPUT-FILE
            IF WS-OUTPUT-STAT NOT = "00"
+               DISPLAY "ERROR: cannot open output file: " WS-OUTPUT-FILE
+                DISPLAY "  FILE STATUS: " WS-OUTPUT-STAT
                STOP RUN
            END-IF.
+
 
            OPEN INPUT ACCOUNTS-FILE
            IF WS-ACCOUNTS-STAT = "00"

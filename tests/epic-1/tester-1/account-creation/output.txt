@@ -1,0 +1,120 @@
+Welcome to InCollege!
+1. Log-In
+2. Create New Account
+Enter your choice:
+2
+All permitted accounts have been created,          please come back later
+1. Log-In
+2. Create New Account
+Enter your choice:
+IanKoratsky
+IanKoratsky
+1. Log-In
+2. Create New Account
+Enter your choice:
+1234asDF!
+Please enter your username:
+2
+Please enter your password:
+
+Incorrect username/password, please try again
+Please enter your username:
+1234asDF!
+Please enter your password:
+2
+Incorrect username/password, please try again
+Please enter your username:
+
+Please enter your password:
+1234asDF!
+You have successfully logged in.
+Welcome, !
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+IanKoratsky
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+IanKoratsky
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
