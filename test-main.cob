@@ -31,6 +31,16 @@
            ORGANIZATION IS LINE SEQUENTIAL
            FILE STATUS IS WS-EXPECTED-STAT.
 
+         SELECT OUTPUT-FILE-CONSOLIDATED 
+           ASSIGN TO WS-OUTPUT-FILE-CONSOLIDATED
+           ORGANIZATION IS LINE SEQUENTIAL
+           FILE STATUS IS WS-OUTPUT-STAT-CONSOLIDATED.
+
+         SELECT EXPECTED-FILE-CONSOLIDATED 
+           ASSIGN TO WS-EXPECTED-FILE-CONSOLIDATED
+           ORGANIZATION IS LINE SEQUENTIAL
+           FILE STATUS IS WS-EXPECTED-STAT-CONSOLIDATED.
+
 
        DATA DIVISION.
        FILE SECTION.
@@ -39,6 +49,14 @@
            
            FD EXPECTED-FILE.
            01 EXPECTED-FILE-LINE PIC X(100).
+
+           FD OUTPUT-FILE-CONSOLIDATED.
+           01 OUTPUT-FILE-LINE-CONSOLIDATED PIC X(100)
+           VALUE "tests-tester-1-output.txt".
+           
+           FD EXPECTED-FILE-CONSOLIDATED.
+           01 EXPECTED-FILE-LINE-CONSOLIDATED PIC X(100)
+           VALUE "tests-tester-1-expected.txt".
 
        WORKING-STORAGE SECTION.
 
@@ -71,8 +89,28 @@
            01 WS-EXPECTED-FILE PIC X(100).
            01 WS-EXPECTED-STAT PIC XX.
 
+           
+
+      * Output
+           01 WS-OUTPUT-LINE PIC X(100).
+           01 WS-OUTPUT-FILE PIC X(100).
+           01 WS-OUTPUT-STAT PIC XX.
+
+      * Expected
+           01 WS-EXPECTED-LINE PIC X(100).
+           01 WS-EXPECTED-FILE PIC X(100).
+           01 WS-EXPECTED-STAT PIC XX.
+
+
+      * Consolidated
+           01 WS-OUTPUT-FILE-CONSOLIDATED PIC X(100).
+           01 OUTPUT-FILE-CONSOLIDATED-LINE PIC XX.
+           01 WS-EXPECTED-FILE-CONSOLIDATED PIC X(100).
+           01 EXPECTED-FILE-CONSOLIDATED-LINE PIC XX.
 
        PROCEDURE DIVISION.
+
+           PERFORM START-CONSOLIDATE-FILES.
 
            MOVE 0 TO TotalTestsPassed.
            MOVE 0 TO TotalTestsFailed.
@@ -131,7 +169,7 @@
                TO WS-FOLDER.
            PERFORM COUNTER-UPDATE.
 
-
+       PERFORM CLOSE-CONSOLIDATED-FILES.
        DISPLAY "Total Tests Passed: " TotalTestsPassed.
        DISPLAY "Total Tests Failed: " TotalTestsFailed.
        STOP RUN.
@@ -157,6 +195,45 @@
        CLOSE-FILES.
            CLOSE OUTPUT-FILE.
            CLOSE EXPECTED-FILE.
+
+           MOVE SPACES TO OUTPUT-FILE-CONSOLIDATED-LINE.
+           STRING 
+               "==== TEST: "
+               WS-FOLDER
+               "===="
+               DELIMITED BY SIZE 
+               INTO OUTPUT-FILE-CONSOLIDATED-LINE
+           END STRING .
+           WRITE OUTPUT-FILE-CONSOLIDATED-LINE.
+
+           
+           MOVE SPACES TO EXPECTED-FILE-CONSOLIDATED-LINE.
+           STRING 
+               "==== TEST: "
+               WS-FOLDER
+               "===="
+               DELIMITED BY SIZE 
+               INTO EXPECTED-FILE-CONSOLIDATED-LINE
+           END STRING .
+           WRITE EXPECTED-FILE-CONSOLIDATED-LINE.
+
+       START-CONSOLIDATE-FILES.
+           OPEN OUTPUT OUTPUT-FILE-CONSOLIDATED
+           IF WS-OUTPUT-STAT-CONSOLIDATED NOT = "00"
+               DISPLAY "ERR"
+               STOP RUN
+           END-IF
+           
+           OPEN OUTPUT EXPECTED-FILE-CONSOLIDATED
+           IF WS-OUTPUT-STAT-CONSOLIDATED NOT = "00"
+               DISPLAY "ERR"
+               STOP RUN
+           END-IF.
+           
+
+       CLOSE-CONSOLIDATED-FILES.
+           CLOSE OUTPUT-FILE-CONSOLIDATED.
+           CLOSE EXPECTED-FILE-CONSOLIDATED.
 
 
 
@@ -219,12 +296,19 @@
                AT END
                    MOVE "Y" TO WS-EXPECTED-EOF
                    MOVE SPACES TO WS-EXPECTED-LINE
+               NOT AT END
+                   WRITE EXPECTED-FILE-CONSOLIDATED-LINE
+                       FROM WS-EXPECTED-LINE
            END-READ.
+           
 
        READ-OUTPUT.
            READ OUTPUT-FILE INTO WS-OUTPUT-LINE
                AT END
                    MOVE "Y" TO WS-OUTPUT-EOF
                    MOVE SPACES TO WS-OUTPUT-LINE
+               NOT AT END
+                   WRITE OUTPUT-FILE-CONSOLIDATED-LINE
+                       FROM WS-OUTPUT-LINE
            END-READ.
            
