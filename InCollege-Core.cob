@@ -1,6 +1,6 @@
 
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. INCOLLEGE-CORE.
+       PROGRAM-ID. INCOLLEGE-CORE IS INITIAL PROGRAM.
        DATE-WRITTEN. 9/3/2026.
 
        ENVIRONMENT DIVISION.
@@ -14,9 +14,11 @@
                ORGANIZATION IS LINE SEQUENTIAL
                FILE STATUS IS WS-OUTPUT-STAT.
 
-           SELECT OPTIONAL ACCOUNTS-FILE ASSIGN TO "Accounts.txt"
+           SELECT OPTIONAL ACCOUNTS-FILE ASSIGN TO WS-ACCOUNTS-FILE
                ORGANIZATION IS LINE SEQUENTIAL
                FILE STATUS IS WS-ACCOUNTS-STAT.
+           
+
 
        DATA DIVISION.
        FILE SECTION.
@@ -35,7 +37,10 @@
 
        01  WS-INPUT-STAT     PIC XX.
        01  WS-OUTPUT-STAT    PIC XX.
-       01  WS-ACCOUNTS-STAT  PIC XX.
+
+       01 WS-ACCOUNTS-FILE PIC X(100).
+
+       01 WS-ACCOUNTS-STAT PIC XX.
            
        01  WS-INPUT-EOF    PIC X   VALUE "N".
            88  END-OF-INPUT        VALUE "Y".
@@ -92,11 +97,13 @@
        LINKAGE SECTION.
        01  LS-INPUT   PIC X(100).
        01  LS-OUTPUT  PIC X(100).
+       01  LS-ACOUNTS PIC X(100).
 
-       PROCEDURE DIVISION USING LS-INPUT LS-OUTPUT.
+       PROCEDURE DIVISION USING LS-INPUT LS-OUTPUT LS-ACOUNTS.
 
            MOVE LS-INPUT TO WS-INPUT-FILE
            MOVE LS-OUTPUT TO WS-OUTPUT-FILE
+           MOVE LS-ACOUNTS TO WS-ACCOUNTS-FILE
 
            PERFORM START-FILES
            MOVE "Welcome to InCollege!" TO WS-OUTPUT-LINE
@@ -241,7 +248,7 @@
        CREATE-ACCOUNT.
            IF WS-TOTAL-ACCOUNTS >= 5
                STRING "All permitted accounts have been created, "
-      -               "please come back later" 
+                      "please come back later" 
                    DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                END-STRING
                PERFORM WRITE-OUTPUT

@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build test-main",
+            "type": "shell",
+            "command": "cobc",
+            "args": [
+                "-x",
+                "-o", "test-main",
+                "test-main.cob",
+                "InCollege-Core.cob"
+            ],
+            "group": { "kind": "build", "isDefault": true },
+            "presentation": { "reveal": "always" },
+            "problemMatcher": {
+                "owner": "cobol",
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):\\s+(error|warning):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "severity": 3,
+                    "message": 4
+                }
+            }
+        },
+        {
+            "label": "run test-main",
+            "type": "shell",
+            "command": "./test-main",
+            "dependsOn": "build test-main",
+            "group": { "kind": "test", "isDefault": true },
+            "presentation": { "reveal": "always" }
+        }
+    ]
+}
