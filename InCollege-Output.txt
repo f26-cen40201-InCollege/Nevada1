@@ -367,4 +367,5 @@ Enter your choice:
 3. Learn a new skill
 4. Logout
 Enter your choice:
-4
+1234abc!
+Please enter your username:
