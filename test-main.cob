@@ -59,6 +59,7 @@
       * Test Input
            01 WS-TEST-INPUT PIC X(100).
            01 WS-TEST-CODE PIC X(100).
+           01 WS-FOLDER PIC X(100).
 
       * Output
            01 WS-OUTPUT-LINE PIC X(100).
@@ -76,28 +77,21 @@
            MOVE 0 TO TotalTestsPassed.
            MOVE 0 TO TotalTestsFailed.
 
-
-
       * EXAMPLE USING EPIC 1 :
-           MOVE "INCOLLEGE-CORE" TO WS-TEST-CODE. *> * Use this to set a code you're going to test, you need only do this once
-
-      * Now you can add tests:
-           MOVE "tests/epic-1/tester-1/account-creation-input.txt" 
-               TO WS-TEST-INPUT. *>This is the input file we'll use for testing
-           MOVE "tests/epic-1/tester-1/account-creation-output.txt" 
-               TO WS-OUTPUT-FILE. *> This is the output file we'll use for testing
-           MOVE "tests/epic-1/tester-1/account-creation-expected.txt" 
-               TO WS-EXPECTED-FILE. *> This is the expected output file we'll use for testing
-           PERFORM COUNTER-UPDATE. *> This is the test
+      *> * Use this to set a code you're going to test
+           MOVE "INCOLLEGE-CORE" TO WS-TEST-CODE. 
+      
+      * For Each test, copy this once and change the folder:
+           MOVE "tests/epic-1/tester-1/account-creation/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
       * And we're done with this test!
-           
+      
+      * See how you don't need to change the WS-TEST-CODE?
+      * That's because all the tests are for the same code
+      * Until you need to change it!
+
       * Now just copy the below as often as you need:
-           MOVE "tests/epic-1/tester-1/menu-tests-input.txt" 
-               TO WS-TEST-INPUT.
-           MOVE "tests/epic-1/tester-1/menu-tests-output.txt" 
-               TO WS-OUTPUT-FILE.
-           MOVE "tests/epic-1/tester-1/menu-tests-expected.txt" 
-               TO WS-EXPECTED-FILE. 
+           MOVE "tests/epic-1/tester-1/menus/" TO WS-FOLDER.
            PERFORM COUNTER-UPDATE.
 
 
@@ -129,6 +123,21 @@
 
 
        COUNTER-UPDATE.
+           
+           STRING WS-FOLDER DELIMITED BY SIZE
+              "input.txt" DELIMITED BY SIZE
+               INTO WS-TEST-INPUT
+           END-STRING
+
+           STRING WS-FOLDER DELIMITED BY SIZE
+              "output.txt" DELIMITED BY SIZE
+               INTO WS-OUTPUT-FILE
+           END-STRING
+           
+           STRING WS-FOLDER DELIMITED BY SIZE
+              "expected.txt" DELIMITED BY SIZE
+               INTO WS-EXPECTED-FILE
+           END-STRING
 
            CALL WS-TEST-CODE USING WS-TEST-INPUT WS-OUTPUT-FILE.
        
