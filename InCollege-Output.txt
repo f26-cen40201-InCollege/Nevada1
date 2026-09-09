@@ -18,12 +18,9 @@ Invalid Option, Try Again
 2. Create New Account
 Enter your choice:
 2
-All permitted accounts have been created, please come back later
-1. Log-In
-2. Create New Account
-Enter your choice:
+Please enter your username:
 IanKoratsky
-Invalid Option, Try Again
+That username is already taken, please try again
 1. Log-In
 2. Create New Account
 Enter your choice:
@@ -33,12 +30,9 @@ Invalid Option, Try Again
 2. Create New Account
 Enter your choice:
 2
-All permitted accounts have been created, please come back later
-1. Log-In
-2. Create New Account
-Enter your choice:
+Please enter your username:
 
-Invalid Option, Try Again
+Blank Usernames not allowed
 1. Log-In
 2. Create New Account
 Enter your choice:
@@ -48,12 +42,9 @@ Invalid Option, Try Again
 2. Create New Account
 Enter your choice:
 2
-All permitted accounts have been created, please come back later
-1. Log-In
-2. Create New Account
-Enter your choice:
+Please enter your username:
 
-Invalid Option, Try Again
+Blank Usernames not allowed
 1. Log-In
 2. Create New Account
 Enter your choice:
@@ -63,27 +54,9 @@ Invalid Option, Try Again
 2. Create New Account
 Enter your choice:
 2
-All permitted accounts have been created, please come back later
-1. Log-In
-2. Create New Account
-Enter your choice:
+Please enter your username:
 
-Invalid Option, Try Again
-1. Log-In
-2. Create New Account
-Enter your choice:
-
-Invalid Option, Try Again
-1. Log-In
-2. Create New Account
-Enter your choice:
-2
-All permitted accounts have been created, please come back later
-1. Log-In
-2. Create New Account
-Enter your choice:
-
-Invalid Option, Try Again
+Blank Usernames not allowed
 1. Log-In
 2. Create New Account
 Enter your choice:
@@ -93,42 +66,48 @@ Invalid Option, Try Again
 2. Create New Account
 Enter your choice:
 2
-All permitted accounts have been created, please come back later
+Please enter your username:
+
+Blank Usernames not allowed
 1. Log-In
 2. Create New Account
 Enter your choice:
+
+Invalid Option, Try Again
+1. Log-In
+2. Create New Account
+Enter your choice:
+2
+Please enter your username:
 IanKoratsky1234
-Invalid Option, Try Again
-1. Log-In
-2. Create New Account
-Enter your choice:
+Please enter your password:
 
-Invalid Option, Try Again
+Password doesn't satisfy requirements, try again
 1. Log-In
 2. Create New Account
 Enter your choice:
 2
-All permitted accounts have been created, please come back later
-1. Log-In
-2. Create New Account
-Enter your choice:
+Please enter your username:
 IanKoratsky1234
-Invalid Option, Try Again
-1. Log-In
-2. Create New Account
-Enter your choice:
+Please enter your password:
 
-Invalid Option, Try Again
+Password doesn't satisfy requirements, try again
 1. Log-In
 2. Create New Account
 Enter your choice:
 2
-All permitted accounts have been created, please come back later
+Please enter your username:
+IanKoratsky1234
+Please enter your password:
+1234asDF!
+Account Created!
 1. Log-In
 2. Create New Account
 Enter your choice:
-IanKoratsky1234
-Invalid Option, Try Again
+2
+Please enter your username:
+
+Blank Usernames not allowed
 1. Log-In
 2. Create New Account
 Enter your choice:
@@ -138,12 +117,9 @@ Invalid Option, Try Again
 2. Create New Account
 Enter your choice:
 2
-All permitted accounts have been created, please come back later
-1. Log-In
-2. Create New Account
-Enter your choice:
+Please enter your username:
 
-Invalid Option, Try Again
+Blank Usernames not allowed
 1. Log-In
 2. Create New Account
 Enter your choice:
@@ -153,27 +129,9 @@ Invalid Option, Try Again
 2. Create New Account
 Enter your choice:
 2
-All permitted accounts have been created, please come back later
-1. Log-In
-2. Create New Account
-Enter your choice:
+Please enter your username:
 
-Invalid Option, Try Again
-1. Log-In
-2. Create New Account
-Enter your choice:
-1234asDF!
-Invalid Option, Try Again
-1. Log-In
-2. Create New Account
-Enter your choice:
-2
-All permitted accounts have been created, please come back later
-1. Log-In
-2. Create New Account
-Enter your choice:
-
-Invalid Option, Try Again
+Blank Usernames not allowed
 1. Log-In
 2. Create New Account
 Enter your choice:
@@ -183,12 +141,9 @@ Invalid Option, Try Again
 2. Create New Account
 Enter your choice:
 2
-All permitted accounts have been created, please come back later
-1. Log-In
-2. Create New Account
-Enter your choice:
+Please enter your username:
 
-Invalid Option, Try Again
+Blank Usernames not allowed
 1. Log-In
 2. Create New Account
 Enter your choice:
@@ -198,12 +153,9 @@ Invalid Option, Try Again
 2. Create New Account
 Enter your choice:
 2
-All permitted accounts have been created, please come back later
-1. Log-In
-2. Create New Account
-Enter your choice:
+Please enter your username:
 IanKoratsky1234
-Invalid Option, Try Again
+That username is already taken, please try again
 1. Log-In
 2. Create New Account
 Enter your choice:
@@ -213,12 +165,9 @@ Invalid Option, Try Again
 2. Create New Account
 Enter your choice:
 2
-All permitted accounts have been created, please come back later
-1. Log-In
-2. Create New Account
-Enter your choice:
+Please enter your username:
 IanKoratsky1234
-Invalid Option, Try Again
+That username is already taken, please try again
 1. Log-In
 2. Create New Account
 Enter your choice:
