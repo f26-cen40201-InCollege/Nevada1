@@ -79,6 +79,7 @@
 
       * EXAMPLE USING EPIC 1 :
       *> * Use this to set a code you're going to test
+           MOVE SPACES TO WS-TEST-CODE.
            MOVE "INCOLLEGE-CORE" TO WS-TEST-CODE. 
       
       * For Each test, copy this once and change the folder:
@@ -122,21 +123,28 @@
            CLOSE EXPECTED-FILE.
 
 
+
        COUNTER-UPDATE.
-           
-           STRING WS-FOLDER DELIMITED BY SIZE
+
+           STRING WS-FOLDER DELIMITED BY SPACE
               "input.txt" DELIMITED BY SIZE
                INTO WS-TEST-INPUT
+               ON OVERFLOW
+                   DISPLAY "Error: WS-TEST-INPUT"
            END-STRING
 
-           STRING WS-FOLDER DELIMITED BY SIZE
+           STRING WS-FOLDER DELIMITED BY SPACE
               "output.txt" DELIMITED BY SIZE
                INTO WS-OUTPUT-FILE
+               ON OVERFLOW
+                   DISPLAY "Error: WS-OUTPUT-FILE"
            END-STRING
            
-           STRING WS-FOLDER DELIMITED BY SIZE
+           STRING WS-FOLDER DELIMITED BY SPACE
               "expected.txt" DELIMITED BY SIZE
                INTO WS-EXPECTED-FILE
+               ON OVERFLOW
+                   DISPLAY "Error: WS-EXPECTED-FILE"
            END-STRING
 
            CALL WS-TEST-CODE USING WS-TEST-INPUT WS-OUTPUT-FILE.
@@ -163,8 +171,12 @@
            MOVE "N" TO WS-MISMATCH.
            MOVE "N" TO WS-OUTPUT-EOF.
            MOVE "N" TO WS-EXPECTED-EOF.
-           
-       
+           MOVE SPACES TO WS-FOLDER.
+           MOVE SPACES TO WS-OUTPUT-LINE.
+           MOVE SPACES TO WS-EXPECTED-LINE.
+           MOVE SPACES TO WS-TEST-INPUT.
+           MOVE SPACES TO WS-OUTPUT-FILE.
+           MOVE SPACES TO WS-EXPECTED-FILE.
 
        READ-EXPECTED.
            READ EXPECTED-FILE INTO WS-EXPECTED-LINE
