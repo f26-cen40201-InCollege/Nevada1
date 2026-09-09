@@ -45,19 +45,16 @@
        DATA DIVISION.
        FILE SECTION.
            FD OUTPUT-FILE.
-           01 OUTPUT-FILE-LINE PIC X(100).
+           01 OUTPUT-FILE-REC PIC X(100).
            
            FD EXPECTED-FILE.
-           01 EXPECTED-FILE-LINE PIC X(100).
+           01 EXPECTED-FILE-REC PIC X(100).
 
            FD OUTPUT-FILE-CONSOLIDATED.
-           01 OUTPUT-FILE-LINE-CONSOLIDATED PIC X(100)
-           VALUE "tests-tester-1-output.txt".
+           01 OUTPUT-CONSOLIDATED-REC PIC X(100).
            
            FD EXPECTED-FILE-CONSOLIDATED.
-           01 EXPECTED-FILE-LINE-CONSOLIDATED PIC X(100)
-           VALUE "tests-tester-1-expected.txt".
-
+           01 EXPECTED-CONSOLIDATED-REC PIC X(100).
        WORKING-STORAGE SECTION.
 
       * Booleans
@@ -83,30 +80,23 @@
            01 WS-OUTPUT-LINE PIC X(100).
            01 WS-OUTPUT-FILE PIC X(100).
            01 WS-OUTPUT-STAT PIC XX.
+           01 WS-OUTPUT-STAT-CONSOLIDATED PIC XX.
 
       * Expected
            01 WS-EXPECTED-LINE PIC X(100).
            01 WS-EXPECTED-FILE PIC X(100).
            01 WS-EXPECTED-STAT PIC XX.
-
-           
-
-      * Output
-           01 WS-OUTPUT-LINE PIC X(100).
-           01 WS-OUTPUT-FILE PIC X(100).
-           01 WS-OUTPUT-STAT PIC XX.
-
-      * Expected
-           01 WS-EXPECTED-LINE PIC X(100).
-           01 WS-EXPECTED-FILE PIC X(100).
-           01 WS-EXPECTED-STAT PIC XX.
+           01 WS-EXPECTED-STAT-CONSOLIDATED PIC XX.
 
 
       * Consolidated
-           01 WS-OUTPUT-FILE-CONSOLIDATED PIC X(100).
-           01 OUTPUT-FILE-CONSOLIDATED-LINE PIC XX.
-           01 WS-EXPECTED-FILE-CONSOLIDATED PIC X(100).
-           01 EXPECTED-FILE-CONSOLIDATED-LINE PIC XX.
+           01 WS-OUTPUT-FILE-CONSOLIDATED PIC X(100)
+               VALUE "tests-tester-1-output.txt".
+           01 OUTPUT-CONSOLIDATED-LINE PIC X(100).
+           01 WS-EXPECTED-FILE-CONSOLIDATED PIC X(100)
+               VALUE "tests-tester-1-expected.txt".
+           01 EXPECTED-CONSOLIDATED-LINE PIC X(100).
+               
 
        PROCEDURE DIVISION.
 
@@ -192,30 +182,34 @@
            END-IF.
 
 
+
+           MOVE SPACES TO OUTPUT-CONSOLIDATED-LINE.
+           STRING 
+               "==== TEST: "
+               WS-FOLDER
+               "===="
+               DELIMITED BY SIZE 
+               INTO OUTPUT-CONSOLIDATED-LINE
+           END-STRING .
+           WRITE OUTPUT-CONSOLIDATED-REC
+               FROM OUTPUT-CONSOLIDATED-LINE.
+
+           
+           MOVE SPACES TO EXPECTED-CONSOLIDATED-LINE.
+           STRING 
+               "==== TEST: "
+               WS-FOLDER
+               "===="
+               DELIMITED BY SIZE 
+               INTO EXPECTED-CONSOLIDATED-LINE
+           END-STRING.
+           WRITE EXPECTED-CONSOLIDATED-REC
+               FROM EXPECTED-CONSOLIDATED-LINE.
+
+
        CLOSE-FILES.
            CLOSE OUTPUT-FILE.
            CLOSE EXPECTED-FILE.
-
-           MOVE SPACES TO OUTPUT-FILE-CONSOLIDATED-LINE.
-           STRING 
-               "==== TEST: "
-               WS-FOLDER
-               "===="
-               DELIMITED BY SIZE 
-               INTO OUTPUT-FILE-CONSOLIDATED-LINE
-           END STRING .
-           WRITE OUTPUT-FILE-CONSOLIDATED-LINE.
-
-           
-           MOVE SPACES TO EXPECTED-FILE-CONSOLIDATED-LINE.
-           STRING 
-               "==== TEST: "
-               WS-FOLDER
-               "===="
-               DELIMITED BY SIZE 
-               INTO EXPECTED-FILE-CONSOLIDATED-LINE
-           END STRING .
-           WRITE EXPECTED-FILE-CONSOLIDATED-LINE.
 
        START-CONSOLIDATE-FILES.
            OPEN OUTPUT OUTPUT-FILE-CONSOLIDATED
@@ -225,7 +219,7 @@
            END-IF
            
            OPEN OUTPUT EXPECTED-FILE-CONSOLIDATED
-           IF WS-OUTPUT-STAT-CONSOLIDATED NOT = "00"
+           IF WS-EXPECTED-STAT-CONSOLIDATED NOT = "00"
                DISPLAY "ERR"
                STOP RUN
            END-IF.
@@ -297,8 +291,8 @@
                    MOVE "Y" TO WS-EXPECTED-EOF
                    MOVE SPACES TO WS-EXPECTED-LINE
                NOT AT END
-                   WRITE EXPECTED-FILE-CONSOLIDATED-LINE
-                       FROM WS-EXPECTED-LINE
+                   WRITE EXPECTED-CONSOLIDATED-REC
+                       FROM EXPECTED-CONSOLIDATED-LINE
            END-READ.
            
 
@@ -308,7 +302,7 @@
                    MOVE "Y" TO WS-OUTPUT-EOF
                    MOVE SPACES TO WS-OUTPUT-LINE
                NOT AT END
-                   WRITE OUTPUT-FILE-CONSOLIDATED-LINE
-                       FROM WS-OUTPUT-LINE
+                   WRITE OUTPUT-CONSOLIDATED-REC
+                       FROM OUTPUT-CONSOLIDATED-LINE
            END-READ.
            
