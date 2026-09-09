@@ -161,7 +161,19 @@
                TO WS-FOLDER.
            PERFORM COUNTER-UPDATE.
 
+           MOVE "tests/epic-1/tester-1/account-creation-neg-2/" 
+               TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
            MOVE "tests/epic-1/tester-1/menus-neg-1/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+           MOVE "tests/epic-1/tester-1/menus-pos-1/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+           MOVE "tests/epic-1/tester-1/menus-pos-2/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+           MOVE "tests/epic-1/tester-1/menus-pos-3/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+           MOVE "tests/epic-1/tester-1/menus-pos-4/" TO WS-FOLDER.
            PERFORM COUNTER-UPDATE.
 
        PERFORM CLOSE-CONSOLIDATED-FILES.

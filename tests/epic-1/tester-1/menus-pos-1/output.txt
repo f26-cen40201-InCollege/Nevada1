@@ -14,12 +14,3 @@ Welcome, IanKoratsky!
 3. Learn a new skill
 4. Logout
 Enter your choice:
-3
-Learn a New Skill:
-1. Financial Literacy
-2. Public Speaking
-3. Time Management
-4. Coding Fundamentals
-5. Networking Skills
-6. Go Back
-Enter your choice:
