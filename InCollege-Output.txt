@@ -2,27 +2,6 @@ Welcome to InCollege!
 1. Log-In
 2. Create New Account
 Enter your choice:
-<<<<<<< Updated upstream
-1sponge
-Invalid Option, Try Again
-1. Log-In
-2. Create New Account
-Enter your choice:
-1
-Please enter your username:
-Johnny
-Please enter your password:
-Samplepa1.
-You have successfully logged in.
-Welcome, Johnny!
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
-Enter your choice:
-1
-Job search/internship is under construction.
-=======
 1234asDF!
 Please enter your username:
 1234asDF!
@@ -52,7 +31,6 @@ Welcome, !
 Enter your choice:
 2
 Find someone you know is under construction.
->>>>>>> Stashed changes
 1. Search for a job
 2. Find someone you know
 3. Learn a new skill
