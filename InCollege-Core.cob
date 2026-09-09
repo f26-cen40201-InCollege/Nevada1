@@ -57,7 +57,7 @@
        01  WS-INPUT-FILE  PIC X(100).
        01 WS-OUTPUT-LINE    PIC X(100).
        01 WS-OUTPUT-FILE PIC X(100).
-       01 WS-CHOICE         PIC X.
+       01 WS-CHOICE         PIC X(5).
        01 WS-NEW-USER       PIC X(20).
        01 WS-NEW-PASS       PIC X(12).
        01 WS-LOGIN-USER     PIC X(20).
@@ -78,6 +78,7 @@
        01  WS-PASSWORD-MATCH    PIC X       VALUE "N".
            88  PASSWORD-MATCHES             VALUE "Y".
 
+       01  WS-USER-LEN           PIC 9(3).
        01  WS-PW-LEN             PIC 9(3).
        01  WS-PW-IDX             PIC 9(3).
        01  WS-PW-CHAR            PIC X.
@@ -193,7 +194,7 @@
                        PERFORM CREATE-ACCOUNT
                    WHEN OTHER
                        MOVE "Invalid Option, Try Again"
-                           TO WS-INPUT-LINE
+                           TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                END-EVALUATE
            END-IF.
@@ -239,15 +240,20 @@
 
        CREATE-ACCOUNT.
            IF WS-TOTAL-ACCOUNTS >= 5
-               MOVE "All permitted accounts have been created,
-      -             "please come back later" 
-                       TO WS-OUTPUT-LINE
+               STRING "All permitted accounts have been created, "
+      -               "please come back later" 
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               END-STRING
                PERFORM WRITE-OUTPUT
            ELSE
                MOVE "Please enter your username:" TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
                PERFORM READ-INPUT
                MOVE WS-INPUT-LINE TO WS-NEW-USER
+               
+               COMPUTE WS-USER-LEN = 
+                   FUNCTION LENGTH(FUNCTION TRIM (WS-INPUT-LINE))
+
                MOVE WS-NEW-USER TO WS-SEARCH-USERNAME
                PERFORM FIND-ACCOUNT-BY-USERNAME
 
@@ -257,28 +263,35 @@
                        TO WS-OUTPUT-LINE
                    PERFORM WRITE-OUTPUT
                ELSE
-                   MOVE "Please enter your password:" TO WS-OUTPUT-LINE
-                   PERFORM WRITE-OUTPUT
-                   PERFORM READ-INPUT
-                   MOVE WS-INPUT-LINE TO WS-NEW-PASS
-
-                   PERFORM PASSWORD-VALIDATION
-
-                   IF PASSWORD-VALID
-                       MOVE WS-INPUT-LINE TO WS-NEW-PASS
-                       ADD 1 TO WS-TOTAL-ACCOUNTS
-                       MOVE WS-NEW-USER
-                           TO WS-USERNAME(WS-TOTAL-ACCOUNTS)
-                       MOVE WS-NEW-PASS
-                           TO WS-PASSWORD(WS-TOTAL-ACCOUNTS)
-                       PERFORM SAVE-TO-ACCOUNTS
-                       MOVE "Account Created!" TO WS-OUTPUT-LINE
-                       PERFORM WRITE-OUTPUT
-                   ELSE 
-                       MOVE
-           "Password doesn't satisfy requirements, try again"
+                   IF WS-USER-LEN = 0
+                       MOVE "Blank Usernames not allowed"
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
+                   ELSE
+                       MOVE "Please enter your password:" 
+                           TO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       PERFORM READ-INPUT
+                       MOVE WS-INPUT-LINE TO WS-NEW-PASS
+
+                       PERFORM PASSWORD-VALIDATION
+
+                       IF PASSWORD-VALID
+                           MOVE WS-INPUT-LINE TO WS-NEW-PASS
+                           ADD 1 TO WS-TOTAL-ACCOUNTS
+                           MOVE WS-NEW-USER
+                               TO WS-USERNAME(WS-TOTAL-ACCOUNTS)
+                           MOVE WS-NEW-PASS
+                               TO WS-PASSWORD(WS-TOTAL-ACCOUNTS)
+                           PERFORM SAVE-TO-ACCOUNTS
+                           MOVE "Account Created!" TO WS-OUTPUT-LINE
+                           PERFORM WRITE-OUTPUT
+                       ELSE 
+                           MOVE
+               "Password doesn't satisfy requirements, try again"
+                               TO WS-OUTPUT-LINE
+                           PERFORM WRITE-OUTPUT
+                       END-IF
                    END-IF
                END-IF
            END-IF.
