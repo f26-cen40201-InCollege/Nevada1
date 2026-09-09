@@ -4,7 +4,7 @@ Welcome to InCollege!
 Enter your choice:
 2
 Please enter your username:
-IanKoratsky1
+IanKoratsky
 Please enter your password:
 1234abc!
 Password doesn't satisfy requirements, try again

@@ -1,20 +1,18 @@
 ==== TEST: tests/epic-1/tester-1/account-creation-pos-1/
-==== TEST: tests/epic-1/tester-1/account-creation-pos-1/
-==== TEST: tests/epic-1/tester-1/account-creation-pos-2/
-==== TEST: tests/epic-1/tester-1/account-creation-pos-2/
+Welcome to InCollege!
+1. Log-In
+2. Create New Account
+Enter your choice:
+2
+Please enter your username:
+IanKoratsky
+Please enter your password:
+1234abc!
+Password doesn't satisfy requirements, try again
+1. Log-In
+2. Create New Account
+Enter your choice:
 ==== TEST: tests/epic-1/tester-1/account-creation-neg-1/
-==== TEST: tests/epic-1/tester-1/account-creation-neg-1/
-==== TEST: tests/epic-1/tester-1/account-creation-neg-2/
-==== TEST: tests/epic-1/tester-1/account-creation-neg-2/
-==== TEST: tests/epic-1/tester-1/menus-pos-1/
-==== TEST: tests/epic-1/tester-1/menus-pos-1/
-==== TEST: tests/epic-1/tester-1/menus-pos-2/
-==== TEST: tests/epic-1/tester-1/menus-pos-2/
+Welcome to InCollege!
 ==== TEST: tests/epic-1/tester-1/menus-neg-1/
-==== TEST: tests/epic-1/tester-1/menus-neg-1/
-==== TEST: tests/epic-1/tester-1/menus-neg-2/
-==== TEST: tests/epic-1/tester-1/menus-neg-2/
-==== TEST: tests/epic-1/tester-1/menus-neg-3/
-==== TEST: tests/epic-1/tester-1/menus-neg-3/
-==== TEST: tests/epic-1/tester-1/menus-neg-4/
-==== TEST: tests/epic-1/tester-1/menus-neg-4/
+Welcome to InCollege!
