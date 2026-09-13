@@ -50,7 +50,7 @@
                10 EXP-TITLE   PIC 9(20).
                10 EXP-ORGAN   PIC X(50).
                10 EXP-DATES   PIC X(35).
-               10 EXP-DESCR   PIC X(200).
+               10 EXP-DESCR   PIC X(100).
            05 PROF-EDU-CNT  PIC 9.
            05 PROF-TOTAL-EDU  OCCURS 3 TIMES.
                10 EDU-DEGREE  PIC X(35).
@@ -141,7 +141,7 @@
                    15 WS-EXP-TITLE    PIC 9(20).
                    15 WS-EXP-ORGAN    PIC X(50).
                    15 WS-EXP-DATES    PIC X(35).
-                   15 WS-EXP-DESCR    PIC X(200).
+                   15 WS-EXP-DESCR    PIC X(100).
                10 WS-PROF-EDU-CNT     PIC 9    VALUE 0.
                10 WS-PROF-TOTAL-EDU   OCCURS 3 TIMES.
                    15 WS-EDU-DEGREE   PIC X(35).
@@ -154,10 +154,11 @@
        01 WS-PROF-IDX      PIC 9       VALUE 0.
        01 WS-EXP-IDX       PIC 9       VALUE 0.
        01 WS-EDU-IDX       PIC 9       VALUE 0.
+       01 WS-FIELD-LEN     PIC 9(3)    VALUE 0.
        
 
        01  WS-VALID-RESPONSE    PIC X       VALUE "N".
-           88 VALIDIATED                    VALUE "Y".
+           88 VALIDATED                    VALUE "Y".
 
 
        
@@ -377,6 +378,7 @@
 
        CREATE-ACCOUNT.
            IF WS-TOTAL-ACCOUNTS >= 5
+               MOVE SPACES TO WS-OUTPUT-LINE
                STRING "All permitted accounts have been created, "
                       "please come back later" 
                    DELIMITED BY SIZE INTO WS-OUTPUT-LINE
@@ -423,6 +425,7 @@
                            PERFORM SAVE-TO-ACCOUNTS
                            MOVE "Account Created!" TO WS-OUTPUT-LINE
                            PERFORM WRITE-OUTPUT
+                           MOVE WS-TOTAL-ACCOUNTS TO WS-FOUND-INDEX
                        ELSE 
                            MOVE
                "Password doesn't satisfy requirements, try again"
@@ -511,7 +514,7 @@
                MOVE WS-HAS-PROF(WS-PROF-IDX) TO HAS-PROF
                WRITE PROFILE-INSTANCE
            END-PERFORM
-           CLOSE PRFOILES-FILE.
+           CLOSE PROFILES-FILE.
 
        FIND-ACCOUNT-BY-USERNAME.
            MOVE "N" TO WS-ACCOUNT-FOUND
@@ -615,15 +618,123 @@
            END-PERFORM.
 
        CREATE-PROFILE.
+           MOVE "---Create/Edit Profile---" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
+
+           PERFORM GET-FIRST-NAME
+           PERFORM GET-LAST-NAME
+           PERFORM GET-SCHOOL
+           PERFORM GET-SCHOOL
+           PERFORM GET-GRAD-YEAR
+           PERFORM GET-ABOUT-ME
+           PERFORM GET-EXPERIENCE
+           PERFORM GET-EDUCATION
+
+           MOVE "---Profile Created/Updated---" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT.
        
 
        VIEW-PROFILE.
 
            
-           
+       GET-FIRST-NAME.
+           MOVE "N" TO WS-VALID-RESPONSE
+           PERFORM UNTIL VALIDATED OR END-OF-INPUT
+               MOVE "Enter First Name: " TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               PERFORM READ-INPUT
+               IF NOT END-OF-INPUT
+                   COMPUTE WS-FIELD-LEN = 
+                       FUNCTION LENGTH(FUNCTION TRIM (WS-INPUT-LINE))
+                   IF WS-FIELD-LEN > 0
+                       MOVE WS-INPUT-LINE
+                           TO WS-PROF-FIRST-NAME(WS-FOUND-INDEX)
+                       MOVE "Y" TO WS-VALID-RESPONSE
+                   ELSE
+                       MOVE "First Name cannot be blank, try again"
+                           TO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                   END-IF
+               END-IF
+           END-PERFORM.
 
-       
+       GET-LAST-NAME.
+
+
+       GET-SCHOOL.
+
+       GET-MAJOR.
+
+       GET-GRAD-YEAR.
+
+       GET-ABOUT-ME.
+
+       GET-EXPERIENCE.
+           MOVE "N" TO WS-VALID-RESPONSE
+           MOVE 0 TO WS-PROF-EXP-CNT(WS-FOUND-INDEX)
+           PERFORM UNTIL VALIDATED OR (WS-PROF-EXP-CNT(WS-FOUND-INDEX) 
+                   > 3) OR END-OF-INPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "Add Experience (optional, max 3 entries." 
+               "Enter 'DONE' to finish or any input to continue):"
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               PERFORM READ-INPUT
+               IF NOT END-OF-INPUT
+                   IF WS-INPUT-LINE = "DONE"
+                       MOVE "Y" TO WS-VALID-RESPONSE
+                       EXIT PERFORM
+                   ELSE
+                       ADD 1 TO WS-PROF-EXP-CNT(WS-FOUND-INDEX)
+                       MOVE WS-PROF-EXP-CNT(WS-FOUND-INDEX)
+                           TO WS-EXP-IDX
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Experience #" WS-EXP-IDX " - Title: " 
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       PERFORM READ-INPUT
+                       IF NOT END-OF-INPUT
+                           MOVE WS-INPUT-LINE
+                               TO WS-EXP-TITLE(WS-FOUND-INDEX,
+                                   WS-EXP-IDX)
+                       END-IF
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Experience #" WS-EXP-IDX
+                           " - Company/Organization: "
+                               DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       PERFORM READ-INPUT
+                       IF NOT END-OF-INPUT
+                           MOVE WS-INPUT-LINE
+                               TO WS-EXP-ORGAN(WS-FOUND-INDEX,
+                                   WS-EXP-IDX)
+                       END-IF
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Experience #" WS-EXP-IDX " - Dates: "
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       PERFORM READ-INPUT
+                       IF NOT END-OF-INPUT
+                           MOVE WS-INPUT-LINE
+                               TO WS-EXP-DATES(WS-FOUND-INDEX,
+                                   WS-EXP-IDX)
+                       END-IF
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Experience #" WS-EXP-IDX
+                           " - Description (optional, max 100 chars"
+                               ", blank to skip): "
+                                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       PERFORM READ-INPUT
+                       IF NOT END-OF-INPUT
+                           MOVE WS-INPUT-LINE
+                               TO WS-EXP-DESCR(WS-FOUND-INDEX,
+                                   WS-EXP-IDX)
+                       END-IF
+                   END-IF
+               END-IF
+           END-PERFORM.
 
 
 
-      
+       GET-EDUCATION.
