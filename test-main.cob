@@ -1,0 +1,379 @@
+      * ================================================================
+      * =================== START INSTRUCTIONS =========================
+
+      * This is the main test entry point.
+      * All tests will be run through it
+      * It's already set up to run all your tests, you just need
+      * To focus on your Epic and Tester File
+
+      * IMPORTANT: YOU MUST UPDATE THE COMPILE CODE IF YOU ADD A FILE TO BE TESTED:
+
+      * cobc -x -o test-main test-main.cob InCollege-Core.cob
+      * ./test-main
+      * then simply run: ./test-main to run all tests
+      * if someone wants to make a way to add particular tests, feel free!
+
+      * ==================== END INSTRUCTIONS ==========================
+      * ================================================================
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. test-main.
+       AUTHOR. Ian Koratsky.
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+
+           SELECT OUTPUT-FILE ASSIGN TO WS-OUTPUT-FILE
+             ORGANIZATION IS LINE SEQUENTIAL
+             FILE STATUS IS WS-OUTPUT-STAT.
+
+           SELECT EXPECTED-FILE ASSIGN TO WS-EXPECTED-FILE
+             ORGANIZATION IS LINE SEQUENTIAL
+             FILE STATUS IS WS-EXPECTED-STAT.
+
+           SELECT OUTPUT-FILE-CONSOLIDATED 
+             ASSIGN TO WS-OUTPUT-FILE-CONSOLIDATED
+             ORGANIZATION IS LINE SEQUENTIAL
+             FILE STATUS IS WS-OUTPUT-STAT-CONSOLIDATED.
+
+           SELECT EXPECTED-FILE-CONSOLIDATED 
+             ASSIGN TO WS-EXPECTED-FILE-CONSOLIDATED
+             ORGANIZATION IS LINE SEQUENTIAL
+             FILE STATUS IS WS-EXPECTED-STAT-CONSOLIDATED.
+
+           SELECT TEST-INPUT-FILE ASSIGN TO WS-TEST-INPUT
+             ORGANIZATION IS LINE SEQUENTIAL
+             FILE STATUS IS WS-TEST-INPUT-STAT.
+         
+           SELECT TEST-INPUT-CONSOLIDATED
+             ASSIGN TO WS-TEST-INPUT-CONSOLIDATED
+             ORGANIZATION IS LINE SEQUENTIAL
+             FILE STATUS IS WS-TEST-INPUT-CONSOLIDATED-STAT.
+
+          
+
+       DATA DIVISION.
+       FILE SECTION.
+           FD OUTPUT-FILE.
+           01 OUTPUT-FILE-REC PIC X(100).
+
+           FD TEST-INPUT-FILE.
+           01 TEST-INPUT-FILE-REC PIC X(100).
+
+           FD TEST-INPUT-CONSOLIDATED.
+           01 TEST-INPUT-CONSOLIDATED-REC PIC X(100).
+           
+           FD EXPECTED-FILE.
+           01 EXPECTED-FILE-REC PIC X(100).
+
+           FD OUTPUT-FILE-CONSOLIDATED.
+           01 OUTPUT-CONSOLIDATED-REC PIC X(100).
+           
+           FD EXPECTED-FILE-CONSOLIDATED.
+           01 EXPECTED-CONSOLIDATED-REC PIC X(100).
+       WORKING-STORAGE SECTION.
+
+      * Booleans
+           01 WS-OUTPUT-EOF PIC X VALUE "N".
+               88 WS-OUTPUT-END VALUE "Y".
+           
+           01 WS-EXPECTED-EOF PIC X VALUE "N".
+                88 WS-EXPECTED-END VALUE "Y".
+
+           01 WS-MISMATCH PIC X VALUE "N".
+                88 MISMATCH-FOUND VALUE "Y".
+
+           
+
+      * Counters
+           01 TotalTestsPassed PIC 9(5) VALUE 0.
+           01 TotalTestsFailed PIC 9(5) VALUE 0.
+
+      * Test Input
+           01 WS-TEST-INPUT PIC X(100).
+           01 WS-TEST-CODE PIC X(100).
+           01 WS-FOLDER PIC X(100).
+
+           01 WS-TEST-CONSOLDATED-LINE PIC X(100).
+
+           01 WS-ACCOUNTS-FILE PIC X(100).
+
+      * Output
+           01 WS-OUTPUT-LINE PIC X(100).
+           01 WS-OUTPUT-FILE PIC X(100).
+           01 WS-OUTPUT-STAT PIC XX.
+           01 WS-OUTPUT-STAT-CONSOLIDATED PIC XX.
+
+      * Expected
+           01 WS-EXPECTED-LINE PIC X(100).
+           01 WS-EXPECTED-FILE PIC X(100).
+           01 WS-EXPECTED-STAT PIC XX.
+           01 WS-EXPECTED-STAT-CONSOLIDATED PIC XX.
+
+
+      * Consolidated
+           01 WS-OUTPUT-FILE-CONSOLIDATED PIC X(100)
+               VALUE "tests-tester-1-output.txt".
+           01 OUTPUT-CONSOLIDATED-LINE PIC X(100).
+           01 WS-EXPECTED-FILE-CONSOLIDATED PIC X(100)
+               VALUE "tests-tester-1-expected.txt".
+           01 EXPECTED-CONSOLIDATED-LINE PIC X(100).
+
+           01 WS-TEST-INPUT-STAT PIC XX.
+
+           01 WS-TEST-INPUT-CONSOLIDATED PIC X(100)
+               VALUE "tests-tester-1-input.txt".
+           01 WS-TEST-INPUT-CONSOLIDATED-STAT PIC XX.
+           01 WS-INPUT-LINE PIC X(100).
+           01 WS-INPUT-EOF PIC X VALUE "N".
+               88 WS-INPUT-END VALUE "Y".
+               
+
+       PROCEDURE DIVISION.
+
+           PERFORM START-CONSOLIDATE-FILES.
+
+           MOVE 0 TO TotalTestsPassed.
+           MOVE 0 TO TotalTestsFailed.
+
+      * EXAMPLE USING EPIC 1 :
+      *> * Use this to set a code you're going to test
+           MOVE SPACES TO WS-TEST-CODE.
+           MOVE "INCOLLEGE-CORE" TO WS-TEST-CODE. 
+      
+      * For Each test, copy this once and change the folder:
+        *>    MOVE "tests/epic-1/tester-1/account-creation-neg-1/" TO WS-FOLDER.
+        *>    PERFORM COUNTER-UPDATE.
+      * And we're done with this test!
+      
+      * See how you don't need to change the WS-TEST-CODE?
+      * That's because all the tests are for the same code
+      * Until you need to change it!
+
+      * Now just copy the below as often as you need:
+
+           MOVE "tests/epic-1/tester-1/account-creation-pos-1/" 
+               TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-1/tester-1/account-creation-neg-1/" 
+               TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-1/tester-1/account-creation-neg-2/" 
+               TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-1/tester-1/menus-neg-1/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+           MOVE "tests/epic-1/tester-1/menus-pos-1/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+           MOVE "tests/epic-1/tester-1/menus-pos-2/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+           MOVE "tests/epic-1/tester-1/menus-pos-3/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+           MOVE "tests/epic-1/tester-1/menus-pos-4/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+       PERFORM CLOSE-CONSOLIDATED-FILES.
+       DISPLAY "Total Tests Passed: " TotalTestsPassed.
+       DISPLAY "Total Tests Failed: " TotalTestsFailed.
+       STOP RUN.
+
+
+       START-FILES.
+           
+           OPEN INPUT OUTPUT-FILE
+           IF WS-OUTPUT-STAT NOT = "00"
+               DISPLAY "Error opening output file: " WS-OUTPUT-FILE
+               DISPLAY "File status: " WS-OUTPUT-STAT
+               STOP RUN
+           END-IF.
+           
+           OPEN INPUT EXPECTED-FILE
+           IF WS-EXPECTED-STAT NOT = "00"
+             DISPLAY "Error opening expected file: " WS-EXPECTED-FILE
+             DISPLAY "File status: " WS-EXPECTED-STAT
+             STOP RUN
+           END-IF.
+
+
+       CLOSE-FILES.
+           CLOSE OUTPUT-FILE.
+           CLOSE EXPECTED-FILE.
+
+       START-CONSOLIDATE-FILES.
+           OPEN OUTPUT OUTPUT-FILE-CONSOLIDATED
+           IF WS-OUTPUT-STAT-CONSOLIDATED NOT = "00"
+               DISPLAY "ERR"
+               STOP RUN
+           END-IF
+           
+           OPEN OUTPUT EXPECTED-FILE-CONSOLIDATED
+           IF WS-EXPECTED-STAT-CONSOLIDATED NOT = "00"
+               DISPLAY "ERR"
+               STOP RUN
+           END-IF.
+
+           OPEN OUTPUT TEST-INPUT-CONSOLIDATED
+           IF WS-TEST-INPUT-CONSOLIDATED-STAT NOT = "00"
+               DISPLAY "ERR"
+               STOP RUN
+           END-IF.
+
+       COPY-INPUT.
+
+           MOVE "N" TO WS-INPUT-EOF.
+       
+           OPEN INPUT TEST-INPUT-FILE
+           IF WS-TEST-INPUT-STAT NOT = "00"
+               DISPLAY "ERR"
+               STOP RUN
+           END-IF
+
+           PERFORM UNTIL WS-INPUT-END
+                READ TEST-INPUT-FILE INTO WS-INPUT-LINE
+                     AT END
+                          MOVE "Y" TO WS-INPUT-EOF
+                     NOT AT END
+                          WRITE TEST-INPUT-CONSOLIDATED-REC
+                            FROM WS-INPUT-LINE
+                END-READ
+           END-PERFORM
+
+           CLOSE TEST-INPUT-FILE.
+
+       CLOSE-CONSOLIDATED-FILES.
+           CLOSE OUTPUT-FILE-CONSOLIDATED.
+           CLOSE EXPECTED-FILE-CONSOLIDATED.
+           CLOSE TEST-INPUT-CONSOLIDATED.
+
+
+
+       COUNTER-UPDATE.
+
+        *>    MOVE SPACES TO OUTPUT-CONSOLIDATED-LINE.
+        *>    STRING 
+        *>        "==== TEST: "
+        *>        WS-FOLDER
+        *>        "===="
+        *>        DELIMITED BY SIZE 
+        *>        INTO OUTPUT-CONSOLIDATED-LINE
+        *>    END-STRING.
+        *>    WRITE OUTPUT-CONSOLIDATED-REC
+        *>        FROM OUTPUT-CONSOLIDATED-LINE.
+
+           
+        *>    MOVE SPACES TO EXPECTED-CONSOLIDATED-LINE.
+        *>    STRING 
+        *>        "==== TEST: "
+        *>        WS-FOLDER
+        *>        "===="
+        *>        DELIMITED BY SIZE 
+        *>        INTO EXPECTED-CONSOLIDATED-LINE
+        *>    END-STRING.
+        *>    WRITE EXPECTED-CONSOLIDATED-REC
+        *>        FROM EXPECTED-CONSOLIDATED-LINE.
+
+           MOVE SPACES TO WS-ACCOUNTS-FILE.
+           STRING WS-FOLDER DELIMITED BY SPACE
+               "accounts.txt" DELIMITED BY SIZE
+               INTO WS-ACCOUNTS-FILE
+               ON OVERFLOW DISPLAY "ERR"
+           END-STRING
+
+           STRING WS-FOLDER DELIMITED BY SPACE
+              "input.txt" DELIMITED BY SIZE
+               INTO WS-TEST-INPUT
+               ON OVERFLOW
+                   DISPLAY "Error: WS-TEST-INPUT"
+           END-STRING
+
+           STRING WS-FOLDER DELIMITED BY SPACE
+              "output.txt" DELIMITED BY SIZE
+               INTO WS-OUTPUT-FILE
+               ON OVERFLOW
+                   DISPLAY "Error: WS-OUTPUT-FILE"
+           END-STRING
+           
+           STRING WS-FOLDER DELIMITED BY SPACE
+              "expected.txt" DELIMITED BY SIZE
+               INTO WS-EXPECTED-FILE
+               ON OVERFLOW
+                   DISPLAY "Error: WS-EXPECTED-FILE"
+           END-STRING
+
+           CALL WS-TEST-CODE USING 
+                   WS-TEST-INPUT 
+                   WS-OUTPUT-FILE 
+                   WS-ACCOUNTS-FILE.
+           PERFORM COPY-INPUT.
+       
+           PERFORM START-FILES.
+
+
+           PERFORM UNTIL WS-OUTPUT-END
+                   AND WS-EXPECTED-END 
+
+               IF NOT WS-OUTPUT-END
+                   PERFORM READ-OUTPUT
+               END-IF
+
+               IF NOT WS-EXPECTED-END
+                   PERFORM READ-EXPECTED
+               END-IF
+
+
+               
+               IF NOT WS-OUTPUT-END AND NOT WS-EXPECTED-END          
+                   IF WS-OUTPUT-LINE NOT = WS-EXPECTED-LINE
+                       MOVE "Y" TO WS-MISMATCH
+                   END-IF
+               ELSE
+                   IF WS-OUTPUT-EOF NOT = WS-EXPECTED-EOF
+                       MOVE "Y" TO WS-MISMATCH
+                   END-IF
+               END-IF
+               
+           END-PERFORM.
+
+           IF MISMATCH-FOUND OR WS-OUTPUT-EOF NOT = WS-EXPECTED-EOF
+               ADD 1 TO TotalTestsFailed
+           ELSE
+               ADD 1 TO TotalTestsPassed
+           END-IF.
+
+           PERFORM CLOSE-FILES.
+           MOVE "N" TO WS-MISMATCH.
+           MOVE "N" TO WS-OUTPUT-EOF.
+           MOVE "N" TO WS-EXPECTED-EOF.
+           MOVE SPACES TO WS-FOLDER.
+           MOVE SPACES TO WS-OUTPUT-LINE.
+           MOVE SPACES TO WS-EXPECTED-LINE.
+           MOVE SPACES TO WS-TEST-INPUT.
+           MOVE SPACES TO WS-OUTPUT-FILE.
+           MOVE SPACES TO WS-EXPECTED-FILE.
+           move SPACES TO WS-ACCOUNTS-FILE.
+
+       READ-EXPECTED.
+           READ EXPECTED-FILE INTO WS-EXPECTED-LINE
+               AT END
+                   MOVE "Y" TO WS-EXPECTED-EOF
+                   MOVE SPACES TO WS-EXPECTED-LINE
+               NOT AT END
+                   WRITE EXPECTED-CONSOLIDATED-REC
+                       FROM WS-EXPECTED-LINE
+           END-READ.
+           
+
+       READ-OUTPUT.
+           READ OUTPUT-FILE INTO WS-OUTPUT-LINE
+               AT END
+                   MOVE "Y" TO WS-OUTPUT-EOF
+                   MOVE SPACES TO WS-OUTPUT-LINE
+               NOT AT END
+                   WRITE OUTPUT-CONSOLIDATED-REC
+                       FROM WS-OUTPUT-LINE
+           END-READ.
+           
