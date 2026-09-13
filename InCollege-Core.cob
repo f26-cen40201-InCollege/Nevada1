@@ -17,8 +17,10 @@
            SELECT OPTIONAL ACCOUNTS-FILE ASSIGN TO WS-ACCOUNTS-FILE
                ORGANIZATION IS LINE SEQUENTIAL
                FILE STATUS IS WS-ACCOUNTS-STAT.
-           
 
+           SELECT PROFILES-FILE ASSIGN TO "Profiles.txt"
+               ORGANIZATION IS LINE SEQUENTIAL
+               FILE STATUS IS WS-PROFILES-STAT.
 
        DATA DIVISION.
        FILE SECTION.
@@ -33,22 +35,48 @@
            05 ACC-USERNAME  PIC X(20).
            05 ACC-PASSWORD  PIC X(20).
 
+      *    EPIC 2 PROFILE FILE FIELD INFORMATION
+       FD PROFILES-FILE.
+       01  PROFILE-INSTANCE.
+           05 PROF-USER        PIC X(20).
+           05 PROF-FIRST-NAME  PIC X(20).
+           05 PROF-LAST-NAME   PIC X(20).
+           05 PROF-SCHOOL      PIC X(50).
+           05 PROF-MAJOR       PIC X(30).
+           05 PROF-GRAD-YEAR   PIC 9(4).
+           05 PROF-ABOUT       PIC X(200).
+           05 PROF-EXP-CNT   PIC 9.
+           05 PROF-EXP-INST OCCURS 3 TIMES.
+               10 EXP-TITLE   PIC 9(20).
+               10 EXP-ORGAN   PIC X(50).
+               10 EXP-DATES   PIC X(35).
+               10 EXP-DESCR   PIC X(200).
+           05 PROF-EDU-CNT  PIC 9.
+           05 PROF-TOTAL-EDU  OCCURS 3 TIMES.
+               10 EDU-DEGREE  PIC X(35).
+               10 EDU-SCHOOL  PIC X(50).
+               10 EDU-YEARS   PIC X(35).
+           05 HAS-PROF        PIC X.
+
+
+
+
        WORKING-STORAGE SECTION.
 
-       01  WS-INPUT-STAT     PIC XX.
-       01  WS-OUTPUT-STAT    PIC XX.
+       01 WS-INPUT-STAT     PIC XX.
+       01 WS-OUTPUT-STAT    PIC XX.
 
        01 WS-ACCOUNTS-FILE PIC X(100).
 
        01 WS-ACCOUNTS-STAT PIC XX.
            
-       01  WS-INPUT-EOF    PIC X   VALUE "N".
+       01 WS-INPUT-EOF    PIC X   VALUE "N".
            88  END-OF-INPUT        VALUE "Y".
-       01  WS-ACCOUNTS-EOF PIC X   VALUE "N".
+       01 WS-ACCOUNTS-EOF PIC X   VALUE "N".
            88  END-OF-ACCOUNTS     VALUE "Y".
-       01  WS-LOGGED-IN    PIC X   VALUE "N".
+       01 WS-LOGGED-IN    PIC X   VALUE "N".
            88 LOGGED-IN         VALUE "Y".
-       01  WS-RUNNING      PIC X   VALUE "Y".
+       01 WS-RUNNING      PIC X   VALUE "Y".
            88 STILL-RUNNING        VALUE "Y".
 
 
@@ -59,7 +87,7 @@
                10   WS-PASSWORD     PIC X(20).
 
        01 WS-INPUT-LINE     PIC X(100).
-       01  WS-INPUT-FILE  PIC X(100).
+       01 WS-INPUT-FILE  PIC X(100).
        01 WS-OUTPUT-LINE    PIC X(100).
        01 WS-OUTPUT-FILE PIC X(100).
        01 WS-CHOICE         PIC X(5).
@@ -93,6 +121,45 @@
 
        01  WS-SKILL-GO-BACK      PIC X       VALUE "N".
            88  SKILL-GO-BACK                 VALUE "Y".
+
+      *    EPIC 2 WS SECTION
+       01  WS-PROFILES-STAT     PIC XX.
+       01  WS-PROFILES-EOF      PIC X       VALUE "N".
+           88 END-OF-PROFILES               VALUE "Y".
+      
+       01 WS-PROFILES.
+           05 WS-PROFILE-INST OCCURS 5 TIMES.
+               10 WS-PROF-USER        PIC X(20).
+               10 WS-PROF-FIRST-NAME  PIC X(20).
+               10 WS-PROF-LAST-NAME   PIC X(20).
+               10 WS-PROF-SCHOOL      PIC X(50).
+               10 WS-PROF-MAJOR       PIC X(30).
+               10 WS-PROF-GRAD-YEAR   PIC 9(4).
+               10 WS-PROF-ABOUT       PIC X(200).
+               10 WS-PROF-EXP-CNT     PIC 9    VALUE 0.
+               10 WS-PROF-EXP-INST OCCURS 3 TIMES.
+                   15 WS-EXP-TITLE    PIC 9(20).
+                   15 WS-EXP-ORGAN    PIC X(50).
+                   15 WS-EXP-DATES    PIC X(35).
+                   15 WS-EXP-DESCR    PIC X(200).
+               10 WS-PROF-EDU-CNT     PIC 9    VALUE 0.
+               10 WS-PROF-TOTAL-EDU   OCCURS 3 TIMES.
+                   15 WS-EDU-DEGREE   PIC X(35).
+                   15 WS-EDU-SCHOOL   PIC X(50).
+                   15 WS-EDU-YEARS    PIC X(35).
+               10 WS-HAS-PROF         PIC X    VALUE "N".
+                   88 WS-PROF-EXISTS           VALUE "Y".
+
+
+       01 WS-PROF-IDX      PIC 9       VALUE 0.
+       01 WS-EXP-IDX       PIC 9       VALUE 0.
+       01 WS-EDU-IDX       PIC 9       VALUE 0.
+       
+
+       01  WS-VALID-RESPONSE    PIC X       VALUE "N".
+           88 VALIDIATED                    VALUE "Y".
+
+
        
        LINKAGE SECTION.
        01  LS-INPUT   PIC X(100).
@@ -125,6 +192,8 @@
            END-PERFORM
 
            PERFORM CLOSE-FILES
+           MOVE "---END_OF_PROGRAM---" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
 
            GOBACK.
 
@@ -149,7 +218,7 @@
 
            OPEN INPUT ACCOUNTS-FILE
            IF WS-ACCOUNTS-STAT = "00"
-               PERFORM UNTIL END-OF-ACCOUNTS OR WS-TOTAL-ACCOUNTS >= 5
+               PERFORM UNTIL END-OF-ACCOUNTS OR WS-TOTAL-ACCOUNTS > 5
                    READ ACCOUNTS-FILE INTO ACCOUNT-INSTANCE
                        AT END
                            MOVE "Y" TO WS-ACCOUNTS-EOF
@@ -162,7 +231,68 @@
                    END-READ
                END-PERFORM
            END-IF
-           CLOSE ACCOUNTS-FILE.
+           CLOSE ACCOUNTS-FILE
+
+           OPEN INPUT PROFILES-FILE
+           IF WS-PROFILES-STAT = "00"
+               PERFORM UNTIL END-OF-PROFILES OR WS-PROF-IDX > 5
+                   READ PROFILES-FILE INTO PROFILE-INSTANCE
+                       AT END
+                           MOVE "Y" TO WS-PROFILES-EOF
+                       NOT AT END
+                           ADD 1 TO WS-PROF-IDX
+                           MOVE PROF-USER
+                               TO WS-PROF-USER(WS-PROF-IDX)
+                           MOVE PROF-FIRST-NAME
+                               TO WS-PROF-FIRST-NAME(WS-PROF-IDX)
+                           MOVE PROF-LAST-NAME
+                               TO WS-PROF-LAST-NAME(WS-PROF-IDX)
+                           MOVE PROF-SCHOOL
+                               TO WS-PROF-SCHOOL(WS-PROF-IDX)
+                           MOVE PROF-MAJOR
+                               TO WS-PROF-MAJOR(WS-PROF-IDX)
+                           MOVE PROF-GRAD-YEAR
+                               TO WS-PROF-GRAD-YEAR(WS-PROF-IDX)
+                           MOVE PROF-ABOUT
+                               TO WS-PROF-ABOUT(WS-PROF-IDX)
+                           MOVE PROF-EXP-CNT
+                               TO WS-PROF-EXP-CNT(WS-PROF-IDX)
+                           PERFORM VARYING WS-EXP-IDX FROM 1 BY 1
+                                   UNTIL WS-EXP-IDX > 3
+                               MOVE EXP-TITLE(WS-EXP-IDX)
+                                   TO WS-EXP-TITLE(WS-PROF-IDX,
+                                       WS-EXP-IDX)
+                               MOVE EXP-ORGAN(WS-EXP-IDX)
+                                   TO WS-EXP-ORGAN(WS-PROF-IDX,
+                                       WS-EXP-IDX)
+                               MOVE EXP-DATES(WS-EXP-IDX)
+                                   TO WS-EXP-DATES(WS-PROF-IDX,
+                                       WS-EXP-IDX)
+                               MOVE EXP-DESCR(WS-EXP-IDX)
+                                   TO WS-EXP-DESCR(WS-PROF-IDX,
+                                       WS-EXP-IDX)
+                           END-PERFORM
+                           MOVE PROF-EDU-CNT
+                               TO WS-PROF-EDU-CNT(WS-PROF-IDX)
+                           PERFORM VARYING WS-EDU-IDX FROM 1 BY 1
+                                   UNTIL WS-EDU-IDX > 3
+                               MOVE EDU-DEGREE(WS-EDU-IDX)
+                                   TO WS-EDU-DEGREE(WS-PROF-IDX,
+                                       WS-EDU-IDX)
+                               MOVE EDU-SCHOOL(WS-EDU-IDX)
+                                   TO WS-EDU-SCHOOL(WS-PROF-IDX,
+                                       WS-EDU-IDX)
+                               MOVE EDU-YEARS(WS-EDU-IDX)
+                                   TO WS-EDU-YEARS(WS-PROF-IDX,
+                                       WS-EDU-IDX)
+                           END-PERFORM
+                           MOVE HAS-PROF
+                               TO WS-HAS-PROF(WS-PROF-IDX)
+                   END-READ
+               END-PERFORM
+           END-IF
+           CLOSE PROFILES-FILE.
+                                   
 
        CLOSE-FILES.
            CLOSE IN-FILE
@@ -345,6 +475,44 @@
            END-PERFORM
            CLOSE ACCOUNTS-FILE.
 
+       SAVE-TO-PROFILES.
+           OPEN OUTPUT PROFILES-FILE
+           PERFORM VARYING WS-INDEX FROM 1 BY 1 
+                   UNTIL WS-INDEX > WS-PROF-IDX
+               MOVE WS-PROF-USER(WS-PROF-IDX) TO PROF-USER
+               MOVE WS-PROF-FIRST-NAME(WS-PROF-IDX) TO PROF-FIRST-NAME
+               MOVE WS-PROF-LAST-NAME(WS-PROF-IDX) TO PROF-LAST-NAME
+               MOVE WS-PROF-SCHOOL(WS-PROF-IDX) TO PROF-SCHOOL
+               MOVE WS-PROF-MAJOR(WS-PROF-IDX) TO PROF-MAJOR
+               MOVE WS-PROF-GRAD-YEAR(WS-PROF-IDX) TO PROF-GRAD-YEAR
+               MOVE WS-PROF-ABOUT(WS-PROF-IDX) TO PROF-ABOUT
+               MOVE WS-PROF-EXP-CNT(WS-PROF-IDX) TO PROF-EXP-CNT
+               PERFORM VARYING WS-EXP-IDX FROM 1 BY 1 
+                       UNTIL WS-EXP-IDX > 3
+                   MOVE WS-EXP-TITLE(WS-PROF-IDX, WS-EXP-IDX)
+                       TO EXP-TITLE(WS-EXP-IDX)
+                   MOVE WS-EXP-ORGAN(WS-PROF-IDX, WS-EXP-IDX)
+                       TO EXP-ORGAN(WS-EXP-IDX)
+                   MOVE WS-EXP-DATES(WS-PROF-IDX, WS-EXP-IDX)
+                       TO EXP-DATES(WS-EXP-IDX)
+                   MOVE WS-EXP-DESCR(WS-PROF-IDX, WS-EXP-IDX)
+                       TO EXP-DESCR(WS-EXP-IDX)
+               END-PERFORM
+               MOVE WS-PROF-EDU-CNT(WS-PROF-IDX) TO PROF-EDU-CNT
+               PERFORM VARYING WS-EDU-IDX FROM 1 BY 1
+                       UNTIL WS-EDU-IDX > 3
+                   MOVE WS-EDU-DEGREE(WS-PROF-IDX, WS-EDU-IDX)
+                       TO EDU-DEGREE(WS-EDU-IDX)
+                   MOVE WS-EDU-SCHOOL(WS-PROF-IDX, WS-EDU-IDX)
+                       TO EDU-SCHOOL(WS-EDU-IDX)
+                   MOVE WS-EDU-YEARS(WS-PROF-IDX, WS-EDU-IDX)
+                       TO EDU-YEARS(WS-EDU-IDX)
+               END-PERFORM
+               MOVE WS-HAS-PROF(WS-PROF-IDX) TO HAS-PROF
+               WRITE PROFILE-INSTANCE
+           END-PERFORM
+           CLOSE PRFOILES-FILE.
+
        FIND-ACCOUNT-BY-USERNAME.
            MOVE "N" TO WS-ACCOUNT-FOUND
            MOVE 0   TO WS-FOUND-INDEX
@@ -363,13 +531,17 @@
            END-IF.
 
        SITE-MENU.
-           MOVE "1. Search for a job" TO WS-OUTPUT-LINE
+           MOVE "1. Create/Edit My Profile" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
-           MOVE "2. Find someone you know" TO WS-OUTPUT-LINE
+           MOVE "2. View My Profile" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
-           MOVE "3. Learn a new skill" TO WS-OUTPUT-LINE
+           MOVE "3. Search for a job" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
-           MOVE "4. Logout" TO WS-OUTPUT-LINE
+           MOVE "4. Find someone you know" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
+           MOVE "5. Learn a new skill" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
+           MOVE "6. Logout" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
            MOVE "Enter your choice:" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
@@ -379,18 +551,22 @@
                MOVE WS-INPUT-LINE TO WS-CHOICE
                EVALUATE WS-CHOICE
                    WHEN "1"
+                       PERFORM CREATE-PROFILE
+                   WHEN "2"
+                       PERFORM VIEW-PROFILE
+                   WHEN "3"
                        MOVE
            "Job search/internship is under construction."
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
-                   WHEN "2"
+                   WHEN "4"
                        MOVE
            "Find someone you know is under construction."
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
-                   WHEN "3"
+                   WHEN "5"
                        PERFORM SKILL-MENU-LOOP
-                   WHEN "4"
+                   WHEN "6"
                        MOVE "N" TO WS-RUNNING
                    WHEN OTHER
                        MOVE "Invalid Option, Try Again"
@@ -437,6 +613,12 @@
                    END-EVALUATE
                END-IF
            END-PERFORM.
+
+       CREATE-PROFILE.
+       
+
+       VIEW-PROFILE.
+
            
            
 
