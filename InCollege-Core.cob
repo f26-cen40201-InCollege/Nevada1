@@ -631,7 +631,8 @@
            PERFORM GET-EDUCATION
 
            MOVE "---Profile Created/Updated---" TO WS-OUTPUT-LINE
-           PERFORM WRITE-OUTPUT.
+           PERFORM WRITE-OUTPUT
+           SAVE-TO-PROFILES.
 
 
        VIEW-PROFILE.
