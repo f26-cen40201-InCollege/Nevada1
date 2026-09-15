@@ -921,9 +921,20 @@
                        PERFORM WRITE-OUTPUT
                        PERFORM READ-INPUT
                        IF NOT END-OF-INPUT
-                           MOVE WS-INPUT-LINE
-                               TO WS-EXP-TITLE(WS-FOUND-INDEX,
-                                   WS-EXP-IDX)
+                           COMPUTE WS-FIELD-LEN = FUNCTION LENGTH(
+                               FUNCTION TRIM(WS-INPUT-LINE))
+                           IF WS-FIELD-LEN > 0
+                               MOVE WS-INPUT-LINE
+                                   TO WS-EXP-TITLE(WS-FOUND-INDEX,
+                                       WS-EXP-IDX)
+                           ELSE
+                               MOVE "Title cannot be blank, try again"
+                                   TO WS-OUTPUT-LINE
+                               PERFORM WRITE-OUTPUT
+                               SUBTRACT 1 FROM 
+                                   WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                               EXIT PERFORM CYCLE
+                           END-IF
                        END-IF
                        MOVE SPACES TO WS-OUTPUT-LINE
                        STRING "Experience #" WS-EXP-IDX
@@ -932,9 +943,20 @@
                        PERFORM WRITE-OUTPUT
                        PERFORM READ-INPUT
                        IF NOT END-OF-INPUT
-                           MOVE WS-INPUT-LINE
-                               TO WS-EXP-ORGAN(WS-FOUND-INDEX,
-                                   WS-EXP-IDX)
+                           COMPUTE WS-FIELD-LEN = FUNCTION LENGTH(
+                               FUNCTION TRIM(WS-INPUT-LINE))
+                           IF WS-FIELD-LEN > 0
+                               MOVE WS-INPUT-LINE
+                                   TO WS-EXP-ORGAN(WS-FOUND-INDEX,
+                                       WS-EXP-IDX)
+                           ELSE
+                               MOVE "Company cannot be blank, try again"
+                                   TO WS-OUTPUT-LINE
+                               PERFORM WRITE-OUTPUT
+                               SUBTRACT 1 FROM 
+                                   WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                               EXIT PERFORM CYCLE
+                           END-IF
                        END-IF
                        MOVE SPACES TO WS-OUTPUT-LINE
                        STRING "Exp #" WS-EXP-IDX " - Years: "
@@ -942,9 +964,20 @@
                        PERFORM WRITE-OUTPUT
                        PERFORM READ-INPUT
                        IF NOT END-OF-INPUT
-                           MOVE WS-INPUT-LINE
-                               TO WS-EXP-DATES(WS-FOUND-INDEX,
-                                   WS-EXP-IDX)
+                           COMPUTE WS-FIELD-LEN = FUNCTION LENGTH(
+                               FUNCTION TRIM(WS-INPUT-LINE))
+                           IF WS-FIELD-LEN > 0
+                               MOVE WS-INPUT-LINE
+                                   TO WS-EXP-DATES(WS-FOUND-INDEX,
+                                       WS-EXP-IDX)
+                           ELSE
+                               MOVE "Years cannot be blank, try again"
+                                   TO WS-OUTPUT-LINE
+                               PERFORM WRITE-OUTPUT
+                               SUBTRACT 1 FROM
+                                   WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                               EXIT PERFORM CYCLE
+                           END-IF
                        END-IF
                        MOVE SPACES TO WS-OUTPUT-LINE
                        STRING "Exp #" WS-EXP-IDX
@@ -1003,7 +1036,7 @@
                                PERFORM WRITE-OUTPUT
                                SUBTRACT 1 FROM
                                    WS-PROF-EDU-CNT(WS-FOUND-INDEX)
-                               CONTINUE
+                               EXIT PERFORM CYCLE
                            END-IF
                        END-IF
 
@@ -1029,7 +1062,7 @@
                                    PERFORM WRITE-OUTPUT
                                    SUBTRACT 1 FROM
                                        WS-PROF-EDU-CNT(WS-FOUND-INDEX)
-                                   CONTINUE
+                                   EXIT PERFORM CYCLE
                                END-IF
                            END-IF
                        END-IF
@@ -1056,6 +1089,7 @@
                                    PERFORM WRITE-OUTPUT
                                    SUBTRACT 1 FROM
                                        WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                                   EXIT PERFORM CYCLE
                                END-IF
                            END-IF
                        END-IF
