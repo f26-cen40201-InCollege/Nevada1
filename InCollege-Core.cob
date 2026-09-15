@@ -47,7 +47,7 @@
            05 PROF-ABOUT       PIC X(200).
            05 PROF-EXP-CNT   PIC 9.
            05 PROF-EXP-INST OCCURS 3 TIMES.
-               10 EXP-TITLE   PIC 9(20).
+               10 EXP-TITLE   PIC X(20).
                10 EXP-ORGAN   PIC X(50).
                10 EXP-DATES   PIC X(35).
                10 EXP-DESCR   PIC X(100).
@@ -138,7 +138,7 @@
                10 WS-PROF-ABOUT       PIC X(200).
                10 WS-PROF-EXP-CNT     PIC 9    VALUE 0.
                10 WS-PROF-EXP-INST OCCURS 3 TIMES.
-                   15 WS-EXP-TITLE    PIC 9(20).
+                   15 WS-EXP-TITLE    PIC X(20).
                    15 WS-EXP-ORGAN    PIC X(50).
                    15 WS-EXP-DATES    PIC X(35).
                    15 WS-EXP-DESCR    PIC X(100).
@@ -152,6 +152,7 @@
 
 
        01 WS-PROF-IDX      PIC 9       VALUE 0.
+         01 WS-PROFILE-IDX   PIC 9       VALUE 0.
        01 WS-EXP-IDX       PIC 9       VALUE 0.
        01 WS-EDU-IDX       PIC 9       VALUE 0.
        01 WS-FIELD-LEN     PIC 9(3)    VALUE 0.
@@ -482,36 +483,36 @@
            OPEN OUTPUT PROFILES-FILE
            PERFORM VARYING WS-INDEX FROM 1 BY 1
                    UNTIL WS-INDEX > WS-PROF-IDX
-               MOVE WS-PROF-USER(WS-PROF-IDX) TO PROF-USER
-               MOVE WS-PROF-FIRST-NAME(WS-PROF-IDX) TO PROF-FIRST-NAME
-               MOVE WS-PROF-LAST-NAME(WS-PROF-IDX) TO PROF-LAST-NAME
-               MOVE WS-PROF-SCHOOL(WS-PROF-IDX) TO PROF-SCHOOL
-               MOVE WS-PROF-MAJOR(WS-PROF-IDX) TO PROF-MAJOR
-               MOVE WS-PROF-GRAD-YEAR(WS-PROF-IDX) TO PROF-GRAD-YEAR
-               MOVE WS-PROF-ABOUT(WS-PROF-IDX) TO PROF-ABOUT
-               MOVE WS-PROF-EXP-CNT(WS-PROF-IDX) TO PROF-EXP-CNT
+               MOVE WS-PROF-USER(WS-INDEX) TO PROF-USER
+               MOVE WS-PROF-FIRST-NAME(WS-INDEX) TO PROF-FIRST-NAME
+               MOVE WS-PROF-LAST-NAME(WS-INDEX) TO PROF-LAST-NAME
+               MOVE WS-PROF-SCHOOL(WS-INDEX) TO PROF-SCHOOL
+               MOVE WS-PROF-MAJOR(WS-INDEX) TO PROF-MAJOR
+               MOVE WS-PROF-GRAD-YEAR(WS-INDEX) TO PROF-GRAD-YEAR
+               MOVE WS-PROF-ABOUT(WS-INDEX) TO PROF-ABOUT
+               MOVE WS-PROF-EXP-CNT(WS-INDEX) TO PROF-EXP-CNT
                PERFORM VARYING WS-EXP-IDX FROM 1 BY 1
                        UNTIL WS-EXP-IDX > 3
-                   MOVE WS-EXP-TITLE(WS-PROF-IDX, WS-EXP-IDX)
+                   MOVE WS-EXP-TITLE(WS-INDEX, WS-EXP-IDX)
                        TO EXP-TITLE(WS-EXP-IDX)
-                   MOVE WS-EXP-ORGAN(WS-PROF-IDX, WS-EXP-IDX)
+                   MOVE WS-EXP-ORGAN(WS-INDEX, WS-EXP-IDX)
                        TO EXP-ORGAN(WS-EXP-IDX)
-                   MOVE WS-EXP-DATES(WS-PROF-IDX, WS-EXP-IDX)
+                   MOVE WS-EXP-DATES(WS-INDEX, WS-EXP-IDX)
                        TO EXP-DATES(WS-EXP-IDX)
-                   MOVE WS-EXP-DESCR(WS-PROF-IDX, WS-EXP-IDX)
+                   MOVE WS-EXP-DESCR(WS-INDEX, WS-EXP-IDX)
                        TO EXP-DESCR(WS-EXP-IDX)
                END-PERFORM
-               MOVE WS-PROF-EDU-CNT(WS-PROF-IDX) TO PROF-EDU-CNT
+               MOVE WS-PROF-EDU-CNT(WS-INDEX) TO PROF-EDU-CNT
                PERFORM VARYING WS-EDU-IDX FROM 1 BY 1
                        UNTIL WS-EDU-IDX > 3
-                   MOVE WS-EDU-DEGREE(WS-PROF-IDX, WS-EDU-IDX)
+                   MOVE WS-EDU-DEGREE(WS-INDEX, WS-EDU-IDX)
                        TO EDU-DEGREE(WS-EDU-IDX)
-                   MOVE WS-EDU-SCHOOL(WS-PROF-IDX, WS-EDU-IDX)
+                   MOVE WS-EDU-SCHOOL(WS-INDEX, WS-EDU-IDX)
                        TO EDU-SCHOOL(WS-EDU-IDX)
-                   MOVE WS-EDU-YEARS(WS-PROF-IDX, WS-EDU-IDX)
+                   MOVE WS-EDU-YEARS(WS-INDEX, WS-EDU-IDX)
                        TO EDU-YEARS(WS-EDU-IDX)
                END-PERFORM
-               MOVE WS-HAS-PROF(WS-PROF-IDX) TO HAS-PROF
+               MOVE WS-HAS-PROF(WS-INDEX) TO HAS-PROF
                WRITE PROFILE-INSTANCE
            END-PERFORM
            CLOSE PROFILES-FILE.
@@ -621,6 +622,13 @@
            MOVE "---Create/Edit Profile---" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
 
+           PERFORM FIND-PROFILE-BY-USERNAME
+           IF WS-PROFILE-IDX = 0
+               ADD 1 TO WS-PROF-IDX
+               MOVE WS-PROF-IDX TO WS-PROFILE-IDX
+           END-IF
+           MOVE WS-PROFILE-IDX TO WS-FOUND-INDEX
+
            PERFORM GET-FIRST-NAME
            PERFORM GET-LAST-NAME
            PERFORM GET-SCHOOL
@@ -630,11 +638,124 @@
            PERFORM GET-EXPERIENCE
            PERFORM GET-EDUCATION
 
+           MOVE WS-LOGIN-USER TO WS-PROF-USER(WS-FOUND-INDEX)
+           MOVE "Y" TO WS-HAS-PROF(WS-FOUND-INDEX)
+           PERFORM SAVE-TO-PROFILES
+
            MOVE "---Profile Created/Updated---" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT.
 
 
        VIEW-PROFILE.
+           PERFORM FIND-PROFILE-BY-USERNAME
+           IF WS-PROFILE-IDX > 0
+               MOVE WS-PROFILE-IDX TO WS-FOUND-INDEX
+           END-IF
+           IF WS-HAS-PROF(WS-FOUND-INDEX) NOT = "Y"
+               MOVE "No profile has been created yet."
+                   TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+           ELSE
+               MOVE "--- Your Profile --" TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "Name: "
+                   FUNCTION TRIM(WS-PROF-FIRST-NAME(WS-FOUND-INDEX))
+                   " "
+                   FUNCTION TRIM(WS-PROF-LAST-NAME(WS-FOUND-INDEX))
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "University: "
+                   FUNCTION TRIM(WS-PROF-SCHOOL(WS-FOUND-INDEX))
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "Major: "
+                   FUNCTION TRIM(WS-PROF-MAJOR(WS-FOUND-INDEX))
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "Graduation Year: "
+                   WS-PROF-GRAD-YEAR(WS-FOUND-INDEX)
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "About Me: "
+                   FUNCTION TRIM(WS-PROF-ABOUT(WS-FOUND-INDEX))
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+
+               IF WS-PROF-EXP-CNT(WS-FOUND-INDEX) > 0
+                   MOVE "Experience:" TO WS-OUTPUT-LINE
+                   PERFORM WRITE-OUTPUT
+                   PERFORM VARYING WS-EXP-IDX FROM 1 BY 1
+                           UNTIL WS-EXP-IDX >
+                               WS-PROF-EXP-CNT(WS-FOUND-INDEX)
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Title: "
+                           FUNCTION TRIM(WS-EXP-TITLE(WS-FOUND-INDEX,
+                               WS-EXP-IDX))
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Company: "
+                           FUNCTION TRIM(WS-EXP-ORGAN(WS-FOUND-INDEX,
+                               WS-EXP-IDX))
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Dates: "
+                           FUNCTION TRIM(WS-EXP-DATES(WS-FOUND-INDEX,
+                               WS-EXP-IDX))
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Description: "
+                           FUNCTION TRIM(WS-EXP-DESCR(WS-FOUND-INDEX,
+                               WS-EXP-IDX))
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                   END-PERFORM
+               END-IF
+
+               IF WS-PROF-EDU-CNT(WS-FOUND-INDEX) > 0
+                   MOVE "Education:" TO WS-OUTPUT-LINE
+                   PERFORM WRITE-OUTPUT
+                   PERFORM VARYING WS-EDU-IDX FROM 1 BY 1
+                           UNTIL WS-EDU-IDX >
+                               WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Degree: "
+                           FUNCTION TRIM(WS-EDU-DEGREE(WS-FOUND-INDEX,
+                               WS-EDU-IDX))
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "University: "
+                           FUNCTION TRIM(WS-EDU-SCHOOL(WS-FOUND-INDEX,
+                               WS-EDU-IDX))
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Years: "
+                           FUNCTION TRIM(WS-EDU-YEARS(WS-FOUND-INDEX,
+                               WS-EDU-IDX))
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                   END-PERFORM
+               END-IF
+           END-IF.
+
+       FIND-PROFILE-BY-USERNAME.
+           MOVE 0 TO WS-PROFILE-IDX
+           MOVE WS-LOGIN-USER TO WS-SEARCH-USERNAME
+           PERFORM VARYING WS-SEARCH-IDX FROM 1 BY 1
+                   UNTIL WS-SEARCH-IDX > WS-PROF-IDX
+               IF WS-PROF-USER(WS-SEARCH-IDX) = WS-SEARCH-USERNAME
+                   MOVE WS-SEARCH-IDX TO WS-PROFILE-IDX
+               END-IF
+           END-PERFORM.
 
 
        GET-FIRST-NAME.
@@ -941,4 +1062,6 @@
                    END-IF
                END-IF
            END-PERFORM.
+
+
 
