@@ -17,8 +17,10 @@
            SELECT OPTIONAL ACCOUNTS-FILE ASSIGN TO WS-ACCOUNTS-FILE
                ORGANIZATION IS LINE SEQUENTIAL
                FILE STATUS IS WS-ACCOUNTS-STAT.
-           
 
+           SELECT PROFILES-FILE ASSIGN TO "Profiles.txt"
+               ORGANIZATION IS LINE SEQUENTIAL
+               FILE STATUS IS WS-PROFILES-STAT.
 
        DATA DIVISION.
        FILE SECTION.
@@ -29,26 +31,52 @@
        01 OUTPUT-LINE   PIC X(100).
 
        FD ACCOUNTS-FILE.
-       01 ACCOUNT-INSTANCE. 
+       01 ACCOUNT-INSTANCE.
            05 ACC-USERNAME  PIC X(20).
            05 ACC-PASSWORD  PIC X(20).
 
+      *    EPIC 2 PROFILE FILE FIELD INFORMATION
+       FD PROFILES-FILE.
+       01  PROFILE-INSTANCE.
+           05 PROF-USER        PIC X(20).
+           05 PROF-FIRST-NAME  PIC X(20).
+           05 PROF-LAST-NAME   PIC X(20).
+           05 PROF-SCHOOL      PIC X(50).
+           05 PROF-MAJOR       PIC X(30).
+           05 PROF-GRAD-YEAR   PIC 9(4).
+           05 PROF-ABOUT       PIC X(200).
+           05 PROF-EXP-CNT   PIC 9.
+           05 PROF-EXP-INST OCCURS 3 TIMES.
+               10 EXP-TITLE   PIC X(20).
+               10 EXP-ORGAN   PIC X(50).
+               10 EXP-DATES   PIC X(35).
+               10 EXP-DESCR   PIC X(100).
+           05 PROF-EDU-CNT  PIC 9.
+           05 PROF-TOTAL-EDU  OCCURS 3 TIMES.
+               10 EDU-DEGREE  PIC X(35).
+               10 EDU-SCHOOL  PIC X(50).
+               10 EDU-YEARS   PIC X(35).
+           05 HAS-PROF        PIC X.
+
+
+
+
        WORKING-STORAGE SECTION.
 
-       01  WS-INPUT-STAT     PIC XX.
-       01  WS-OUTPUT-STAT    PIC XX.
+       01 WS-INPUT-STAT     PIC XX.
+       01 WS-OUTPUT-STAT    PIC XX.
 
        01 WS-ACCOUNTS-FILE PIC X(100).
 
        01 WS-ACCOUNTS-STAT PIC XX.
-           
-       01  WS-INPUT-EOF    PIC X   VALUE "N".
+
+       01 WS-INPUT-EOF    PIC X   VALUE "N".
            88  END-OF-INPUT        VALUE "Y".
-       01  WS-ACCOUNTS-EOF PIC X   VALUE "N".
+       01 WS-ACCOUNTS-EOF PIC X   VALUE "N".
            88  END-OF-ACCOUNTS     VALUE "Y".
-       01  WS-LOGGED-IN    PIC X   VALUE "N".
+       01 WS-LOGGED-IN    PIC X   VALUE "N".
            88 LOGGED-IN         VALUE "Y".
-       01  WS-RUNNING      PIC X   VALUE "Y".
+       01 WS-RUNNING      PIC X   VALUE "Y".
            88 STILL-RUNNING        VALUE "Y".
 
 
@@ -59,7 +87,7 @@
                10   WS-PASSWORD     PIC X(20).
 
        01 WS-INPUT-LINE     PIC X(100).
-       01  WS-INPUT-FILE  PIC X(100).
+       01 WS-INPUT-FILE  PIC X(100).
        01 WS-OUTPUT-LINE    PIC X(100).
        01 WS-OUTPUT-FILE PIC X(100).
        01 WS-CHOICE         PIC X(5).
@@ -93,7 +121,48 @@
 
        01  WS-SKILL-GO-BACK      PIC X       VALUE "N".
            88  SKILL-GO-BACK                 VALUE "Y".
-       
+
+      *    EPIC 2 WS SECTION
+       01  WS-PROFILES-STAT     PIC XX.
+       01  WS-PROFILES-EOF      PIC X       VALUE "N".
+           88 END-OF-PROFILES               VALUE "Y".
+
+       01 WS-PROFILES.
+           05 WS-PROFILE-INST OCCURS 5 TIMES.
+               10 WS-PROF-USER        PIC X(20).
+               10 WS-PROF-FIRST-NAME  PIC X(20).
+               10 WS-PROF-LAST-NAME   PIC X(20).
+               10 WS-PROF-SCHOOL      PIC X(50).
+               10 WS-PROF-MAJOR       PIC X(30).
+               10 WS-PROF-GRAD-YEAR   PIC 9(4).
+               10 WS-PROF-ABOUT       PIC X(200).
+               10 WS-PROF-EXP-CNT     PIC 9    VALUE 0.
+               10 WS-PROF-EXP-INST OCCURS 3 TIMES.
+                   15 WS-EXP-TITLE    PIC X(20).
+                   15 WS-EXP-ORGAN    PIC X(50).
+                   15 WS-EXP-DATES    PIC X(35).
+                   15 WS-EXP-DESCR    PIC X(100).
+               10 WS-PROF-EDU-CNT     PIC 9    VALUE 0.
+               10 WS-PROF-TOTAL-EDU   OCCURS 3 TIMES.
+                   15 WS-EDU-DEGREE   PIC X(35).
+                   15 WS-EDU-SCHOOL   PIC X(50).
+                   15 WS-EDU-YEARS    PIC X(35).
+               10 WS-HAS-PROF         PIC X    VALUE "N".
+                   88 WS-PROF-EXISTS           VALUE "Y".
+
+
+       01 WS-PROF-IDX      PIC 9       VALUE 0.
+         01 WS-PROFILE-IDX   PIC 9       VALUE 0.
+       01 WS-EXP-IDX       PIC 9       VALUE 0.
+       01 WS-EDU-IDX       PIC 9       VALUE 0.
+       01 WS-FIELD-LEN     PIC 9(3)    VALUE 0.
+
+
+       01  WS-VALID-RESPONSE    PIC X       VALUE "N".
+           88 VALIDATED                    VALUE "Y".
+
+
+
        LINKAGE SECTION.
        01  LS-INPUT   PIC X(100).
        01  LS-OUTPUT  PIC X(100).
@@ -125,6 +194,8 @@
            END-PERFORM
 
            PERFORM CLOSE-FILES
+           MOVE "---END_OF_PROGRAM---" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
 
            GOBACK.
 
@@ -149,20 +220,85 @@
 
            OPEN INPUT ACCOUNTS-FILE
            IF WS-ACCOUNTS-STAT = "00"
-               PERFORM UNTIL END-OF-ACCOUNTS OR WS-TOTAL-ACCOUNTS >= 5
+               PERFORM UNTIL END-OF-ACCOUNTS OR WS-TOTAL-ACCOUNTS > 5
                    READ ACCOUNTS-FILE INTO ACCOUNT-INSTANCE
                        AT END
                            MOVE "Y" TO WS-ACCOUNTS-EOF
                        NOT AT END
                            ADD 1 TO WS-TOTAL-ACCOUNTS
-                           MOVE ACC-USERNAME 
+                           MOVE ACC-USERNAME
                                TO WS-USERNAME(WS-TOTAL-ACCOUNTS)
                            MOVE ACC-PASSWORD
                                TO WS-PASSWORD(WS-TOTAL-ACCOUNTS)
                    END-READ
                END-PERFORM
            END-IF
-           CLOSE ACCOUNTS-FILE.
+           CLOSE ACCOUNTS-FILE
+
+           OPEN INPUT PROFILES-FILE
+           IF WS-PROFILES-STAT = "00"
+               PERFORM UNTIL END-OF-PROFILES OR WS-PROF-IDX > 5
+                   READ PROFILES-FILE INTO PROFILE-INSTANCE
+                       AT END
+                           MOVE "Y" TO WS-PROFILES-EOF
+                       NOT AT END
+                           MOVE PROF-USER TO WS-SEARCH-USERNAME
+                           PERFORM FIND-ACCOUNT-BY-USERNAME
+                           IF ACCOUNT-FOUND
+                               ADD 1 TO WS-PROF-IDX
+                               MOVE PROF-USER
+                                   TO WS-PROF-USER(WS-FOUND-INDEX)
+                               MOVE PROF-FIRST-NAME
+                                   TO WS-PROF-FIRST-NAME(WS-FOUND-INDEX)
+                               MOVE PROF-LAST-NAME
+                                   TO WS-PROF-LAST-NAME(WS-FOUND-INDEX)
+                               MOVE PROF-SCHOOL
+                                   TO WS-PROF-SCHOOL(WS-FOUND-INDEX)
+                               MOVE PROF-MAJOR
+                                   TO WS-PROF-MAJOR(WS-FOUND-INDEX)
+                               MOVE PROF-GRAD-YEAR
+                                   TO WS-PROF-GRAD-YEAR(WS-FOUND-INDEX)
+                               MOVE PROF-ABOUT
+                                   TO WS-PROF-ABOUT(WS-FOUND-INDEX)
+                               MOVE PROF-EXP-CNT
+                                   TO WS-PROF-EXP-CNT(WS-FOUND-INDEX)
+                               PERFORM VARYING WS-EXP-IDX FROM 1 BY 1
+                                       UNTIL WS-EXP-IDX > 3
+                                   MOVE EXP-TITLE(WS-EXP-IDX)
+                                       TO WS-EXP-TITLE(WS-FOUND-INDEX,
+                                           WS-EXP-IDX)
+                                   MOVE EXP-ORGAN(WS-EXP-IDX)
+                                       TO WS-EXP-ORGAN(WS-FOUND-INDEX,
+                                           WS-EXP-IDX)
+                                   MOVE EXP-DATES(WS-EXP-IDX)
+                                       TO WS-EXP-DATES(WS-FOUND-INDEX,
+                                           WS-EXP-IDX)
+                                   MOVE EXP-DESCR(WS-EXP-IDX)
+                                       TO WS-EXP-DESCR(WS-FOUND-INDEX,
+                                           WS-EXP-IDX)
+                               END-PERFORM
+                               MOVE PROF-EDU-CNT
+                                   TO WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                               PERFORM VARYING WS-EDU-IDX FROM 1 BY 1
+                                       UNTIL WS-EDU-IDX > 3
+                                   MOVE EDU-DEGREE(WS-EDU-IDX)
+                                       TO WS-EDU-DEGREE(WS-FOUND-INDEX,
+                                           WS-EDU-IDX)
+                                   MOVE EDU-SCHOOL(WS-EDU-IDX)
+                                       TO WS-EDU-SCHOOL(WS-FOUND-INDEX,
+                                           WS-EDU-IDX)
+                                   MOVE EDU-YEARS(WS-EDU-IDX)
+                                       TO WS-EDU-YEARS(WS-FOUND-INDEX,
+                                           WS-EDU-IDX)
+                               END-PERFORM
+                               MOVE HAS-PROF
+                                   TO WS-HAS-PROF(WS-FOUND-INDEX)
+                           END-IF
+                   END-READ
+               END-PERFORM
+           END-IF
+           CLOSE PROFILES-FILE.
+
 
        CLOSE-FILES.
            CLOSE IN-FILE
@@ -205,7 +341,7 @@
                        PERFORM WRITE-OUTPUT
                END-EVALUATE
            END-IF.
-           
+
        LOG-IN.
            PERFORM UNTIL LOGGED-IN OR END-OF-INPUT
                MOVE "Please enter your username:" TO WS-OUTPUT-LINE
@@ -247,8 +383,9 @@
 
        CREATE-ACCOUNT.
            IF WS-TOTAL-ACCOUNTS >= 5
+               MOVE SPACES TO WS-OUTPUT-LINE
                STRING "All permitted accounts have been created, "
-                      "please come back later" 
+                      "please come back later"
                    DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                END-STRING
                PERFORM WRITE-OUTPUT
@@ -257,11 +394,12 @@
                PERFORM WRITE-OUTPUT
                PERFORM READ-INPUT
                MOVE WS-INPUT-LINE TO WS-NEW-USER
-               
-               COMPUTE WS-USER-LEN = 
+
+               COMPUTE WS-USER-LEN =
                    FUNCTION LENGTH(FUNCTION TRIM (WS-INPUT-LINE))
 
                MOVE WS-NEW-USER TO WS-SEARCH-USERNAME
+               MOVE WS-NEW-USER TO WS-LOGIN-USER
                PERFORM FIND-ACCOUNT-BY-USERNAME
 
                IF ACCOUNT-FOUND
@@ -275,7 +413,7 @@
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                    ELSE
-                       MOVE "Please enter your password:" 
+                       MOVE "Please enter your password:"
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                        PERFORM READ-INPUT
@@ -293,7 +431,12 @@
                            PERFORM SAVE-TO-ACCOUNTS
                            MOVE "Account Created!" TO WS-OUTPUT-LINE
                            PERFORM WRITE-OUTPUT
-                       ELSE 
+                           MOVE "You have successfully logged in."
+                               TO WS-OUTPUT-LINE
+                           PERFORM WRITE-OUTPUT
+                           MOVE "Y" TO WS-LOGGED-IN
+                           MOVE WS-TOTAL-ACCOUNTS TO WS-FOUND-INDEX
+                       ELSE
                            MOVE
                "Password doesn't satisfy requirements, try again"
                                TO WS-OUTPUT-LINE
@@ -302,7 +445,7 @@
                    END-IF
                END-IF
            END-IF.
-                   
+
        PASSWORD-VALIDATION.
            MOVE "N" TO WS-HAS-UPPER
            MOVE "N" TO WS-HAS-DIGIT
@@ -345,6 +488,44 @@
            END-PERFORM
            CLOSE ACCOUNTS-FILE.
 
+       SAVE-TO-PROFILES.
+           OPEN OUTPUT PROFILES-FILE
+           PERFORM VARYING WS-INDEX FROM 1 BY 1
+                   UNTIL WS-INDEX > WS-PROF-IDX
+               MOVE WS-PROF-USER(WS-INDEX) TO PROF-USER
+               MOVE WS-PROF-FIRST-NAME(WS-INDEX) TO PROF-FIRST-NAME
+               MOVE WS-PROF-LAST-NAME(WS-INDEX) TO PROF-LAST-NAME
+               MOVE WS-PROF-SCHOOL(WS-INDEX) TO PROF-SCHOOL
+               MOVE WS-PROF-MAJOR(WS-INDEX) TO PROF-MAJOR
+               MOVE WS-PROF-GRAD-YEAR(WS-INDEX) TO PROF-GRAD-YEAR
+               MOVE WS-PROF-ABOUT(WS-INDEX) TO PROF-ABOUT
+               MOVE WS-PROF-EXP-CNT(WS-INDEX) TO PROF-EXP-CNT
+               PERFORM VARYING WS-EXP-IDX FROM 1 BY 1
+                       UNTIL WS-EXP-IDX > 3
+                   MOVE WS-EXP-TITLE(WS-INDEX, WS-EXP-IDX)
+                       TO EXP-TITLE(WS-EXP-IDX)
+                   MOVE WS-EXP-ORGAN(WS-INDEX, WS-EXP-IDX)
+                       TO EXP-ORGAN(WS-EXP-IDX)
+                   MOVE WS-EXP-DATES(WS-INDEX, WS-EXP-IDX)
+                       TO EXP-DATES(WS-EXP-IDX)
+                   MOVE WS-EXP-DESCR(WS-INDEX, WS-EXP-IDX)
+                       TO EXP-DESCR(WS-EXP-IDX)
+               END-PERFORM
+               MOVE WS-PROF-EDU-CNT(WS-INDEX) TO PROF-EDU-CNT
+               PERFORM VARYING WS-EDU-IDX FROM 1 BY 1
+                       UNTIL WS-EDU-IDX > 3
+                   MOVE WS-EDU-DEGREE(WS-INDEX, WS-EDU-IDX)
+                       TO EDU-DEGREE(WS-EDU-IDX)
+                   MOVE WS-EDU-SCHOOL(WS-INDEX, WS-EDU-IDX)
+                       TO EDU-SCHOOL(WS-EDU-IDX)
+                   MOVE WS-EDU-YEARS(WS-INDEX, WS-EDU-IDX)
+                       TO EDU-YEARS(WS-EDU-IDX)
+               END-PERFORM
+               MOVE WS-HAS-PROF(WS-INDEX) TO HAS-PROF
+               WRITE PROFILE-INSTANCE
+           END-PERFORM
+           CLOSE PROFILES-FILE.
+
        FIND-ACCOUNT-BY-USERNAME.
            MOVE "N" TO WS-ACCOUNT-FOUND
            MOVE 0   TO WS-FOUND-INDEX
@@ -363,13 +544,17 @@
            END-IF.
 
        SITE-MENU.
-           MOVE "1. Search for a job" TO WS-OUTPUT-LINE
+           MOVE "1. Create/Edit My Profile" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
-           MOVE "2. Find someone you know" TO WS-OUTPUT-LINE
+           MOVE "2. View My Profile" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
-           MOVE "3. Learn a new skill" TO WS-OUTPUT-LINE
+           MOVE "3. Search for a job" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
-           MOVE "4. Logout" TO WS-OUTPUT-LINE
+           MOVE "4. Find someone you know" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
+           MOVE "5. Learn a new skill" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
+           MOVE "6. Logout" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
            MOVE "Enter your choice:" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
@@ -379,18 +564,22 @@
                MOVE WS-INPUT-LINE TO WS-CHOICE
                EVALUATE WS-CHOICE
                    WHEN "1"
+                       PERFORM CREATE-PROFILE
+                   WHEN "2"
+                       PERFORM VIEW-PROFILE
+                   WHEN "3"
                        MOVE
            "Job search/internship is under construction."
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
-                   WHEN "2"
+                   WHEN "4"
                        MOVE
            "Find someone you know is under construction."
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
-                   WHEN "3"
+                   WHEN "5"
                        PERFORM SKILL-MENU-LOOP
-                   WHEN "4"
+                   WHEN "6"
                        MOVE "N" TO WS-RUNNING
                    WHEN OTHER
                        MOVE "Invalid Option, Try Again"
@@ -398,7 +587,7 @@
                        PERFORM WRITE-OUTPUT
                END-EVALUATE
            END-IF.
-                  
+
 
        SKILL-MENU-LOOP.
            MOVE "N" TO WS-SKILL-GO-BACK
@@ -437,11 +626,484 @@
                    END-EVALUATE
                END-IF
            END-PERFORM.
-           
-           
 
-       
+       CREATE-PROFILE.
+           MOVE "---Create/Edit Profile---" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
+
+           PERFORM FIND-PROFILE-BY-USERNAME
+           IF WS-PROFILE-IDX = 0
+               ADD 1 TO WS-PROF-IDX
+               MOVE WS-PROF-IDX TO WS-PROFILE-IDX
+           END-IF
+           MOVE WS-PROFILE-IDX TO WS-FOUND-INDEX
+
+           PERFORM GET-FIRST-NAME
+           PERFORM GET-LAST-NAME
+           PERFORM GET-SCHOOL
+           PERFORM GET-MAJOR
+           PERFORM GET-GRAD-YEAR
+           PERFORM GET-ABOUT-ME
+           PERFORM GET-EXPERIENCE
+           PERFORM GET-EDUCATION
+
+           MOVE WS-LOGIN-USER TO WS-PROF-USER(WS-FOUND-INDEX)
+           MOVE "Y" TO WS-HAS-PROF(WS-FOUND-INDEX)
+           PERFORM SAVE-TO-PROFILES
+
+           MOVE "---Profile Created/Updated---" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT.
+
+
+       VIEW-PROFILE.
+           PERFORM FIND-PROFILE-BY-USERNAME
+           IF WS-PROFILE-IDX > 0
+               MOVE WS-PROFILE-IDX TO WS-FOUND-INDEX
+           END-IF
+           IF WS-HAS-PROF(WS-FOUND-INDEX) NOT = "Y"
+               MOVE "No profile has been created yet."
+                   TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+           ELSE
+               MOVE "--- Your Profile --" TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "Name: "
+                   FUNCTION TRIM(WS-PROF-FIRST-NAME(WS-FOUND-INDEX))
+                   " "
+                   FUNCTION TRIM(WS-PROF-LAST-NAME(WS-FOUND-INDEX))
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "University: "
+                   FUNCTION TRIM(WS-PROF-SCHOOL(WS-FOUND-INDEX))
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "Major: "
+                   FUNCTION TRIM(WS-PROF-MAJOR(WS-FOUND-INDEX))
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "Graduation Year: "
+                   WS-PROF-GRAD-YEAR(WS-FOUND-INDEX)
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "About Me: "
+                   FUNCTION TRIM(WS-PROF-ABOUT(WS-FOUND-INDEX))
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+
+               IF WS-PROF-EXP-CNT(WS-FOUND-INDEX) > 0
+                   MOVE "Experience:" TO WS-OUTPUT-LINE
+                   PERFORM WRITE-OUTPUT
+                   PERFORM VARYING WS-EXP-IDX FROM 1 BY 1
+                           UNTIL WS-EXP-IDX >
+                               WS-PROF-EXP-CNT(WS-FOUND-INDEX)
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING " Title: "
+                           FUNCTION TRIM(WS-EXP-TITLE(WS-FOUND-INDEX,
+                               WS-EXP-IDX))
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING " Company: "
+                           FUNCTION TRIM(WS-EXP-ORGAN(WS-FOUND-INDEX,
+                               WS-EXP-IDX))
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING " Dates: "
+                           FUNCTION TRIM(WS-EXP-DATES(WS-FOUND-INDEX,
+                               WS-EXP-IDX))
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING " Description: "
+                           FUNCTION TRIM(WS-EXP-DESCR(WS-FOUND-INDEX,
+                               WS-EXP-IDX))
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                   END-PERFORM
+               END-IF
+
+               IF WS-PROF-EDU-CNT(WS-FOUND-INDEX) > 0
+                   MOVE "Education:" TO WS-OUTPUT-LINE
+                   PERFORM WRITE-OUTPUT
+                   PERFORM VARYING WS-EDU-IDX FROM 1 BY 1
+                           UNTIL WS-EDU-IDX >
+                               WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING " Degree: "
+                           FUNCTION TRIM(WS-EDU-DEGREE(WS-FOUND-INDEX,
+                               WS-EDU-IDX))
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING " University: "
+                           FUNCTION TRIM(WS-EDU-SCHOOL(WS-FOUND-INDEX,
+                               WS-EDU-IDX))
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING " Years: "
+                           FUNCTION TRIM(WS-EDU-YEARS(WS-FOUND-INDEX,
+                               WS-EDU-IDX))
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                   END-PERFORM
+               END-IF
+           END-IF.
+
+       FIND-PROFILE-BY-USERNAME.
+           MOVE 0 TO WS-PROFILE-IDX
+           MOVE WS-LOGIN-USER TO WS-SEARCH-USERNAME
+           PERFORM VARYING WS-SEARCH-IDX FROM 1 BY 1
+                   UNTIL WS-SEARCH-IDX > WS-PROF-IDX
+               IF WS-PROF-USER(WS-SEARCH-IDX) = WS-SEARCH-USERNAME
+                   MOVE WS-SEARCH-IDX TO WS-PROFILE-IDX
+               END-IF
+           END-PERFORM.
+
+
+       GET-FIRST-NAME.
+           MOVE "N" TO WS-VALID-RESPONSE
+           PERFORM UNTIL VALIDATED OR END-OF-INPUT
+               MOVE "Enter First Name: " TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               PERFORM READ-INPUT
+               IF NOT END-OF-INPUT
+                   COMPUTE WS-FIELD-LEN =
+                       FUNCTION LENGTH(FUNCTION TRIM (WS-INPUT-LINE))
+                   IF WS-FIELD-LEN > 0
+                       MOVE WS-INPUT-LINE
+                           TO WS-PROF-FIRST-NAME(WS-FOUND-INDEX)
+                       MOVE "Y" TO WS-VALID-RESPONSE
+                   ELSE
+                       MOVE "First Name cannot be blank, try again"
+                           TO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                   END-IF
+               END-IF
+           END-PERFORM.
+
+       GET-LAST-NAME.
+           MOVE "N" TO WS-VALID-RESPONSE
+           PERFORM UNTIL VALIDATED OR END-OF-INPUT
+               MOVE "Enter Last Name: " TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               PERFORM READ-INPUT
+               IF NOT END-OF-INPUT
+                   COMPUTE WS-FIELD-LEN =
+                       FUNCTION LENGTH(FUNCTION TRIM(WS-INPUT-LINE))
+                   IF WS-FIELD-LEN > 0
+                       MOVE WS-INPUT-LINE
+                           TO WS-PROF-LAST-NAME(WS-FOUND-INDEX)
+                       MOVE "Y" TO WS-VALID-RESPONSE
+                   ELSE
+                       MOVE "Last Name cannot be blank, try again"
+                           TO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                   END-IF
+               END-IF
+           END-PERFORM.
+
+
+       GET-SCHOOL.
+           MOVE "N" TO WS-VALID-RESPONSE
+           PERFORM UNTIL VALIDATED OR END-OF-INPUT
+               MOVE "Enter university name: " TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               PERFORM READ-INPUT
+               IF NOT END-OF-INPUT
+                   COMPUTE WS-FIELD-LEN =
+                       FUNCTION LENGTH(FUNCTION TRIM(WS-INPUT-LINE))
+                   IF WS-FIELD-LEN > 0
+                       MOVE WS-INPUT-LINE
+                           TO WS-PROF-SCHOOL(WS-FOUND-INDEX)
+                       MOVE "Y" TO WS-VALID-RESPONSE
+                   ELSE
+                       MOVE "University name cannot be blank"
+                           TO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                   END-IF
+               END-IF
+           END-PERFORM.
+
+       GET-MAJOR.
+           MOVE "N" TO WS-VALID-RESPONSE
+           PERFORM UNTIL VALIDATED OR END-OF-INPUT
+               MOVE "Enter the name of your major: " TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               PERFORM READ-INPUT
+               IF NOT END-OF-INPUT
+                   COMPUTE WS-FIELD-LEN =
+                       FUNCTION LENGTH(FUNCTION TRIM(WS-INPUT-LINE))
+                   IF WS-FIELD-LEN > 0
+                       MOVE WS-INPUT-LINE
+                           TO WS-PROF-MAJOR(WS-FOUND-INDEX)
+                       MOVE "Y" TO WS-VALID-RESPONSE
+                   ELSE
+                       MOVE "Major cannot be left blank"
+                           TO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                   END-IF
+               END-IF
+           END-PERFORM.
+
+        GET-GRAD-YEAR.
+           MOVE "N" TO WS-VALID-RESPONSE
+           PERFORM UNTIL VALIDATED OR END-OF-INPUT
+               MOVE "Enter Graduation Year (YYYY): " TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               PERFORM READ-INPUT
+               IF NOT END-OF-INPUT
+                   MOVE FUNCTION TRIM(WS-INPUT-LINE) TO WS-INPUT-LINE
+                   COMPUTE WS-FIELD-LEN =
+                       FUNCTION LENGTH(FUNCTION TRIM(WS-INPUT-LINE))
+                   IF WS-FIELD-LEN = 4
+                       IF WS-INPUT-LINE(1:WS-FIELD-LEN) IS NUMERIC
+                           IF FUNCTION NUMVAL(WS-INPUT-LINE) > 2025
+                               AND FUNCTION NUMVAL(WS-INPUT-LINE) < 2034
+                               MOVE WS-INPUT-LINE
+                                   TO WS-PROF-GRAD-YEAR(WS-FOUND-INDEX)
+                               MOVE "Y" TO WS-VALID-RESPONSE
+                           ELSE
+                               MOVE
+                 "Graduation year must be between 2026 and 2033"
+                                   TO WS-OUTPUT-LINE
+                               PERFORM WRITE-OUTPUT
+                           END-IF
+                       ELSE
+                           MOVE
+                 "Graduation year must be numeric, Please try again"
+                               TO WS-OUTPUT-LINE
+                           PERFORM WRITE-OUTPUT
+                       END-IF
+                   ELSE
+                       MOVE
+                 "Graduation year must be 4 digits, Please try again"
+                           TO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                   END-IF
+               END-IF
+           END-PERFORM.
+
+       GET-ABOUT-ME.
+           MOVE "N" TO WS-VALID-RESPONSE
+           PERFORM UNTIL VALIDATED OR END-OF-INPUT
+               MOVE "Enter About Me (optional): " TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               PERFORM READ-INPUT
+               IF NOT END-OF-INPUT
+                   MOVE FUNCTION TRIM(WS-INPUT-LINE) TO WS-INPUT-LINE
+                   MOVE WS-INPUT-LINE
+                       TO WS-PROF-ABOUT(WS-FOUND-INDEX)
+                   MOVE "Y" TO WS-VALID-RESPONSE
+               END-IF
+           END-PERFORM.
+
+       GET-EXPERIENCE.
+           MOVE "N" TO WS-VALID-RESPONSE
+           MOVE 0 TO WS-PROF-EXP-CNT(WS-FOUND-INDEX)
+           PERFORM UNTIL VALIDATED OR (WS-PROF-EXP-CNT(WS-FOUND-INDEX)
+                   > 3) OR END-OF-INPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "Add Experience (optional, max 3 entries."
+               "Enter 'DONE' to finish or any input to continue):"
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               PERFORM READ-INPUT
+               IF NOT END-OF-INPUT
+                   IF WS-INPUT-LINE = "DONE"
+                       MOVE "Y" TO WS-VALID-RESPONSE
+                       EXIT PERFORM
+                   ELSE
+                       ADD 1 TO WS-PROF-EXP-CNT(WS-FOUND-INDEX)
+                       MOVE WS-PROF-EXP-CNT(WS-FOUND-INDEX)
+                           TO WS-EXP-IDX
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Experience #" WS-EXP-IDX " - Title: "
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       PERFORM READ-INPUT
+                       IF NOT END-OF-INPUT
+                           COMPUTE WS-FIELD-LEN = FUNCTION LENGTH(
+                               FUNCTION TRIM(WS-INPUT-LINE))
+                           IF WS-FIELD-LEN > 0
+                               MOVE WS-INPUT-LINE
+                                   TO WS-EXP-TITLE(WS-FOUND-INDEX,
+                                       WS-EXP-IDX)
+                           ELSE
+                               MOVE "Title cannot be blank, try again"
+                                   TO WS-OUTPUT-LINE
+                               PERFORM WRITE-OUTPUT
+                               SUBTRACT 1 FROM 
+                                   WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                               EXIT PERFORM CYCLE
+                           END-IF
+                       END-IF
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Experience #" WS-EXP-IDX
+                           " - Company/Organization: "
+                               DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       PERFORM READ-INPUT
+                       IF NOT END-OF-INPUT
+                           COMPUTE WS-FIELD-LEN = FUNCTION LENGTH(
+                               FUNCTION TRIM(WS-INPUT-LINE))
+                           IF WS-FIELD-LEN > 0
+                               MOVE WS-INPUT-LINE
+                                   TO WS-EXP-ORGAN(WS-FOUND-INDEX,
+                                       WS-EXP-IDX)
+                           ELSE
+                               MOVE "Company cannot be blank, try again"
+                                   TO WS-OUTPUT-LINE
+                               PERFORM WRITE-OUTPUT
+                               SUBTRACT 1 FROM 
+                                   WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                               EXIT PERFORM CYCLE
+                           END-IF
+                       END-IF
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Exp #" WS-EXP-IDX " - Years: "
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       PERFORM READ-INPUT
+                       IF NOT END-OF-INPUT
+                           COMPUTE WS-FIELD-LEN = FUNCTION LENGTH(
+                               FUNCTION TRIM(WS-INPUT-LINE))
+                           IF WS-FIELD-LEN > 0
+                               MOVE WS-INPUT-LINE
+                                   TO WS-EXP-DATES(WS-FOUND-INDEX,
+                                       WS-EXP-IDX)
+                           ELSE
+                               MOVE "Years cannot be blank, try again"
+                                   TO WS-OUTPUT-LINE
+                               PERFORM WRITE-OUTPUT
+                               SUBTRACT 1 FROM
+                                   WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                               EXIT PERFORM CYCLE
+                           END-IF
+                       END-IF
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Exp #" WS-EXP-IDX
+                           " - Description (optional, max 100 chars): "
+                                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       PERFORM READ-INPUT
+                       IF NOT END-OF-INPUT
+                           MOVE WS-INPUT-LINE
+                               TO WS-EXP-DESCR(WS-FOUND-INDEX,
+                                   WS-EXP-IDX)
+                       END-IF
+                   END-IF
+               END-IF
+           END-PERFORM.
 
 
 
-      
+       GET-EDUCATION.
+           MOVE "N" TO WS-VALID-RESPONSE
+           MOVE 0 TO WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+           PERFORM UNTIL VALIDATED OR (WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                   > 3) OR END-OF-INPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "Add Education (optional, max 3 entries."
+               " Enter 'DONE' to finish or any input to continue):"
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               PERFORM READ-INPUT
+               IF NOT END-OF-INPUT
+                   IF WS-INPUT-LINE = "DONE"
+                       MOVE "Y" TO WS-VALID-RESPONSE
+                       EXIT PERFORM
+                   ELSE
+                       ADD 1 TO WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                       MOVE WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                           TO WS-EDU-IDX
+
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Education #" WS-EDU-IDX
+                           " - Degree: "
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                       PERFORM WRITE-OUTPUT
+                       PERFORM READ-INPUT
+                       IF NOT END-OF-INPUT
+                           COMPUTE WS-FIELD-LEN =
+                               FUNCTION LENGTH(
+                                   FUNCTION TRIM(WS-INPUT-LINE))
+                           IF WS-FIELD-LEN > 0
+                               MOVE WS-INPUT-LINE
+                                   TO WS-EDU-DEGREE(WS-FOUND-INDEX,
+                                       WS-EDU-IDX)
+                           ELSE
+                               MOVE "Degree cannot be blank, try again"
+                                   TO WS-OUTPUT-LINE
+                               PERFORM WRITE-OUTPUT
+                               SUBTRACT 1 FROM
+                                   WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                               EXIT PERFORM CYCLE
+                           END-IF
+                       END-IF
+
+                       IF NOT END-OF-INPUT
+                           MOVE SPACES TO WS-OUTPUT-LINE
+                           STRING "Education #" WS-EDU-IDX
+                               " - University/College: "
+                               DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                           PERFORM WRITE-OUTPUT
+                           PERFORM READ-INPUT
+                           IF NOT END-OF-INPUT
+                               COMPUTE WS-FIELD-LEN =
+                                   FUNCTION LENGTH(
+                                       FUNCTION TRIM(WS-INPUT-LINE))
+                               IF WS-FIELD-LEN > 0
+                                   MOVE WS-INPUT-LINE
+                                       TO WS-EDU-SCHOOL(WS-FOUND-INDEX,
+                                           WS-EDU-IDX)
+                               ELSE
+                                   MOVE
+                         "University blank, try again"
+                                       TO WS-OUTPUT-LINE
+                                   PERFORM WRITE-OUTPUT
+                                   SUBTRACT 1 FROM
+                                       WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                                   EXIT PERFORM CYCLE
+                               END-IF
+                           END-IF
+                       END-IF
+
+                       IF NOT END-OF-INPUT
+                           MOVE SPACES TO WS-OUTPUT-LINE
+                           STRING "Education #" WS-EDU-IDX
+                               " - Years Attended: "
+                               DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                           PERFORM WRITE-OUTPUT
+                           PERFORM READ-INPUT
+                           IF NOT END-OF-INPUT
+                               COMPUTE WS-FIELD-LEN =
+                                   FUNCTION LENGTH(
+                                       FUNCTION TRIM(WS-INPUT-LINE))
+                               IF WS-FIELD-LEN > 0
+                                   MOVE WS-INPUT-LINE
+                                       TO WS-EDU-YEARS(WS-FOUND-INDEX,
+                                           WS-EDU-IDX)
+                               ELSE
+                                   MOVE
+                         "Years Attended blank, try again"
+                                       TO WS-OUTPUT-LINE
+                                   PERFORM WRITE-OUTPUT
+                                   SUBTRACT 1 FROM
+                                       WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                                   EXIT PERFORM CYCLE
+                               END-IF
+                           END-IF
+                       END-IF
+                   END-IF
+               END-IF
+           END-PERFORM.
+
+
+
