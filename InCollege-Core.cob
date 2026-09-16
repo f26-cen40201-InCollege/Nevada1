@@ -698,25 +698,25 @@
                            UNTIL WS-EXP-IDX >
                                WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                        MOVE SPACES TO WS-OUTPUT-LINE
-                       STRING "Title: "
+                       STRING " Title: "
                            FUNCTION TRIM(WS-EXP-TITLE(WS-FOUND-INDEX,
                                WS-EXP-IDX))
                            DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                        MOVE SPACES TO WS-OUTPUT-LINE
-                       STRING "Company: "
+                       STRING " Company: "
                            FUNCTION TRIM(WS-EXP-ORGAN(WS-FOUND-INDEX,
                                WS-EXP-IDX))
                            DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                        MOVE SPACES TO WS-OUTPUT-LINE
-                       STRING "Dates: "
+                       STRING " Dates: "
                            FUNCTION TRIM(WS-EXP-DATES(WS-FOUND-INDEX,
                                WS-EXP-IDX))
                            DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                        MOVE SPACES TO WS-OUTPUT-LINE
-                       STRING "Description: "
+                       STRING " Description: "
                            FUNCTION TRIM(WS-EXP-DESCR(WS-FOUND-INDEX,
                                WS-EXP-IDX))
                            DELIMITED BY SIZE INTO WS-OUTPUT-LINE
@@ -731,19 +731,19 @@
                            UNTIL WS-EDU-IDX >
                                WS-PROF-EDU-CNT(WS-FOUND-INDEX)
                        MOVE SPACES TO WS-OUTPUT-LINE
-                       STRING "Degree: "
+                       STRING " Degree: "
                            FUNCTION TRIM(WS-EDU-DEGREE(WS-FOUND-INDEX,
                                WS-EDU-IDX))
                            DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                        MOVE SPACES TO WS-OUTPUT-LINE
-                       STRING "University: "
+                       STRING " University: "
                            FUNCTION TRIM(WS-EDU-SCHOOL(WS-FOUND-INDEX,
                                WS-EDU-IDX))
                            DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                        MOVE SPACES TO WS-OUTPUT-LINE
-                       STRING "Years: "
+                       STRING " Years: "
                            FUNCTION TRIM(WS-EDU-YEARS(WS-FOUND-INDEX,
                                WS-EDU-IDX))
                            DELIMITED BY SIZE INTO WS-OUTPUT-LINE
