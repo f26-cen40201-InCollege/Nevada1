@@ -1,0 +1,37 @@
+Welcome to InCollege!
+1. Log-In
+2. Create New Account
+Enter your choice:
+2
+Please enter your username:
+viewonlyuser
+Please enter your password:
+Passw0rd9$
+Account Created!
+1. Log-In
+2. Create New Account
+Enter your choice:
+1
+Please enter your username:
+viewonlyuser
+Please enter your password:
+Passw0rd9$
+You have successfully logged in.
+Welcome, viewonlyuser!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+2
+No profile has been created yet.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6

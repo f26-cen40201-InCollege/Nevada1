@@ -1,0 +1,45 @@
+Welcome to InCollege!
+1. Log-In
+2. Create New Account
+Enter your choice:
+2
+Please enter your username:
+viewonlyuser
+That username is already taken, please try again
+1. Log-In
+2. Create New Account
+Enter your choice:
+Passw0rd9$
+Invalid Option, Try Again
+1. Log-In
+2. Create New Account
+Enter your choice:
+1
+Please enter your username:
+viewonlyuser
+Please enter your password:
+Passw0rd9$
+You have successfully logged in.
+Welcome, viewonlyuser!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+2
+--- Your Profile --
+Name: Priya Shah
+University: University of Central Florida
+Major: Chemistry
+Graduation Year: 2030
+About Me: A future research chemist.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6

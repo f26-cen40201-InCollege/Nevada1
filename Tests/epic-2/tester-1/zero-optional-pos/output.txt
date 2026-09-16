@@ -1,0 +1,71 @@
+Welcome to InCollege!
+1. Log-In
+2. Create New Account
+Enter your choice:
+2
+Please enter your username:
+profileuser3
+That username is already taken, please try again
+1. Log-In
+2. Create New Account
+Enter your choice:
+Passw0rd3$
+Invalid Option, Try Again
+1. Log-In
+2. Create New Account
+Enter your choice:
+1
+Please enter your username:
+profileuser3
+Please enter your password:
+Passw0rd3$
+You have successfully logged in.
+Welcome, profileuser3!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+1
+---Create/Edit Profile---
+Enter First Name:
+Sam
+Enter Last Name:
+Nguyen
+Enter university name:
+University of South Florida
+Enter the name of your major:
+Biology
+Enter Graduation Year (YYYY):
+2029
+Enter About Me (optional):
+
+Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
+DONE
+Add Education (optional, max 3 entries. Enter 'DONE' to finish or any input to continue):
+DONE
+---Profile Created/Updated---
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+2
+--- Your Profile --
+Name: Sam Nguyen
+University: University of South Florida
+Major: Biology
+Graduation Year: 2029
+About Me:
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6
