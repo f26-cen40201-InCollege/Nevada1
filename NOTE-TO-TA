@@ -1,0 +1,7 @@
+Please use both InCollege.cob and InCollege-Core when compiling with the following cmd:
+
+cobc -x -o incollege InCollege.cob InCollege-Core.cob
+
+We used a wrapper so that we could make automated and decoupled testing
+
+Thank you!

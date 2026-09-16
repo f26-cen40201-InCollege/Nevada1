@@ -220,7 +220,7 @@
 
            OPEN INPUT ACCOUNTS-FILE
            IF WS-ACCOUNTS-STAT = "00"
-               PERFORM UNTIL END-OF-ACCOUNTS OR WS-TOTAL-ACCOUNTS > 5
+               PERFORM UNTIL END-OF-ACCOUNTS OR WS-TOTAL-ACCOUNTS >= 5
                    READ ACCOUNTS-FILE INTO ACCOUNT-INSTANCE
                        AT END
                            MOVE "Y" TO WS-ACCOUNTS-EOF
@@ -237,7 +237,7 @@
 
            OPEN INPUT PROFILES-FILE
            IF WS-PROFILES-STAT = "00"
-               PERFORM UNTIL END-OF-PROFILES OR WS-PROF-IDX > 5
+               PERFORM UNTIL END-OF-PROFILES OR WS-PROF-IDX >= 5
                    READ PROFILES-FILE INTO PROFILE-INSTANCE
                        AT END
                            MOVE "Y" TO WS-PROFILES-EOF
@@ -908,7 +908,7 @@
            MOVE "N" TO WS-VALID-RESPONSE
            MOVE 0 TO WS-PROF-EXP-CNT(WS-FOUND-INDEX)
            PERFORM UNTIL VALIDATED OR (WS-PROF-EXP-CNT(WS-FOUND-INDEX)
-                   > 3) OR END-OF-INPUT
+                   >= 3) OR END-OF-INPUT
                MOVE SPACES TO WS-OUTPUT-LINE
                STRING "Add Experience (optional, max 3 entries."
                "Enter 'DONE' to finish or any input to continue):"
@@ -1008,7 +1008,7 @@
            MOVE "N" TO WS-VALID-RESPONSE
            MOVE 0 TO WS-PROF-EDU-CNT(WS-FOUND-INDEX)
            PERFORM UNTIL VALIDATED OR (WS-PROF-EDU-CNT(WS-FOUND-INDEX)
-                   > 3) OR END-OF-INPUT
+                   >= 3) OR END-OF-INPUT
                MOVE SPACES TO WS-OUTPUT-LINE
                STRING "Add Education (optional, max 3 entries."
                " Enter 'DONE' to finish or any input to continue):"
