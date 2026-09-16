@@ -220,7 +220,7 @@
 
            OPEN INPUT ACCOUNTS-FILE
            IF WS-ACCOUNTS-STAT = "00"
-               PERFORM UNTIL END-OF-ACCOUNTS OR WS-TOTAL-ACCOUNTS > 5
+               PERFORM UNTIL END-OF-ACCOUNTS OR WS-TOTAL-ACCOUNTS >= 5
                    READ ACCOUNTS-FILE INTO ACCOUNT-INSTANCE
                        AT END
                            MOVE "Y" TO WS-ACCOUNTS-EOF
@@ -237,7 +237,7 @@
 
            OPEN INPUT PROFILES-FILE
            IF WS-PROFILES-STAT = "00"
-               PERFORM UNTIL END-OF-PROFILES OR WS-PROF-IDX > 5
+               PERFORM UNTIL END-OF-PROFILES OR WS-PROF-IDX >= 5
                    READ PROFILES-FILE INTO PROFILE-INSTANCE
                        AT END
                            MOVE "Y" TO WS-PROFILES-EOF
@@ -263,7 +263,7 @@
                                MOVE PROF-EXP-CNT
                                    TO WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                                PERFORM VARYING WS-EXP-IDX FROM 1 BY 1
-                                       UNTIL WS-EXP-IDX > 3
+                                       UNTIL WS-EXP-IDX >= 3
                                    MOVE EXP-TITLE(WS-EXP-IDX)
                                        TO WS-EXP-TITLE(WS-FOUND-INDEX,
                                            WS-EXP-IDX)
@@ -280,7 +280,7 @@
                                MOVE PROF-EDU-CNT
                                    TO WS-PROF-EDU-CNT(WS-FOUND-INDEX)
                                PERFORM VARYING WS-EDU-IDX FROM 1 BY 1
-                                       UNTIL WS-EDU-IDX > 3
+                                       UNTIL WS-EDU-IDX >= 3
                                    MOVE EDU-DEGREE(WS-EDU-IDX)
                                        TO WS-EDU-DEGREE(WS-FOUND-INDEX,
                                            WS-EDU-IDX)
@@ -501,7 +501,7 @@
                MOVE WS-PROF-ABOUT(WS-INDEX) TO PROF-ABOUT
                MOVE WS-PROF-EXP-CNT(WS-INDEX) TO PROF-EXP-CNT
                PERFORM VARYING WS-EXP-IDX FROM 1 BY 1
-                       UNTIL WS-EXP-IDX > 3
+                       UNTIL WS-EXP-IDX >= 3
                    MOVE WS-EXP-TITLE(WS-INDEX, WS-EXP-IDX)
                        TO EXP-TITLE(WS-EXP-IDX)
                    MOVE WS-EXP-ORGAN(WS-INDEX, WS-EXP-IDX)
@@ -513,7 +513,7 @@
                END-PERFORM
                MOVE WS-PROF-EDU-CNT(WS-INDEX) TO PROF-EDU-CNT
                PERFORM VARYING WS-EDU-IDX FROM 1 BY 1
-                       UNTIL WS-EDU-IDX > 3
+                       UNTIL WS-EDU-IDX >= 3
                    MOVE WS-EDU-DEGREE(WS-INDEX, WS-EDU-IDX)
                        TO EDU-DEGREE(WS-EDU-IDX)
                    MOVE WS-EDU-SCHOOL(WS-INDEX, WS-EDU-IDX)
@@ -908,7 +908,7 @@
            MOVE "N" TO WS-VALID-RESPONSE
            MOVE 0 TO WS-PROF-EXP-CNT(WS-FOUND-INDEX)
            PERFORM UNTIL VALIDATED OR (WS-PROF-EXP-CNT(WS-FOUND-INDEX)
-                   > 3) OR END-OF-INPUT
+                   >= 3) OR END-OF-INPUT
                MOVE SPACES TO WS-OUTPUT-LINE
                STRING "Add Experience (optional, max 3 entries."
                "Enter 'DONE' to finish or any input to continue):"
@@ -1008,7 +1008,7 @@
            MOVE "N" TO WS-VALID-RESPONSE
            MOVE 0 TO WS-PROF-EDU-CNT(WS-FOUND-INDEX)
            PERFORM UNTIL VALIDATED OR (WS-PROF-EDU-CNT(WS-FOUND-INDEX)
-                   > 3) OR END-OF-INPUT
+                   >= 3) OR END-OF-INPUT
                MOVE SPACES TO WS-OUTPUT-LINE
                STRING "Add Education (optional, max 3 entries."
                " Enter 'DONE' to finish or any input to continue):"

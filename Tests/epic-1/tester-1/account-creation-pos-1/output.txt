@@ -5,9 +5,12 @@ Enter your choice:
 2
 Please enter your username:
 IanKoratsky
-Please enter your password:
+That username is already taken, please try again
+1. Log-In
+2. Create New Account
+Enter your choice:
 1234Abc!
-Account Created!
+Invalid Option, Try Again
 1. Log-In
 2. Create New Account
 Enter your choice:

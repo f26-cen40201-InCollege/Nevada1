@@ -1,16 +1,17 @@
       * ================================================================
       * =================== START INSTRUCTIONS =========================
 
-      *> This is the main test entry point.
-      *> All tests will be run through it
-      *> It's already set up to run all your tests, you just need
-      *> To focus on your Epic and Tester File
+      *>   This is the main test entry point.
+      *>   All tests will be run through it
+      *>   It's already set up to run all your tests, you just need
+      *>   To focus on your Epic and Tester File
 
-      *> IMPORTANT: YOU MUST UPDATE THE COMPILE CODE IF YOU ADD A FILE TO BE TESTED:
+      *>   IMPORTANT: YOU MUST UPDATE THE COMPILE CODE IF YOU ADD A FILE TO BE TESTED:
 
-      *> cobc -x -o test-main test-main.cob InCollege-Core.cob \ ./test-main
-      *> then simply run: ./test-main to run all tests
-      *> if someone wants to make a way to add particular tests, feel free!
+      *>   cobc -x -o test-main test-main.cob InCollege-Core.cob 
+      *>   ./test-main
+      *>   then simply run: ./test-main to run all tests
+      *>   if someone wants to make a way to add particular tests, feel free!
 
       
 
@@ -69,9 +70,7 @@
            FD EXPECTED-FILE.
            01 EXPECTED-FILE-REC PIC X(100).
 
-      *    ====================== Original Files =======================
-           
-           01 ACCOUNTS-PATH PIC X(100).
+      
 
       *    ==================== Condolidation Files ====================
 
@@ -86,6 +85,9 @@
 
 
        WORKING-STORAGE SECTION.
+      *    ====================== Original Files =======================
+           
+           01 ACCOUNTS-PATH PIC X(100).
 
       *    ========================== Booleans==========================
            01 WS-OUTPUT-EOF PIC X VALUE "N".
@@ -303,11 +305,14 @@
                PERFORM BUILD-TEST-PATH.
                MOVE WS-BUILT-PATH TO WS-EXPECTED-FILE.
 
-               MOVE "accounts.txt" TO ACCOUNTS-PATH.
+               MOVE "accounts.txt" TO WS-PATH-SUFFIX.
                PERFORM BUILD-TEST-PATH.
                MOVE WS-BUILT-PATH TO WS-ACCOUNTS-FILE.
     
-               CALL WS-TEST-CODE USING WS-TEST-INPUT WS-OUTPUT-FILE.
+               CALL WS-TEST-CODE USING 
+                   WS-TEST-INPUT 
+                   WS-OUTPUT-FILE
+                   WS-ACCOUNTS-FILE.
                PERFORM COPY-INPUT.
            
                PERFORM START-FILES.
