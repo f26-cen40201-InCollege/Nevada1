@@ -6,10 +6,10 @@
        input-output section.
        file-control.
            select source-file assign to ws-source-name
-               organization is sequential
+               organization is line sequential
                file status is ws-source-status.
            select target-file assign to ws-target-name
-               organization is sequential
+               organization is line sequential
                file status is ws-target-status.
        
        data division.
@@ -31,7 +31,7 @@
            01 lk-target-file-path pic x(100).
            01 lk-return-code pic 9(4) comp.
 
-       procedure division using 
+       procedure division using
                lk-source-file-path 
                lk-target-file-path
                lk-return-code.
@@ -66,3 +66,4 @@
            close source-file
            close target-file
            goback.
+           

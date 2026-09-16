@@ -241,7 +241,7 @@
        CREATE-ACCOUNT.
            IF WS-TOTAL-ACCOUNTS >= 5
                STRING "All permitted accounts have been created, "
-      -               "please come back later" 
+                     "please come back later"
                    DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                END-STRING
                PERFORM WRITE-OUTPUT
