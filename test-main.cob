@@ -129,6 +129,14 @@
            01 WS-INPUT-EOF PIC X VALUE "N".
                88 WS-INPUT-END VALUE "Y".
                
+      * helpers
+
+           01 WS-TEST-HEADER PIC X(100).
+           01 WS-PATH-SUFFIX PIC X(20).
+           01 WS-BUILT-PATH PIC X(100).
+
+           01 WS-CHECK-STAT PIC XX.
+           01 WS-CHECK-NAME PIC X(100).
 
        PROCEDURE DIVISION.
 
@@ -183,44 +191,46 @@
 
 
        START-FILES.
+
+           OPEN INPUT  OUTPUT-FILE.
+           MOVE WS-OUTPUT-STAT TO WS-CHECK-STAT.
+           MOVE WS-OUTPUT-FILE TO WS-CHECK-NAME.
+           PERFORM VERIFY-FILE-OPEN.
            
-           OPEN INPUT OUTPUT-FILE
-           IF WS-OUTPUT-STAT NOT = "00"
-               DISPLAY "Error opening output file: " WS-OUTPUT-FILE
-               DISPLAY "File status: " WS-OUTPUT-STAT
-               STOP RUN
-           END-IF.
-           
-           OPEN INPUT EXPECTED-FILE
-           IF WS-EXPECTED-STAT NOT = "00"
-             DISPLAY "Error opening expected file: " WS-EXPECTED-FILE
-             DISPLAY "File status: " WS-EXPECTED-STAT
-             STOP RUN
-           END-IF.
+           OPEN INPUT  EXPECTED-FILE.
+           MOVE WS-EXPECTED-STAT TO WS-CHECK-STAT.
+           MOVE WS-EXPECTED-FILE TO WS-CHECK-NAME.
+           PERFORM VERIFY-FILE-OPEN.
 
 
        CLOSE-FILES.
            CLOSE OUTPUT-FILE.
            CLOSE EXPECTED-FILE.
 
-       START-CONSOLIDATE-FILES.
-           OPEN OUTPUT OUTPUT-FILE-CONSOLIDATED
-           IF WS-OUTPUT-STAT-CONSOLIDATED NOT = "00"
-               DISPLAY "ERR"
-               STOP RUN
-           END-IF
-           
-           OPEN OUTPUT EXPECTED-FILE-CONSOLIDATED
-           IF WS-EXPECTED-STAT-CONSOLIDATED NOT = "00"
-               DISPLAY "ERR"
+       VERIFY-FILE-OPEN.
+           IF WS-CHECK-STAT NOT = "00"
+               DISPLAY "ERROR OPENING" WS-CHECK-NAME
+               DISPLAY "FILE STATUS: " WS-CHECK-STAT
                STOP RUN
            END-IF.
 
-           OPEN OUTPUT TEST-INPUT-CONSOLIDATED
-           IF WS-TEST-INPUT-CONSOLIDATED-STAT NOT = "00"
-               DISPLAY "ERR"
-               STOP RUN
-           END-IF.
+       START-CONSOLIDATE-FILES.
+
+           OPEN OUTPUT  OUTPUT-FILE-CONSOLIDATED.
+           MOVE WS-OUTPUT-STAT-CONSOLIDATED TO WS-CHECK-STAT.
+           MOVE WS-OUTPUT-CONSOLIDATED TO WS-CHECK-NAME.
+           PERFORM VERIFY-FILE-OPEN.
+           
+           OPEN OUTPUT  EXPECTED-FILE-CONSOLIDATED.
+           MOVE WS-EXPECTED-STAT-CONSOLIDATED TO WS-CHECK-STAT.
+           MOVE WS-EXPECTED-FILE-CONSOLIDATED TO WS-CHECK-NAME.
+           PERFORM VERIFY-FILE-OPEN.
+
+           OPEN OUTPUT  TEST-INPUT-CONSOLIDATED.
+           MOVE WS-TEST-INPUT-CONSOLIDATED-STAT TO WS-CHECK-STAT.
+           MOVE WS-TEST-INPUT-CONSOLIDATED TO WS-CHECK-NAME.
+           PERFORM VERIFY-FILE-OPEN.
+
 
        COPY-INPUT.
 
@@ -253,61 +263,32 @@
 
        COUNTER-UPDATE.
 
-        *>    MOVE SPACES TO OUTPUT-CONSOLIDATED-LINE.
-        *>    STRING 
-        *>        "==== TEST: "
-        *>        WS-FOLDER
-        *>        "===="
-        *>        DELIMITED BY SIZE 
-        *>        INTO OUTPUT-CONSOLIDATED-LINE
-        *>    END-STRING.
-        *>    WRITE OUTPUT-CONSOLIDATED-REC
-        *>        FROM OUTPUT-CONSOLIDATED-LINE.
+           STRING 
+               "==== TEST: "
+               WS-FOLDER
+               "===="
+               DELIMITED BY SIZE 
+               INTO WS-TEST-HEADER
+           END-STRING.
 
-           
-        *>    MOVE SPACES TO EXPECTED-CONSOLIDATED-LINE.
-        *>    STRING 
-        *>        "==== TEST: "
-        *>        WS-FOLDER
-        *>        "===="
-        *>        DELIMITED BY SIZE 
-        *>        INTO EXPECTED-CONSOLIDATED-LINE
-        *>    END-STRING.
-        *>    WRITE EXPECTED-CONSOLIDATED-REC
-        *>        FROM EXPECTED-CONSOLIDATED-LINE.
+           WRITE OUTPUT-CONSOLIDATED-REC
+               FROM WS-TEST-HEADER.
+           WRITE EXPECTED-CONSOLIDATED-REC
+               FROM WS-TEST-HEADER.
 
-           MOVE SPACES TO WS-ACCOUNTS-FILE.
-           STRING WS-FOLDER DELIMITED BY SPACE
-               "accounts.txt" DELIMITED BY SIZE
-               INTO WS-ACCOUNTS-FILE
-               ON OVERFLOW DISPLAY "ERR"
-           END-STRING
+           MOVE "input.txt" TO WS-PATH-SUFFIX.
+           PERFORM BUILD-TEST-PATH.
+           MOVE WS-BUILT-PATH TO WS-TEST-INPUT.
 
-           STRING WS-FOLDER DELIMITED BY SPACE
-              "input.txt" DELIMITED BY SIZE
-               INTO WS-TEST-INPUT
-               ON OVERFLOW
-                   DISPLAY "Error: WS-TEST-INPUT"
-           END-STRING
+           MOVE "output.txt" TO WS-PATH-SUFFIX.
+           PERFORM BUILD-TEST-PATH.
+           MOVE WS-BUILT-PATH TO WS-OUTPUT-FILE.
 
-           STRING WS-FOLDER DELIMITED BY SPACE
-              "output.txt" DELIMITED BY SIZE
-               INTO WS-OUTPUT-FILE
-               ON OVERFLOW
-                   DISPLAY "Error: WS-OUTPUT-FILE"
-           END-STRING
-           
-           STRING WS-FOLDER DELIMITED BY SPACE
-              "expected.txt" DELIMITED BY SIZE
-               INTO WS-EXPECTED-FILE
-               ON OVERFLOW
-                   DISPLAY "Error: WS-EXPECTED-FILE"
-           END-STRING
+           MOVE "expected.txt" TO WS-PATH-SUFFIX.
+           PERFORM BUILD-TEST-PATH.
+           MOVE WS-BUILT-PATH TO WS-EXPECTED-FILE.
 
-           CALL WS-TEST-CODE USING 
-                   WS-TEST-INPUT 
-                   WS-OUTPUT-FILE 
-                   WS-ACCOUNTS-FILE.
+           CALL WS-TEST-CODE USING WS-TEST-INPUT WS-OUTPUT-FILE.
            PERFORM COPY-INPUT.
        
            PERFORM START-FILES.
@@ -354,7 +335,15 @@
            MOVE SPACES TO WS-TEST-INPUT.
            MOVE SPACES TO WS-OUTPUT-FILE.
            MOVE SPACES TO WS-EXPECTED-FILE.
-           move SPACES TO WS-ACCOUNTS-FILE.
+
+
+       BUILD-TEST-PATH.
+           STRING WS-FOLDER delimited by space
+               WS-PATH-SUFFIX delimited by size
+             INTO WS-BUILT-PATH
+             ON overflow
+               DISPLAY "err building path" WS-PATH-SUFFIX
+           END-STRING.
 
        READ-EXPECTED.
            READ EXPECTED-FILE INTO WS-EXPECTED-LINE
