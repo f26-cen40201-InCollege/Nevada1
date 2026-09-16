@@ -263,7 +263,7 @@
                                MOVE PROF-EXP-CNT
                                    TO WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                                PERFORM VARYING WS-EXP-IDX FROM 1 BY 1
-                                       UNTIL WS-EXP-IDX >= 3
+                                       UNTIL WS-EXP-IDX > 3
                                    MOVE EXP-TITLE(WS-EXP-IDX)
                                        TO WS-EXP-TITLE(WS-FOUND-INDEX,
                                            WS-EXP-IDX)
@@ -280,7 +280,7 @@
                                MOVE PROF-EDU-CNT
                                    TO WS-PROF-EDU-CNT(WS-FOUND-INDEX)
                                PERFORM VARYING WS-EDU-IDX FROM 1 BY 1
-                                       UNTIL WS-EDU-IDX >= 3
+                                       UNTIL WS-EDU-IDX > 3
                                    MOVE EDU-DEGREE(WS-EDU-IDX)
                                        TO WS-EDU-DEGREE(WS-FOUND-INDEX,
                                            WS-EDU-IDX)
@@ -501,7 +501,7 @@
                MOVE WS-PROF-ABOUT(WS-INDEX) TO PROF-ABOUT
                MOVE WS-PROF-EXP-CNT(WS-INDEX) TO PROF-EXP-CNT
                PERFORM VARYING WS-EXP-IDX FROM 1 BY 1
-                       UNTIL WS-EXP-IDX >= 3
+                       UNTIL WS-EXP-IDX > 3
                    MOVE WS-EXP-TITLE(WS-INDEX, WS-EXP-IDX)
                        TO EXP-TITLE(WS-EXP-IDX)
                    MOVE WS-EXP-ORGAN(WS-INDEX, WS-EXP-IDX)
@@ -513,7 +513,7 @@
                END-PERFORM
                MOVE WS-PROF-EDU-CNT(WS-INDEX) TO PROF-EDU-CNT
                PERFORM VARYING WS-EDU-IDX FROM 1 BY 1
-                       UNTIL WS-EDU-IDX >= 3
+                       UNTIL WS-EDU-IDX > 3
                    MOVE WS-EDU-DEGREE(WS-INDEX, WS-EDU-IDX)
                        TO EDU-DEGREE(WS-EDU-IDX)
                    MOVE WS-EDU-SCHOOL(WS-INDEX, WS-EDU-IDX)
