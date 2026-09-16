@@ -395,6 +395,7 @@
                    FUNCTION LENGTH(FUNCTION TRIM (WS-INPUT-LINE))
 
                MOVE WS-NEW-USER TO WS-SEARCH-USERNAME
+               MOVE WS-NEW-USER TO WS-LOGIN-USER
                PERFORM FIND-ACCOUNT-BY-USERNAME
 
                IF ACCOUNT-FOUND
@@ -426,6 +427,10 @@
                            PERFORM SAVE-TO-ACCOUNTS
                            MOVE "Account Created!" TO WS-OUTPUT-LINE
                            PERFORM WRITE-OUTPUT
+                           MOVE "You have successfully logged in."
+                               TO WS-OUTPUT-LINE
+                           PERFORM WRITE-OUTPUT
+                           MOVE "Y" TO WS-LOGGED-IN
                            MOVE WS-TOTAL-ACCOUNTS TO WS-FOUND-INDEX
                        ELSE
                            MOVE
@@ -853,9 +858,8 @@
                    MOVE FUNCTION TRIM(WS-INPUT-LINE) TO WS-INPUT-LINE
                    COMPUTE WS-FIELD-LEN =
                        FUNCTION LENGTH(FUNCTION TRIM(WS-INPUT-LINE))
-
                    IF WS-FIELD-LEN = 4
-                       IF WS-INPUT-LINE IS NUMERIC
+                       IF WS-INPUT-LINE(1:WS-FIELD-LEN) IS NUMERIC
                            IF FUNCTION NUMVAL(WS-INPUT-LINE) > 2025
                                AND FUNCTION NUMVAL(WS-INPUT-LINE) < 2034
                                MOVE WS-INPUT-LINE
@@ -1000,7 +1004,7 @@
            MOVE "N" TO WS-VALID-RESPONSE
            MOVE 0 TO WS-PROF-EDU-CNT(WS-FOUND-INDEX)
            PERFORM UNTIL VALIDATED OR (WS-PROF-EDU-CNT(WS-FOUND-INDEX)
-                   >= 3) OR END-OF-INPUT
+                   > 3) OR END-OF-INPUT
                MOVE SPACES TO WS-OUTPUT-LINE
                STRING "Add Education (optional, max 3 entries."
                " Enter 'DONE' to finish or any input to continue):"
