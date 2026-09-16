@@ -940,7 +940,7 @@
                                    TO WS-OUTPUT-LINE
                                PERFORM WRITE-OUTPUT
                                SUBTRACT 1 FROM 
-                                   WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                                   WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                                EXIT PERFORM CYCLE
                            END-IF
                        END-IF
@@ -962,7 +962,7 @@
                                    TO WS-OUTPUT-LINE
                                PERFORM WRITE-OUTPUT
                                SUBTRACT 1 FROM 
-                                   WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                                   WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                                EXIT PERFORM CYCLE
                            END-IF
                        END-IF
@@ -983,7 +983,7 @@
                                    TO WS-OUTPUT-LINE
                                PERFORM WRITE-OUTPUT
                                SUBTRACT 1 FROM
-                                   WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                                   WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                                EXIT PERFORM CYCLE
                            END-IF
                        END-IF
