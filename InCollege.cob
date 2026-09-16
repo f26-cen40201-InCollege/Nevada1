@@ -5,7 +5,7 @@
 
        PROCEDURE DIVISION.
            CALL 'INCOLLEGE-CORE' USING "InCollege-Input.txt" 
-               "InCollege-Output.txt".
+               "InCollege-Output.txt" "Accounts.txt"
            STOP RUN.
 
        

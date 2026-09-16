@@ -1,0 +1,44 @@
+2
+profileuser1
+Passw0rd1$
+1
+profileuser1
+Passw0rd1$
+1
+John
+Doe
+University of South Florida
+Computer Science
+2027
+Enthusiastic developer who loves solving problems.
+
+Software Intern
+Tech Corp
+Summer 2024
+Built internal tools for QA automation.
+DONE
+
+Bachelor of Science
+University of South Florida
+2023-2027
+DONE
+1
+John
+Smith
+University of South Florida
+Computer Science
+2027
+Enthusiastic developer who loves solving problems and mentoring others.
+
+Teaching Assistant
+University of South Florida
+Fall 2025
+Helped run lab sections for 40 students.
+DONE
+
+Bachelor of Science
+University of South Florida
+2023-2027
+DONE
+2
+6

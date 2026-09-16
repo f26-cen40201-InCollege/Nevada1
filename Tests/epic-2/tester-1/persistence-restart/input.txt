@@ -1,0 +1,25 @@
+2
+persistuser
+Persist1$
+1
+persistuser
+Persist1$
+1
+Jordan
+Lee
+University of South Florida
+Data Science
+2028
+Testing persistence across a restart.
+
+Data Analyst Intern
+Insight Labs
+Summer 2025
+Analyzed survey data for a nonprofit client.
+DONE
+
+Bachelor of Science
+University of South Florida
+2024-2028
+DONE
+6

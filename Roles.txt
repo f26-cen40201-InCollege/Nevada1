@@ -1,5 +1,5 @@
-Jude Joyson - Scrum Master
-Aref Khondaker - Developer 1
-Tangil Khondaker - Developer 2
-Ian Koratsky - Tester 1
-Connon Kouznetsov - Tester 2
+Connon Kouznetsov - Scrum Master
+Jude Joyson - Developer 1
+Aref Khondaker - Developer 2
+Tangil Khondaker - Tester 1
+Ian Koratsky - Tester 2

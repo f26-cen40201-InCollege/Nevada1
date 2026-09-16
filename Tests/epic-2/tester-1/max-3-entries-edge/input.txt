@@ -1,0 +1,44 @@
+2
+profileuser2
+Passw0rd2$
+1
+profileuser2
+Passw0rd2$
+1
+Maria
+Lopez
+University of Central Florida
+Mechanical Engineering
+2028
+
+
+Design Intern
+AutoWorks
+Summer 2025
+Prototyped suspension components.
+
+Research Assistant
+University of Central Florida
+Jan 2026 - May 2026
+
+
+Manufacturing Co-op
+Precision Parts Inc
+Summer 2026
+Worked on the assembly line QA team.
+DONE
+
+Bachelor of Science
+University of Central Florida
+2024-2028
+
+Associate of Science
+Community College
+2022-2024
+
+Certificate in CAD Design
+Online Institute
+2023-2023
+DONE
+2
+6
