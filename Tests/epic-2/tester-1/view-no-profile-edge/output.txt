@@ -29,12 +29,7 @@ Welcome, viewonlyuser!
 6. Logout
 Enter your choice:
 2
---- Your Profile --
-Name: Priya Shah
-University: University of Central Florida
-Major: Chemistry
-Graduation Year: 2030
-About Me: A future research chemist.
+No profile has been created yet.
 1. Create/Edit My Profile
 2. View My Profile
 3. Search for a job
