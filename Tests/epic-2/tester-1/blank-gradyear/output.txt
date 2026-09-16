@@ -1,0 +1,39 @@
+Welcome to InCollege!
+1. Log-In
+2. Create New Account
+Enter your choice:
+2
+Please enter your username:
+produser6
+That username is already taken, please try again
+1. Log-In
+2. Create New Account
+Enter your choice:
+Passw0rd6$
+Invalid Option, Try Again
+1. Log-In
+2. Create New Account
+Enter your choice:
+1
+Please enter your username:
+produser6
+Please enter your password:
+Passw0rd6$
+You have successfully logged in.
+Welcome, produser6!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+1
+---Create/Edit Profile---
+Enter First Name:
+Alex
+Enter Last Name:
+Rivera
+Enter university name:
+University of Florida
+Enter the name of your major:

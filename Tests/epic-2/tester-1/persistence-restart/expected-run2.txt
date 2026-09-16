@@ -1,0 +1,42 @@
+Welcome to InCollege!
+1. Log-In
+2. Create New Account
+Enter your choice:
+1
+Please enter your username:
+persistuser
+Please enter your password:
+Persist1$
+You have successfully logged in.
+Welcome, persistuser!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+2
+--- Your Profile --
+Name: Jordan Lee
+University: University of South Florida
+Major: Data Science
+Graduation Year: 2028
+About Me: Testing persistence across a restart.
+Experience:
+Title: Data Analyst Intern
+Company: Insight Labs
+Dates: Summer 2025
+Description: Analyzed survey data for a nonprofit client.
+Education:
+Degree: Bachelor of Science
+University: University of South Florida
+Years: 2024-2028
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6
