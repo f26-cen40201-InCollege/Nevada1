@@ -247,52 +247,52 @@
                            IF ACCOUNT-FOUND
                                ADD 1 TO WS-PROF-IDX
                                MOVE PROF-USER
-                                   TO WS-PROF-USER(WS-FOUND-INDEX)
+                                   TO WS-PROF-USER(WS-PROF-IDX)
                                MOVE PROF-FIRST-NAME
-                                   TO WS-PROF-FIRST-NAME(WS-FOUND-INDEX)
+                                   TO WS-PROF-FIRST-NAME(WS-PROF-IDX)
                                MOVE PROF-LAST-NAME
-                                   TO WS-PROF-LAST-NAME(WS-FOUND-INDEX)
+                                   TO WS-PROF-LAST-NAME(WS-PROF-IDX)
                                MOVE PROF-SCHOOL
-                                   TO WS-PROF-SCHOOL(WS-FOUND-INDEX)
+                                   TO WS-PROF-SCHOOL(WS-PROF-IDX)
                                MOVE PROF-MAJOR
-                                   TO WS-PROF-MAJOR(WS-FOUND-INDEX)
+                                   TO WS-PROF-MAJOR(WS-PROF-IDX)
                                MOVE PROF-GRAD-YEAR
-                                   TO WS-PROF-GRAD-YEAR(WS-FOUND-INDEX)
+                                   TO WS-PROF-GRAD-YEAR(WS-PROF-IDX)
                                MOVE PROF-ABOUT
-                                   TO WS-PROF-ABOUT(WS-FOUND-INDEX)
+                                   TO WS-PROF-ABOUT(WS-PROF-IDX)
                                MOVE PROF-EXP-CNT
-                                   TO WS-PROF-EXP-CNT(WS-FOUND-INDEX)
+                                   TO WS-PROF-EXP-CNT(WS-PROF-IDX)
                                PERFORM VARYING WS-EXP-IDX FROM 1 BY 1
                                        UNTIL WS-EXP-IDX > 3
                                    MOVE EXP-TITLE(WS-EXP-IDX)
-                                       TO WS-EXP-TITLE(WS-FOUND-INDEX,
+                                       TO WS-EXP-TITLE(WS-PROF-IDX,
                                            WS-EXP-IDX)
                                    MOVE EXP-ORGAN(WS-EXP-IDX)
-                                       TO WS-EXP-ORGAN(WS-FOUND-INDEX,
+                                       TO WS-EXP-ORGAN(WS-PROF-IDX,
                                            WS-EXP-IDX)
                                    MOVE EXP-DATES(WS-EXP-IDX)
-                                       TO WS-EXP-DATES(WS-FOUND-INDEX,
+                                       TO WS-EXP-DATES(WS-PROF-IDX,
                                            WS-EXP-IDX)
                                    MOVE EXP-DESCR(WS-EXP-IDX)
-                                       TO WS-EXP-DESCR(WS-FOUND-INDEX,
+                                       TO WS-EXP-DESCR(WS-PROF-IDX,
                                            WS-EXP-IDX)
                                END-PERFORM
                                MOVE PROF-EDU-CNT
-                                   TO WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+                                   TO WS-PROF-EDU-CNT(WS-PROF-IDX)
                                PERFORM VARYING WS-EDU-IDX FROM 1 BY 1
                                        UNTIL WS-EDU-IDX > 3
                                    MOVE EDU-DEGREE(WS-EDU-IDX)
-                                       TO WS-EDU-DEGREE(WS-FOUND-INDEX,
+                                       TO WS-EDU-DEGREE(WS-PROF-IDX,
                                            WS-EDU-IDX)
                                    MOVE EDU-SCHOOL(WS-EDU-IDX)
-                                       TO WS-EDU-SCHOOL(WS-FOUND-INDEX,
+                                       TO WS-EDU-SCHOOL(WS-PROF-IDX,
                                            WS-EDU-IDX)
                                    MOVE EDU-YEARS(WS-EDU-IDX)
-                                       TO WS-EDU-YEARS(WS-FOUND-INDEX,
+                                       TO WS-EDU-YEARS(WS-PROF-IDX,
                                            WS-EDU-IDX)
                                END-PERFORM
                                MOVE HAS-PROF
-                                   TO WS-HAS-PROF(WS-FOUND-INDEX)
+                                   TO WS-HAS-PROF(WS-PROF-IDX)
                            END-IF
                    END-READ
                END-PERFORM
