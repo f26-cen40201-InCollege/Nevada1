@@ -2,7 +2,7 @@
 profileuser1
 Passw0rd1$
 4
-Adam
+   Adam Smith  
 4
   John Doe   
 6

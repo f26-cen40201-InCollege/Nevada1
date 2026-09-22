@@ -18,22 +18,22 @@ Welcome, profileuser1!
 Enter your choice:
 4
 Enter full name:
-   Adam Smith
-==== Profile for Adam Smith ====
-Name: Adam Smith
-University: University of Florida
-Major: Physics
-Graduation Year: 2030
-About Me: Enthusiastic physist who loves solving problems.
+John Doe
+==== Profile for John Doe ====
+Name: John Doe
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2027
+About Me: Enthusiastic developer who loves solving problems.
 Experience:
- Title: Physics Lab Intern
- Company: Berkley
+ Title: Software Intern
+ Company: Tech Corp
  Dates: Summer 2024
- Description: Conducted experiments
+ Description: Built internal tools for QA automation.
 Education:
  Degree: Bachelor of Science
- University: University of Florida
- Years: 2023-2030
+ University: University of South Florida
+ Years: 2023-2027
 1. Create/Edit My Profile
 2. View My Profile
 3. Search for a job
@@ -43,7 +43,7 @@ Education:
 Enter your choice:
 4
 Enter full name:
-  John Doe
+John Doe
 ==== Profile for John Doe ====
 Name: John Doe
 University: University of South Florida

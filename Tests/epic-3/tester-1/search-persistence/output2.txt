@@ -4,23 +4,23 @@ Welcome to InCollege!
 Enter your choice:
 2
 Please enter your username:
-profileuser1
+profileuser2
 That username is already taken, please try again
 1. Log-In
 2. Create New Account
 Enter your choice:
-Passw0rd1$
+Passw0rd2$
 Invalid Option, Try Again
 1. Log-In
 2. Create New Account
 Enter your choice:
 1
 Please enter your username:
-profileuser1
+profileuser2
 Please enter your password:
-Passw0rd1$
+Passw0rd2$
 You have successfully logged in.
-Welcome, profileuser1!
+Welcome, profileuser2!
 1. Create/Edit My Profile
 2. View My Profile
 3. Search for a job
@@ -28,43 +28,24 @@ Welcome, profileuser1!
 5. Learn a new skill
 6. Logout
 Enter your choice:
-1
----Create/Edit Profile---
-Enter First Name:
-John
-Enter Last Name:
-Doe
-Enter university name:
-University of South Florida
-Enter the name of your major:
-Computer Science
-Enter Graduation Year (YYYY):
-2027
-Enter About Me (optional):
-Enthusiastic developer who loves solving problems.
-Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
-
-Experience #1 - Title:
-Software Intern
-Experience #1 - Company/Organization:
-Tech Corp
-Exp #1 - Years:
-Summer 2024
-Exp #1 - Description (optional, max 100 chars):
-Built internal tools for QA automation.
-Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
-DONE
-Add Education (optional, max 3 entries. Enter 'DONE' to finish or any input to continue):
-
-Education #1 - Degree:
-Bachelor of Science
-Education #1 - University/College:
-University of South Florida
-Education #1 - Years Attended:
-2023-2027
-Add Education (optional, max 3 entries. Enter 'DONE' to finish or any input to continue):
-DONE
----Profile Created/Updated---
+4
+Enter full name:
+Adam Smith
+==== Profile for Adam Smith ====
+Name: Adam Smith
+University: University of Florida
+Major: Physics
+Graduation Year: 2030
+About Me: Enthusiastic physist who loves solving problems.
+Experience:
+ Title: Physics Lab Intern
+ Company: Berkley
+ Dates: Summer 2024
+ Description: Conducted experiments
+Education:
+ Degree: Bachelor of Science
+ University: University of Florida
+ Years: 2023-2030
 1. Create/Edit My Profile
 2. View My Profile
 3. Search for a job
@@ -72,7 +53,9 @@ DONE
 5. Learn a new skill
 6. Logout
 Enter your choice:
-2
+4
+Enter full name:
+John Doe
 ==== Profile for John Doe ====
 Name: John Doe
 University: University of South Florida
@@ -88,6 +71,29 @@ Education:
  Degree: Bachelor of Science
  University: University of South Florida
  Years: 2023-2027
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+2
+==== Profile for Adam Smith ====
+Name: Adam Smith
+University: University of Florida
+Major: Physics
+Graduation Year: 2030
+About Me: Enthusiastic physist who loves solving problems.
+Experience:
+ Title: Physics Lab Intern
+ Company: Berkley
+ Dates: Summer 2024
+ Description: Conducted experiments
+Education:
+ Degree: Bachelor of Science
+ University: University of Florida
+ Years: 2023-2030
 1. Create/Edit My Profile
 2. View My Profile
 3. Search for a job

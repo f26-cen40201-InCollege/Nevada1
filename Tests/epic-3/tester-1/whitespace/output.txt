@@ -18,8 +18,22 @@ Welcome, profileuser1!
 Enter your choice:
 4
 Enter full name:
-Adam
-Profile cannot be found
+   Adam Smith
+==== Profile for Adam Smith ====
+Name: Adam Smith
+University: University of Florida
+Major: Physics
+Graduation Year: 2030
+About Me: Enthusiastic physist who loves solving problems.
+Experience:
+ Title: Physics Lab Intern
+ Company: Berkley
+ Dates: Summer 2024
+ Description: Conducted experiments
+Education:
+ Degree: Bachelor of Science
+ University: University of Florida
+ Years: 2023-2030
 1. Create/Edit My Profile
 2. View My Profile
 3. Search for a job
