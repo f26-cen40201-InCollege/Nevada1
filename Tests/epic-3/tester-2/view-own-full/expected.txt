@@ -1,0 +1,98 @@
+Welcome to InCollege!
+1. Log-In
+2. Create New Account
+Enter your choice:
+2
+Please enter your username:
+selfuser1
+Please enter your password:
+SelfPass1$
+Account Created!
+1. Log-In
+2. Create New Account
+Enter your choice:
+1
+Please enter your username:
+selfuser1
+Please enter your password:
+SelfPass1$
+You have successfully logged in.
+Welcome, selfuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+1
+---Create/Edit Profile---
+Enter First Name: 
+Taylor
+Enter Last Name: 
+Reed
+Enter university name: 
+University of South Florida
+Enter the name of your major: 
+Computer Science
+Enter Graduation Year (YYYY): 
+2027
+Enter About Me (optional): 
+Building cool things with code.
+Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
+
+Experience #1 - Title: 
+Software Intern
+Experience #1 - Company/Organization: 
+Tech Solutions Inc.
+Exp #1 - Years: 
+Summer 2024
+Exp #1 - Description (optional, max 100 chars): 
+Worked on backend services.
+Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
+DONE
+Add Education (optional, max 3 entries. Enter 'DONE' to finish or any input to continue):
+
+Education #1 - Degree: 
+Bachelor of Science
+Education #1 - University/College: 
+University of South Florida
+Education #1 - Years Attended: 
+2023-2027
+Add Education (optional, max 3 entries. Enter 'DONE' to finish or any input to continue):
+DONE
+---Profile Created/Updated---
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+2
+--- Your Profile --
+==== Profile for Taylor Reed
+Name: Taylor Reed
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2027
+About Me: Building cool things with code.
+Experience:
+ Title: Software Intern
+ Company: Tech Solutions Inc.
+ Dates: Summer 2024
+ Description: Worked on backend services.
+Education:
+ Degree: Bachelor of Science
+ University: University of South Florida
+ Years: 2023-2027
+--------------------
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6
+---END_OF_PROGRAM---
