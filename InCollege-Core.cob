@@ -672,8 +672,10 @@
                         INTO WS-OUTPUT-LINE
                     END-STRING
 
-                    IF FUNCTION TRIM(WS-OUTPUT-LINE) =
-                        FUNCTION TRIM(WS-SEARCH-FULL-NAME)
+                          IF FUNCTION TRIM(
+                                    FUNCTION UPPER-CASE(WS-OUTPUT-LINE)) =
+                                FUNCTION TRIM(
+                                    FUNCTION UPPER-CASE(WS-SEARCH-FULL-NAME))
                          MOVE WS-SEARCH-IDX TO WS-FOUND-INDEX
                     END-IF
                 END-IF
