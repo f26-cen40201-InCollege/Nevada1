@@ -1,0 +1,189 @@
+Welcome to InCollege!
+1. Log-In
+2. Create New Account
+Enter your choice:
+1
+Please enter your username:
+TestingDave
+Please enter your password:
+Davidson1.
+You have successfully logged in.
+Welcome, TestingDave!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+1
+---Create/Edit Profile---
+Enter First Name:
+David
+Enter Last Name:
+Blake
+Enter university name:
+University of Texas
+Enter the name of your major:
+Electrical Engineering
+Enter Graduation Year (YYYY):
+2028
+Enter About Me (optional):
+Working to fix those wires!
+Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
+
+Experience #1 - Title:
+Electrical Intern
+Experience #1 - Company/Organization:
+Duke Energy
+Exp #1 - Years:
+Summer 2024
+Exp #1 - Description (optional, max 100 chars):
+Built internal tools for QA automation.
+Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
+
+Experience #2 - Title:
+Wiring Expert
+Experience #2 - Company/Organization:
+Duke Energy
+Exp #2 - Years:
+Summer 2025
+Exp #2 - Description (optional, max 100 chars):
+Fixed wires for electrical systems
+Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
+
+Experience #3 - Title:
+Embedded Circuiter
+Experience #3 - Company/Organization:
+Tech Corp
+Exp #3 - Years:
+Summer 2026
+Exp #3 - Description (optional, max 100 chars):
+Built embedded circuits for my company
+Add Education (optional, max 3 entries. Enter 'DONE' to finish or any input to continue):
+
+Education #1 - Degree:
+General Education Diploma
+Education #1 - University/College:
+Austin High School
+Education #1 - Years Attended:
+2020-2024
+Add Education (optional, max 3 entries. Enter 'DONE' to finish or any input to continue):
+
+Education #2 - Degree:
+Bachelor's Degree
+Education #2 - University/College:
+University of Texas
+Education #2 - Years Attended:
+2024-2028
+Add Education (optional, max 3 entries. Enter 'DONE' to finish or any input to continue):
+
+Education #3 - Degree:
+Associate's Degree
+Education #3 - University/College:
+Austin Community College
+Education #3 - Years Attended:
+2024-2026
+---Profile Created/Updated---
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+
+Invalid Option, Try Again
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+DONE
+Invalid Option, Try Again
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+2
+==== Profile for David Blake ====
+Name: David Blake
+University: University of Texas
+Major: Electrical Engineering
+Graduation Year: 2028
+About Me: Working to fix those wires!
+Experience:
+ Title: Electrical Intern
+ Company: Duke Energy
+ Dates: Summer 2024
+ Description: Built internal tools for QA automation.
+ Title: Wiring Expert
+ Company: Duke Energy
+ Dates: Summer 2025
+ Description: Fixed wires for electrical systems
+ Title: Embedded Circuiter
+ Company: Tech Corp
+ Dates: Summer 2026
+ Description: Built embedded circuits for my company
+Education:
+ Degree: General Education Diploma
+ University: Austin High School
+ Years: 2020-2024
+ Degree: Bachelor's Degree
+ University: University of Texas
+ Years: 2024-2028
+ Degree: Associate's Degree
+ University: Austin Community College
+ Years: 2024-2026
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+4
+Enter full name:
+David Blake
+==== Profile for David Blake ====
+Name: David Blake
+University: University of Texas
+Major: Electrical Engineering
+Graduation Year: 2028
+About Me: Working to fix those wires!
+Experience:
+ Title: Electrical Intern
+ Company: Duke Energy
+ Dates: Summer 2024
+ Description: Built internal tools for QA automation.
+ Title: Wiring Expert
+ Company: Duke Energy
+ Dates: Summer 2025
+ Description: Fixed wires for electrical systems
+ Title: Embedded Circuiter
+ Company: Tech Corp
+ Dates: Summer 2026
+ Description: Built embedded circuits for my company
+Education:
+ Degree: General Education Diploma
+ University: Austin High School
+ Years: 2020-2024
+ Degree: Bachelor's Degree
+ University: University of Texas
+ Years: 2024-2028
+ Degree: Associate's Degree
+ University: Austin Community College
+ Years: 2024-2026
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6

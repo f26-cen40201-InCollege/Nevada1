@@ -1,0 +1,2 @@
+longnameuser        LongPass12$
+selfuser1           SelfPass1$

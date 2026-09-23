@@ -1,0 +1,25 @@
+2
+seconduser
+SecondPas1$
+1
+seconduser
+SecondPas1$
+1
+Morgan
+Blake
+University of Central Florida
+Electrical Engineering
+2026
+Robotics enthusiast.
+
+Research Assistant
+UCF Robotics Lab
+Fall 2025
+Built sensor calibration tools.
+DONE
+
+Bachelor of Science
+University of Central Florida
+2022-2026
+DONE
+6

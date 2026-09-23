@@ -1,0 +1,2 @@
+minimaluser         MinimalPa1$
+selfuser1           SelfPass1$
