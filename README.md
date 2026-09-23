@@ -58,11 +58,12 @@ To add a test:
 4. Add the input and expected output files required by the scenario.
 5. Record the test path and execution result in the linked Jira issue.
 
-The primary COBOL test commands are available as VS Code tasks:
+Build and run the primary COBOL program with:
 
-```text
-build test-main
-run test-main
+```sh
+cobc -x -o InCollege InCollege.cob InCollege-Core.cob && ./InCollege
 ```
+
+The `build test-main` and `run test-main` commands are also available as VS Code tasks for the test harness.
 
 See the project documentation before making changes, and provide references to the requirement, procedure, affected files, and validation evidence during every handoff.

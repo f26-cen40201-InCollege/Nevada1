@@ -162,6 +162,8 @@
            88 VALIDATED                    VALUE "Y".
 
        01 WS-SEARCH-FULL-NAME PIC X(40).
+         01 WS-PROFILE-NAME-UPPER PIC X(100).
+         01 WS-SEARCH-NAME-UPPER  PIC X(40).
 
        LINKAGE SECTION.
        01  LS-INPUT   PIC X(100).
@@ -672,11 +674,13 @@
                         INTO WS-OUTPUT-LINE
                     END-STRING
 
-                          IF FUNCTION TRIM(
-                                    FUNCTION UPPER-CASE(WS-OUTPUT-LINE)) =
-                                FUNCTION TRIM(
-                                    FUNCTION UPPER-CASE(WS-SEARCH-FULL-NAME))
-                         MOVE WS-SEARCH-IDX TO WS-FOUND-INDEX
+                    MOVE FUNCTION UPPER-CASE(WS-OUTPUT-LINE)
+                        TO WS-PROFILE-NAME-UPPER
+                    MOVE FUNCTION UPPER-CASE(WS-SEARCH-FULL-NAME)
+                        TO WS-SEARCH-NAME-UPPER
+                    IF FUNCTION TRIM(WS-PROFILE-NAME-UPPER) =
+                       FUNCTION TRIM(WS-SEARCH-NAME-UPPER)
+                        MOVE WS-SEARCH-IDX TO WS-FOUND-INDEX
                     END-IF
                 END-IF
             END-PERFORM
