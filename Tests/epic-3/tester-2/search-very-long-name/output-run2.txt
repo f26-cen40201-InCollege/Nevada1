@@ -75,7 +75,12 @@ Enter your choice:
 4
 Enter full name:
 Maximilianalexandraa Wolfeschlegelstein12
-Profile cannot be found
+==== Profile for Maximilianalexandraa Wolfeschlegelstein12 ====
+Name: Maximilianalexandraa Wolfeschlegelstein12
+University: University of Florida
+Major: Mathematics
+Graduation Year: 2028
+About Me:
 1. Create/Edit My Profile
 2. View My Profile
 3. Search for a job
