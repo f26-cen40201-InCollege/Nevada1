@@ -1,0 +1,44 @@
+Welcome to InCollege!
+1. Log-In
+2. Create New Account
+Enter your choice:
+1
+Please enter your username:
+profileuser1
+Please enter your password:
+Passw0rd1$
+You have successfully logged in.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+4
+Enter full name:
+john doe
+==== Profile for John Doe ====
+Name: John Doe
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2027
+About Me: Enthusiastic developer who loves solving problems.
+Experience:
+ Title: Software Intern
+ Company: Tech Corp
+ Dates: Summer 2024
+ Description: Built internal tools for QA automation.
+Education:
+ Degree: Bachelor of Science
+ University: University of South Florida
+ Years: 2023-2027
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6

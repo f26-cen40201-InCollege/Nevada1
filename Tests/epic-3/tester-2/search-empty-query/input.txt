@@ -1,0 +1,27 @@
+2
+selfuser1
+SelfPass1$
+1
+selfuser1
+SelfPass1$
+1
+Taylor
+Reed
+University of South Florida
+Computer Science
+2027
+Building cool things with code.
+
+Software Intern
+Tech Solutions Inc.
+Summer 2024
+Worked on backend services.
+DONE
+
+Bachelor of Science
+University of South Florida
+2023-2027
+DONE
+4
+
+6

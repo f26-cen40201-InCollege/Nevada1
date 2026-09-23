@@ -1,0 +1,104 @@
+Welcome to InCollege!
+1. Log-In
+2. Create New Account
+Enter your choice:
+2
+Please enter your username:
+profileuser2
+That username is already taken, please try again
+1. Log-In
+2. Create New Account
+Enter your choice:
+Passw0rd2$
+Invalid Option, Try Again
+1. Log-In
+2. Create New Account
+Enter your choice:
+1
+Please enter your username:
+profileuser2
+Please enter your password:
+Passw0rd2$
+You have successfully logged in.
+Welcome, profileuser2!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+4
+Enter full name:
+Adam Smith
+==== Profile for Adam Smith ====
+Name: Adam Smith
+University: University of Florida
+Major: Physics
+Graduation Year: 2030
+About Me: Enthusiastic physist who loves solving problems.
+Experience:
+ Title: Physics Lab Intern
+ Company: Berkley
+ Dates: Summer 2024
+ Description: Conducted experiments
+Education:
+ Degree: Bachelor of Science
+ University: University of Florida
+ Years: 2023-2030
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+4
+Enter full name:
+John Doe
+==== Profile for John Doe ====
+Name: John Doe
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2027
+About Me: Enthusiastic developer who loves solving problems.
+Experience:
+ Title: Software Intern
+ Company: Tech Corp
+ Dates: Summer 2024
+ Description: Built internal tools for QA automation.
+Education:
+ Degree: Bachelor of Science
+ University: University of South Florida
+ Years: 2023-2027
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+2
+==== Profile for Adam Smith ====
+Name: Adam Smith
+University: University of Florida
+Major: Physics
+Graduation Year: 2030
+About Me: Enthusiastic physist who loves solving problems.
+Experience:
+ Title: Physics Lab Intern
+ Company: Berkley
+ Dates: Summer 2024
+ Description: Conducted experiments
+Education:
+ Degree: Bachelor of Science
+ University: University of Florida
+ Years: 2023-2030
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6
