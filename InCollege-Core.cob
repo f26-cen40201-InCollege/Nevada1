@@ -161,9 +161,9 @@
        01  WS-VALID-RESPONSE    PIC X       VALUE "N".
            88 VALIDATED                    VALUE "Y".
 
-       01 WS-SEARCH-FULL-NAME PIC X(40).
+       01 WS-SEARCH-FULL-NAME PIC X(100).
          01 WS-PROFILE-NAME-UPPER PIC X(100).
-         01 WS-SEARCH-NAME-UPPER  PIC X(40).
+         01 WS-SEARCH-NAME-UPPER  PIC X(100).
 
        LINKAGE SECTION.
        01  LS-INPUT   PIC X(100).
