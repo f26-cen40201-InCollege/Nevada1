@@ -22,6 +22,10 @@
                ORGANIZATION IS LINE SEQUENTIAL
                FILE STATUS IS WS-PROFILES-STAT.
 
+           SELECT OPTIONAL CONNECTIONS-FILE ASSIGN TO "Connections.txt"
+               ORGANIZATION IS LINE SEQUENTIAL
+               FILE STATUS IS WS-CONNECTIONS-STAT.
+
        DATA DIVISION.
        FILE SECTION.
        FD IN-FILE.
@@ -58,6 +62,12 @@
                10 EDU-YEARS   PIC X(35).
            05 HAS-PROF        PIC X.
 
+       FD CONNECTIONS-FILE.
+       01 CONNECTION-INSTANCE.
+           05 REQ-SENDER      PIC X(20).
+           05 REQ-RECIPIENT   PIC X(20).
+           05 REQ-STATUS      PIC X.
+
 
 
 
@@ -65,6 +75,7 @@
 
        01 WS-INPUT-STAT     PIC XX.
        01 WS-OUTPUT-STAT    PIC XX.
+         01 WS-CONNECTIONS-STAT PIC XX.
 
        01 WS-ACCOUNTS-FILE PIC X(100).
 
@@ -95,6 +106,21 @@
        01 WS-NEW-PASS       PIC X(12).
        01 WS-LOGIN-USER     PIC X(20).
        01 WS-LOGIN-PASS     PIC X(12).
+
+       01 WS-CONNECTIONS-EOF PIC X VALUE "N".
+           88 END-OF-CONNECTIONS VALUE "Y".
+       01 WS-TOTAL-CONNECTIONS PIC 9(2) VALUE 0.
+       01 WS-CONNECTIONS.
+           05 WS-CONNECTION OCCURS 25 TIMES.
+               10 WS-REQ-SENDER    PIC X(20).
+               10 WS-REQ-RECIPIENT PIC X(20).
+               10 WS-REQ-STATUS    PIC X.
+       01 WS-REQUEST-IDX PIC 9(2) VALUE 0.
+       01 WS-TARGET-USERNAME PIC X(20).
+       01 WS-CONNECTION-FOUND PIC X VALUE "N".
+           88 CONNECTION-FOUND VALUE "Y".
+       01 WS-CONNECTION-STATUS PIC X.
+       01 WS-CONNECTION-ACTION PIC X(5).
 
        01 WS-VALID-PASS     PIC X      VALUE "Y".
            88 PASSWORD-VALID           VALUE "Y".
@@ -168,13 +194,13 @@
        LINKAGE SECTION.
        01  LS-INPUT   PIC X(100).
        01  LS-OUTPUT  PIC X(100).
-       01  LS-ACOUNTS PIC X(100).
+       01  LS-ACCOUNTS PIC X(100).
 
-       PROCEDURE DIVISION USING LS-INPUT LS-OUTPUT LS-ACOUNTS.
+       PROCEDURE DIVISION USING LS-INPUT LS-OUTPUT LS-ACCOUNTS.
 
            MOVE LS-INPUT TO WS-INPUT-FILE
            MOVE LS-OUTPUT TO WS-OUTPUT-FILE
-           MOVE LS-ACOUNTS TO WS-ACCOUNTS-FILE
+           MOVE LS-ACCOUNTS TO WS-ACCOUNTS-FILE
 
            PERFORM START-FILES
            MOVE "Welcome to InCollege!" TO WS-OUTPUT-LINE
@@ -299,12 +325,35 @@
                    END-READ
                END-PERFORM
            END-IF
-           CLOSE PROFILES-FILE.
+           CLOSE PROFILES-FILE
+
+           PERFORM LOAD-CONNECTIONS.
 
 
        CLOSE-FILES.
            CLOSE IN-FILE
            CLOSE OUTPUT-FILE.
+
+       LOAD-CONNECTIONS.
+           OPEN INPUT CONNECTIONS-FILE
+           IF WS-CONNECTIONS-STAT = "00"
+               PERFORM UNTIL END-OF-CONNECTIONS
+                   OR WS-TOTAL-CONNECTIONS >= 25
+                   READ CONNECTIONS-FILE INTO CONNECTION-INSTANCE
+                       AT END
+                           MOVE "Y" TO WS-CONNECTIONS-EOF
+                       NOT AT END
+                           ADD 1 TO WS-TOTAL-CONNECTIONS
+                           MOVE REQ-SENDER
+                               TO WS-REQ-SENDER(WS-TOTAL-CONNECTIONS)
+                           MOVE REQ-RECIPIENT
+                               TO WS-REQ-RECIPIENT(WS-TOTAL-CONNECTIONS)
+                           MOVE REQ-STATUS
+                               TO WS-REQ-STATUS(WS-TOTAL-CONNECTIONS)
+                   END-READ
+               END-PERFORM
+               CLOSE CONNECTIONS-FILE
+           END-IF.
 
        WRITE-OUTPUT.
            DISPLAY WS-OUTPUT-LINE
@@ -558,6 +607,8 @@
            PERFORM WRITE-OUTPUT
            MOVE "6. Logout" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
+           MOVE "7. Pending Connection Requests" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
            MOVE "Enter your choice:" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
 
@@ -580,6 +631,8 @@
                        PERFORM SKILL-MENU-LOOP
                    WHEN "6"
                        MOVE "N" TO WS-RUNNING
+                   WHEN "7"
+                       PERFORM VIEW-PENDING-REQUESTS
                    WHEN OTHER
                        MOVE "Invalid Option, Try Again"
                            TO WS-OUTPUT-LINE
@@ -690,7 +743,118 @@
                 PERFORM WRITE-OUTPUT
             ELSE
                 PERFORM DISPLAY-PROFILE
+                PERFORM CONNECTION-ACTION
             END-IF. 
+
+       CONNECTION-ACTION.
+            MOVE "1. Send Connection Request" TO WS-OUTPUT-LINE
+            PERFORM WRITE-OUTPUT
+            MOVE "2. Return to Main Menu" TO WS-OUTPUT-LINE
+            PERFORM WRITE-OUTPUT
+            MOVE "Enter your choice:" TO WS-OUTPUT-LINE
+            PERFORM WRITE-OUTPUT
+            PERFORM READ-INPUT
+            IF NOT END-OF-INPUT
+                MOVE WS-INPUT-LINE TO WS-CONNECTION-ACTION
+                IF WS-CONNECTION-ACTION = "1"
+                    MOVE WS-PROF-USER(WS-FOUND-INDEX)
+                        TO WS-TARGET-USERNAME
+                    IF WS-TARGET-USERNAME = WS-LOGIN-USER
+                        MOVE "You cannot send a request to yourself."
+                            TO WS-OUTPUT-LINE
+                        PERFORM WRITE-OUTPUT
+                    ELSE
+                        PERFORM SEND-CONNECTION-REQUEST
+                    END-IF
+                END-IF
+            END-IF.
+
+       SEND-CONNECTION-REQUEST.
+            MOVE "N" TO WS-CONNECTION-FOUND
+            MOVE SPACES TO WS-CONNECTION-STATUS
+            PERFORM VARYING WS-REQUEST-IDX FROM 1 BY 1
+                    UNTIL WS-REQUEST-IDX > WS-TOTAL-CONNECTIONS
+                IF WS-REQ-SENDER(WS-REQUEST-IDX) = WS-TARGET-USERNAME
+                   AND WS-REQ-RECIPIENT(WS-REQUEST-IDX) = WS-LOGIN-USER
+                    MOVE "Y" TO WS-CONNECTION-FOUND
+                    MOVE WS-REQ-STATUS(WS-REQUEST-IDX)
+                        TO WS-CONNECTION-STATUS
+                    IF WS-CONNECTION-STATUS = "P"
+                        MOVE "This user already sent a request"
+                            TO WS-OUTPUT-LINE
+                        PERFORM WRITE-OUTPUT
+                    END-IF
+                END-IF
+                IF WS-REQ-SENDER(WS-REQUEST-IDX) = WS-LOGIN-USER
+                    IF WS-REQ-RECIPIENT(WS-REQUEST-IDX)
+                       = WS-TARGET-USERNAME
+                        MOVE "Y" TO WS-CONNECTION-FOUND
+                        MOVE WS-REQ-STATUS(WS-REQUEST-IDX)
+                            TO WS-CONNECTION-STATUS
+                        IF WS-CONNECTION-STATUS = "P"
+                            MOVE "Request already sent"
+                                TO WS-OUTPUT-LINE
+                            PERFORM WRITE-OUTPUT
+                        END-IF
+                    END-IF
+                END-IF
+                IF WS-CONNECTION-STATUS = "C"
+                    MOVE "You are already connected with this user"
+                        TO WS-OUTPUT-LINE
+                    PERFORM WRITE-OUTPUT
+                END-IF
+            END-PERFORM
+
+            IF NOT CONNECTION-FOUND
+                IF WS-TOTAL-CONNECTIONS < 25
+                    ADD 1 TO WS-TOTAL-CONNECTIONS
+                    MOVE WS-LOGIN-USER
+                        TO WS-REQ-SENDER(WS-TOTAL-CONNECTIONS)
+                    MOVE WS-TARGET-USERNAME
+                        TO WS-REQ-RECIPIENT(WS-TOTAL-CONNECTIONS)
+                    MOVE "P" TO WS-REQ-STATUS(WS-TOTAL-CONNECTIONS)
+                    PERFORM SAVE-CONNECTIONS
+                    MOVE "Connection request sent." TO WS-OUTPUT-LINE
+                    PERFORM WRITE-OUTPUT
+                ELSE
+                    MOVE "Unable to send request. Storage is full."
+                        TO WS-OUTPUT-LINE
+                    PERFORM WRITE-OUTPUT
+                END-IF
+            END-IF.
+
+       SAVE-CONNECTIONS.
+           OPEN OUTPUT CONNECTIONS-FILE
+           PERFORM VARYING WS-REQUEST-IDX FROM 1 BY 1
+                   UNTIL WS-REQUEST-IDX > WS-TOTAL-CONNECTIONS
+               MOVE WS-REQ-SENDER(WS-REQUEST-IDX) TO REQ-SENDER
+               MOVE WS-REQ-RECIPIENT(WS-REQUEST-IDX) TO REQ-RECIPIENT
+               MOVE WS-REQ-STATUS(WS-REQUEST-IDX) TO REQ-STATUS
+               WRITE CONNECTION-INSTANCE
+           END-PERFORM
+           CLOSE CONNECTIONS-FILE.
+
+       VIEW-PENDING-REQUESTS.
+           MOVE "Pending Connection Requests:" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
+           MOVE "N" TO WS-CONNECTION-FOUND
+           PERFORM VARYING WS-REQUEST-IDX FROM 1 BY 1
+                   UNTIL WS-REQUEST-IDX > WS-TOTAL-CONNECTIONS
+               IF WS-REQ-RECIPIENT(WS-REQUEST-IDX) = WS-LOGIN-USER
+                  AND WS-REQ-STATUS(WS-REQUEST-IDX) = "P"
+                   MOVE "Y" TO WS-CONNECTION-FOUND
+                   MOVE SPACES TO WS-OUTPUT-LINE
+                   STRING "- "
+                       FUNCTION TRIM(WS-REQ-SENDER(WS-REQUEST-IDX))
+                       DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                   PERFORM WRITE-OUTPUT
+               END-IF
+           END-PERFORM
+           IF NOT CONNECTION-FOUND
+               MOVE "You have no pending connection requests."
+                   TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+           END-IF.
 
        VIEW-PROFILE.
             PERFORM FIND-PROFILE-BY-USERNAME
