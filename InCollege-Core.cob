@@ -791,6 +791,11 @@
                             TO WS-OUTPUT-LINE
                         PERFORM WRITE-OUTPUT
                     END-IF
+                    IF WS-CONNECTION-STATUS = "C"
+                        MOVE "You Are Already Connected With User"
+                            TO WS-OUTPUT-LINE
+                        PERFORM WRITE-OUTPUT
+                    END-IF
                 END-IF
                 IF WS-REQ-SENDER(WS-REQUEST-IDX) = WS-LOGIN-USER
                     IF WS-REQ-RECIPIENT(WS-REQUEST-IDX)
@@ -803,13 +808,14 @@
                                 TO WS-OUTPUT-LINE
                             PERFORM WRITE-OUTPUT
                         END-IF
+                        IF WS-CONNECTION-STATUS = "C"
+                            MOVE "You Are Already Connected With User"
+                                TO WS-OUTPUT-LINE
+                            PERFORM WRITE-OUTPUT
+                        END-IF
                     END-IF
                 END-IF
-                IF WS-CONNECTION-STATUS = "C"
-                    MOVE "You Are Already Connected With This User"
-                        TO WS-OUTPUT-LINE
-                    PERFORM WRITE-OUTPUT
-                END-IF
+                
             END-PERFORM
 
             IF NOT CONNECTION-FOUND
