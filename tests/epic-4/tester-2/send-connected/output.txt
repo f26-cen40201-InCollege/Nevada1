@@ -1,62 +1,53 @@
-Welcome to InCollege!
-1. Log-In
-2. Create New Account
-Enter your choice:
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
 1
-Please enter your username:
+Please Enter Your username:
 profileuser1
-Please enter your password:
+Please Enter Your password:
 Passw0rd1$
-You have successfully logged in.
+You Have Successfully Logged In.
 Welcome, profileuser1!
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Search for someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
 7. Pending Connection Requests
-Enter your choice:
+ENTER YOUR CHOICE:
 7
 Pending Connection Requests:
-- profileuser2
+- profileuser3
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Search for someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
 7. Pending Connection Requests
-Enter your choice:
+ENTER YOUR CHOICE:
 4
-Enter full name:
+Enter Full Name:
 Adam Smith
-==== Profile for Adam Smith ====
+==== Profile For Adam Smith ====
 Name: Adam Smith
 University: University of Florida
 Major: Physics
 Graduation Year: 2030
 About Me: Enthusiastic physist who loves solving problems.
-Experience:
- Title: Physics Lab Intern
- Company: Berkley
- Dates: Summer 2024
- Description: Conducted experiments
-Education:
- Degree: Bachelor of Science
- University: University of Florida
- Years: 2023-2030
 1. Send Connection Request
 2. Return to Main Menu
-Enter your choice:
+ENTER YOUR CHOICE:
 1
-This user already sent a request
+You Are Already Connected With User
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Search for someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
 7. Pending Connection Requests
-Enter your choice:
+ENTER YOUR CHOICE:
 6
