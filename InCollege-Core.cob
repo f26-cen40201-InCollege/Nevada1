@@ -203,7 +203,7 @@
            MOVE LS-ACCOUNTS TO WS-ACCOUNTS-FILE
 
            PERFORM START-FILES
-           MOVE "Welcome to InCollege!" TO WS-OUTPUT-LINE
+           MOVE "WELCOME TO INCOLLEGE!" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
 
            PERFORM UNTIL LOGGED-IN OR END-OF-INPUT
@@ -233,15 +233,15 @@
        START-FILES.
            OPEN INPUT IN-FILE
            IF WS-INPUT-STAT NOT = "00"
-                DISPLAY "Error opening input file: " WS-INPUT-FILE
-                DISPLAY "File status: " WS-INPUT-STAT
+                DISPLAY "ERROR: Cannot Open Input File: " WS-INPUT-FILE
+                DISPLAY "File Status: " WS-INPUT-STAT
                STOP RUN
            END-IF.
 
            OPEN OUTPUT OUTPUT-FILE
            IF WS-OUTPUT-STAT NOT = "00"
-               DISPLAY "ERROR: cannot open output file: " WS-OUTPUT-FILE
-                DISPLAY "  FILE STATUS: " WS-OUTPUT-STAT
+               DISPLAY "ERROR: Cannot Open Output File: " WS-OUTPUT-FILE
+                DISPLAY "  File Status: " WS-OUTPUT-STAT
                STOP RUN
            END-IF.
 
@@ -371,11 +371,11 @@
            END-IF.
 
        LOG-IN-SCREEN.
-           MOVE "1. Log-In" TO WS-OUTPUT-LINE
+           MOVE "1. LOG-IN" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
-           MOVE "2. Create New Account" To WS-OUTPUT-LINE
+           MOVE "2. CREATE NEW ACCOUNT" To WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
-           MOVE "Enter your choice:" TO WS-OUTPUT-LINE
+           MOVE "ENTER YOUR CHOICE:" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
 
            PERFORM READ-INPUT
@@ -395,7 +395,7 @@
 
        LOG-IN.
            PERFORM UNTIL LOGGED-IN OR END-OF-INPUT
-               MOVE "Please enter your username:" TO WS-OUTPUT-LINE
+               MOVE "Please Enter Your username:" TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
                PERFORM READ-INPUT
                IF NOT END-OF-INPUT
@@ -403,7 +403,7 @@
                    MOVE WS-LOGIN-USER TO WS-SEARCH-USERNAME
                    PERFORM FIND-ACCOUNT-BY-USERNAME
 
-                   MOVE "Please enter your password:" TO WS-OUTPUT-LINE
+                   MOVE "Please Enter Your password:" TO WS-OUTPUT-LINE
                    PERFORM WRITE-OUTPUT
                    PERFORM READ-INPUT
                    IF NOT END-OF-INPUT
@@ -417,13 +417,13 @@
                        END-IF
 
                        IF PASSWORD-MATCHES
-                           MOVE "You have successfully logged in."
+                           MOVE "You Have Successfully Logged In."
                                TO WS-OUTPUT-LINE
                            PERFORM WRITE-OUTPUT
                            MOVE "Y" TO WS-LOGGED-IN
                        ELSE
                            MOVE
-           "Incorrect username/password, please try again"
+           "Incorrect Username/Password, Please Try Again"
                                TO WS-OUTPUT-LINE
                            PERFORM WRITE-OUTPUT
                        END-IF
@@ -435,13 +435,13 @@
        CREATE-ACCOUNT.
            IF WS-TOTAL-ACCOUNTS >= 5
                MOVE SPACES TO WS-OUTPUT-LINE
-               STRING "All permitted accounts have been created, "
-                      "please come back later"
+               STRING "All Permitted Accounts Have Been Created, "
+                      "Please Come Back Later"
                    DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                END-STRING
                PERFORM WRITE-OUTPUT
            ELSE
-               MOVE "Please enter your username:" TO WS-OUTPUT-LINE
+               MOVE "Please Enter Your username:" TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
                PERFORM READ-INPUT
                MOVE WS-INPUT-LINE TO WS-NEW-USER
@@ -455,7 +455,7 @@
 
                IF ACCOUNT-FOUND
                    MOVE
-           "That username is already taken, please try again"
+           "That USERNAME Is Already Taken, Please Try Again"
                        TO WS-OUTPUT-LINE
                    PERFORM WRITE-OUTPUT
                ELSE
@@ -464,7 +464,7 @@
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                    ELSE
-                       MOVE "Please enter your password:"
+                       MOVE "Please Enter Your Password:"
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                        PERFORM READ-INPUT
@@ -482,14 +482,14 @@
                            PERFORM SAVE-TO-ACCOUNTS
                            MOVE "Account Created!" TO WS-OUTPUT-LINE
                            PERFORM WRITE-OUTPUT
-                           MOVE "You have successfully logged in."
+                           MOVE "You Have Successfully Logged In."
                                TO WS-OUTPUT-LINE
                            PERFORM WRITE-OUTPUT
                            MOVE "Y" TO WS-LOGGED-IN
                            MOVE WS-TOTAL-ACCOUNTS TO WS-FOUND-INDEX
                        ELSE
                            MOVE
-               "Password doesn't satisfy requirements, try again"
+               "Password Doesn't Satisfy Requirements, Try Again"
                                TO WS-OUTPUT-LINE
                            PERFORM WRITE-OUTPUT
                        END-IF
@@ -599,17 +599,17 @@
            PERFORM WRITE-OUTPUT
            MOVE "2. View My Profile" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
-           MOVE "3. Search for a job" TO WS-OUTPUT-LINE
+           MOVE "3. Search For a job" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
-           MOVE "4. Search for someone you know" TO WS-OUTPUT-LINE
+           MOVE "4. Search For someone you know" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
-           MOVE "5. Learn a new skill" TO WS-OUTPUT-LINE
+           MOVE "5. Learn a New Skill" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
            MOVE "6. Logout" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
            MOVE "7. Pending Connection Requests" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
-           MOVE "Enter your choice:" TO WS-OUTPUT-LINE
+           MOVE "ENTER YOUR CHOICE:" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
 
            PERFORM READ-INPUT
@@ -622,7 +622,7 @@
                        PERFORM VIEW-PROFILE
                    WHEN "3"
                        MOVE
-           "Job search/internship is under construction."
+           "Job Search/Internship Is Under Construction."
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                    WHEN "4"
@@ -658,7 +658,7 @@
                PERFORM WRITE-OUTPUT
                MOVE "6. Go Back" TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
-               MOVE "Enter your choice:" TO WS-OUTPUT-LINE
+               MOVE "ENTER YOUR CHOICE:" TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
 
                PERFORM READ-INPUT
@@ -668,7 +668,7 @@
                        WHEN "6"
                            MOVE "Y" TO WS-SKILL-GO-BACK
                        WHEN "1" THRU "5"
-                           MOVE "This skill is under construction."
+                           MOVE "This Skill Is Under Construction."
                                TO WS-OUTPUT-LINE
                            PERFORM WRITE-OUTPUT
                        WHEN OTHER
@@ -707,7 +707,7 @@
            PERFORM WRITE-OUTPUT.
 
         FIND-SOMEONE.
-            MOVE "Enter full name:" TO WS-OUTPUT-LINE
+            MOVE "Enter Full Name:" TO WS-OUTPUT-LINE
             PERFORM WRITE-OUTPUT
             PERFORM READ-INPUT
 
@@ -739,7 +739,7 @@
             END-PERFORM
 
             IF WS-FOUND-INDEX = 0
-                MOVE "Profile cannot be found" TO WS-OUTPUT-LINE
+                MOVE "Profile Cannot Be Found" TO WS-OUTPUT-LINE
                 PERFORM WRITE-OUTPUT
             ELSE
                 PERFORM DISPLAY-PROFILE
@@ -751,22 +751,29 @@
             PERFORM WRITE-OUTPUT
             MOVE "2. Return to Main Menu" TO WS-OUTPUT-LINE
             PERFORM WRITE-OUTPUT
-            MOVE "Enter your choice:" TO WS-OUTPUT-LINE
+            MOVE "ENTER YOUR CHOICE:" TO WS-OUTPUT-LINE
             PERFORM WRITE-OUTPUT
             PERFORM READ-INPUT
             IF NOT END-OF-INPUT
                 MOVE WS-INPUT-LINE TO WS-CONNECTION-ACTION
-                IF WS-CONNECTION-ACTION = "1"
-                    MOVE WS-PROF-USER(WS-FOUND-INDEX)
-                        TO WS-TARGET-USERNAME
-                    IF WS-TARGET-USERNAME = WS-LOGIN-USER
-                        MOVE "You cannot send a request to yourself."
+                EVALUATE WS-CONNECTION-ACTION
+                    WHEN "1"
+                        MOVE WS-PROF-USER(WS-FOUND-INDEX)
+                            TO WS-TARGET-USERNAME
+                        IF WS-TARGET-USERNAME = WS-LOGIN-USER
+                            MOVE "CANNOT SEND A REQUEST TO YOURSELF."
+                                TO WS-OUTPUT-LINE
+                            PERFORM WRITE-OUTPUT
+                        ELSE
+                            PERFORM SEND-CONNECTION-REQUEST
+                        END-IF
+                    WHEN "2"
+                        CONTINUE
+                    WHEN OTHER
+                        MOVE "INVALID OPTION, TRY AGAIN."
                             TO WS-OUTPUT-LINE
                         PERFORM WRITE-OUTPUT
-                    ELSE
-                        PERFORM SEND-CONNECTION-REQUEST
-                    END-IF
-                END-IF
+                END-EVALUATE
             END-IF.
 
        SEND-CONNECTION-REQUEST.
@@ -780,7 +787,7 @@
                     MOVE WS-REQ-STATUS(WS-REQUEST-IDX)
                         TO WS-CONNECTION-STATUS
                     IF WS-CONNECTION-STATUS = "P"
-                        MOVE "This user already sent a request"
+                        MOVE "This User Already Sent a Request"
                             TO WS-OUTPUT-LINE
                         PERFORM WRITE-OUTPUT
                     END-IF
@@ -792,14 +799,14 @@
                         MOVE WS-REQ-STATUS(WS-REQUEST-IDX)
                             TO WS-CONNECTION-STATUS
                         IF WS-CONNECTION-STATUS = "P"
-                            MOVE "Request already sent"
+                            MOVE "Request Already Sent"
                                 TO WS-OUTPUT-LINE
                             PERFORM WRITE-OUTPUT
                         END-IF
                     END-IF
                 END-IF
                 IF WS-CONNECTION-STATUS = "C"
-                    MOVE "You are already connected with this user"
+                    MOVE "You Are Already Connected With This User"
                         TO WS-OUTPUT-LINE
                     PERFORM WRITE-OUTPUT
                 END-IF
@@ -814,10 +821,10 @@
                         TO WS-REQ-RECIPIENT(WS-TOTAL-CONNECTIONS)
                     MOVE "P" TO WS-REQ-STATUS(WS-TOTAL-CONNECTIONS)
                     PERFORM SAVE-CONNECTIONS
-                    MOVE "Connection request sent." TO WS-OUTPUT-LINE
+                    MOVE "Connection Request Sent." TO WS-OUTPUT-LINE
                     PERFORM WRITE-OUTPUT
                 ELSE
-                    MOVE "Unable to send request. Storage is full."
+                    MOVE "Unable To Send Request. Storage Is Full."
                         TO WS-OUTPUT-LINE
                     PERFORM WRITE-OUTPUT
                 END-IF
@@ -851,7 +858,7 @@
                END-IF
            END-PERFORM
            IF NOT CONNECTION-FOUND
-               MOVE "You have no pending connection requests."
+               MOVE "You Have No Pending Connection Requests."
                    TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
            END-IF.
@@ -864,7 +871,7 @@
             END-IF
 
             IF WS-HAS-PROF(WS-FOUND-INDEX) NOT = "Y"
-                MOVE "No profile has been created yet."
+                MOVE "No Profile Has Been Created Yet."
                     TO WS-OUTPUT-LINE
                 PERFORM WRITE-OUTPUT
             ELSE
@@ -873,7 +880,7 @@
         
         DISPLAY-PROFILE.
             MOVE SPACES TO WS-OUTPUT-LINE
-            STRING "==== Profile for "
+            STRING "==== Profile For "
                 FUNCTION TRIM(WS-PROF-FIRST-NAME(WS-FOUND-INDEX))
                 " "
                 FUNCTION TRIM(WS-PROF-LAST-NAME(WS-FOUND-INDEX))
@@ -993,7 +1000,7 @@
                            TO WS-PROF-FIRST-NAME(WS-FOUND-INDEX)
                        MOVE "Y" TO WS-VALID-RESPONSE
                    ELSE
-                       MOVE "First Name cannot be blank, try again"
+                       MOVE "First Name CANNOT Be Blank, Try Again"
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                    END-IF
@@ -1014,7 +1021,7 @@
                            TO WS-PROF-LAST-NAME(WS-FOUND-INDEX)
                        MOVE "Y" TO WS-VALID-RESPONSE
                    ELSE
-                       MOVE "Last Name cannot be blank, try again"
+                       MOVE "Last Name CANNOT Be Blank, Try Again"
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                    END-IF
@@ -1025,7 +1032,7 @@
        GET-SCHOOL.
            MOVE "N" TO WS-VALID-RESPONSE
            PERFORM UNTIL VALIDATED OR END-OF-INPUT
-               MOVE "Enter university name: " TO WS-OUTPUT-LINE
+               MOVE "Enter University Name: " TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
                PERFORM READ-INPUT
                IF NOT END-OF-INPUT
@@ -1036,7 +1043,7 @@
                            TO WS-PROF-SCHOOL(WS-FOUND-INDEX)
                        MOVE "Y" TO WS-VALID-RESPONSE
                    ELSE
-                       MOVE "University name cannot be blank"
+                       MOVE "University Name Cannot Be Blank"
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                    END-IF
@@ -1046,7 +1053,7 @@
        GET-MAJOR.
            MOVE "N" TO WS-VALID-RESPONSE
            PERFORM UNTIL VALIDATED OR END-OF-INPUT
-               MOVE "Enter the name of your major: " TO WS-OUTPUT-LINE
+               MOVE "Enter The Name Of Your Major: " TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
                PERFORM READ-INPUT
                IF NOT END-OF-INPUT
@@ -1057,7 +1064,7 @@
                            TO WS-PROF-MAJOR(WS-FOUND-INDEX)
                        MOVE "Y" TO WS-VALID-RESPONSE
                    ELSE
-                       MOVE "Major cannot be left blank"
+                       MOVE "Major Cannot Be Blank, Try Again"
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                    END-IF
@@ -1083,19 +1090,19 @@
                                MOVE "Y" TO WS-VALID-RESPONSE
                            ELSE
                                MOVE
-                 "Graduation year must be between 2026 and 2033"
+                 "Graduation Year Must Be Between 2026 And 2033"
                                    TO WS-OUTPUT-LINE
                                PERFORM WRITE-OUTPUT
                            END-IF
                        ELSE
                            MOVE
-                 "Graduation year must be numeric, Please try again"
+                 "Graduation Year Must Be Numeric, Please Try Again"
                                TO WS-OUTPUT-LINE
                            PERFORM WRITE-OUTPUT
                        END-IF
                    ELSE
                        MOVE
-                 "Graduation year must be 4 digits, Please try again"
+                 "Graduation Year Must Be 4 Digits, Please Try Again"
                            TO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                    END-IF
@@ -1105,7 +1112,7 @@
        GET-ABOUT-ME.
            MOVE "N" TO WS-VALID-RESPONSE
            PERFORM UNTIL VALIDATED OR END-OF-INPUT
-               MOVE "Enter About Me (optional): " TO WS-OUTPUT-LINE
+               MOVE "Enter About Me (Optional): " TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
                PERFORM READ-INPUT
                IF NOT END-OF-INPUT
@@ -1122,8 +1129,8 @@
            PERFORM UNTIL VALIDATED OR (WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                    >= 3) OR END-OF-INPUT
                MOVE SPACES TO WS-OUTPUT-LINE
-               STRING "Add Experience (optional, max 3 entries."
-               "Enter 'DONE' to finish or any input to continue):"
+               STRING "Add Experience (Optional, Max 3 Entries)."
+               "Enter 'DONE' To Finish Or Any Input To Continue):"
                    DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
                PERFORM READ-INPUT
@@ -1148,7 +1155,7 @@
                                    TO WS-EXP-TITLE(WS-FOUND-INDEX,
                                        WS-EXP-IDX)
                            ELSE
-                               MOVE "Title cannot be blank, try again"
+                               MOVE "Title Cannot Be Blank, Try Again"
                                    TO WS-OUTPUT-LINE
                                PERFORM WRITE-OUTPUT
                                SUBTRACT 1 FROM 
@@ -1170,7 +1177,7 @@
                                    TO WS-EXP-ORGAN(WS-FOUND-INDEX,
                                        WS-EXP-IDX)
                            ELSE
-                               MOVE "Company cannot be blank, try again"
+                               MOVE "Company Cannot Be Blank, Try Again"
                                    TO WS-OUTPUT-LINE
                                PERFORM WRITE-OUTPUT
                                SUBTRACT 1 FROM 
@@ -1191,7 +1198,7 @@
                                    TO WS-EXP-DATES(WS-FOUND-INDEX,
                                        WS-EXP-IDX)
                            ELSE
-                               MOVE "Years cannot be blank, try again"
+                               MOVE "Years Cannot Be Blank, Try Again"
                                    TO WS-OUTPUT-LINE
                                PERFORM WRITE-OUTPUT
                                SUBTRACT 1 FROM
@@ -1201,7 +1208,7 @@
                        END-IF
                        MOVE SPACES TO WS-OUTPUT-LINE
                        STRING "Exp #" WS-EXP-IDX
-                           " - Description (optional, max 100 chars): "
+                           " - Description (Optional, Max 100 Chars): "
                                    DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                        PERFORM WRITE-OUTPUT
                        PERFORM READ-INPUT
@@ -1222,8 +1229,8 @@
            PERFORM UNTIL VALIDATED OR (WS-PROF-EDU-CNT(WS-FOUND-INDEX)
                    >= 3) OR END-OF-INPUT
                MOVE SPACES TO WS-OUTPUT-LINE
-               STRING "Add Education (optional, max 3 entries."
-               " Enter 'DONE' to finish or any input to continue):"
+               STRING "Add Education (Optional, Max 3 Entries)."
+               " Enter 'DONE' To Finish Or Any Input To Continue):"
                    DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
                PERFORM READ-INPUT
@@ -1251,7 +1258,7 @@
                                    TO WS-EDU-DEGREE(WS-FOUND-INDEX,
                                        WS-EDU-IDX)
                            ELSE
-                               MOVE "Degree cannot be blank, try again"
+                               MOVE "Degree Cannot Be Blank, Try Again"
                                    TO WS-OUTPUT-LINE
                                PERFORM WRITE-OUTPUT
                                SUBTRACT 1 FROM
@@ -1277,7 +1284,7 @@
                                            WS-EDU-IDX)
                                ELSE
                                    MOVE
-                         "University blank, try again"
+                         "University Name Blank, Try Again"
                                        TO WS-OUTPUT-LINE
                                    PERFORM WRITE-OUTPUT
                                    SUBTRACT 1 FROM
@@ -1304,7 +1311,7 @@
                                            WS-EDU-IDX)
                                ELSE
                                    MOVE
-                         "Years Attended blank, try again"
+                         "Years Attended Blank, Try Again"
                                        TO WS-OUTPUT-LINE
                                    PERFORM WRITE-OUTPUT
                                    SUBTRACT 1 FROM
