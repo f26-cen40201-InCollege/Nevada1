@@ -1,0 +1,65 @@
+Welcome to InCollege!
+1. Log-In
+2. Create New Account
+Enter your choice:
+1
+Please enter your username:
+profileuser1
+Please enter your password:
+Passw0rd1$
+You have successfully logged in.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+7. Pending Connection Requests
+Enter your choice:
+4
+Enter full name:
+David Blake
+==== Profile for David Blake ====
+Name: David Blake
+University: University of Texas
+Major: Electrical Engineering
+Graduation Year: 2028
+About Me: Working to fix those wires!
+Experience:
+ Title: Electrical Intern
+ Company: Duke Energy
+ Dates: Summer 2024
+ Description: Built internal tools for QA automation.
+ Title: Wiring Expert
+ Company: Duke Energy
+ Dates: Summer 2025
+ Description: Fixed wires for electrical systems
+ Title: Embedded Circuiter
+ Company: Tech Corp
+ Dates: Summer 2026
+ Description: Built embedded circuits for my company
+Education:
+ Degree: General Education Diploma
+ University: Austin High School
+ Years: 2020-2024
+ Degree: Bachelor's Degree
+ University: University of Texas
+ Years: 2024-2028
+ Degree: Associate's Degree
+ University: Austin Community College
+ Years: 2024-2026
+1. Send Connection Request
+2. Return to Main Menu
+Enter your choice:
+1
+Connection request sent.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Search for someone you know
+5. Learn a new skill
+6. Logout
+7. Pending Connection Requests
+Enter your choice:
+6
