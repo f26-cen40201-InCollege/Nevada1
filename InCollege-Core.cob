@@ -91,9 +91,9 @@
            88 STILL-RUNNING        VALUE "Y".
 
 
-       01 WS-TOTAL-ACCOUNTS     PIC 9       VALUE 0.
+       01 WS-TOTAL-ACCOUNTS     PIC 9(2)       VALUE 0.
        01 WS-ACCOUNTS.
-           05   WS-ACCOUNT-ENTRY OCCURS 5 TIMES.
+           05   WS-ACCOUNT-ENTRY OCCURS 10 TIMES.
                10   WS-USERNAME     PIC X(20).
                10   WS-PASSWORD     PIC X(20).
 
@@ -109,29 +109,34 @@
 
        01 WS-CONNECTIONS-EOF PIC X VALUE "N".
            88 END-OF-CONNECTIONS VALUE "Y".
-       01 WS-TOTAL-CONNECTIONS PIC 9(2) VALUE 0.
+       01 WS-TOTAL-CONNECTIONS PIC 9(3) VALUE 0.
        01 WS-CONNECTIONS.
-           05 WS-CONNECTION OCCURS 25 TIMES.
+           05 WS-CONNECTION OCCURS 100 TIMES.
                10 WS-REQ-SENDER    PIC X(20).
                10 WS-REQ-RECIPIENT PIC X(20).
                10 WS-REQ-STATUS    PIC X.
-       01 WS-REQUEST-IDX PIC 9(2) VALUE 0.
+       01 WS-REQUEST-IDX PIC 9(3) VALUE 0.
        01 WS-TARGET-USERNAME PIC X(20).
        01 WS-CONNECTION-FOUND PIC X VALUE "N".
            88 CONNECTION-FOUND VALUE "Y".
        01 WS-CONNECTION-STATUS PIC X.
        01 WS-CONNECTION-ACTION PIC X(5).
 
+       01 WS-SAVE-IDX      PIC 9(3) VALUE 0.
+       01 WS-LOOKUP-USER   PIC X(20).
+       01 WS-NET-IDX       PIC 9(2) VALUE 0.
+       01 WS-NET-FOUND     PIC 9(2) VALUE 0.
+
        01 WS-VALID-PASS     PIC X      VALUE "Y".
            88 PASSWORD-VALID           VALUE "Y".
 
-       01 WS-INDEX          PIC 9      VALUE 0.
+       01 WS-INDEX          PIC 9(2)      VALUE 0.
 
        01  WS-SEARCH-USERNAME   PIC X(20).
        01  WS-ACCOUNT-FOUND     PIC X       VALUE "N".
            88  ACCOUNT-FOUND                VALUE "Y".
-       01  WS-FOUND-INDEX       PIC 9       VALUE 0.
-       01  WS-SEARCH-IDX        PIC 9.
+       01  WS-FOUND-INDEX       PIC 9(2)       VALUE 0.
+       01  WS-SEARCH-IDX        PIC 9(2).
 
        01  WS-CHECK-PASSWORD    PIC X(20).
        01  WS-PASSWORD-MATCH    PIC X       VALUE "N".
@@ -154,7 +159,7 @@
            88 END-OF-PROFILES               VALUE "Y".
 
        01 WS-PROFILES.
-           05 WS-PROFILE-INST OCCURS 5 TIMES.
+           05 WS-PROFILE-INST OCCURS 10 TIMES.
                10 WS-PROF-USER        PIC X(20).
                10 WS-PROF-FIRST-NAME  PIC X(20).
                10 WS-PROF-LAST-NAME   PIC X(20).
@@ -177,8 +182,8 @@
                    88 WS-PROF-EXISTS           VALUE "Y".
 
 
-       01 WS-PROF-IDX      PIC 9       VALUE 0.
-         01 WS-PROFILE-IDX   PIC 9       VALUE 0.
+       01 WS-PROF-IDX      PIC 9(2)       VALUE 0.
+         01 WS-PROFILE-IDX   PIC 9(2)       VALUE 0.
        01 WS-EXP-IDX       PIC 9       VALUE 0.
        01 WS-EDU-IDX       PIC 9       VALUE 0.
        01 WS-FIELD-LEN     PIC 9(3)    VALUE 0.
@@ -248,7 +253,7 @@
 
            OPEN INPUT ACCOUNTS-FILE
            IF WS-ACCOUNTS-STAT = "00"
-               PERFORM UNTIL END-OF-ACCOUNTS OR WS-TOTAL-ACCOUNTS >= 5
+               PERFORM UNTIL END-OF-ACCOUNTS OR WS-TOTAL-ACCOUNTS >= 10
                    READ ACCOUNTS-FILE INTO ACCOUNT-INSTANCE
                        AT END
                            MOVE "Y" TO WS-ACCOUNTS-EOF
@@ -265,7 +270,7 @@
 
            OPEN INPUT PROFILES-FILE
            IF WS-PROFILES-STAT = "00"
-               PERFORM UNTIL END-OF-PROFILES OR WS-PROF-IDX >= 5
+               PERFORM UNTIL END-OF-PROFILES OR WS-PROF-IDX >= 10
                    READ PROFILES-FILE INTO PROFILE-INSTANCE
                        AT END
                            MOVE "Y" TO WS-PROFILES-EOF
@@ -338,7 +343,7 @@
            OPEN INPUT CONNECTIONS-FILE
            IF WS-CONNECTIONS-STAT = "00"
                PERFORM UNTIL END-OF-CONNECTIONS
-                   OR WS-TOTAL-CONNECTIONS >= 25
+                   OR WS-TOTAL-CONNECTIONS >= 100
                    READ CONNECTIONS-FILE INTO CONNECTION-INSTANCE
                        AT END
                            MOVE "Y" TO WS-CONNECTIONS-EOF
@@ -433,7 +438,7 @@
 
 
        CREATE-ACCOUNT.
-           IF WS-TOTAL-ACCOUNTS >= 5
+           IF WS-TOTAL-ACCOUNTS >= 10
                MOVE SPACES TO WS-OUTPUT-LINE
                STRING "All Permitted Accounts Have Been Created, "
                       "Please Come Back Later"
@@ -819,7 +824,7 @@
             END-PERFORM
 
             IF NOT CONNECTION-FOUND
-                IF WS-TOTAL-CONNECTIONS < 25
+                IF WS-TOTAL-CONNECTIONS < 100
                     ADD 1 TO WS-TOTAL-CONNECTIONS
                     MOVE WS-LOGIN-USER
                         TO WS-REQ-SENDER(WS-TOTAL-CONNECTIONS)
