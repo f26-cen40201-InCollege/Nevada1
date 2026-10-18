@@ -357,8 +357,8 @@
                                TO WS-REQ-STATUS(WS-TOTAL-CONNECTIONS)
                    END-READ
                END-PERFORM
-               CLOSE CONNECTIONS-FILE
            END-IF.
+           CLOSE CONNECTIONS-FILE
 
        WRITE-OUTPUT.
            DISPLAY WS-OUTPUT-LINE
