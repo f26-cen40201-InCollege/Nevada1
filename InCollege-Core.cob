@@ -901,6 +901,9 @@
                        WHEN "1"
                            PERFORM ACCEPT-REQUEST
                            MOVE "Y" TO WS-VALID-RESPONSE
+                       WHEN "2"
+                           PERFORM REJECT-REQUEST
+                           MOVE "Y" TO WS-VALID-RESPONSE
                        WHEN OTHER
                            MOVE "Invalid Option, Try Again"
                                TO WS-OUTPUT-LINE
@@ -917,6 +920,15 @@
                FUNCTION TRIM(WS-TARGET-USERNAME) " accepted!"
                DELIMITED BY SIZE INTO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT.    
+
+       REJECT-REQUEST.
+           MOVE "R" TO WS-REQ-STATUS(WS-REQUEST-IDX)
+           PERFORM SAVE-CONNECTIONS
+           MOVE SPACES TO WS-OUTPUT-LINE
+           STRING "Connection request from "
+               FUNCTION TRIM(WS-TARGET-USERNAME) " rejected!"
+               DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT.
 
        VIEW-PROFILE.
             PERFORM FIND-PROFILE-BY-USERNAME
