@@ -877,6 +877,47 @@
                PERFORM WRITE-OUTPUT
            END-IF.
 
+       PROCESS-ONE-REQUEST.
+           MOVE WS-REQ-SENDER(WS-REQUEST-IDX) TO WS-TARGET-USERNAME
+           MOVE SPACES TO WS-OUTPUT-LINE
+           STRING "Request from: " FUNCTION TRIM(WS-TARGET-USERNAME)
+               DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
+           MOVE "N" TO WS-VALID-RESPONSE
+           PERFORM UNTIL VALIDATED OR END-OF-INPUT
+               MOVE "1. Accept" TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE "2. Reject" TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "Enter your choice for "
+                   FUNCTION TRIM(WS-TARGET-USERNAME) ":"
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               PERFORM READ-INPUT
+               IF NOT END-OF-INPUT
+                   MOVE WS-INPUT-LINE TO WS-CHOICE
+                   EVALUATE WS-CHOICE
+                       WHEN "1"
+                           PERFORM ACCEPT-REQUEST
+                           MOVE "Y" TO WS-VALID-RESPONSE
+                       WHEN OTHER
+                           MOVE "Invalid Option, Try Again"
+                               TO WS-OUTPUT-LINE
+                           PERFORM WRITE-OUTPUT
+                   END-EVALUATE
+               END-IF
+           END-PERFORM.
+
+       ACCEPT-REQUEST.
+           MOVE "C" TO WS-REQ-STATUS(WS-REQUEST-IDX)
+           PERFORM SAVE-CONNECTIONS
+           MOVE SPACES TO WS-OUTPUT-LINE
+           STRING "Connection request from "
+               FUNCTION TRIM(WS-TARGET-USERNAME) " accepted!"
+               DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT.    
+
        VIEW-PROFILE.
             PERFORM FIND-PROFILE-BY-USERNAME
 
