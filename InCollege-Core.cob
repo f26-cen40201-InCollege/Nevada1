@@ -801,6 +801,9 @@
                             TO WS-OUTPUT-LINE
                         PERFORM WRITE-OUTPUT
                     END-IF
+                    IF WS-CONNECTION-STATUS = "R"
+                        PERFORM SHOW-REJECTED-BLOCK
+                    END-IF
                 END-IF
                 IF WS-REQ-SENDER(WS-REQUEST-IDX) = WS-LOGIN-USER
                     IF WS-REQ-RECIPIENT(WS-REQUEST-IDX)
@@ -817,6 +820,9 @@
                             MOVE "You Are Already Connected With User"
                                 TO WS-OUTPUT-LINE
                             PERFORM WRITE-OUTPUT
+                        END-IF
+                        IF WS-CONNECTION-STATUS = "R"
+                            PERFORM SHOW-REJECTED-BLOCK
                         END-IF
                     END-IF
                 END-IF
@@ -928,6 +934,11 @@
            STRING "Connection request from "
                FUNCTION TRIM(WS-TARGET-USERNAME) " rejected!"
                DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT.
+
+       SHOW-REJECTED-BLOCK.
+           MOVE "You Cannot Send A Connection Request To This User."
+               TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT.
 
        VIEW-PROFILE.
