@@ -853,24 +853,27 @@
            CLOSE CONNECTIONS-FILE.
 
        VIEW-PENDING-REQUESTS.
-           MOVE "Pending Connection Requests:" TO WS-OUTPUT-LINE
+           MOVE "--- Pending Connection Requests ---" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
            MOVE "N" TO WS-CONNECTION-FOUND
            PERFORM VARYING WS-REQUEST-IDX FROM 1 BY 1
                    UNTIL WS-REQUEST-IDX > WS-TOTAL-CONNECTIONS
+                      OR END-OF-INPUT
                IF WS-REQ-RECIPIENT(WS-REQUEST-IDX) = WS-LOGIN-USER
                   AND WS-REQ-STATUS(WS-REQUEST-IDX) = "P"
                    MOVE "Y" TO WS-CONNECTION-FOUND
-                   MOVE SPACES TO WS-OUTPUT-LINE
-                   STRING "- "
-                       FUNCTION TRIM(WS-REQ-SENDER(WS-REQUEST-IDX))
-                       DELIMITED BY SIZE INTO WS-OUTPUT-LINE
-                   PERFORM WRITE-OUTPUT
+                   PERFORM PROCESS-ONE-REQUEST
                END-IF
            END-PERFORM
-           IF NOT CONNECTION-FOUND
-               MOVE "You Have No Pending Connection Requests."
+           IF CONNECTION-FOUND
+               MOVE "-----------------------------------"
                    TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+           ELSE
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "You have no pending connection requests "
+                   "at this time."
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
            END-IF.
 
