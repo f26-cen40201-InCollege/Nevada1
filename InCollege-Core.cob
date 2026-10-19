@@ -184,6 +184,12 @@
 
        01 WS-PROF-IDX      PIC 9(2)       VALUE 0.
          01 WS-PROFILE-IDX   PIC 9(2)       VALUE 0.
+
+       01 WS-PROFILE-2-IDX PIC 9(2) VALUE 0.
+       01 WS-ANOTHER-USER-SEARCH     PIC X(20).
+
+       
+
        01 WS-EXP-IDX       PIC 9       VALUE 0.
        01 WS-EDU-IDX       PIC 9       VALUE 0.
        01 WS-FIELD-LEN     PIC 9(3)    VALUE 0.
@@ -614,6 +620,8 @@
            PERFORM WRITE-OUTPUT
            MOVE "7. Pending Connection Requests" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
+           MOVE "8. View My Network" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
            MOVE "ENTER YOUR CHOICE:" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
 
@@ -638,6 +646,8 @@
                        MOVE "N" TO WS-RUNNING
                    WHEN "7"
                        PERFORM VIEW-PENDING-REQUESTS
+                   WHEN "8"
+                       PERFORM VIEW-MY-NETWORK
                    WHEN OTHER
                        MOVE "Invalid Option, Try Again"
                            TO WS-OUTPUT-LINE
@@ -871,7 +881,7 @@
                    PERFORM PROCESS-ONE-REQUEST
                END-IF
            END-PERFORM
-           IF CONNECTION-FOUND
+           IF CONNECTION-FOUND = "N"
                MOVE "-----------------------------------"
                    TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
@@ -882,6 +892,52 @@
                    DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
            END-IF.
+       VIEW-MY-NETWORK.
+           MOVE "--- Your Network ---" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
+           MOVE "N" TO WS-CONNECTION-FOUND
+           PERFORM VARYING WS-REQUEST-IDX FROM 1 BY 1
+                   UNTIL WS-REQUEST-IDX > WS-TOTAL-CONNECTIONS
+               IF WS-REQ-STATUS(WS-REQUEST-IDX) = "C"
+                   AND (WS-REQ-RECIPIENT(WS-REQUEST-IDX) = WS-LOGIN-USER
+                       OR WS-REQ-SENDER(WS-REQUEST-IDX) = WS-LOGIN-USER)
+
+                   MOVE "Y" to WS-CONNECTION-FOUND
+
+                   IF WS-REQ-RECIPIENT(WS-REQUEST-IDX) = WS-LOGIN-USER
+                       MOVE WS-REQ-SENDER(WS-REQUEST-IDX)
+                           TO WS-ANOTHER-USER-SEARCH
+                   ELSE
+                       MOVE WS-REQ-RECIPIENT(WS-REQUEST-IDX)
+                           TO WS-ANOTHER-USER-SEARCH
+                   END-IF
+
+                   PERFORM FIND-ANOTHER-PROFILE-BY-USERNAME
+
+                   IF WS-PROFILE-2-IDX > 0
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Connected With: "
+                         FUNCTION TRIM(WS-ANOTHER-USER-SEARCH)
+                         " (University: "
+                         FUNCTION TRIM(WS-PROF-SCHOOL(WS-PROFILE-2-IDX))
+                         ", Major: "
+                         FUNCTION TRIM(WS-PROF-MAJOR(WS-PROFILE-2-IDX))
+                         ")"
+                         DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                          
+                       PERFORM WRITE-OUTPUT
+                   END-IF
+               END-IF
+           END-PERFORM
+
+           IF WS-CONNECTION-FOUND = "N"
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "You have no connections in your network "
+                   "at this time."
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+           END-IF.
+
 
        PROCESS-ONE-REQUEST.
            MOVE WS-REQ-SENDER(WS-REQUEST-IDX) TO WS-TARGET-USERNAME
@@ -1058,8 +1114,19 @@
            MOVE WS-LOGIN-USER TO WS-SEARCH-USERNAME
            PERFORM VARYING WS-SEARCH-IDX FROM 1 BY 1
                    UNTIL WS-SEARCH-IDX > WS-PROF-IDX
+                       OR WS-PROFILE-IDX > 0
                IF WS-PROF-USER(WS-SEARCH-IDX) = WS-SEARCH-USERNAME
                    MOVE WS-SEARCH-IDX TO WS-PROFILE-IDX
+               END-IF
+           END-PERFORM.
+
+       FIND-ANOTHER-PROFILE-BY-USERNAME.
+           MOVE 0 TO WS-PROFILE-2-IDX
+           PERFORM VARYING WS-SEARCH-IDX FROM 1 BY 1
+                   UNTIL WS-SEARCH-IDX > WS-PROF-IDX
+                       OR WS-PROFILE-2-IDX > 0
+               IF WS-PROF-USER(WS-SEARCH-IDX) = WS-ANOTHER-USER-SEARCH
+                   MOVE WS-SEARCH-IDX TO WS-PROFILE-2-IDX
                END-IF
            END-PERFORM.
 
