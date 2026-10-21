@@ -1,95 +1,53 @@
-Welcome to InCollege!
-1. Log-In
-2. Create New Account
-Enter your choice:
-2
-Please enter your username:
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
 profileuser1
-Please enter your password:
+Please Enter Your password:
 Passw0rd1$
-Account Created!
-You have successfully logged in.
+You Have Successfully Logged In.
 Welcome, profileuser1!
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
-Enter your choice:
-1
----Create/Edit Profile---
-Enter First Name:
-profileuser1
-Enter Last Name:
-Passw0rd1$
-Enter university name:
-1
-Enter the name of your major:
-John
-Enter Graduation Year (YYYY):
-Doe
-Graduation year must be 4 digits, Please try again
-Enter Graduation Year (YYYY):
-University of South Florida
-Graduation year must be 4 digits, Please try again
-Enter Graduation Year (YYYY):
-Computer Science
-Graduation year must be 4 digits, Please try again
-Enter Graduation Year (YYYY):
-2027
-Enter About Me (optional):
-Enthusiastic developer who loves solving problems.
-Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
-
-Experience #1 - Title:
-Software Intern
-Experience #1 - Company/Organization:
-Tech Corp
-Exp #1 - Years:
-Summer 2024
-Exp #1 - Description (optional, max 100 chars):
-Built internal tools for QA automation.
-Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
-DONE
-Add Education (optional, max 3 entries. Enter 'DONE' to finish or any input to continue):
-
-Education #1 - Degree:
-Bachelor of Science
-Education #1 - University/College:
-University of South Florida
-Education #1 - Years Attended:
-2023-2027
-Add Education (optional, max 3 entries. Enter 'DONE' to finish or any input to continue):
-DONE
----Profile Created/Updated---
+7. Pending Connection Requests
+ENTER YOUR CHOICE:
+7
+Pending Connection Requests:
+- profileuser3
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
-Enter your choice:
-2
---- Your Profile --
-Name: profileuser1 Passw0rd1$
-University: 1
-Major: John
-Graduation Year: 2027
-About Me: Enthusiastic developer who loves solving problems.
-Experience:
- Title: Software Intern
- Company: Tech Corp
- Dates: Summer 2024
- Description: Built internal tools for QA automation.
-Education:
- Degree: Bachelor of Science
- University: University of South Florida
- Years: 2023-2027
+7. Pending Connection Requests
+ENTER YOUR CHOICE:
+4
+Enter Full Name:
+Adam Smith
+==== Profile For Adam Smith ====
+Name: Adam Smith
+University: University of Florida
+Major: Physics
+Graduation Year: 2030
+About Me: Enthusiastic physist who loves solving problems.
+1. Send Connection Request
+2. Return to Main Menu
+ENTER YOUR CHOICE:
+1
+You Are Already Connected With User
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
-Enter your choice:
+7. Pending Connection Requests
+ENTER YOUR CHOICE:
+6
