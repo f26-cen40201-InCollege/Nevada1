@@ -364,7 +364,7 @@
                    END-READ
                END-PERFORM
            END-IF.
-           CLOSE CONNECTIONS-FILE
+           CLOSE CONNECTIONS-FILE.
 
        WRITE-OUTPUT.
            DISPLAY WS-OUTPUT-LINE
@@ -881,7 +881,7 @@
                    PERFORM PROCESS-ONE-REQUEST
                END-IF
            END-PERFORM
-           IF CONNECTION-FOUND = "N"
+           IF CONNECTION-FOUND
                MOVE "-----------------------------------"
                    TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT

@@ -211,12 +211,15 @@
 
       *    If you need to set a file to a specific initial condition,
       *    use this instead
-           MOVE "tests/epic-1/tester-1/account-creation-pos-1/" 
-               TO WS-FOLDER.
-           MOVE "accounts.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Accounts.txt" TO WS-INITIAL-CONDITION.
-           PERFORM MODIFY-INITIAL-CONDITON-FILE.
-           PERFORM COUNTER-UPDATE.
+      *    (Commented out: account-creation-pos-1/ has no input.txt or
+      *    expected.txt, which halted the entire harness with
+      *    file status 35)
+      *    MOVE "tests/epic-1/tester-1/account-creation-pos-1/"
+      *        TO WS-FOLDER.
+      *    MOVE "accounts.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+      *    MOVE "Accounts.txt" TO WS-INITIAL-CONDITION.
+      *    PERFORM MODIFY-INITIAL-CONDITON-FILE.
+      *    PERFORM COUNTER-UPDATE.
 
       *    ======================= END EXAMPLE =========================
       *    =============================================================
@@ -237,8 +240,11 @@
                TO WS-FOLDER.
            PERFORM COUNTER-UPDATE.
 
-           MOVE "tests/epic-1/tester-1/menus-neg-1/" TO WS-FOLDER.
-           PERFORM COUNTER-UPDATE.
+      *    (Commented out: menus-neg-1/ has no input.txt or
+      *    expected.txt, which halted the entire harness with
+      *    file status 35)
+      *    MOVE "tests/epic-1/tester-1/menus-neg-1/" TO WS-FOLDER.
+      *    PERFORM COUNTER-UPDATE.
            MOVE "tests/epic-1/tester-1/menus-pos-1/" TO WS-FOLDER.
            PERFORM COUNTER-UPDATE.
            MOVE "tests/epic-1/tester-1/menus-pos-2/" TO WS-FOLDER.
@@ -246,6 +252,48 @@
            MOVE "tests/epic-1/tester-1/menus-pos-3/" TO WS-FOLDER.
            PERFORM COUNTER-UPDATE.
            MOVE "tests/epic-1/tester-1/menus-pos-4/" TO WS-FOLDER.
+           PERFORM COUNTER-UPDATE.
+
+      *    ================== EPIC 5 - TESTER 2 TESTS ==================
+
+           MOVE "tests/epic-5/tester-2/accept-single-request/"
+               TO WS-FOLDER.
+           MOVE "connections.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-5/tester-2/accept-multiple-requests/"
+               TO WS-FOLDER.
+           MOVE "connections.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-5/tester-2/reject-single-request/"
+               TO WS-FOLDER.
+           MOVE "connections.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-5/tester-2/reject-multiple-requests/"
+               TO WS-FOLDER.
+           MOVE "connections.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
 
 
