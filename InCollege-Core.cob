@@ -232,9 +232,9 @@
                PERFORM SITE-MENU
            END-PERFORM
 
-           PERFORM CLOSE-FILES
            MOVE "---END_OF_PROGRAM---" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
+           PERFORM CLOSE-FILES
 
            GOBACK.
 
@@ -364,10 +364,10 @@
                    END-READ
                END-PERFORM
            END-IF.
-           CLOSE CONNECTIONS-FILE
+           CLOSE CONNECTIONS-FILE.
 
        WRITE-OUTPUT.
-           DISPLAY WS-OUTPUT-LINE
+           DISPLAY FUNCTION TRIM(WS-OUTPUT-LINE)
            WRITE OUTPUT-LINE FROM WS-OUTPUT-LINE.
 
        READ-INPUT.
@@ -881,7 +881,7 @@
                    PERFORM PROCESS-ONE-REQUEST
                END-IF
            END-PERFORM
-           IF CONNECTION-FOUND = "N"
+           IF CONNECTION-FOUND
                MOVE "-----------------------------------"
                    TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT

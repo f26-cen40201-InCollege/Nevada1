@@ -1,0 +1,71 @@
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+7
+--- Pending Connection Requests ---
+Request from: profileuser2
+1. Accept
+2. Reject
+Enter your choice for profileuser2:
+1
+Connection request from profileuser2 accepted!
+Request from: profileuser3
+1. Accept
+2. Reject
+Enter your choice for profileuser3:
+1
+Connection request from profileuser3 accepted!
+-----------------------------------
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+8
+--- Your Network ---
+Connected With: profileuser2 (University: University of Florida, Major: Physics)
+Connected With: profileuser3 (University: University of Texas, Major: Electrical Engineering)
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+7
+--- Pending Connection Requests ---
+You have no pending connection requests at this time.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---
