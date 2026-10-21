@@ -102,6 +102,8 @@
            01 NOT-FINAL-OUTPUT PIC X VALUE "N".
                 88 FINAL-OUTPUT VALUE "Y".
 
+         01 WS-SKIP-RESET PIC X VALUE "N".
+
       *    ========================== Counters========================== 
 
            01 TotalTestsPassed PIC 9(5) VALUE 0.
@@ -254,7 +256,17 @@
            MOVE "tests/epic-1/tester-1/menus-pos-4/" TO WS-FOLDER.
            PERFORM COUNTER-UPDATE.
 
-      *    ================== EPIC 5 - TESTER 2 TESTS ==================
+      *    ================== EPIC 5 - TESTER 1 & 2 TESTS ==================
+
+           MOVE "tests/epic-5/tester-1/mixed-accept-reject-network/"
+               TO WS-FOLDER.
+           MOVE "connections.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
 
            MOVE "tests/epic-5/tester-2/accept-single-request/"
                TO WS-FOLDER.
@@ -304,8 +316,12 @@
       *    entries adjacent and in this order - no other test may run
       *    between them and touch Connections.txt.
 
-           MOVE "tests/epic-5/tester-2/accept-request-persistence-part1/"
-               TO WS-FOLDER.
+         MOVE "Y" TO WS-SKIP-RESET.
+           MOVE "tests/epic-5/tester-2/" TO WS-FOLDER.
+           STRING WS-FOLDER
+               DELIMITED BY SPACE
+               "accept-request-persistence-part1/"
+               DELIMITED BY SIZE INTO WS-FOLDER.
            MOVE "connections.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
            MOVE "Connections.txt" TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
@@ -314,8 +330,11 @@
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
 
-           MOVE "tests/epic-5/tester-2/accept-request-persistence-part2/"
-               TO WS-FOLDER.
+           MOVE "tests/epic-5/tester-2/" TO WS-FOLDER.
+           STRING WS-FOLDER
+               DELIMITED BY SPACE
+               "accept-request-persistence-part2/"
+               DELIMITED BY SIZE INTO WS-FOLDER.
            MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
            MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
@@ -428,7 +447,11 @@
     
       *        Clear vars and files
                PERFORM CLOSE-FILES.
-               PERFORM RESET-ORIGINAL-FILES.
+               IF WS-SKIP-RESET = "N"
+                   PERFORM RESET-ORIGINAL-FILES
+               ELSE
+                   MOVE "N" TO WS-SKIP-RESET
+               END-IF.
                MOVE "N" TO WS-MISMATCH.
                MOVE "N" TO WS-OUTPUT-EOF.
                MOVE "N" TO WS-EXPECTED-EOF.
@@ -455,6 +478,14 @@
                     "Accounts.txt"
                     "Accounts-backup.txt" 
                     RETURNCODE.
+                CALL "COPY-FILE" USING 
+                    "Profiles.txt"
+                    "Profiles-backup.txt" 
+                    RETURNCODE.
+                CALL "COPY-FILE" USING 
+                    "Connections.txt"
+                    "Connections-backup.txt" 
+                    RETURNCODE.
 
            RESET-ORIGINAL-FILES.
                 move 0 to RETURNCODE.
@@ -464,6 +495,14 @@
                CALL "COPY-FILE" USING 
                    "Accounts-backup.txt" 
                    "Accounts.txt"
+                   RETURNCODE.
+               CALL "COPY-FILE" USING 
+                   "Profiles-backup.txt" 
+                   "Profiles.txt"
+                   RETURNCODE.
+               CALL "COPY-FILE" USING 
+                   "Connections-backup.txt" 
+                   "Connections.txt"
                    RETURNCODE.
            
       *    ===================== Helper functions ======================

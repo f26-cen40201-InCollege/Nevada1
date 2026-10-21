@@ -49,4 +49,17 @@ Connected With: profileuser3 (University: University of Texas, Major: Electrical
 7. Pending Connection Requests
 8. View My Network
 ENTER YOUR CHOICE:
+7
+--- Pending Connection Requests ---
+You have no pending connection requests at this time.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
 6
+---END_OF_PROGRAM---
