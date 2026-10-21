@@ -296,6 +296,31 @@
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
 
+      *    Persistence test: part 1 accepts a pending request (which
+      *    writes the "C" status to Connections.txt on disk). Part 2
+      *    deliberately does NOT reseed connections.txt, so it only
+      *    passes if part 1's accept was actually persisted to disk
+      *    for this fresh run to read back in. Keep these two test
+      *    entries adjacent and in this order - no other test may run
+      *    between them and touch Connections.txt.
+
+           MOVE "tests/epic-5/tester-2/accept-request-persistence-part1/"
+               TO WS-FOLDER.
+           MOVE "connections.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+
+           MOVE "tests/epic-5/tester-2/accept-request-persistence-part2/"
+               TO WS-FOLDER.
+           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+
 
       *    ====================== END YOUR TESTS =======================
       *    =============================================================
