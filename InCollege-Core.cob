@@ -91,9 +91,9 @@
            88 STILL-RUNNING        VALUE "Y".
 
 
-       01 WS-TOTAL-ACCOUNTS     PIC 9       VALUE 0.
+       01 WS-TOTAL-ACCOUNTS     PIC 9(2)       VALUE 0.
        01 WS-ACCOUNTS.
-           05   WS-ACCOUNT-ENTRY OCCURS 5 TIMES.
+           05   WS-ACCOUNT-ENTRY OCCURS 10 TIMES.
                10   WS-USERNAME     PIC X(20).
                10   WS-PASSWORD     PIC X(20).
 
@@ -109,29 +109,34 @@
 
        01 WS-CONNECTIONS-EOF PIC X VALUE "N".
            88 END-OF-CONNECTIONS VALUE "Y".
-       01 WS-TOTAL-CONNECTIONS PIC 9(2) VALUE 0.
+       01 WS-TOTAL-CONNECTIONS PIC 9(3) VALUE 0.
        01 WS-CONNECTIONS.
-           05 WS-CONNECTION OCCURS 25 TIMES.
+           05 WS-CONNECTION OCCURS 100 TIMES.
                10 WS-REQ-SENDER    PIC X(20).
                10 WS-REQ-RECIPIENT PIC X(20).
                10 WS-REQ-STATUS    PIC X.
-       01 WS-REQUEST-IDX PIC 9(2) VALUE 0.
+       01 WS-REQUEST-IDX PIC 9(3) VALUE 0.
        01 WS-TARGET-USERNAME PIC X(20).
        01 WS-CONNECTION-FOUND PIC X VALUE "N".
            88 CONNECTION-FOUND VALUE "Y".
        01 WS-CONNECTION-STATUS PIC X.
        01 WS-CONNECTION-ACTION PIC X(5).
 
+       01 WS-SAVE-IDX      PIC 9(3) VALUE 0.
+       01 WS-LOOKUP-USER   PIC X(20).
+       01 WS-NET-IDX       PIC 9(2) VALUE 0.
+       01 WS-NET-FOUND     PIC 9(2) VALUE 0.
+
        01 WS-VALID-PASS     PIC X      VALUE "Y".
            88 PASSWORD-VALID           VALUE "Y".
 
-       01 WS-INDEX          PIC 9      VALUE 0.
+       01 WS-INDEX          PIC 9(2)      VALUE 0.
 
        01  WS-SEARCH-USERNAME   PIC X(20).
        01  WS-ACCOUNT-FOUND     PIC X       VALUE "N".
            88  ACCOUNT-FOUND                VALUE "Y".
-       01  WS-FOUND-INDEX       PIC 9       VALUE 0.
-       01  WS-SEARCH-IDX        PIC 9.
+       01  WS-FOUND-INDEX       PIC 9(2)       VALUE 0.
+       01  WS-SEARCH-IDX        PIC 9(2).
 
        01  WS-CHECK-PASSWORD    PIC X(20).
        01  WS-PASSWORD-MATCH    PIC X       VALUE "N".
@@ -154,7 +159,7 @@
            88 END-OF-PROFILES               VALUE "Y".
 
        01 WS-PROFILES.
-           05 WS-PROFILE-INST OCCURS 5 TIMES.
+           05 WS-PROFILE-INST OCCURS 10 TIMES.
                10 WS-PROF-USER        PIC X(20).
                10 WS-PROF-FIRST-NAME  PIC X(20).
                10 WS-PROF-LAST-NAME   PIC X(20).
@@ -177,8 +182,14 @@
                    88 WS-PROF-EXISTS           VALUE "Y".
 
 
-       01 WS-PROF-IDX      PIC 9       VALUE 0.
-         01 WS-PROFILE-IDX   PIC 9       VALUE 0.
+       01 WS-PROF-IDX      PIC 9(2)       VALUE 0.
+         01 WS-PROFILE-IDX   PIC 9(2)       VALUE 0.
+
+       01 WS-PROFILE-2-IDX PIC 9(2) VALUE 0.
+       01 WS-ANOTHER-USER-SEARCH     PIC X(20).
+
+       
+
        01 WS-EXP-IDX       PIC 9       VALUE 0.
        01 WS-EDU-IDX       PIC 9       VALUE 0.
        01 WS-FIELD-LEN     PIC 9(3)    VALUE 0.
@@ -248,7 +259,7 @@
 
            OPEN INPUT ACCOUNTS-FILE
            IF WS-ACCOUNTS-STAT = "00"
-               PERFORM UNTIL END-OF-ACCOUNTS OR WS-TOTAL-ACCOUNTS >= 5
+               PERFORM UNTIL END-OF-ACCOUNTS OR WS-TOTAL-ACCOUNTS >= 10
                    READ ACCOUNTS-FILE INTO ACCOUNT-INSTANCE
                        AT END
                            MOVE "Y" TO WS-ACCOUNTS-EOF
@@ -265,7 +276,7 @@
 
            OPEN INPUT PROFILES-FILE
            IF WS-PROFILES-STAT = "00"
-               PERFORM UNTIL END-OF-PROFILES OR WS-PROF-IDX >= 5
+               PERFORM UNTIL END-OF-PROFILES OR WS-PROF-IDX >= 10
                    READ PROFILES-FILE INTO PROFILE-INSTANCE
                        AT END
                            MOVE "Y" TO WS-PROFILES-EOF
@@ -338,7 +349,7 @@
            OPEN INPUT CONNECTIONS-FILE
            IF WS-CONNECTIONS-STAT = "00"
                PERFORM UNTIL END-OF-CONNECTIONS
-                   OR WS-TOTAL-CONNECTIONS >= 25
+                   OR WS-TOTAL-CONNECTIONS >= 100
                    READ CONNECTIONS-FILE INTO CONNECTION-INSTANCE
                        AT END
                            MOVE "Y" TO WS-CONNECTIONS-EOF
@@ -352,8 +363,8 @@
                                TO WS-REQ-STATUS(WS-TOTAL-CONNECTIONS)
                    END-READ
                END-PERFORM
-               CLOSE CONNECTIONS-FILE
            END-IF.
+           CLOSE CONNECTIONS-FILE.
 
        WRITE-OUTPUT.
            DISPLAY WS-OUTPUT-LINE
@@ -433,7 +444,7 @@
 
 
        CREATE-ACCOUNT.
-           IF WS-TOTAL-ACCOUNTS >= 5
+           IF WS-TOTAL-ACCOUNTS >= 10
                MOVE SPACES TO WS-OUTPUT-LINE
                STRING "All Permitted Accounts Have Been Created, "
                       "Please Come Back Later"
@@ -609,6 +620,8 @@
            PERFORM WRITE-OUTPUT
            MOVE "7. Pending Connection Requests" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
+           MOVE "8. View My Network" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
            MOVE "ENTER YOUR CHOICE:" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
 
@@ -633,6 +646,8 @@
                        MOVE "N" TO WS-RUNNING
                    WHEN "7"
                        PERFORM VIEW-PENDING-REQUESTS
+                   WHEN "8"
+                       PERFORM VIEW-MY-NETWORK
                    WHEN OTHER
                        MOVE "Invalid Option, Try Again"
                            TO WS-OUTPUT-LINE
@@ -796,6 +811,9 @@
                             TO WS-OUTPUT-LINE
                         PERFORM WRITE-OUTPUT
                     END-IF
+                    IF WS-CONNECTION-STATUS = "R"
+                        PERFORM SHOW-REJECTED-BLOCK
+                    END-IF
                 END-IF
                 IF WS-REQ-SENDER(WS-REQUEST-IDX) = WS-LOGIN-USER
                     IF WS-REQ-RECIPIENT(WS-REQUEST-IDX)
@@ -813,13 +831,16 @@
                                 TO WS-OUTPUT-LINE
                             PERFORM WRITE-OUTPUT
                         END-IF
+                        IF WS-CONNECTION-STATUS = "R"
+                            PERFORM SHOW-REJECTED-BLOCK
+                        END-IF
                     END-IF
                 END-IF
                 
             END-PERFORM
 
             IF NOT CONNECTION-FOUND
-                IF WS-TOTAL-CONNECTIONS < 25
+                IF WS-TOTAL-CONNECTIONS < 100
                     ADD 1 TO WS-TOTAL-CONNECTIONS
                     MOVE WS-LOGIN-USER
                         TO WS-REQ-SENDER(WS-TOTAL-CONNECTIONS)
@@ -838,36 +859,143 @@
 
        SAVE-CONNECTIONS.
            OPEN OUTPUT CONNECTIONS-FILE
-           PERFORM VARYING WS-REQUEST-IDX FROM 1 BY 1
-                   UNTIL WS-REQUEST-IDX > WS-TOTAL-CONNECTIONS
-               MOVE WS-REQ-SENDER(WS-REQUEST-IDX) TO REQ-SENDER
-               MOVE WS-REQ-RECIPIENT(WS-REQUEST-IDX) TO REQ-RECIPIENT
-               MOVE WS-REQ-STATUS(WS-REQUEST-IDX) TO REQ-STATUS
+           PERFORM VARYING WS-SAVE-IDX FROM 1 BY 1
+                   UNTIL WS-SAVE-IDX > WS-TOTAL-CONNECTIONS
+               MOVE WS-REQ-SENDER(WS-SAVE-IDX) TO REQ-SENDER
+               MOVE WS-REQ-RECIPIENT(WS-SAVE-IDX) TO REQ-RECIPIENT
+               MOVE WS-REQ-STATUS(WS-SAVE-IDX) TO REQ-STATUS
                WRITE CONNECTION-INSTANCE
            END-PERFORM
            CLOSE CONNECTIONS-FILE.
 
        VIEW-PENDING-REQUESTS.
-           MOVE "Pending Connection Requests:" TO WS-OUTPUT-LINE
+           MOVE "--- Pending Connection Requests ---" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
            MOVE "N" TO WS-CONNECTION-FOUND
            PERFORM VARYING WS-REQUEST-IDX FROM 1 BY 1
                    UNTIL WS-REQUEST-IDX > WS-TOTAL-CONNECTIONS
+                      OR END-OF-INPUT
                IF WS-REQ-RECIPIENT(WS-REQUEST-IDX) = WS-LOGIN-USER
                   AND WS-REQ-STATUS(WS-REQUEST-IDX) = "P"
                    MOVE "Y" TO WS-CONNECTION-FOUND
-                   MOVE SPACES TO WS-OUTPUT-LINE
-                   STRING "- "
-                       FUNCTION TRIM(WS-REQ-SENDER(WS-REQUEST-IDX))
-                       DELIMITED BY SIZE INTO WS-OUTPUT-LINE
-                   PERFORM WRITE-OUTPUT
+                   PERFORM PROCESS-ONE-REQUEST
                END-IF
            END-PERFORM
-           IF NOT CONNECTION-FOUND
-               MOVE "You Have No Pending Connection Requests."
+           IF CONNECTION-FOUND
+               MOVE "-----------------------------------"
                    TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
+           ELSE
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "You have no pending connection requests "
+                   "at this time."
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
            END-IF.
+       VIEW-MY-NETWORK.
+           MOVE "--- Your Network ---" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
+           MOVE "N" TO WS-CONNECTION-FOUND
+           PERFORM VARYING WS-REQUEST-IDX FROM 1 BY 1
+                   UNTIL WS-REQUEST-IDX > WS-TOTAL-CONNECTIONS
+               IF WS-REQ-STATUS(WS-REQUEST-IDX) = "C"
+                   AND (WS-REQ-RECIPIENT(WS-REQUEST-IDX) = WS-LOGIN-USER
+                       OR WS-REQ-SENDER(WS-REQUEST-IDX) = WS-LOGIN-USER)
+
+                   MOVE "Y" to WS-CONNECTION-FOUND
+
+                   IF WS-REQ-RECIPIENT(WS-REQUEST-IDX) = WS-LOGIN-USER
+                       MOVE WS-REQ-SENDER(WS-REQUEST-IDX)
+                           TO WS-ANOTHER-USER-SEARCH
+                   ELSE
+                       MOVE WS-REQ-RECIPIENT(WS-REQUEST-IDX)
+                           TO WS-ANOTHER-USER-SEARCH
+                   END-IF
+
+                   PERFORM FIND-ANOTHER-PROFILE-BY-USERNAME
+
+                   IF WS-PROFILE-2-IDX > 0
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                       STRING "Connected With: "
+                         FUNCTION TRIM(WS-ANOTHER-USER-SEARCH)
+                         " (University: "
+                         FUNCTION TRIM(WS-PROF-SCHOOL(WS-PROFILE-2-IDX))
+                         ", Major: "
+                         FUNCTION TRIM(WS-PROF-MAJOR(WS-PROFILE-2-IDX))
+                         ")"
+                         DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                          
+                       PERFORM WRITE-OUTPUT
+                   END-IF
+               END-IF
+           END-PERFORM
+
+           IF WS-CONNECTION-FOUND = "N"
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "You have no connections in your network "
+                   "at this time."
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+           END-IF.
+
+
+       PROCESS-ONE-REQUEST.
+           MOVE WS-REQ-SENDER(WS-REQUEST-IDX) TO WS-TARGET-USERNAME
+           MOVE SPACES TO WS-OUTPUT-LINE
+           STRING "Request from: " FUNCTION TRIM(WS-TARGET-USERNAME)
+               DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
+           MOVE "N" TO WS-VALID-RESPONSE
+           PERFORM UNTIL VALIDATED OR END-OF-INPUT
+               MOVE "1. Accept" TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE "2. Reject" TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
+               STRING "Enter your choice for "
+                   FUNCTION TRIM(WS-TARGET-USERNAME) ":"
+                   DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               PERFORM READ-INPUT
+               IF NOT END-OF-INPUT
+                   MOVE WS-INPUT-LINE TO WS-CHOICE
+                   EVALUATE WS-CHOICE
+                       WHEN "1"
+                           PERFORM ACCEPT-REQUEST
+                           MOVE "Y" TO WS-VALID-RESPONSE
+                       WHEN "2"
+                           PERFORM REJECT-REQUEST
+                           MOVE "Y" TO WS-VALID-RESPONSE
+                       WHEN OTHER
+                           MOVE "Invalid Option, Try Again"
+                               TO WS-OUTPUT-LINE
+                           PERFORM WRITE-OUTPUT
+                   END-EVALUATE
+               END-IF
+           END-PERFORM.
+
+       ACCEPT-REQUEST.
+           MOVE "C" TO WS-REQ-STATUS(WS-REQUEST-IDX)
+           PERFORM SAVE-CONNECTIONS
+           MOVE SPACES TO WS-OUTPUT-LINE
+           STRING "Connection request from "
+               FUNCTION TRIM(WS-TARGET-USERNAME) " accepted!"
+               DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT.    
+
+       REJECT-REQUEST.
+           MOVE "R" TO WS-REQ-STATUS(WS-REQUEST-IDX)
+           PERFORM SAVE-CONNECTIONS
+           MOVE SPACES TO WS-OUTPUT-LINE
+           STRING "Connection request from "
+               FUNCTION TRIM(WS-TARGET-USERNAME) " rejected!"
+               DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT.
+
+       SHOW-REJECTED-BLOCK.
+           MOVE "You Cannot Send A Connection Request To This User."
+               TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT.
 
        VIEW-PROFILE.
             PERFORM FIND-PROFILE-BY-USERNAME
@@ -986,8 +1114,19 @@
            MOVE WS-LOGIN-USER TO WS-SEARCH-USERNAME
            PERFORM VARYING WS-SEARCH-IDX FROM 1 BY 1
                    UNTIL WS-SEARCH-IDX > WS-PROF-IDX
+                       OR WS-PROFILE-IDX > 0
                IF WS-PROF-USER(WS-SEARCH-IDX) = WS-SEARCH-USERNAME
                    MOVE WS-SEARCH-IDX TO WS-PROFILE-IDX
+               END-IF
+           END-PERFORM.
+
+       FIND-ANOTHER-PROFILE-BY-USERNAME.
+           MOVE 0 TO WS-PROFILE-2-IDX
+           PERFORM VARYING WS-SEARCH-IDX FROM 1 BY 1
+                   UNTIL WS-SEARCH-IDX > WS-PROF-IDX
+                       OR WS-PROFILE-2-IDX > 0
+               IF WS-PROF-USER(WS-SEARCH-IDX) = WS-ANOTHER-USER-SEARCH
+                   MOVE WS-SEARCH-IDX TO WS-PROFILE-2-IDX
                END-IF
            END-PERFORM.
 
