@@ -14,3 +14,4 @@ Invalid Option, Try Again
 1. LOG-IN
 2. CREATE NEW ACCOUNT
 ENTER YOUR CHOICE:
+---END_OF_PROGRAM---
