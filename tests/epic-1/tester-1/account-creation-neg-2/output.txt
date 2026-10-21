@@ -1,19 +1,16 @@
-Welcome to InCollege!
-1. Log-In
-2. Create New Account
-Enter your choice:
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
 2
-All permitted accounts have been created, please come back later
-1. Log-In
-2. Create New Account
-Enter your choice:
+Please Enter Your username:
 IanKoratsky
-Invalid Option, Try Again
-1. Log-In
-2. Create New Account
-Enter your choice:
+That USERNAME Is Already Taken, Please Try Again
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
 1234Abc!
 Invalid Option, Try Again
-1. Log-In
-2. Create New Account
-Enter your choice:
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:

@@ -1,27 +1,31 @@
-Welcome to InCollege!
-1. Log-In
-2. Create New Account
-Enter your choice:
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
 1
-Please enter your username:
+Please Enter Your username:
 IanKoratsky
-Please enter your password:
+Please Enter Your password:
 1234Abc!
-You have successfully logged in.
+You Have Successfully Logged In.
 Welcome, IanKoratsky!
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
-Enter your choice:
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
 3
-Job search/internship is under construction.
+Job Search/Internship Is Under Construction.
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
-Enter your choice:
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
