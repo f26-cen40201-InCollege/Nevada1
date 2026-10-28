@@ -18,7 +18,7 @@
                ORGANIZATION IS LINE SEQUENTIAL
                FILE STATUS IS WS-ACCOUNTS-STAT.
 
-           SELECT PROFILES-FILE ASSIGN TO "Profiles.txt"
+           SELECT OPTIONAL PROFILES-FILE ASSIGN TO "Profiles.txt"
                ORGANIZATION IS LINE SEQUENTIAL
                FILE STATUS IS WS-PROFILES-STAT.
 
@@ -26,13 +26,17 @@
                ORGANIZATION IS LINE SEQUENTIAL
                FILE STATUS IS WS-CONNECTIONS-STAT.
 
+           SELECT OPTIONAL JOBS-FILE ASSIGN TO "Jobs.txt"
+               ORGANIZATION IS LINE SEQUENTIAL
+               FILE STATUS IS WS-JOBS-STAT.
+
        DATA DIVISION.
        FILE SECTION.
        FD IN-FILE.
-       01 INPUT-LINE    PIC X(100).
+       01 INPUT-LINE    PIC X(250).
 
        FD OUTPUT-FILE.
-       01 OUTPUT-LINE   PIC X(100).
+       01 OUTPUT-LINE   PIC X(250).
 
        FD ACCOUNTS-FILE.
        01 ACCOUNT-INSTANCE.
@@ -68,8 +72,16 @@
            05 REQ-RECIPIENT   PIC X(20).
            05 REQ-STATUS      PIC X.
 
-
-
+      *    EPIC 6 JOB FIELD INFORMATION
+       FD JOBS-FILE.
+       01 JOB-INSTANCE.
+           05 JOB-ID          PIC 9(4).
+           05 JOB-POSTER      PIC X(20).
+           05 JOB-TITLE       PIC X(50).
+           05 JOB-DESCR       PIC X(200).
+           05 JOB-EMPLOYER    PIC X(50).
+           05 JOB-LOCATION    PIC X(50).
+           05 JOB-SALARY      PIC X(30).
 
        WORKING-STORAGE SECTION.
 
@@ -97,9 +109,9 @@
                10   WS-USERNAME     PIC X(20).
                10   WS-PASSWORD     PIC X(20).
 
-       01 WS-INPUT-LINE     PIC X(100).
+       01 WS-INPUT-LINE     PIC X(250).
        01 WS-INPUT-FILE  PIC X(100).
-       01 WS-OUTPUT-LINE    PIC X(100).
+       01 WS-OUTPUT-LINE    PIC X(250).
        01 WS-OUTPUT-FILE PIC X(100).
        01 WS-CHOICE         PIC X(5).
        01 WS-NEW-USER       PIC X(20).
@@ -201,6 +213,35 @@
        01 WS-SEARCH-FULL-NAME PIC X(100).
          01 WS-PROFILE-NAME-UPPER PIC X(100).
          01 WS-SEARCH-NAME-UPPER  PIC X(100).
+
+      *    EPIC 6 WS SECTION
+       01 WS-JOBS-STAT     PIC XX.
+       01 WS-JOBS-EOF      PIC X       VALUE "N".
+           88 END-OF-JOBS              VALUE "Y".
+       01 WS-TOTAL-JOBS    PIC 9(3)    VALUE 0.
+       01 WS-MAX-JOB-ID    PIC 9(4)    VALUE 0.
+       01 WS-JOBS.
+           05 WS-JOB-INST OCCURS 100 TIMES.
+               10 WS-JOB-ID        PIC 9(4).
+               10 WS-JOB-POSTER    PIC X(20).
+               10 WS-JOB-TITLE     PIC X(50).
+               10 WS-JOB-DESCR     PIC X(200).
+               10 WS-JOB-EMPLOYER  PIC X(50).
+               10 WS-JOB-LOCATION  PIC X(50).
+               10 WS-JOB-SALARY    PIC X(30).
+       01 WS-JOB-IDX       PIC 9(3)     VALUE 0.
+
+       01 WS-JOB-MENU-DONE PIC X       VALUE "N".
+           88 JOB-MENU-DONE            VALUE "Y".
+
+       01 WS-FIELD-PROMPT  PIC X(60).
+       01 WS-FIELD-NAME    PIC X(20).
+       01 WS-FIELD-VALUE   PIC X(250).
+       01 WS-FIELD-MAX     PIC 9(3)    VALUE 0.
+       01 WS-FIELD-DISP    PIC ZZ9.
+       01 WS-FIELD-REQ     PIC X       VALUE "Y".
+           88 FIELD-REQUIRED           VALUE "Y".
+
 
        LINKAGE SECTION.
        01  LS-INPUT   PIC X(100).
@@ -338,7 +379,8 @@
            END-IF
            CLOSE PROFILES-FILE
 
-           PERFORM LOAD-CONNECTIONS.
+           PERFORM LOAD-CONNECTIONS
+           PERFORM LOAD-JOBS.
 
 
        CLOSE-FILES.
@@ -367,7 +409,7 @@
            CLOSE CONNECTIONS-FILE.
 
        WRITE-OUTPUT.
-           DISPLAY FUNCTION TRIM(WS-OUTPUT-LINE)
+           DISPLAY FUNCTION TRIM(WS-OUTPUT-LINE TRAILING)
            WRITE OUTPUT-LINE FROM WS-OUTPUT-LINE.
 
        READ-INPUT.
@@ -634,10 +676,7 @@
                    WHEN "2"
                        PERFORM VIEW-PROFILE
                    WHEN "3"
-                       MOVE
-           "Job Search/Internship Is Under Construction."
-                           TO WS-OUTPUT-LINE
-                       PERFORM WRITE-OUTPUT
+                       PERFORM JOB-MENU
                    WHEN "4"
                        PERFORM FIND-SOMEONE
                    WHEN "5"
@@ -914,21 +953,25 @@
 
                    PERFORM FIND-ANOTHER-PROFILE-BY-USERNAME
 
+                   MOVE SPACES TO WS-OUTPUT-LINE
                    IF WS-PROFILE-2-IDX > 0
-                       MOVE SPACES TO WS-OUTPUT-LINE
-                       STRING "Connected With: "
+                       STRING "Connected with: "
                          FUNCTION TRIM(WS-ANOTHER-USER-SEARCH)
                          " (University: "
                          FUNCTION TRIM(WS-PROF-SCHOOL(WS-PROFILE-2-IDX))
                          ", Major: "
                          FUNCTION TRIM(WS-PROF-MAJOR(WS-PROFILE-2-IDX))
                          ")"
-                         DELIMITED BY SIZE INTO WS-OUTPUT-LINE
-                          
-                       PERFORM WRITE-OUTPUT
+                       DELIMITED BY SIZE INTO WS-OUTPUT-LINE
+                   ELSE
+                       STRING "Connected with: "
+                           FUNCTION TRIM(WS-ANOTHER-USER-SEARCH)
+                           DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                    END-IF
+                   PERFORM WRITE-OUTPUT
                END-IF
            END-PERFORM
+           
 
            IF WS-CONNECTION-FOUND = "N"
                MOVE SPACES TO WS-OUTPUT-LINE
@@ -936,7 +979,9 @@
                    "at this time."
                    DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
-           END-IF.
+           END-IF
+           MOVE "--------------------" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT.
 
 
        PROCESS-ONE-REQUEST.
@@ -998,19 +1043,16 @@
            PERFORM WRITE-OUTPUT.
 
        VIEW-PROFILE.
-            PERFORM FIND-PROFILE-BY-USERNAME
+           PERFORM FIND-PROFILE-BY-USERNAME
 
-            IF WS-PROFILE-IDX > 0
-                MOVE WS-PROFILE-IDX TO WS-FOUND-INDEX
-            END-IF
-
-            IF WS-HAS-PROF(WS-FOUND-INDEX) NOT = "Y"
-                MOVE "No Profile Has Been Created Yet."
-                    TO WS-OUTPUT-LINE
-                PERFORM WRITE-OUTPUT
-            ELSE
-                PERFORM DISPLAY-PROFILE
-            END-IF.
+           IF WS-PROFILE-IDX = 0
+               MOVE "No Profile Has Been Created Yet."
+                   TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+           ELSE 
+               MOVE WS-PROFILE-IDX TO WS-FOUND-INDEX
+               PERFORM DISPLAY-PROFILE
+           END-IF.
         
         DISPLAY-PROFILE.
             MOVE SPACES TO WS-OUTPUT-LINE
@@ -1469,8 +1511,5 @@
                END-IF
            END-PERFORM.
 
-
-
-
-
-
+       COPY "Jobs.cob".
+       COPY "BrowseJobs.cob".
