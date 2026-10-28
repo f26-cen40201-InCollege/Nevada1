@@ -64,6 +64,5 @@
            end-perform
 
            close source-file
-           close target-file
-           goback.
-           
+             close target-file
+             goback.

@@ -32,7 +32,8 @@ You have no pending connection requests at this time.
 ENTER YOUR CHOICE:
 8
 --- Your Network ---
-Connected With: profileuser2 (University: University of Florida, Major: Physics)
+Connected with: profileuser2 (University: University of Florida, Major: Physics)
+--------------------
 1. Create/Edit My Profile
 2. View My Profile
 3. Search For a job

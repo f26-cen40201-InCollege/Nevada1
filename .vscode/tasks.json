@@ -9,7 +9,8 @@
                 "-x",
                 "-o", "test-main",
                 "test-main.cob",
-                "InCollege-Core.cob"
+                "InCollege-Core.cob",
+                "tests/copy_file.cob"
             ],
             "group": { "kind": "build", "isDefault": true },
             "presentation": { "reveal": "always" },

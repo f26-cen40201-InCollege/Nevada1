@@ -39,6 +39,7 @@ ENTER YOUR CHOICE:
 8
 --- Your Network ---
 You have no connections in your network at this time.
+--------------------
 1. Create/Edit My Profile
 2. View My Profile
 3. Search For a job

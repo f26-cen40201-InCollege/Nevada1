@@ -1511,5 +1511,5 @@
                END-IF
            END-PERFORM.
 
-       COPY "Jobs.cob".
-       COPY "BrowseJobs.cob".
+         COPY "Jobs.cob".
+         COPY "BrowseJobs.cob".
