@@ -16,7 +16,6 @@
 | **Ian Koratsky** | **ikoratsk@usf.edu** | **U54407179** |
 | **Connor Kouznetsov** | **ckouznetsov@usf.edu** | **U30979013** |
 
-
 ## **PROJECT OVERVIEW**
 
 This repository contains all functional code, testing, and documentation CEN-4020 Software Engineering In-College project.
@@ -49,7 +48,6 @@ See [ROLE-TRACKER.md](docs/ROLE-TRACKER.md) for the owner of each role in every 
 #### 5. Have the assigned Tester verify the acceptance criteria and attach test evidence.
 #### 6. Close the issue only when the implementation, testing, documentation, and any linked bug work are complete.
 
-
 ## **TESTING IMPLEMENTATION**
 
 The test suite uses nested directories organized by *Epic*, *Tester*, and *Scenario*. **COBOL** test inputs and expected outputs are processed sequentially.
@@ -68,8 +66,6 @@ Build and Run the primary COBOL program with:
 cobc -x -o InCollege InCollege.cob InCollege-Core.cob && ./InCollege
 ```
 
-The `build test-main` and `run test-main` commands are also available as VS Code tasks for the test harness.
-
-See the project documentation before making changes, and provide references to the requirement, procedure, affected files, and validation evidence during every handoff.
+The `build test-main` and `run test-main` commands are also available as VS Code tasks for the test harness. See the project documentation before making changes, and provide references to the requirement, procedure, affected files, and validation evidence during every handoff.
 
 </div>

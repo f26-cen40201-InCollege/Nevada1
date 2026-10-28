@@ -44,8 +44,9 @@ Connection request from profileuser3 accepted!
 ENTER YOUR CHOICE:
 8
 --- Your Network ---
-Connected With: profileuser2 (University: University of Florida, Major: Physics)
-Connected With: profileuser3 (University: University of Texas, Major: Electrical Engineering)
+Connected with: profileuser2 (University: University of Florida, Major: Physics)
+Connected with: profileuser3 (University: University of Texas, Major: Electrical Engineering)
+--------------------
 1. Create/Edit My Profile
 2. View My Profile
 3. Search For a job
