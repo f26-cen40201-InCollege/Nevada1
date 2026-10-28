@@ -1,4 +1,3 @@
-profileuser1        8                   7                   6                                                 Computer Science              2027Enthusiastic developer who loves solving problems.
+profileuser1        John                Doe                 University of South Florida                       Computer Science              2027Enthusiastic developer who loves solving problems.
 profileuser2        Adam                Smith               University of Florida                             Physics                       2030Enthusiastic physist who loves solving problems.
 profileuser3        David               Blake               University of Texas                               Electrical Engineering        2028Working to fix those wires!
-IanKoratsky         IanKoratsky         1234Abc!            1                                                 1                             0000

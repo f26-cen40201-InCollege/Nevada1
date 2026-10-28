@@ -8,7 +8,8 @@
 
       *>   IMPORTANT: YOU MUST UPDATE THE COMPILE CODE IF YOU ADD A FILE TO BE TESTED:
 
-      *>   cobc -x -o test-main test-main.cob InCollege-Core.cob 
+            *>   cobc -x -o test-main test-main.cob InCollege-Core.cob
+            *>       tests/copy_file.cob
       *>   ./test-main
       *>   then simply run: ./test-main to run all tests
       *>   if someone wants to make a way to add particular tests, feel free!
@@ -174,10 +175,10 @@
 
       *    Uncomment the below to output headers for debugging
 
-      *     SET SHOW-HEADERS TO TRUE.
+           SET SHOW-HEADERS TO TRUE.
 
       *    This will push the outputs to what we need to submit
-           SET FINAL-OUTPUT TO TRUE.
+      *     SET FINAL-OUTPUT TO TRUE.
 
       *    ===================== END TOGGLE VARS =======================
       *    =============================================================
@@ -188,7 +189,6 @@
 
            MOVE 0 TO TotalTestsPassed.
            MOVE 0 TO TotalTestsFailed.
-
 
 
       *    =============================================================
@@ -205,9 +205,9 @@
 
       *    ====================== Option 1: Basic ======================
 
-           MOVE "tests/epic-1/tester-1/account-creation-neg-1/" 
-               TO WS-FOLDER.
-           PERFORM COUNTER-UPDATE.
+      *     MOVE "tests/epic-1/tester-1/account-creation-neg-1/" 
+      *         TO WS-FOLDER.
+      *     PERFORM COUNTER-UPDATE.
 
       *    ==================== Option 2: Advanced =====================
 
@@ -219,6 +219,7 @@
       *    MOVE "tests/epic-1/tester-1/account-creation-pos-1/"
       *        TO WS-FOLDER.
       *    MOVE "accounts.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+
       *    MOVE "Accounts.txt" TO WS-INITIAL-CONDITION.
       *    PERFORM MODIFY-INITIAL-CONDITON-FILE.
       *    PERFORM COUNTER-UPDATE.
@@ -237,106 +238,369 @@
       *    =============================================================
       *    =============================================================
       *    ===================== START YOUR TESTS ======================    
+      
 
-           MOVE "tests/epic-1/tester-1/account-creation-neg-2/" 
+      *    ================== EPIC 6 - TESTER 1 & 2 TESTS ==================
+
+      *    ======================= EPIC 6 - TESTER 1 =======================
+      
+
+      *    Positive Tests
+
+      *    Test: does the new job function trigger in all edge cases
+           MOVE "tests/epic-6/tester-1/00-post-pos-new-job/"
                TO WS-FOLDER.
+           
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
 
-      *    (Commented out: menus-neg-1/ has no input.txt or
-      *    expected.txt, which halted the entire harness with
-      *    file status 35)
-      *    MOVE "tests/epic-1/tester-1/menus-neg-1/" TO WS-FOLDER.
-      *    PERFORM COUNTER-UPDATE.
-           MOVE "tests/epic-1/tester-1/menus-pos-1/" TO WS-FOLDER.
-           PERFORM COUNTER-UPDATE.
-           MOVE "tests/epic-1/tester-1/menus-pos-2/" TO WS-FOLDER.
-           PERFORM COUNTER-UPDATE.
-           MOVE "tests/epic-1/tester-1/menus-pos-3/" TO WS-FOLDER.
-           PERFORM COUNTER-UPDATE.
-           MOVE "tests/epic-1/tester-1/menus-pos-4/" TO WS-FOLDER.
-           PERFORM COUNTER-UPDATE.
 
-      *    ================== EPIC 5 - TESTER 1 & 2 TESTS ==================
+      *    Test: Title
 
-           MOVE "tests/epic-5/tester-1/mixed-accept-reject-network/"
+           MOVE "tests/epic-6/tester-1/01-post-pos-new-job-title/"
                TO WS-FOLDER.
-           MOVE "connections.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Connections.txt" TO WS-INITIAL-CONDITION.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
-           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
 
-           MOVE "tests/epic-5/tester-2/accept-single-request/"
+      *    Test: Description
+
+           MOVE "tests/epic-6/tester-1/02-post-pos-new-job-description/"
                TO WS-FOLDER.
-           MOVE "connections.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Connections.txt" TO WS-INITIAL-CONDITION.
+           
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
-           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
 
-           MOVE "tests/epic-5/tester-2/accept-multiple-requests/"
+      *    Test: Employer
+
+           MOVE "tests/epic-6/tester-1/03-post-pos-new-job-employer/"
                TO WS-FOLDER.
-           MOVE "connections.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Connections.txt" TO WS-INITIAL-CONDITION.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
-           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
 
-           MOVE "tests/epic-5/tester-2/reject-single-request/"
+      *    Test: Location
+      
+           MOVE "tests/epic-6/tester-1/04-post-pos-new-job-location/"
                TO WS-FOLDER.
-           MOVE "connections.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Connections.txt" TO WS-INITIAL-CONDITION.
-           PERFORM MODIFY-INITIAL-CONDITON-FILE.
-           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
 
-           MOVE "tests/epic-5/tester-2/reject-multiple-requests/"
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+      *    Test: Salary
+
+           MOVE "tests/epic-6/tester-1/05-post-pos-new-job-salary/"
                TO WS-FOLDER.
-           MOVE "connections.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Connections.txt" TO WS-INITIAL-CONDITION.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
-           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+      *    Test: Menu entry/exit functinality
+
+           MOVE "tests/epic-6/tester-1/entry-exit-entry/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+
+      *    Negative Tests
+
+      *    Test: does the new job function reject a wrong input
+           MOVE "tests/epic-6/tester-1/00-post-neg-new-job/"
+               TO WS-FOLDER.
+           
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
 
-      *    Persistence test: part 1 accepts a pending request (which
-      *    writes the "C" status to Connections.txt on disk). Part 2
-      *    deliberately does NOT reseed connections.txt, so it only
-      *    passes if part 1's accept was actually persisted to disk
-      *    for this fresh run to read back in. Keep these two test
-      *    entries adjacent and in this order - no other test may run
-      *    between them and touch Connections.txt.
 
-         MOVE "Y" TO WS-SKIP-RESET.
-           MOVE "tests/epic-5/tester-2/" TO WS-FOLDER.
-           STRING WS-FOLDER
-               DELIMITED BY SPACE
-               "accept-request-persistence-part1/"
-               DELIMITED BY SIZE INTO WS-FOLDER.
-           MOVE "connections.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Connections.txt" TO WS-INITIAL-CONDITION.
+      *    Test: Title
+
+           MOVE "tests/epic-6/tester-1/01-post-neg-new-job-title/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
-           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
 
-           MOVE "tests/epic-5/tester-2/" TO WS-FOLDER.
-           STRING WS-FOLDER
-               DELIMITED BY SPACE
-               "accept-request-persistence-part2/"
-               DELIMITED BY SIZE INTO WS-FOLDER.
-           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+      *    Test: Description
+
+           MOVE "tests/epic-6/tester-1/02-post-neg-new-job-description/"
+               TO WS-FOLDER.
+           
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+
+      *    Test: Employer
+
+           MOVE "tests/epic-6/tester-1/03-post-neg-new-job-employer/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+
+      *    Test: Location
+      
+           MOVE "tests/epic-6/tester-1/04-post-neg-new-job-location/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+      *    Test: Salary
+
+           MOVE "tests/epic-6/tester-1/05-post-neg-new-job-salary/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+      *    Test: Menu entry/exit functinality
+
+           MOVE "tests/epic-6/tester-1/entry-exit-entry/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
 
@@ -455,7 +719,6 @@
                MOVE "N" TO WS-MISMATCH.
                MOVE "N" TO WS-OUTPUT-EOF.
                MOVE "N" TO WS-EXPECTED-EOF.
-               MOVE SPACES TO WS-FOLDER.
                MOVE SPACES TO WS-OUTPUT-LINE.
                MOVE SPACES TO WS-EXPECTED-LINE.
                MOVE SPACES TO WS-TEST-INPUT.
@@ -628,5 +891,4 @@
            CLOSE-CONSOLIDATED-FILES.
                CLOSE OUTPUT-FILE-CONSOLIDATED.
                CLOSE EXPECTED-FILE-CONSOLIDATED.
-               CLOSE TEST-INPUT-CONSOLIDATED.
-           
+            CLOSE TEST-INPUT-CONSOLIDATED.

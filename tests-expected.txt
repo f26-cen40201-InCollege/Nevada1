@@ -1,194 +1,66 @@
-Welcome to InCollege!
-1. Log-In
-2. Create New Account
-Enter your choice:
-2
-Please enter your username:
-IanKoratsky1
-Please enter your password:
-1234abc!
-Password doesn't satisfy requirements, try again
-1. Log-In
-2. Create New Account
-Enter your choice:
-Welcome to InCollege!
-1. Log-In
-2. Create New Account
-Enter your choice:
-2
-All permitted accounts have been created, please come back later
-1. Log-In
-2. Create New Account
-Enter your choice:
-IanKoratsky
-Invalid Option, Try Again
-1. Log-In
-2. Create New Account
-Enter your choice:
-1234Abc!
-Invalid Option, Try Again
-1. Log-In
-2. Create New Account
-Enter your choice:
-Welcome to InCollege!
-1. Log-In
-2. Create New Account
-Enter your choice:
+==== TEST: tests/epic-6/tester-1/00-post-pos-new-job/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
 1
-Please enter your username:
-IanKoratsky
-Please enter your password:
-1234Abc!
-You have successfully logged in.
-Welcome, IanKoratsky!
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
-Enter your choice:
-Welcome to InCollege!
-1. Log-In
-2. Create New Account
-Enter your choice:
-1
-Please enter your username:
-IanKoratsky
-Please enter your password:
-1234Abc!
-You have successfully logged in.
-Welcome, IanKoratsky!
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
-Enter your choice:
-1
-Job search/internship is under construction.
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
-Enter your choice:
-Welcome to InCollege!
-1. Log-In
-2. Create New Account
-Enter your choice:
-1
-Please enter your username:
-IanKoratsky
-Please enter your password:
-1234Abc!
-You have successfully logged in.
-Welcome, IanKoratsky!
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
-Enter your choice:
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
 3
-Learn a New Skill:
-1. Financial Literacy
-2. Public Speaking
-3. Time Management
-4. Coding Fundamentals
-5. Networking Skills
-6. Go Back
-Enter your choice:
-Welcome to InCollege!
-1. Log-In
-2. Create New Account
-Enter your choice:
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
 1
-Please enter your username:
-IanKoratsky
-Please enter your password:
-1234Abc!
-You have successfully logged in.
-Welcome, IanKoratsky!
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
-Enter your choice:
+--- Post a New Job/Internship ---
+Enter Job Title:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/00-post-pos-new-job/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
 3
-Learn a New Skill:
-1. Financial Literacy
-2. Public Speaking
-3. Time Management
-4. Coding Fundamentals
-5. Networking Skills
-6. Go Back
-Enter your choice:
-WELCOME TO INCOLLEGE!
-1. LOG-IN
-2. CREATE NEW ACCOUNT
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
 ENTER YOUR CHOICE:
 1
-Please Enter Your username:
-profileuser1
-Please Enter Your password:
-Passw0rd1$
-You Have Successfully Logged In.
-Welcome, profileuser1!
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-7
---- Pending Connection Requests ---
-Request from: profileuser2
-1. Accept
-2. Reject
-Enter your choice for profileuser2:
-1
-Connection request from profileuser2 accepted!
-Request from: profileuser3
-1. Accept
-2. Reject
-Enter your choice for profileuser3:
-2
-Connection request from profileuser3 rejected!
------------------------------------
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-8
---- Your Network ---
-Connected With: profileuser2 (University: University of Florida, Major: Physics)
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-7
---- Pending Connection Requests ---
-You have no pending connection requests at this time.
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-6
+--- Post a New Job/Internship ---
+Enter Job Title:
 ---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/00-post-pos-new-job/
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -209,50 +81,17 @@ Welcome, profileuser1!
 7. Pending Connection Requests
 8. View My Network
 ENTER YOUR CHOICE:
-7
---- Pending Connection Requests ---
-Request from: profileuser2
-1. Accept
-2. Reject
-Enter your choice for profileuser2:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
 1
-Connection request from profileuser2 accepted!
------------------------------------
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-8
---- Your Network ---
-Connected With: profileuser2 (University: University of Florida, Major: Physics)
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-7
---- Pending Connection Requests ---
-You have no pending connection requests at this time.
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-6
+--- Post a New Job/Internship ---
+Enter Job Title:
 ---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/01-post-pos-new-job-title/
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -273,57 +112,19 @@ Welcome, profileuser1!
 7. Pending Connection Requests
 8. View My Network
 ENTER YOUR CHOICE:
-7
---- Pending Connection Requests ---
-Request from: profileuser2
-1. Accept
-2. Reject
-Enter your choice for profileuser2:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
 1
-Connection request from profileuser2 accepted!
-Request from: profileuser3
-1. Accept
-2. Reject
-Enter your choice for profileuser3:
-1
-Connection request from profileuser3 accepted!
------------------------------------
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-8
---- Your Network ---
-Connected With: profileuser2 (University: University of Florida, Major: Physics)
-Connected With: profileuser3 (University: University of Texas, Major: Electrical Engineering)
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-7
---- Pending Connection Requests ---
-You have no pending connection requests at this time.
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-6
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
 ---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/01-post-pos-new-job-title/
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -344,50 +145,19 @@ Welcome, profileuser1!
 7. Pending Connection Requests
 8. View My Network
 ENTER YOUR CHOICE:
-7
---- Pending Connection Requests ---
-Request from: profileuser2
-1. Accept
-2. Reject
-Enter your choice for profileuser2:
-2
-Connection request from profileuser2 rejected!
------------------------------------
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
 ENTER YOUR CHOICE:
-8
---- Your Network ---
-You have no connections in your network at this time.
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-7
---- Pending Connection Requests ---
-You have no pending connection requests at this time.
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-6
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
 ---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/01-post-pos-new-job-title/
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -408,56 +178,19 @@ Welcome, profileuser1!
 7. Pending Connection Requests
 8. View My Network
 ENTER YOUR CHOICE:
-7
---- Pending Connection Requests ---
-Request from: profileuser2
-1. Accept
-2. Reject
-Enter your choice for profileuser2:
-2
-Connection request from profileuser2 rejected!
-Request from: profileuser3
-1. Accept
-2. Reject
-Enter your choice for profileuser3:
-2
-Connection request from profileuser3 rejected!
------------------------------------
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
 ENTER YOUR CHOICE:
-8
---- Your Network ---
-You have no connections in your network at this time.
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-7
---- Pending Connection Requests ---
-You have no pending connection requests at this time.
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-6
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
 ---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/02-post-pos-new-job-description/
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -478,26 +211,21 @@ Welcome, profileuser1!
 7. Pending Connection Requests
 8. View My Network
 ENTER YOUR CHOICE:
-7
---- Pending Connection Requests ---
-Request from: profileuser2
-1. Accept
-2. Reject
-Enter your choice for profileuser2:
-1
-Connection request from profileuser2 accepted!
------------------------------------
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
 ENTER YOUR CHOICE:
-6
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
 ---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/02-post-pos-new-job-description/
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -518,9 +246,32 @@ Welcome, profileuser1!
 7. Pending Connection Requests
 8. View My Network
 ENTER YOUR CHOICE:
-7
---- Pending Connection Requests ---
-You have no pending connection requests at this time.
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/02-post-pos-new-job-description/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
 1. Create/Edit My Profile
 2. View My Profile
 3. Search For a job
@@ -530,9 +281,32 @@ You have no pending connection requests at this time.
 7. Pending Connection Requests
 8. View My Network
 ENTER YOUR CHOICE:
-8
---- Your Network ---
-Connected With: profileuser2 (University: University of Florida, Major: Physics)
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/03-post-pos-new-job-employer/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
 1. Create/Edit My Profile
 2. View My Profile
 3. Search For a job
@@ -542,5 +316,1281 @@ Connected With: profileuser2 (University: University of Florida, Major: Physics)
 7. Pending Connection Requests
 8. View My Network
 ENTER YOUR CHOICE:
-6
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/03-post-pos-new-job-employer/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/03-post-pos-new-job-employer/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/04-post-pos-new-job-location/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+Tampa, Florida
+Enter Salary (optional, enter 'NONE' to skip):
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/04-post-pos-new-job-location/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+Tampa, Florida
+Enter Salary (optional, enter 'NONE' to skip):
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/04-post-pos-new-job-location/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+Tampa, Florida
+Enter Salary (optional, enter 'NONE' to skip):
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/05-post-pos-new-job-salary/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+Tampa, Florida
+Enter Salary (optional, enter 'NONE' to skip):
+65,000.00
+Job posted successfully!
+----------------------------------
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/05-post-pos-new-job-salary/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+Tampa, Florida
+Enter Salary (optional, enter 'NONE' to skip):
+65,000.00
+Job posted successfully!
+----------------------------------
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/05-post-pos-new-job-salary/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+Tampa, Florida
+Enter Salary (optional, enter 'NONE' to skip):
+65,000.00
+Job posted successfully!
+----------------------------------
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/entry-exit-entry/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/entry-exit-entry/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/entry-exit-entry/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/00-post-neg-new-job/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+9999999999999
+Invalid Option, Try Again
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/00-post-neg-new-job/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+9999999999999
+Invalid Option, Try Again
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/00-post-neg-new-job/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+9999999999999
+Invalid Option, Try Again
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/01-post-neg-new-job-title/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxzasdfghjkl;'][poiuytrewq1azq2x3wsecdrvf
+Job Title Cannot Exceed 50 Characters, Try Again
+Enter Job Title:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/01-post-neg-new-job-title/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxzasdfghjkl;'][poiuytrewq1azq2x3wsecdrvf
+Job Title Cannot Exceed 50 Characters, Try Again
+Enter Job Title:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/01-post-neg-new-job-title/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxzasdfghjkl;'][poiuytrewq1azq2x3wsecdrvf
+Job Title Cannot Exceed 50 Characters, Try Again
+Enter Job Title:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/02-post-neg-new-job-description/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxza
+Enter Employer Name:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/02-post-neg-new-job-description/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxza
+Enter Employer Name:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/02-post-neg-new-job-description/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxza
+Enter Employer Name:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/03-post-neg-new-job-employer/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxzasdfghjkl;'][poiuytrewq1azq2x
+Employer Name Cannot Exceed 50 Characters, Try Again
+Enter Employer Name:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/03-post-neg-new-job-employer/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxzasdfghjkl;'][poiuytrewq1azq2x
+Employer Name Cannot Exceed 50 Characters, Try Again
+Enter Employer Name:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/03-post-neg-new-job-employer/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxzasdfghjkl;'][poiuytrewq1azq2x
+Employer Name Cannot Exceed 50 Characters, Try Again
+Enter Employer Name:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/04-post-neg-new-job-location/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+Tampa, Florida!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxzasdfghjkl;'][poiuytrewq1
+Location Cannot Exceed 50 Characters, Try Again
+Enter Location:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/04-post-neg-new-job-location/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+Tampa, Florida!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxzasdfghjkl;'][poiuytrewq1
+Location Cannot Exceed 50 Characters, Try Again
+Enter Location:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/04-post-neg-new-job-location/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+Tampa, Florida!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxzasdfghjkl;'][poiuytrewq1
+Location Cannot Exceed 50 Characters, Try Again
+Enter Location:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/05-post-neg-new-job-salary/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+Tampa, Florida
+Enter Salary (optional, enter 'NONE' to skip):
+65,000.00!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxzasdfghjkl;'][poiuytrewq1azq2x
+Salary Cannot Exceed 30 Characters, Try Again
+Enter Salary (optional, enter 'NONE' to skip):
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/05-post-neg-new-job-salary/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+Tampa, Florida
+Enter Salary (optional, enter 'NONE' to skip):
+65,000.00!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxzasdfghjkl;'][poiuytrewq1azq2x
+Salary Cannot Exceed 30 Characters, Try Again
+Enter Salary (optional, enter 'NONE' to skip):
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/05-post-neg-new-job-salary/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+Tampa, Florida
+Enter Salary (optional, enter 'NONE' to skip):
+65,000.00!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxzasdfghjkl;'][poiuytrewq1azq2x
+Salary Cannot Exceed 30 Characters, Try Again
+Enter Salary (optional, enter 'NONE' to skip):
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/entry-exit-entry/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/entry-exit-entry/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-6/tester-1/entry-exit-entry/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---
