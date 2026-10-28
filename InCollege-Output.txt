@@ -35,4 +35,17 @@ InCollege
 Enter Location:
 Tampa, Florida
 Enter Salary (optional, enter 'NONE' to skip):
+$90000 - $100000
+Job posted successfully!
+----------------------------------
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+2
+Browse Jobs/Internships is under construction.
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---

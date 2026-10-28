@@ -1,0 +1,18 @@
+1
+profileuser1
+Passw0rd1$
+3
+1
+E6-P05 First Job
+First description.
+Alpha
+Tampa, FL
+NONE
+1
+E6-P05 Second Job
+Second description.
+Beta
+Miami, FL
+$50/hour
+3
+6
