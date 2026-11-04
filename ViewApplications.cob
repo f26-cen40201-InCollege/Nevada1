@@ -60,16 +60,19 @@
            PERFORM WRITE-OUTPUT
            IF WS-FOUND-JOB-IDX = 0
                MOVE "(This listing is not available.)" TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
            ELSE
                MOVE SPACES TO WS-OUTPUT-LINE
                STRING "Job Title: "
                    FUNCTION TRIM(WS-JOB-TITLE(WS-FOUND-JOB-IDX))
                    DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
                STRING "Employer: "
                    FUNCTION TRIM(WS-JOB-EMPLOYER(WS-FOUND-JOB-IDX))
                    DELIMITED BY SIZE INTO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
+               MOVE SPACES TO WS-OUTPUT-LINE
                STRING "Location: "
                    FUNCTION TRIM(WS-JOB-LOCATION(WS-FOUND-JOB-IDX))
                    DELIMITED BY SIZE INTO WS-OUTPUT-LINE

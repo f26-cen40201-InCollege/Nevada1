@@ -48,7 +48,7 @@
        JOB-MENU.
            MOVE "N" TO WS-JOB-MENU-DONE
            PERFORM UNTIL JOB-MENU-DONE OR END-OF-INPUT
-               MOVE "---Job Search/Internship Menu ---" 
+               MOVE "--- Job Search/Internship Menu ---" 
                    TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
                MOVE "1. Post a Job/Internship" TO WS-OUTPUT-LINE

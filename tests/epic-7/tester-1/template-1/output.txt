@@ -1,2 +1,8 @@
-Welcome to InCollege!
-Welcome, !
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+2
+Please Enter Your username:
+Blank Usernames not allowed
+---END_OF_PROGRAM---
