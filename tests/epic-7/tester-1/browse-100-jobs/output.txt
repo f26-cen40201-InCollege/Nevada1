@@ -1,0 +1,264 @@
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+TestUser
+Please Enter Your password:
+Passw0rd1!
+You Have Successfully Logged In.
+Welcome, TestUser!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+--- Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. View My Applications
+4. Back to Main Menu
+ENTER YOUR CHOICE:
+2
+--- Available Job Listings ---
+1. Job Title 001 at Employer 001 (City 001)
+2. Job Title 002 at Employer 002 (City 002)
+3. Job Title 003 at Employer 003 (City 003)
+4. Job Title 004 at Employer 004 (City 004)
+5. Job Title 005 at Employer 005 (City 005)
+6. Job Title 006 at Employer 006 (City 006)
+7. Job Title 007 at Employer 007 (City 007)
+8. Job Title 008 at Employer 008 (City 008)
+9. Job Title 009 at Employer 009 (City 009)
+10. Job Title 010 at Employer 010 (City 010)
+11. Job Title 011 at Employer 011 (City 011)
+12. Job Title 012 at Employer 012 (City 012)
+13. Job Title 013 at Employer 013 (City 013)
+14. Job Title 014 at Employer 014 (City 014)
+15. Job Title 015 at Employer 015 (City 015)
+16. Job Title 016 at Employer 016 (City 016)
+17. Job Title 017 at Employer 017 (City 017)
+18. Job Title 018 at Employer 018 (City 018)
+19. Job Title 019 at Employer 019 (City 019)
+20. Job Title 020 at Employer 020 (City 020)
+21. Job Title 021 at Employer 021 (City 021)
+22. Job Title 022 at Employer 022 (City 022)
+23. Job Title 023 at Employer 023 (City 023)
+24. Job Title 024 at Employer 024 (City 024)
+25. Job Title 025 at Employer 025 (City 025)
+26. Job Title 026 at Employer 026 (City 026)
+27. Job Title 027 at Employer 027 (City 027)
+28. Job Title 028 at Employer 028 (City 028)
+29. Job Title 029 at Employer 029 (City 029)
+30. Job Title 030 at Employer 030 (City 030)
+31. Job Title 031 at Employer 031 (City 031)
+32. Job Title 032 at Employer 032 (City 032)
+33. Job Title 033 at Employer 033 (City 033)
+34. Job Title 034 at Employer 034 (City 034)
+35. Job Title 035 at Employer 035 (City 035)
+36. Job Title 036 at Employer 036 (City 036)
+37. Job Title 037 at Employer 037 (City 037)
+38. Job Title 038 at Employer 038 (City 038)
+39. Job Title 039 at Employer 039 (City 039)
+40. Job Title 040 at Employer 040 (City 040)
+41. Job Title 041 at Employer 041 (City 041)
+42. Job Title 042 at Employer 042 (City 042)
+43. Job Title 043 at Employer 043 (City 043)
+44. Job Title 044 at Employer 044 (City 044)
+45. Job Title 045 at Employer 045 (City 045)
+46. Job Title 046 at Employer 046 (City 046)
+47. Job Title 047 at Employer 047 (City 047)
+48. Job Title 048 at Employer 048 (City 048)
+49. Job Title 049 at Employer 049 (City 049)
+50. Job Title 050 at Employer 050 (City 050)
+51. Job Title 051 at Employer 051 (City 051)
+52. Job Title 052 at Employer 052 (City 052)
+53. Job Title 053 at Employer 053 (City 053)
+54. Job Title 054 at Employer 054 (City 054)
+55. Job Title 055 at Employer 055 (City 055)
+56. Job Title 056 at Employer 056 (City 056)
+57. Job Title 057 at Employer 057 (City 057)
+58. Job Title 058 at Employer 058 (City 058)
+59. Job Title 059 at Employer 059 (City 059)
+60. Job Title 060 at Employer 060 (City 060)
+61. Job Title 061 at Employer 061 (City 061)
+62. Job Title 062 at Employer 062 (City 062)
+63. Job Title 063 at Employer 063 (City 063)
+64. Job Title 064 at Employer 064 (City 064)
+65. Job Title 065 at Employer 065 (City 065)
+66. Job Title 066 at Employer 066 (City 066)
+67. Job Title 067 at Employer 067 (City 067)
+68. Job Title 068 at Employer 068 (City 068)
+69. Job Title 069 at Employer 069 (City 069)
+70. Job Title 070 at Employer 070 (City 070)
+71. Job Title 071 at Employer 071 (City 071)
+72. Job Title 072 at Employer 072 (City 072)
+73. Job Title 073 at Employer 073 (City 073)
+74. Job Title 074 at Employer 074 (City 074)
+75. Job Title 075 at Employer 075 (City 075)
+76. Job Title 076 at Employer 076 (City 076)
+77. Job Title 077 at Employer 077 (City 077)
+78. Job Title 078 at Employer 078 (City 078)
+79. Job Title 079 at Employer 079 (City 079)
+80. Job Title 080 at Employer 080 (City 080)
+81. Job Title 081 at Employer 081 (City 081)
+82. Job Title 082 at Employer 082 (City 082)
+83. Job Title 083 at Employer 083 (City 083)
+84. Job Title 084 at Employer 084 (City 084)
+85. Job Title 085 at Employer 085 (City 085)
+86. Job Title 086 at Employer 086 (City 086)
+87. Job Title 087 at Employer 087 (City 087)
+88. Job Title 088 at Employer 088 (City 088)
+89. Job Title 089 at Employer 089 (City 089)
+90. Job Title 090 at Employer 090 (City 090)
+91. Job Title 091 at Employer 091 (City 091)
+92. Job Title 092 at Employer 092 (City 092)
+93. Job Title 093 at Employer 093 (City 093)
+94. Job Title 094 at Employer 094 (City 094)
+95. Job Title 095 at Employer 095 (City 095)
+96. Job Title 096 at Employer 096 (City 096)
+97. Job Title 097 at Employer 097 (City 097)
+98. Job Title 098 at Employer 098 (City 098)
+99. Job Title 099 at Employer 099 (City 099)
+100. Job Title 100 at Employer 100 (City 100)
+-----------------------------
+Enter job number to view details, or 0 to go back:
+100
+--- Job Details ---
+Title: Job Title 100
+Description: Description for job 100.
+Employer: Employer 100
+Location: City 100
+-------------------
+1. Apply for this Job
+2. Back to Job List
+Enter Your Choice:
+2
+--- Available Job Listings ---
+1. Job Title 001 at Employer 001 (City 001)
+2. Job Title 002 at Employer 002 (City 002)
+3. Job Title 003 at Employer 003 (City 003)
+4. Job Title 004 at Employer 004 (City 004)
+5. Job Title 005 at Employer 005 (City 005)
+6. Job Title 006 at Employer 006 (City 006)
+7. Job Title 007 at Employer 007 (City 007)
+8. Job Title 008 at Employer 008 (City 008)
+9. Job Title 009 at Employer 009 (City 009)
+10. Job Title 010 at Employer 010 (City 010)
+11. Job Title 011 at Employer 011 (City 011)
+12. Job Title 012 at Employer 012 (City 012)
+13. Job Title 013 at Employer 013 (City 013)
+14. Job Title 014 at Employer 014 (City 014)
+15. Job Title 015 at Employer 015 (City 015)
+16. Job Title 016 at Employer 016 (City 016)
+17. Job Title 017 at Employer 017 (City 017)
+18. Job Title 018 at Employer 018 (City 018)
+19. Job Title 019 at Employer 019 (City 019)
+20. Job Title 020 at Employer 020 (City 020)
+21. Job Title 021 at Employer 021 (City 021)
+22. Job Title 022 at Employer 022 (City 022)
+23. Job Title 023 at Employer 023 (City 023)
+24. Job Title 024 at Employer 024 (City 024)
+25. Job Title 025 at Employer 025 (City 025)
+26. Job Title 026 at Employer 026 (City 026)
+27. Job Title 027 at Employer 027 (City 027)
+28. Job Title 028 at Employer 028 (City 028)
+29. Job Title 029 at Employer 029 (City 029)
+30. Job Title 030 at Employer 030 (City 030)
+31. Job Title 031 at Employer 031 (City 031)
+32. Job Title 032 at Employer 032 (City 032)
+33. Job Title 033 at Employer 033 (City 033)
+34. Job Title 034 at Employer 034 (City 034)
+35. Job Title 035 at Employer 035 (City 035)
+36. Job Title 036 at Employer 036 (City 036)
+37. Job Title 037 at Employer 037 (City 037)
+38. Job Title 038 at Employer 038 (City 038)
+39. Job Title 039 at Employer 039 (City 039)
+40. Job Title 040 at Employer 040 (City 040)
+41. Job Title 041 at Employer 041 (City 041)
+42. Job Title 042 at Employer 042 (City 042)
+43. Job Title 043 at Employer 043 (City 043)
+44. Job Title 044 at Employer 044 (City 044)
+45. Job Title 045 at Employer 045 (City 045)
+46. Job Title 046 at Employer 046 (City 046)
+47. Job Title 047 at Employer 047 (City 047)
+48. Job Title 048 at Employer 048 (City 048)
+49. Job Title 049 at Employer 049 (City 049)
+50. Job Title 050 at Employer 050 (City 050)
+51. Job Title 051 at Employer 051 (City 051)
+52. Job Title 052 at Employer 052 (City 052)
+53. Job Title 053 at Employer 053 (City 053)
+54. Job Title 054 at Employer 054 (City 054)
+55. Job Title 055 at Employer 055 (City 055)
+56. Job Title 056 at Employer 056 (City 056)
+57. Job Title 057 at Employer 057 (City 057)
+58. Job Title 058 at Employer 058 (City 058)
+59. Job Title 059 at Employer 059 (City 059)
+60. Job Title 060 at Employer 060 (City 060)
+61. Job Title 061 at Employer 061 (City 061)
+62. Job Title 062 at Employer 062 (City 062)
+63. Job Title 063 at Employer 063 (City 063)
+64. Job Title 064 at Employer 064 (City 064)
+65. Job Title 065 at Employer 065 (City 065)
+66. Job Title 066 at Employer 066 (City 066)
+67. Job Title 067 at Employer 067 (City 067)
+68. Job Title 068 at Employer 068 (City 068)
+69. Job Title 069 at Employer 069 (City 069)
+70. Job Title 070 at Employer 070 (City 070)
+71. Job Title 071 at Employer 071 (City 071)
+72. Job Title 072 at Employer 072 (City 072)
+73. Job Title 073 at Employer 073 (City 073)
+74. Job Title 074 at Employer 074 (City 074)
+75. Job Title 075 at Employer 075 (City 075)
+76. Job Title 076 at Employer 076 (City 076)
+77. Job Title 077 at Employer 077 (City 077)
+78. Job Title 078 at Employer 078 (City 078)
+79. Job Title 079 at Employer 079 (City 079)
+80. Job Title 080 at Employer 080 (City 080)
+81. Job Title 081 at Employer 081 (City 081)
+82. Job Title 082 at Employer 082 (City 082)
+83. Job Title 083 at Employer 083 (City 083)
+84. Job Title 084 at Employer 084 (City 084)
+85. Job Title 085 at Employer 085 (City 085)
+86. Job Title 086 at Employer 086 (City 086)
+87. Job Title 087 at Employer 087 (City 087)
+88. Job Title 088 at Employer 088 (City 088)
+89. Job Title 089 at Employer 089 (City 089)
+90. Job Title 090 at Employer 090 (City 090)
+91. Job Title 091 at Employer 091 (City 091)
+92. Job Title 092 at Employer 092 (City 092)
+93. Job Title 093 at Employer 093 (City 093)
+94. Job Title 094 at Employer 094 (City 094)
+95. Job Title 095 at Employer 095 (City 095)
+96. Job Title 096 at Employer 096 (City 096)
+97. Job Title 097 at Employer 097 (City 097)
+98. Job Title 098 at Employer 098 (City 098)
+99. Job Title 099 at Employer 099 (City 099)
+100. Job Title 100 at Employer 100 (City 100)
+-----------------------------
+Enter job number to view details, or 0 to go back:
+0
+--- Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. View My Applications
+4. Back to Main Menu
+ENTER YOUR CHOICE:
+4
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---
