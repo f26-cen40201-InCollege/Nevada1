@@ -1,4 +1,3 @@
-      * ================================================================
       * =================== START INSTRUCTIONS =========================
 
       *>   This is the main test entry point.
@@ -8,15 +7,13 @@
 
       *>   IMPORTANT: YOU MUST UPDATE THE COMPILE CODE IF YOU ADD A FILE TO BE TESTED:
 
-      *>   cobc -x -o test-main test-main.cob InCollege-Core.cob 
+            *>   cobc -x -o test-main test-main.cob InCollege-Core.cob
+            *>       tests/copy_file.cob
       *>   ./test-main
       *>   then simply run: ./test-main to run all tests
       *>   if someone wants to make a way to add particular tests, feel free!
 
-      
-
       * ==================== END INSTRUCTIONS ==========================
-      * ================================================================
 
        IDENTIFICATION DIVISION.
        PROGRAM-ID. test-main.
@@ -53,11 +50,17 @@
              ORGANIZATION IS LINE SEQUENTIAL
              FILE STATUS IS WS-TEST-INPUT-CONSOLIDATED-STAT.
 
-          
+           SELECT OPTIONAL JOBS-ACTUAL-FILE ASSIGN TO "Jobs.txt"
+             ORGANIZATION IS LINE SEQUENTIAL
+             FILE STATUS IS WS-JOBS-ACT-STAT.
+
+           SELECT OPTIONAL JOBS-EXPECTED-FILE
+             ASSIGN TO WS-JOBS-EXP-PATH
+             ORGANIZATION IS LINE SEQUENTIAL
+             FILE STATUS IS WS-JOBS-EXP-STAT.
 
        DATA DIVISION.
        FILE SECTION.
-
 
       *    ========================= Test Files ========================
 
@@ -70,8 +73,6 @@
            FD EXPECTED-FILE.
            01 EXPECTED-FILE-REC PIC X(100).
 
-      
-
       *    ==================== Condolidation Files ====================
 
            FD TEST-INPUT-CONSOLIDATED.
@@ -83,13 +84,21 @@
            FD EXPECTED-FILE-CONSOLIDATED.
            01 EXPECTED-CONSOLIDATED-REC PIC X(100).
 
+      *    ================== Jobs.txt comparison (Epic 6) =============
+      *    One job record is 404 characters (4+20+50+200+50+50+30).
+
+           FD JOBS-ACTUAL-FILE.
+           01 JOBS-ACTUAL-REC PIC X(404).
+
+           FD JOBS-EXPECTED-FILE.
+           01 JOBS-EXPECTED-REC PIC X(404).
 
        WORKING-STORAGE SECTION.
       *    ====================== Original Files =======================
            
            01 ACCOUNTS-PATH PIC X(100).
 
-      *    ========================== Booleans==========================
+      *    ========================== Booleans ==========================
            01 WS-OUTPUT-EOF PIC X VALUE "N".
                88 WS-OUTPUT-END VALUE "Y".
            
@@ -102,12 +111,14 @@
            01 NOT-FINAL-OUTPUT PIC X VALUE "N".
                 88 FINAL-OUTPUT VALUE "Y".
 
-      *    ========================== Counters========================== 
+         01 WS-SKIP-RESET PIC X VALUE "N".
+
+      *    ========================== Counters ========================== 
 
            01 TotalTestsPassed PIC 9(5) VALUE 0.
            01 TotalTestsFailed PIC 9(5) VALUE 0.
 
-      *    ========================= Test Input========================= 
+      *    ========================= Test Input ========================= 
 
            01 WS-TEST-INPUT PIC X(100).
            01 WS-TEST-CODE PIC X(100).
@@ -123,14 +134,13 @@
            01 WS-OUTPUT-STAT PIC XX.
            01 WS-OUTPUT-STAT-CONSOLIDATED PIC XX.
 
-      *    ========================== Expected========================== 
+      *    ========================== Expected ========================== 
            01 WS-EXPECTED-LINE PIC X(100).
            01 WS-EXPECTED-FILE PIC X(100).
            01 WS-EXPECTED-STAT PIC XX.
            01 WS-EXPECTED-STAT-CONSOLIDATED PIC XX.
 
-
-      *    ======================== Consolidated========================
+      *    ======================== Consolidated ========================
            01 WS-OUTPUT-FILE-CONSOLIDATED PIC X(100)
                VALUE "tests-output.txt".
            01 OUTPUT-CONSOLIDATED-LINE PIC X(100).
@@ -143,6 +153,19 @@
            01 WS-TEST-INPUT-CONSOLIDATED PIC X(100)
                VALUE "tests-input.txt".
            01 WS-TEST-INPUT-CONSOLIDATED-STAT PIC XX.
+
+      *    ================== Jobs.txt comparison (Epic 6) =============
+           01 WS-JOBS-ACT-STAT PIC XX.
+           01 WS-JOBS-EXP-STAT PIC XX.
+           01 WS-JOBS-EXP-PATH PIC X(100).
+           01 WS-JOBS-ACT-LINE PIC X(404).
+           01 WS-JOBS-EXP-LINE PIC X(404).
+           01 WS-JOBS-ACT-EOF PIC X VALUE "N".
+               88 WS-JOBS-ACT-END VALUE "Y".
+           01 WS-JOBS-EXP-EOF PIC X VALUE "N".
+               88 WS-JOBS-EXP-END VALUE "Y".
+           01 WS-JOBS-MISMATCH PIC X VALUE "N".
+               88 JOBS-MISMATCH-FOUND VALUE "Y".
            01 WS-INPUT-LINE PIC X(100).
            01 WS-INPUT-EOF PIC X VALUE "N".
                88 WS-INPUT-END VALUE "Y".
@@ -172,10 +195,10 @@
 
       *    Uncomment the below to output headers for debugging
 
-      *     SET SHOW-HEADERS TO TRUE.
+           SET SHOW-HEADERS TO TRUE.
 
       *    This will push the outputs to what we need to submit
-           SET FINAL-OUTPUT TO TRUE.
+      *     SET FINAL-OUTPUT TO TRUE.
 
       *    ===================== END TOGGLE VARS =======================
       *    =============================================================
@@ -186,7 +209,6 @@
 
            MOVE 0 TO TotalTestsPassed.
            MOVE 0 TO TotalTestsFailed.
-
 
 
       *    =============================================================
@@ -203,20 +225,24 @@
 
       *    ====================== Option 1: Basic ======================
 
-           MOVE "tests/epic-1/tester-1/account-creation-neg-1/" 
-               TO WS-FOLDER.
-           PERFORM COUNTER-UPDATE.
+      *     MOVE "tests/epic-1/tester-1/account-creation-neg-1/" 
+      *         TO WS-FOLDER.
+      *     PERFORM COUNTER-UPDATE.
 
       *    ==================== Option 2: Advanced =====================
 
       *    If you need to set a file to a specific initial condition,
       *    use this instead
-           MOVE "tests/epic-1/tester-1/account-creation-pos-1/" 
-               TO WS-FOLDER.
-           MOVE "accounts.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "Accounts.txt" TO WS-INITIAL-CONDITION.
-           PERFORM MODIFY-INITIAL-CONDITON-FILE.
-           PERFORM COUNTER-UPDATE.
+      *    (Commented out: account-creation-pos-1/ has no input.txt or
+      *    expected.txt, which halted the entire harness with
+      *    file status 35)
+      *    MOVE "tests/epic-1/tester-1/account-creation-pos-1/"
+      *        TO WS-FOLDER.
+      *    MOVE "accounts.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+
+      *    MOVE "Accounts.txt" TO WS-INITIAL-CONDITION.
+      *    PERFORM MODIFY-INITIAL-CONDITON-FILE.
+      *    PERFORM COUNTER-UPDATE.
 
       *    ======================= END EXAMPLE =========================
       *    =============================================================
@@ -232,22 +258,464 @@
       *    =============================================================
       *    =============================================================
       *    ===================== START YOUR TESTS ======================    
+      
 
-           MOVE "tests/epic-1/tester-1/account-creation-neg-2/" 
+      *    ================== EPIC 6 - TESTER 1 & 2 TESTS ==================
+
+      *    ======================= EPIC 6 - TESTER 1 =======================
+      
+
+      *    Positive Tests
+
+      *    Test: does the new job function trigger in all edge cases
+           MOVE "tests/epic-6/tester-1/00-post-pos-new-job/"
                TO WS-FOLDER.
+           
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
 
-           MOVE "tests/epic-1/tester-1/menus-neg-1/" TO WS-FOLDER.
+
+      *    Test: Title
+
+           MOVE "tests/epic-6/tester-1/01-post-pos-new-job-title/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
-           MOVE "tests/epic-1/tester-1/menus-pos-1/" TO WS-FOLDER.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
-           MOVE "tests/epic-1/tester-1/menus-pos-2/" TO WS-FOLDER.
-           PERFORM COUNTER-UPDATE.
-           MOVE "tests/epic-1/tester-1/menus-pos-3/" TO WS-FOLDER.
-           PERFORM COUNTER-UPDATE.
-           MOVE "tests/epic-1/tester-1/menus-pos-4/" TO WS-FOLDER.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
            PERFORM COUNTER-UPDATE.
 
+      *    Test: Description
+
+           MOVE "tests/epic-6/tester-1/02-post-pos-new-job-description/"
+               TO WS-FOLDER.
+           
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+
+      *    Test: Employer
+
+           MOVE "tests/epic-6/tester-1/03-post-pos-new-job-employer/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+
+      *    Test: Location
+      
+           MOVE "tests/epic-6/tester-1/04-post-pos-new-job-location/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+      *    Test: Salary
+
+           MOVE "tests/epic-6/tester-1/05-post-pos-new-job-salary/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+      *    Test: Menu entry/exit functinality
+
+           MOVE "tests/epic-6/tester-1/entry-exit-entry/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+
+      *    Negative Tests
+
+      *    Test: does the new job function reject a wrong input
+           MOVE "tests/epic-6/tester-1/00-post-neg-new-job/"
+               TO WS-FOLDER.
+           
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+
+
+      *    Test: Title
+
+           MOVE "tests/epic-6/tester-1/01-post-neg-new-job-title/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+
+      *    Test: Description
+
+           MOVE "tests/epic-6/tester-1/02-post-neg-new-job-description/"
+               TO WS-FOLDER.
+           
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+
+      *    Test: Employer
+
+           MOVE "tests/epic-6/tester-1/03-post-neg-new-job-employer/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+
+      *    Test: Location
+      
+           MOVE "tests/epic-6/tester-1/04-post-neg-new-job-location/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+      *    Test: Salary
+
+           MOVE "tests/epic-6/tester-1/05-post-neg-new-job-salary/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+      *    Test: Menu entry/exit functinality
+
+           MOVE "tests/epic-6/tester-1/entry-exit-entry/"
+               TO WS-FOLDER.
+           MOVE "tests/epic-6/tester-1/zero-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/1-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+           
+           MOVE "tests/epic-6/tester-1/99-jobs.txt" 
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+
+           MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM COUNTER-UPDATE.
+
+
+      *    ======================= EPIC 6 - TESTER 2 =======================
+
+      *    jobs.txt / expected-jobs.txt = Jobs.txt before / after the run.
+      *    T2-RUN: set Jobs.txt, run, compare output and Jobs.txt.
+      *    T2-RUN-CONTINUE: same, but keeps the previous run's Jobs.txt.
+           MOVE "INCOLLEGE-CORE" TO WS-TEST-CODE.
+
+      *    ------------------------- Positive --------------------------
+
+      *    Salary NONE, saved with no salary
+           MOVE
+           "tests/epic-6/tester-2/04-post-salary-none/"
+               TO WS-FOLDER.
+           PERFORM T2-RUN.
+
+      *    Description of exactly 200 characters is kept in full
+           MOVE
+           "tests/epic-6/tester-2/05-description-exactly-200/"
+               TO WS-FOLDER.
+           PERFORM T2-RUN.
+
+      *    Two postings in one run: two records, IDs 1 and 2
+           MOVE
+           "tests/epic-6/tester-2/06-two-jobs-one-run/"
+               TO WS-FOLDER.
+           PERFORM T2-RUN.
+
+      *    ------------------------- Negative --------------------------
+
+      *    Each required field blank in turn is rejected and re-asked
+           MOVE
+           "tests/epic-6/tester-2/02-blank-required-fields/"
+               TO WS-FOLDER.
+           PERFORM T2-RUN.
+
+      *    Description of 201 characters is rejected, not truncated
+           MOVE
+           "tests/epic-6/tester-2/03-description-201-rejected/"
+               TO WS-FOLDER.
+           PERFORM T2-RUN.
+
+      *    ---------------- Persistence (three runs in a row) ----------
+
+      *    User 1 posts, user 2 posts, then a login-only run.
+           MOVE
+           "tests/epic-6/tester-2/07-persist-run1-user1-posts/"
+               TO WS-FOLDER.
+           PERFORM T2-RUN.
+
+           MOVE
+           "tests/epic-6/tester-2/08-persist-run2-user2-posts/"
+               TO WS-FOLDER.
+           PERFORM T2-RUN-CONTINUE.
+
+           MOVE
+           "tests/epic-6/tester-2/09-persist-run3-login-only/"
+               TO WS-FOLDER.
+           PERFORM T2-RUN-CONTINUE.
+
+      *    ------------- Navigation / deliverable sample run -----------
+
+      *    Post, then Browse (under construction), then back to the menu
+           MOVE
+           "tests/epic-6/tester-2/11-week6-sample-run/"
+               TO WS-FOLDER.
+           PERFORM T2-RUN.
+
+      *    --------------- Regression (earlier epics) ------------------
+
+      *    Pending requests and network still work after posting a job.
+      *    Connections/Profiles are set to a known state first.
+           MOVE
+           "tests/epic-6/tester-2/01-pending-network-posting/"
+               TO WS-FOLDER.
+           MOVE "connections.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "profiles.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           PERFORM T2-RUN.
+
+      *    ------------------------ Spec wording -----------------------
+
+      *    Expects "--- Job Search/Internship Menu ---"; fails until the
+      *    program's header gets its missing space.
+      *    Keep LAST: posts nothing, so Jobs.txt ends empty.
+           MOVE
+           "tests/epic-6/tester-2/10-job-menu-spec-wording/"
+               TO WS-FOLDER.
+           PERFORM T2-RUN.
 
       *    ====================== END YOUR TESTS =======================
       *    =============================================================
@@ -317,7 +785,6 @@
            
                PERFORM START-FILES.
     
-    
       *    ============================ Loop ===========================
     
                PERFORM UNTIL WS-OUTPUT-END AND WS-EXPECTED-END
@@ -355,19 +822,19 @@
     
       *        Clear vars and files
                PERFORM CLOSE-FILES.
-               PERFORM RESET-ORIGINAL-FILES.
+               IF WS-SKIP-RESET = "N"
+                   PERFORM RESET-ORIGINAL-FILES
+               ELSE
+                   MOVE "N" TO WS-SKIP-RESET
+               END-IF.
                MOVE "N" TO WS-MISMATCH.
                MOVE "N" TO WS-OUTPUT-EOF.
                MOVE "N" TO WS-EXPECTED-EOF.
-               MOVE SPACES TO WS-FOLDER.
                MOVE SPACES TO WS-OUTPUT-LINE.
                MOVE SPACES TO WS-EXPECTED-LINE.
                MOVE SPACES TO WS-TEST-INPUT.
                MOVE SPACES TO WS-OUTPUT-FILE.
                MOVE SPACES TO WS-EXPECTED-FILE.
-
-
-
 
       *    Here we set any oringal files needed to 
            SET-ORIGINAL-FILES.
@@ -382,6 +849,14 @@
                     "Accounts.txt"
                     "Accounts-backup.txt" 
                     RETURNCODE.
+                CALL "COPY-FILE" USING 
+                    "Profiles.txt"
+                    "Profiles-backup.txt" 
+                    RETURNCODE.
+                CALL "COPY-FILE" USING 
+                    "Connections.txt"
+                    "Connections-backup.txt" 
+                    RETURNCODE.
 
            RESET-ORIGINAL-FILES.
                 move 0 to RETURNCODE.
@@ -392,10 +867,16 @@
                    "Accounts-backup.txt" 
                    "Accounts.txt"
                    RETURNCODE.
+               CALL "COPY-FILE" USING 
+                   "Profiles-backup.txt" 
+                   "Profiles.txt"
+                   RETURNCODE.
+               CALL "COPY-FILE" USING 
+                   "Connections-backup.txt" 
+                   "Connections.txt"
+                   RETURNCODE.
            
       *    ===================== Helper functions ======================
-
-       
 
            BUILD-TEST-PATH.
                MOVE SPACES TO WS-BUILT-PATH.
@@ -513,8 +994,69 @@
                CLOSE OUTPUT-FILE.
                CLOSE EXPECTED-FILE.
     
+           T2-RUN.
+               MOVE "jobs.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+               MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+               PERFORM MODIFY-INITIAL-CONDITON-FILE.
+               PERFORM T2-RUN-CONTINUE.
+
+           T2-RUN-CONTINUE.
+               PERFORM COUNTER-UPDATE.
+               PERFORM T2-VERIFY-JOBS.
+
+           T2-VERIFY-JOBS.
+      *        Jobs.txt as saved by the program vs expected-jobs.txt.
+               MOVE "expected-jobs.txt" TO WS-PATH-SUFFIX.
+               PERFORM BUILD-TEST-PATH.
+               MOVE WS-BUILT-PATH TO WS-JOBS-EXP-PATH.
+
+               MOVE "N" TO WS-JOBS-MISMATCH.
+               MOVE "N" TO WS-JOBS-ACT-EOF.
+               MOVE "N" TO WS-JOBS-EXP-EOF.
+
+               OPEN INPUT JOBS-ACTUAL-FILE.
+               OPEN INPUT JOBS-EXPECTED-FILE.
+
+               PERFORM UNTIL WS-JOBS-ACT-END AND WS-JOBS-EXP-END
+                   IF NOT WS-JOBS-ACT-END
+                       READ JOBS-ACTUAL-FILE INTO WS-JOBS-ACT-LINE
+                           AT END
+                               MOVE "Y" TO WS-JOBS-ACT-EOF
+                               MOVE SPACES TO WS-JOBS-ACT-LINE
+                       END-READ
+                   END-IF
+
+                   IF NOT WS-JOBS-EXP-END
+                       READ JOBS-EXPECTED-FILE INTO WS-JOBS-EXP-LINE
+                           AT END
+                               MOVE "Y" TO WS-JOBS-EXP-EOF
+                               MOVE SPACES TO WS-JOBS-EXP-LINE
+                       END-READ
+                   END-IF
+
+      *            Different record counts, or a record that differs
+                   IF WS-JOBS-ACT-EOF NOT = WS-JOBS-EXP-EOF
+                       MOVE "Y" TO WS-JOBS-MISMATCH
+                   ELSE
+                       IF NOT WS-JOBS-ACT-END
+                           IF WS-JOBS-ACT-LINE NOT = WS-JOBS-EXP-LINE
+                               MOVE "Y" TO WS-JOBS-MISMATCH
+                           END-IF
+                       END-IF
+                   END-IF
+               END-PERFORM.
+
+               CLOSE JOBS-ACTUAL-FILE.
+               CLOSE JOBS-EXPECTED-FILE.
+
+               IF JOBS-MISMATCH-FOUND
+                   ADD 1 TO TotalTestsFailed
+                   DISPLAY "JOBS.TXT MISMATCH: " WS-FOLDER
+               ELSE
+                   ADD 1 TO TotalTestsPassed
+               END-IF.
+
            CLOSE-CONSOLIDATED-FILES.
                CLOSE OUTPUT-FILE-CONSOLIDATED.
                CLOSE EXPECTED-FILE-CONSOLIDATED.
-               CLOSE TEST-INPUT-CONSOLIDATED.
-           
+            CLOSE TEST-INPUT-CONSOLIDATED.

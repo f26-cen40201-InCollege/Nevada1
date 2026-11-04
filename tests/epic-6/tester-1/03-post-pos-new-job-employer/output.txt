@@ -1,0 +1,36 @@
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+ENTER YOUR CHOICE:
+3
+---Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+ENTER YOUR CHOICE:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+InCollege Tester
+Enter Description (max 200 chars):
+Testing testy code with a testy 'tude
+Enter Employer Name:
+InCollege
+Enter Location:
+---END_OF_PROGRAM---

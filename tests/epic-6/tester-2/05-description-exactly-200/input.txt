@@ -1,0 +1,12 @@
+1
+profileuser1
+Passw0rd1$
+3
+1
+E6-P04 Writer
+E6-P04 desc-abcdefghij-abcdefghij-abcdefghij-abcdefghij-abcdefghij-abcdefghij-abcdefghij-abcdefghij-abcdefghij-abcdefghij-abcdefghij-abcdefghij-abcdefghij-abcdefghij-abcdefghij-abcdefghij-abcdefghij-a
+Words Inc
+Remote
+NONE
+3
+6
