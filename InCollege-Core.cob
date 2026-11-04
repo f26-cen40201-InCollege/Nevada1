@@ -30,6 +30,10 @@
                ORGANIZATION IS LINE SEQUENTIAL
                FILE STATUS IS WS-JOBS-STAT.
 
+           SELECT OPTIONAL APPLICATIONS-FILE ASSIGN TO "Application.txt"
+               ORGANIZATION IS LINE SEQUENTIAL
+               FILE STATUS IS WS-APPS-STAT.
+
        DATA DIVISION.
        FILE SECTION.
        FD IN-FILE.
@@ -82,6 +86,12 @@
            05 JOB-EMPLOYER    PIC X(50).
            05 JOB-LOCATION    PIC X(50).
            05 JOB-SALARY      PIC X(30).
+
+      *    EPIC 7 APPLICATION FIELD INFORMATION
+       FD APPLICATIONS-FILE.
+       01 APPLICATION-INST.
+           05 APP-USER        PIC X(20).
+           05 APP-JOB-ID      PIC 9(4). 
 
        WORKING-STORAGE SECTION.
 
@@ -242,6 +252,33 @@
        01 WS-FIELD-REQ     PIC X       VALUE "Y".
            88 FIELD-REQUIRED           VALUE "Y".
 
+      *    EPIC 7 WS SECTION
+       01 WS-APPS-STAT     PIC XX.
+       01 WS-APPS-EOF      PIC X       VALUE "N".
+           88 END-OF-APPS              VALUE "Y".
+       01 WS-TOTAL-APPS    PIC 9(3)    VALUE 0.
+       01 WS-APPS.
+           05 WS-APP-INST OCCURS 500 TIMES.
+               10 WS-APP-USER      PIC X(20).
+               10 WS-APP-JOB-ID    PIC 9(4).
+
+       01 WS-APP-IDX       PIC 9(3)    VALUE 0.
+       01 WS-APP-COUNT     PIC 9(3)    VALUE 0.
+       01 WS-APP-DISP      PIC ZZ9.
+       01 WS-ALR-APPLIED   PIC X       VALUE "N".
+           88 ALR-APPLIED              VALUE "Y".
+
+       01 WS-BROWSE-DONE   PIC X       VALUE "N".
+           88 BROWSE-DONE              VALUE "Y".
+       01 WS-DETAIL-DONE   PIC X       VALUE "N".
+           88 DETAIL-DONE              VALUE "Y".
+       01 WS-JOB-SEL           PIC 9(3)    VALUE 0.
+       01 WS-JOB-NUM-DISP      PIC ZZ9.
+       01 WS-JOB-ID-DISP       PIC 9(4).
+       01 WS-LOOKUP-JOB-ID     PIC 9(4)    VALUE 0.
+       01 WS-LOOKUP-JOB-IDX    PIC 9(3)    VALUE 0.
+       01 WS-FOUND-JOB-IDX     PIC 9(3)    VALUE 0.
+
 
        LINKAGE SECTION.
        01  LS-INPUT   PIC X(100).
@@ -380,7 +417,8 @@
            CLOSE PROFILES-FILE
 
            PERFORM LOAD-CONNECTIONS
-           PERFORM LOAD-JOBS.
+           PERFORM LOAD-JOBS
+           PERFORM LOAD-APPS.
 
 
        CLOSE-FILES.
@@ -1513,3 +1551,5 @@
 
          COPY "Jobs.cob".
          COPY "BrowseJobs.cob".
+         COPY "ApplyJobs.cob".
+         COPY "ViewApplications.cob".

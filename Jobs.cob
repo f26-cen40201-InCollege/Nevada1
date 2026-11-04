@@ -47,14 +47,17 @@
        
        JOB-MENU.
            MOVE "N" TO WS-JOB-MENU-DONE
-           MOVE "---Job Search/Internship Menu ---" TO WS-OUTPUT-LINE
-           PERFORM WRITE-OUTPUT
            PERFORM UNTIL JOB-MENU-DONE OR END-OF-INPUT
+               MOVE "--- Job Search/Internship Menu ---" 
+                   TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
                MOVE "1. Post a Job/Internship" TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
                MOVE "2. Browse Jobs/Internships" TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
-               MOVE "3. Back to Main Menu" TO WS-OUTPUT-LINE
+               MOVE "3. View My Applications" TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+               MOVE "4. Back to Main Menu" TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
                MOVE "ENTER YOUR CHOICE: " TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
@@ -68,6 +71,8 @@
                            WHEN "2"
                                PERFORM BROWSE-JOBS
                            WHEN "3"
+                               PERFORM VIEW-APPLICATIONS
+                           WHEN "4"
                                MOVE "Y" TO WS-JOB-MENU-DONE
                            WHEN OTHER
                                MOVE "Invalid Option, Try Again"

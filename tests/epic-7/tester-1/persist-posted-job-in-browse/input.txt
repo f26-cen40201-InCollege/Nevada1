@@ -1,0 +1,12 @@
+1
+TestUser
+Passw0rd1!
+3
+1
+QA Engineer
+Test the product thoroughly.
+QualityCo
+Austin, TX
+$30/hour
+4
+6
