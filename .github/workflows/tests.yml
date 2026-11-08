@@ -1,0 +1,40 @@
+name: COBOL build and pipeline checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cobol-pipeline-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check dependency issue automation
+        shell: bash
+        run: |
+          python3 -B -m unittest discover -s .github/scripts -p 'test_*.py' -v 2>&1 | tee pipeline-checks.log
+      - name: Compile COBOL application in Docker
+        shell: bash
+        run: |
+          docker build --file .github/Dockerfile --tag incollege-ci . 2>&1 | tee cobol-build.log
+      - name: Preserve pipeline logs
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: pipeline-checks-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            pipeline-checks.log
+            cobol-build.log
+          if-no-files-found: warn
+          retention-days: 14

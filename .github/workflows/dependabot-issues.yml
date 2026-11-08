@@ -1,0 +1,31 @@
+name: Dependabot issues
+
+on:
+  schedule:
+    - cron: '30 14 * * *'
+  workflow_dispatch:
+
+permissions: {}
+concurrency:
+  group: dependabot-issues
+  cancel-in-progress: false
+
+jobs:
+  mirror-alerts:
+    # Even manual runs execute only the reviewed default-branch script.
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: write
+      vulnerability-alerts: read
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - name: Mirror open alerts to issues
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/dependabot_issues.py
