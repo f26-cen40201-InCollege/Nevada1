@@ -98,7 +98,7 @@ class MainPullRequestTests(unittest.TestCase):
                     sync.main_pull_request(self.api, self.event, "pull_request_target")
 
     def test_resolution_requires_linked_open_main_pr(self):
-        import .resolve_dependabot_issue as resolver
+        import resolve_dependabot_issue as resolver
         issue = {"body": "<!-- incollege-main-pr:42 -->"}
         self.assertEqual(resolver.require_linked_main_pull_request(self.api, issue), 42)
         self.api.request.return_value = ({**self.pull, "state": "closed"}, None)
