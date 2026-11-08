@@ -34,10 +34,16 @@
                ORGANIZATION IS LINE SEQUENTIAL
                FILE STATUS IS WS-APPS-STAT.
 
+           SELECT OPTIONAL MESSAGES-FILE ASSIGN TO "Messages.txt"
+               ORGANIZATION IS LINE SEQUENTIAL
+               FILE STATUS IS WS-MESSAGES-STAT.
+
        DATA DIVISION.
        FILE SECTION.
-       FD IN-FILE.
-       01 INPUT-LINE    PIC X(250).
+       FD IN-FILE
+           RECORD IS VARYING IN SIZE FROM 0 TO 4096
+           DEPENDING ON WS-INPUT-LENGTH.
+       01 INPUT-LINE    PIC X(4096).
 
        FD OUTPUT-FILE.
        01 OUTPUT-LINE   PIC X(250).
@@ -93,9 +99,18 @@
            05 APP-USER        PIC X(20).
            05 APP-JOB-ID      PIC 9(4). 
 
+      *    EPIC 8 MESSAGE FILE: APPEND ONLY, NO IN-MEMORY LIMIT
+       FD MESSAGES-FILE.
+       01 MESSAGE-INSTANCE.
+           05 MSG-SENDER      PIC X(20).
+           05 MSG-RECIPIENT   PIC X(20).
+           05 MSG-TIMESTAMP   PIC X(25).
+           05 MSG-CONTENT     PIC X(200).
+
        WORKING-STORAGE SECTION.
 
        01 WS-INPUT-STAT     PIC XX.
+       01 WS-INPUT-LENGTH   BINARY-LONG.
        01 WS-OUTPUT-STAT    PIC XX.
          01 WS-CONNECTIONS-STAT PIC XX.
 
@@ -279,6 +294,18 @@
        01 WS-LOOKUP-JOB-IDX    PIC 9(3)    VALUE 0.
        01 WS-FOUND-JOB-IDX     PIC 9(3)    VALUE 0.
 
+
+      *    EPIC 8 WS SECTION
+       01 WS-MESSAGES-STAT PIC XX.
+       01 WS-MESSAGES-DONE PIC X VALUE "N".
+       01 WS-MESSAGE-USER  PIC X(20).
+       01 WS-MESSAGE-RAW   PIC X(4096).
+       01 WS-MESSAGE-TEXT  PIC X(200).
+       01 WS-MESSAGE-LEN   PIC 9(4).
+       01 WS-MESSAGE-CONN  PIC X VALUE "N".
+       01 WS-MESSAGE-IDX   BINARY-LONG.
+       01 WS-MESSAGE-SAVED PIC X VALUE "N".
+       01 WS-SENT-DATE     PIC X(21).
 
        LINKAGE SECTION.
        01  LS-INPUT   PIC X(100).
@@ -702,6 +729,8 @@
            PERFORM WRITE-OUTPUT
            MOVE "8. View My Network" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
+           MOVE "9. Messages" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
            MOVE "ENTER YOUR CHOICE:" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
 
@@ -725,6 +754,8 @@
                        PERFORM VIEW-PENDING-REQUESTS
                    WHEN "8"
                        PERFORM VIEW-MY-NETWORK
+                   WHEN "9"
+                       PERFORM MESSAGES-MENU
                    WHEN OTHER
                        MOVE "Invalid Option, Try Again"
                            TO WS-OUTPUT-LINE
@@ -1553,3 +1584,6 @@
          COPY "BrowseJobs.cob".
          COPY "ApplyJobs.cob".
          COPY "ViewApplications.cob".
+
+         COPY "SendMessage.cob".
+         COPY "ViewMessages.cob".
