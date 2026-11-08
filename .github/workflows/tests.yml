@@ -2,7 +2,9 @@ name: COBOL build and pipeline checks
 
 on:
   push:
+    branches: [develop]
   pull_request:
+    branches: [develop, main]
   workflow_dispatch:
 
 permissions:

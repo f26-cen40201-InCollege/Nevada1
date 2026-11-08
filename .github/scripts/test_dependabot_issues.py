@@ -22,7 +22,7 @@ class MirrorTests(unittest.TestCase):
         api = Mock()
         api.paginate.side_effect = [alerts, issues]
         with redirect_stdout(io.StringIO()):
-            created = sync.mirror_alerts(api)
+            created = sync.mirror_alerts(api, 42)
         return created, api
 
     def test_creates_issue_with_evidence_and_no_patch(self):
@@ -32,14 +32,19 @@ class MirrorTests(unittest.TestCase):
         self.assertIn("Dependabot #1", title)
         self.assertIn("<!-- incollege-dependabot-alert:1 -->", body)
         self.assertIn("First patched version: `2`", body)
-        self.assertIn("approve and initiate", body)
+        self.assertIn("/PR-RESOLVE", body)
+        self.assertIn("<!-- incollege-main-pr:42 -->", body)
 
     def test_open_and_closed_issues_prevent_duplicates(self):
         for state in ("open", "closed"):
             with self.subTest(state=state):
-                created, api = self.run_sync([alert()], [{"state": state, "body": "<!-- incollege-dependabot-alert:1 -->"}])
+                created, api = self.run_sync([alert()], [{"number": 10, "state": state, "body": "<!-- incollege-dependabot-alert:1 -->"}])
                 self.assertEqual(created, 0)
                 api.create_issue.assert_not_called()
+                if state == "open":
+                    self.assertIn("<!-- incollege-main-pr:42 -->", api.request.call_args.args[1]["body"])
+                else:
+                    api.request.assert_not_called()
 
     def test_pull_request_marker_does_not_suppress_issue(self):
         created, _ = self.run_sync([alert()], [{"pull_request": {}, "body": "<!-- incollege-dependabot-alert:1 -->"}])
@@ -60,13 +65,47 @@ class MirrorTests(unittest.TestCase):
         api.paginate.side_effect = [[alert()], []]
         api.create_issue.side_effect = RuntimeError("denied")
         with self.assertRaisesRegex(RuntimeError, "denied"):
-            sync.mirror_alerts(api)
+            sync.mirror_alerts(api, 42)
 
     def test_no_patched_version(self):
         item = alert()
         item["security_vulnerability"]["first_patched_version"] = None
         _, api = self.run_sync([item], [])
         self.assertIn("not available", api.create_issue.call_args.args[1])
+
+class MainPullRequestTests(unittest.TestCase):
+    def setUp(self):
+        self.api = Mock(repository_url="https://api.github.com/repos/org/repo")
+        self.pull = {"number": 42, "state": "open", "base": {"ref": "main"}}
+        self.event = {"action": "opened", "pull_request": self.pull.copy()}
+        self.api.request.return_value = (self.pull.copy(), None)
+
+    def test_accepts_open_main_pr_after_api_recheck(self):
+        self.assertEqual(sync.main_pull_request(self.api, self.event, "pull_request_target"), 42)
+
+    def test_rejects_feature_or_develop_events(self):
+        for event_name, base in (("push", "main"), ("pull_request_target", "develop")):
+            with self.subTest(event_name=event_name, base=base):
+                event = {"action": "opened", "pull_request": {**self.pull, "base": {"ref": base}}}
+                with self.assertRaises(ValueError):
+                    sync.main_pull_request(self.api, event, event_name)
+
+    def test_rejects_pr_retargeted_or_closed_before_sync(self):
+        for current in ({**self.pull, "state": "closed"}, {**self.pull, "base": {"ref": "develop"}}):
+            with self.subTest(current=current):
+                self.api.request.return_value = (current, None)
+                with self.assertRaises(ValueError):
+                    sync.main_pull_request(self.api, self.event, "pull_request_target")
+
+    def test_resolution_requires_linked_open_main_pr(self):
+        import .resolve_dependabot_issue as resolver
+        issue = {"body": "<!-- incollege-main-pr:42 -->"}
+        self.assertEqual(resolver.require_linked_main_pull_request(self.api, issue), 42)
+        self.api.request.return_value = ({**self.pull, "state": "closed"}, None)
+        with self.assertRaises(ValueError):
+            resolver.require_linked_main_pull_request(self.api, issue)
+        with self.assertRaises(ValueError):
+            resolver.require_linked_main_pull_request(self.api, {"body": "no link"})
 
 class APITests(unittest.TestCase):
     def setUp(self):

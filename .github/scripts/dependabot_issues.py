@@ -7,6 +7,7 @@ from urllib.parse import urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 MARKER = re.compile(r"<!-- incollege-dependabot-alert:(\d+) -->")
+PR_MARKER = re.compile(r"<!-- incollege-main-pr:(\d+) -->")
 
 class RejectRedirects(HTTPRedirectHandler):
     def redirect_request(self, request, response, code, message, headers, new_url):
@@ -83,20 +84,44 @@ def inline(value):
     """Render API text as a code span without newlines or embedded backticks."""
     return "`" + str(value).replace("`", "'").replace("\r", " ").replace("\n", " ") + "`"
 
-def mirror_alerts(api):
+def main_pull_request(api, event, event_name):
+    """Accept only a current, open main-targeting pull request event."""
+    if event_name != "pull_request_target" or event.get("action") not in {
+        "opened", "reopened", "synchronize", "edited"
+    }:
+        raise ValueError("Dependabot issue sync requires a pull request targeting main.")
+    pull = event.get("pull_request") or {}
+    number = pull.get("number")
+    if isinstance(number, bool) or not isinstance(number, int) or number < 1:
+        raise ValueError("The pull request number is invalid.")
+    if pull.get("state") != "open" or (pull.get("base") or {}).get("ref") != "main":
+        raise ValueError("The pull request must be open and target main.")
+    current, _ = api.request(f"{api.repository_url}/pulls/{number}")
+    if (current.get("number") != number or current.get("state") != "open"
+            or (current.get("base") or {}).get("ref") != "main"):
+        raise ValueError("The pull request is no longer open against main.")
+    return number
+
+
+def mirror_alerts(api, pull_number):
     # Fetch all pages before writes so issue creation cannot shift pagination.
     alerts = api.paginate("dependabot/alerts?state=open&per_page=100")
     issues = api.paginate("issues?state=all&per_page=100")
-    existing = {
-        int(number)
-        for issue in issues
-        if "pull_request" not in issue
-        for number in MARKER.findall(issue.get("body") or "")
-    }
+    existing = {}
+    for issue in issues:
+        if "pull_request" not in issue:
+            for number in MARKER.findall(issue.get("body") or ""):
+                existing.setdefault(int(number), issue)
+    pr_marker = f"<!-- incollege-main-pr:{pull_number} -->"
     created = 0
     for alert in alerts:
         number = int(alert["number"])
         if number in existing:
+            issue = existing[number]
+            if issue.get("state") == "open" and pr_marker not in (issue.get("body") or ""):
+                body = (issue.get("body") or "").rstrip() + f"\n\n{pr_marker}\nRelated main pull request: #{pull_number}."
+                api.request(f"{api.repository_url}/issues/{int(issue['number'])}", {"body": body}, method="PATCH")
+                issue["body"] = body
             continue
         dependency = alert["dependency"]
         advisory = alert["security_advisory"]
@@ -109,6 +134,8 @@ def mirror_alerts(api):
         ).replace("\n", " ").replace("\r", " ")[:240]
         body = "\n".join([
             f"<!-- incollege-dependabot-alert:{number} -->",
+            pr_marker,
+            f"Created for open pull request #{pull_number} targeting main.",
             "Dependabot reported a vulnerable dependency. Review this issue before starting a fix.",
             "",
             f"- Alert: {alert['html_url']}",
@@ -126,7 +153,7 @@ def mirror_alerts(api):
             "Check the linked alert for its current status before closing this issue.",
         ])
         api.create_issue(title, body)
-        existing.add(number)
+        existing[number] = {"state": "open", "body": body}
         created += 1
     print(f"Dependabot: {len(alerts)} open alert(s); {created} new issue(s).")
     return created
@@ -138,8 +165,11 @@ def main():
             os.environ.get("GITHUB_REPOSITORY", ""),
             os.environ.get("GITHUB_API_URL", "https://api.github.com"),
         )
-        mirror_alerts(api)
-    except (KeyError, ValueError, RuntimeError) as error:
+        with open(os.environ["GITHUB_EVENT_PATH"], encoding="utf-8") as event_file:
+            event = json.load(event_file)
+        pull_number = main_pull_request(api, event, os.environ.get("GITHUB_EVENT_NAME", ""))
+        mirror_alerts(api, pull_number)
+    except (KeyError, OSError, ValueError, RuntimeError, TypeError) as error:
         print(f"Dependabot issue sync failed: {error}", file=sys.stderr)
         return 1
     return 0
