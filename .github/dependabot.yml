@@ -1,0 +1,26 @@
+version: 2
+# Alerts are enabled in repository settings. This file cannot enable them.
+# Disable security-update PRs in settings as documented in docs/CI.md.
+# Both the zero version-PR limit and ignore rule preserve issue-first review.
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 0
+    ignore:
+      - dependency-name: '*'
+  - package-ecosystem: docker
+    directory: /.github
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 0
+    ignore:
+      - dependency-name: '*'
+  - package-ecosystem: devcontainers
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 0
+    ignore:
+      - dependency-name: '*'

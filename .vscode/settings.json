@@ -1,4 +1,5 @@
 {
+    "python.analysis.extraPaths": ["${workspaceFolder}/.github/scripts"],
     "cSpell.words": [
         "Aref",
         "Chartfield",
