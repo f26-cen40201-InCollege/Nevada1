@@ -152,4 +152,8 @@
            ELSE
                MOVE "Unable to save message." TO WS-OUTPUT-LINE
            END-IF
-           PERFORM WRITE-OUTPUT.
+           PERFORM WRITE-OUTPUT
+           IF WS-MESSAGE-SAVED = "Y"
+               MOVE "---------------------" TO WS-OUTPUT-LINE
+               PERFORM WRITE-OUTPUT
+           END-IF.

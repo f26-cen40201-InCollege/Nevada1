@@ -1,0 +1,8 @@
+TestUser            Passw0rd1!
+ConnectedUser       Passw0rd1!
+PendingOut          Passw0rd1!
+PendingIn           Passw0rd1!
+RejectedUser        Passw0rd1!
+StrangerUser        Passw0rd1!
+LonelyUser          Passw0rd1!
+MaxLengthUser0123456Passw0rd1!
