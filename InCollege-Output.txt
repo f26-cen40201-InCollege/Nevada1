@@ -4,11 +4,11 @@ WELCOME TO INCOLLEGE!
 ENTER YOUR CHOICE:
 1
 Please Enter Your username:
-profileuser1
+profileuser2
 Please Enter Your password:
-Passw0rd1$
+Passw0rd2$
 You Have Successfully Logged In.
-Welcome, profileuser1!
+Welcome, profileuser2!
 1. Create/Edit My Profile
 2. View My Profile
 3. Search For a job
@@ -17,62 +17,41 @@ Welcome, profileuser1!
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
-3
----Job Search/Internship Menu ---
-1. Post a Job/Internship
-2. Browse Jobs/Internships
-3. View My Applications
-4. Back to Main Menu
-ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
 2
---- Available Job Listings ---
-1. InCollege Tester at InCollege (Tampa, Florida)
-2. InCollege Developer at InCollege (New York City, New York)
-3. Construction Engineer at Future Constructs (Atlanta, Georgia)
------------------------------
-Enter job number to view details, or 0 to go back:
-2
---- Job Details ---
-Title: InCollege Developer
-Description: Help us develop code!
-Employer: InColleges develop code!
-Location: New York City, New York!
-Salary: $150000 - $200000New York!
--------------------
-1. Apply for this Job
-2. Back to Job List
-Enter Your Choice:
+View My Messages is under construction.
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
 1
-Your application for InCollege Developer at InCollege has been submitted.
---- Available Job Listings ---
-1. InCollege Tester at InCollege (Tampa, Florida)
-2. InCollege Developer at InCollege (New York City, New York)
-3. Construction Engineer at Future Constructs (Atlanta, Georgia)
------------------------------
-Enter job number to view details, or 0 to go back:
-0
----Job Search/Internship Menu ---
-1. Post a Job/Internship
-2. Browse Jobs/Internships
-3. View My Applications
-4. Back to Main Menu
-ENTER YOUR CHOICE:
+Enter recipient's username (must be a connection):
+profileuser1
+Enter your message (max 200 chars):
+I'm doing good.
+Message sent to profileuser1 successfully!
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
 3
---- Your Job Applications ---
-Application Summary for profileuser1
-------------------------------
-Job ID: 0002
-Job Title: InCollege Developer
-Employer: InCollegee Developer
-Location: New York City, New York
-------------------------------
-Total Applications: 1
-------------------------------
----Job Search/Internship Menu ---
-1. Post a Job/Internship
-2. Browse Jobs/Internships
-3. View My Applications
-4. Back to Main Menu
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---
