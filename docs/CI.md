@@ -1,13 +1,22 @@
 # InCollege pipeline checks and dependency alerts
 
-The `COBOL build and pipeline checks` workflow runs on pushes to `develop`, pull requests targeting `develop` or `main`, and manual dispatch. It runs only the pipeline automation checks under `.github/scripts/` and compiles the application using `.github/Dockerfile` with Ubuntu 22.04 and GnuCOBOL. Build and pipeline logs are preserved as workflow artifacts, and failures return a nonzero status. Application acceptance tests remain the assigned testers' responsibility; the workflow does not execute application scenarios or change tester files.
+The `COBOL build and pipeline checks` workflow runs on pushes to `develop`, pull requests targeting `develop` or `main`, and manual dispatch. It runs the pipeline automation checks under `.github/scripts/`, compiles the application using `.github/Dockerfile` with Ubuntu 22.04 and GnuCOBOL, and executes 19 isolated messaging acceptance checks against the compiled program. Build logs, check logs, and per-run input/output evidence are preserved as workflow artifacts, and failures return a nonzero status. Assigned testers continue to own their scenario fixtures and submission archives.
 
 Run the pipeline checks locally:
 
 ```bash
 python3 -B -m unittest discover -s .github/scripts -p 'test_*.py' -v
 docker build --file .github/Dockerfile --tag incollege-ci .
+docker run --rm --network none incollege-ci python3 -B /opt/incollege/check_messages.py
 ```
+
+## Application evidence and legacy harness
+
+The Docker acceptance checks cover received-message formatting, exact recipient filtering, different senders, 200-character content, 125 messages, empty and missing storage, storage failures, repeated views, main-menu navigation, input exhaustion, and real send/restart/view persistence. Every application run compares standard output byte for byte with `InCollege-Output.txt`. Test storage is temporary; repository data and assigned testers' files are never overwritten.
+
+In Actions, `test-results/` contains each run's input, console output, output file, and available account/connection/message fixtures. The container runs without network access and writes evidence as the runner's user. For local evidence, create a writable results directory and bind-mount it at `/results` with `INCOLLEGE_TEST_RESULTS=/results`, following the command in `.github/workflows/tests.yml`.
+
+The existing `test-main.cob` harness remains available through the VS Code tasks. Before Epic 9 implementation, an isolated run of the committed harness reported **11 passed and 53 failed**. Its active scenarios and expected transcripts cover older Epic 6 behavior. These pre-existing failures require tester review; the new workflow does not claim that this historical suite passes or replace its expected files with generated output.
 
 ## Dependabot setup
 
