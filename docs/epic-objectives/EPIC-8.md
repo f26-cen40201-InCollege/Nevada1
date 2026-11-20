@@ -9,7 +9,7 @@
 | **Tester #1** | Aref Khondaker |
 | **Tester #2** | Tangil Khondaker |
 
-## **GLOBAL OBJECTIVE | SPRINT #8 | November 4, 2026 → November 11, 2026**
+## **GLOBAL OBJECTIVE | SPRINT #8 | November 4, 2026 → November 16, 2026**
 
 Implement the foundational capability for connected users to send private messages to each other within InCollege. Logged-in users can select a recipient by username, enter free-form message content, and save the message persistently for the recipient to retrieve in a later Epic. This work introduces Jira Epic #5: Messaging System. `View My Messages` remains under construction this week.
 

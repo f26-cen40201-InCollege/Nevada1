@@ -30,7 +30,17 @@ jobs:
         shell: bash
         run: |
           docker build --file .github/Dockerfile --tag incollege-ci . 2>&1 | tee cobol-build.log
-      - name: Preserve pipeline logs
+      - name: Run messaging acceptance checks in Docker
+        shell: bash
+        run: |
+          mkdir -p test-results
+          docker run --rm --network none \
+            --user "$(id -u):$(id -g)" \
+            --mount "type=bind,source=$PWD/test-results,target=/results" \
+            --env INCOLLEGE_TEST_RESULTS=/results \
+            incollege-ci \
+            python3 -B /opt/incollege/check_messages.py 2>&1 | tee application-checks.log
+      - name: Preserve pipeline logs and application evidence
         if: always()
         uses: actions/upload-artifact@v7.0.2
         with:
@@ -38,5 +48,7 @@ jobs:
           path: |
             pipeline-checks.log
             cobol-build.log
+            application-checks.log
+            test-results/
           if-no-files-found: warn
           retention-days: 14

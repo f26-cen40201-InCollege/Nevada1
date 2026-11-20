@@ -8,3 +8,5 @@ RUN apt-get update \
 WORKDIR /workspace
 COPY *.cob ./
 RUN cobc -x -o /usr/local/bin/InCollege InCollege.cob InCollege-Core.cob
+
+COPY .github/scripts/check_messages.py /opt/incollege/check_messages.py
