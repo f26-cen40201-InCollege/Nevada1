@@ -23,3 +23,15 @@
   *.xml linguist-detectable=false
   *.json linguist-detectable=false
   *.yaml linguist-detectable=false
+
+  "Epic 9 app + handoff files consistent across platforms."
+  /InCollege-Core.cob text eol=lf
+  /InCollege-Input.txt text eol=lf
+  /InCollege-Output.txt text eol=lf
+  /Messages.txt text eol=lf
+  /README.md text eol=lf
+  /Roles.txt text eol=lf
+  /SendMessage.cob text eol=lf
+  /ViewMessages.cob text eol=lf
+  /docs/CI.md text eol=lf
+  /docs/epic-objectives/EPIC-9.md text eol=lf
