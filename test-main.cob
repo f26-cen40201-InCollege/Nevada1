@@ -259,6 +259,7 @@
       *    =============================================================
       *    ===================== START YOUR TESTS ======================
 
+    
       *    =============================================================
       
            MOVE "tests/epic-1/tester-1/menus-pos-4/"
@@ -266,7 +267,7 @@
            
            MOVE "tests/epic-1/tester-1/menus-pos-4/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -279,7 +280,7 @@
            
            MOVE "tests/epic-1/tester-1/menus-pos-3/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -292,7 +293,7 @@
            
            MOVE "tests/epic-1/tester-1/menus-pos-2/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -305,7 +306,7 @@
            
            MOVE "tests/epic-1/tester-1/acc-creation-neg-2/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -318,7 +319,7 @@
            
            MOVE "tests/epic-1/tester-1/menus-pos-1/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -331,7 +332,7 @@
            
            MOVE "tests/epic-1/tester-1/acc-creation-neg-1/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -344,7 +345,7 @@
            
            MOVE "tests/epic-2/tester-1/persistence-restart/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -357,7 +358,7 @@
            
            MOVE "tests/epic-2/tester-1/max-3-entries-edge/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -370,7 +371,7 @@
            
            MOVE "tests/epic-2/tester-1/prof-creation-neg-2/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -383,7 +384,7 @@
            
            MOVE "tests/epic-2/tester-1/blank-univ-neg/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -396,7 +397,7 @@
            
            MOVE "tests/epic-2/tester-1/gradyr-2025-bad-neg/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -409,7 +410,7 @@
            
            MOVE "tests/epic-2/tester-1/gradyr-high-ok-edge/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -422,7 +423,7 @@
            
            MOVE "tests/epic-2/tester-1/blank-major-neg/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -435,7 +436,7 @@
            
            MOVE "tests/epic-2/tester-1/expdesc-101bad-edge/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -448,7 +449,7 @@
            
            MOVE "tests/epic-2/tester-1/gradyr-2034-bad-neg/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -461,7 +462,7 @@
            
            MOVE "tests/epic-2/tester-1/aboutme-200ok-edge/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -474,7 +475,7 @@
            
            MOVE "tests/epic-2/tester-1/gradyr-nonnum-neg/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -487,7 +488,7 @@
            
            MOVE "tests/epic-2/tester-1/gradyr-toolong-neg/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -500,7 +501,7 @@
            
            MOVE "tests/epic-2/tester-1/blank-gradyear/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -513,7 +514,7 @@
            
            MOVE "tests/epic-2/tester-1/edit-profile-pos/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -526,7 +527,7 @@
            
            MOVE "tests/epic-2/tester-1/gradyr-low-ok-edge/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -539,7 +540,7 @@
            
            MOVE "tests/epic-2/tester-1/expdesc-100ok-edge/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -558,6 +559,11 @@
            MOVE "tests/epic-2/tester-1/acc-creation-pos-1/"
                   TO WS-FOLDER.
            
+           MOVE "tests/epic-2/tester-1/acc-creation-pos-1/accounts.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Accounts.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
            PERFORM COUNTER-UPDATE.
     
@@ -568,7 +574,7 @@
            
            MOVE "tests/epic-2/tester-1/gradyr-tooshort-neg/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -581,7 +587,7 @@
            
            MOVE "tests/epic-2/tester-1/full-profile-pos/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -594,7 +600,7 @@
            
            MOVE "tests/epic-2/tester-1/blank-firstname-neg/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -607,7 +613,7 @@
            
            MOVE "tests/epic-2/tester-1/aboutme-201bad-edge/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -620,7 +626,7 @@
            
            MOVE "tests/epic-2/tester-1/blank-lastname-neg/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -633,7 +639,7 @@
            
            MOVE "tests/epic-2/tester-2/zero-optional-pos/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -646,7 +652,7 @@
            
            MOVE "tests/epic-2/tester-2/vw-no-profile-edge/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -659,7 +665,7 @@
            
            MOVE "tests/epic-2/tester-2/two-users-check-pos/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -672,12 +678,12 @@
            
            MOVE "tests/epic-3/tester-1/wrong-letter-case/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-3/tester-1/wrong-letter-case/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -690,12 +696,12 @@
            
            MOVE "tests/epic-3/tester-1/same-name/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-3/tester-1/same-name/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -708,12 +714,12 @@
            
            MOVE "tests/epic-3/tester-1/search-persistence/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-3/tester-1/search-persistence/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -726,12 +732,12 @@
            
            MOVE "tests/epic-3/tester-1/too-much-inputs/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-3/tester-1/too-much-inputs/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -744,12 +750,12 @@
            
            MOVE "tests/epic-3/tester-1/profile-dne/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-3/tester-1/profile-dne/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -762,12 +768,12 @@
            
            MOVE "tests/epic-3/tester-1/partial-name/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-3/tester-1/partial-name/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -780,12 +786,12 @@
            
            MOVE "tests/epic-3/tester-1/whitespace/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-3/tester-1/whitespace/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -798,12 +804,12 @@
            
            MOVE "tests/epic-3/tester-1/max-optionals/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-3/tester-1/max-optionals/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -816,7 +822,7 @@
            
            MOVE "tests/epic-3/tester-2/search-empty-query/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -829,7 +835,7 @@
            
            MOVE "tests/epic-3/tester-2/search-find-full/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -842,7 +848,7 @@
            
            MOVE "tests/epic-3/tester-2/search-view-own/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -855,7 +861,7 @@
            
            MOVE "tests/epic-3/tester-2/search-self/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -868,7 +874,7 @@
            
            MOVE "tests/epic-3/tester-2/search-find-empty/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -881,7 +887,7 @@
            
            MOVE "tests/epic-3/tester-2/search-long-name/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -894,7 +900,7 @@
            
            MOVE "tests/epic-3/tester-2/view-own-minimal/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -907,7 +913,7 @@
            
            MOVE "tests/epic-3/tester-2/view-own-full/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -936,7 +942,7 @@
            
            MOVE "tests/epic-4/tester-1/pending-filter/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -949,17 +955,17 @@
            
            MOVE "tests/epic-4/tester-2/send-conn/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-4/tester-2/send-conn/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-4/tester-2/send-conn/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -972,17 +978,17 @@
            
            MOVE "tests/epic-4/tester-2/no-profile/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-4/tester-2/no-profile/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-4/tester-2/no-profile/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -995,17 +1001,17 @@
            
            MOVE "tests/epic-4/tester-2/duplicate-req/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-4/tester-2/duplicate-req/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-4/tester-2/duplicate-req/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1018,17 +1024,17 @@
            
            MOVE "tests/epic-4/tester-2/send-self/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-4/tester-2/send-self/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-4/tester-2/send-self/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1041,17 +1047,17 @@
            
            MOVE "tests/epic-4/tester-2/send-unconn/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-4/tester-2/send-unconn/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-4/tester-2/send-unconn/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1064,17 +1070,17 @@
            
            MOVE "tests/epic-4/tester-2/request-not-acpt/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-4/tester-2/request-not-acpt/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-4/tester-2/request-not-acpt/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1087,17 +1093,17 @@
            
            MOVE "tests/epic-4/tester-2/multi-requests/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-4/tester-2/multi-requests/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-4/tester-2/multi-requests/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1110,17 +1116,17 @@
            
            MOVE "tests/epic-5/tester-1/mixed-ac-rej-net/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-5/tester-1/mixed-ac-rej-net/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-5/tester-1/mixed-ac-rej-net/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1133,17 +1139,17 @@
            
            MOVE "tests/epic-5/tester-2/rej-1-req/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-5/tester-2/rej-1-req/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-5/tester-2/rej-1-req/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1156,17 +1162,17 @@
            
            MOVE "tests/epic-5/tester-2/acc-req-pers-p1/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-5/tester-2/acc-req-pers-p1/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-5/tester-2/acc-req-pers-p1/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1179,17 +1185,17 @@
            
            MOVE "tests/epic-5/tester-2/rej-multi-req/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-5/tester-2/rej-multi-req/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-5/tester-2/rej-multi-req/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1202,17 +1208,17 @@
            
            MOVE "tests/epic-5/tester-2/accept-1-req/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-5/tester-2/accept-1-req/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-5/tester-2/accept-1-req/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1225,12 +1231,12 @@
            
            MOVE "tests/epic-5/tester-2/acc-req-pers-p2/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-5/tester-2/acc-req-pers-p2/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1243,17 +1249,17 @@
            
            MOVE "tests/epic-5/tester-2/acc-multi-req/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-5/tester-2/acc-multi-req/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-5/tester-2/acc-multi-req/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1266,17 +1272,17 @@
            
            MOVE "tests/epic-6/tester-1/02-pos-new-job-d/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/02-pos-new-job-d/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/02-pos-new-job-d/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1289,17 +1295,17 @@
            
            MOVE "tests/epic-6/tester-1/05-neg-new-job-s/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/05-neg-new-job-s/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/05-neg-new-job-s/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1312,17 +1318,17 @@
            
            MOVE "tests/epic-6/tester-1/01-neg-new-job-t/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/01-neg-new-job-t/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/01-neg-new-job-t/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1335,17 +1341,17 @@
            
            MOVE "tests/epic-6/tester-1/00-neg-new-job/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/00-neg-new-job/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/00-neg-new-job/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1358,17 +1364,17 @@
            
            MOVE "tests/epic-6/tester-1/entry-exit-entry/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/entry-exit-entry/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/entry-exit-entry/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1381,17 +1387,17 @@
            
            MOVE "tests/epic-6/tester-1/04-neg-new-job-l/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/04-neg-new-job-l/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/04-neg-new-job-l/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1404,17 +1410,17 @@
            
            MOVE "tests/epic-6/tester-1/00-pos-new-job/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/00-pos-new-job/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/00-pos-new-job/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1427,17 +1433,17 @@
            
            MOVE "tests/epic-6/tester-1/03-neg-new-job-e/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/03-neg-new-job-e/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/03-neg-new-job-e/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1450,17 +1456,17 @@
            
            MOVE "tests/epic-6/tester-1/02-neg-new-job-d/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/02-neg-new-job-d/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/02-neg-new-job-d/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1473,17 +1479,17 @@
            
            MOVE "tests/epic-6/tester-1/05-pos-new-job-s/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/05-pos-new-job-s/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/05-pos-new-job-s/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1496,17 +1502,17 @@
            
            MOVE "tests/epic-6/tester-1/01-pos-new-job-t/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/01-pos-new-job-t/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/01-pos-new-job-t/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1519,17 +1525,17 @@
            
            MOVE "tests/epic-6/tester-1/04-pos-new-job-l/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/04-pos-new-job-l/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/04-pos-new-job-l/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1542,17 +1548,17 @@
            
            MOVE "tests/epic-6/tester-1/03-pos-new-job-e/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/03-pos-new-job-e/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-1/03-pos-new-job-e/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1565,7 +1571,7 @@
            
            MOVE "tests/epic-6/tester-2/09-pers-r3-ln-only/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1578,12 +1584,12 @@
            
            MOVE "tests/epic-6/tester-2/03-desc-201-rej/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-2/03-desc-201-rej/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1596,12 +1602,12 @@
            
            MOVE "tests/epic-6/tester-2/11-week6-sample-run/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-2/11-week6-sample-run/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1614,12 +1620,12 @@
            
            MOVE "tests/epic-6/tester-2/07-pers-r1-usr1-p/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-2/07-pers-r1-usr1-p/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1632,12 +1638,12 @@
            
            MOVE "tests/epic-6/tester-2/05-desc-exactly-200/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-2/05-desc-exactly-200/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1650,12 +1656,12 @@
            
            MOVE "tests/epic-6/tester-2/04-post-salary-none/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-2/04-post-salary-none/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1668,22 +1674,22 @@
            
            MOVE "tests/epic-6/tester-2/01-pend-nwk-p/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-2/01-pend-nwk-p/profiles.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "profiles.txt" 
+           MOVE "Profiles.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-2/01-pend-nwk-p/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-2/01-pend-nwk-p/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1696,12 +1702,12 @@
            
            MOVE "tests/epic-6/tester-2/10-job-m-spec-wd/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-2/10-job-m-spec-wd/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1714,12 +1720,12 @@
            
            MOVE "tests/epic-6/tester-2/02-blank-req-fds/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-2/02-blank-req-fds/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1732,7 +1738,7 @@
            
            MOVE "tests/epic-6/tester-2/08-pers-r2-usr2-p/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1745,12 +1751,12 @@
            
            MOVE "tests/epic-6/tester-2/06-two-jobs-one-run/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-6/tester-2/06-two-jobs-one-run/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1763,12 +1769,12 @@
            
            MOVE "tests/epic-7/tester-1/prst-app-multi-user/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/prst-app-multi-user/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1781,17 +1787,17 @@
            
            MOVE "tests/epic-7/tester-1/rep-ord-m-app/application.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "application.txt" 
+           MOVE "Application.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/rep-ord-m-app/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/rep-ord-m-app/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1804,12 +1810,12 @@
            
            MOVE "tests/epic-7/tester-1/browse-one-job/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/browse-one-job/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1822,12 +1828,12 @@
            
            MOVE "tests/epic-7/tester-1/dets-inv-menu-op/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/dets-inv-menu-op/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1840,7 +1846,7 @@
            
            MOVE "tests/epic-7/tester-1/post-job-sal-na/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1853,12 +1859,12 @@
            
            MOVE "tests/epic-7/tester-1/details-b2l/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/details-b2l/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1871,12 +1877,12 @@
            
            MOVE "tests/epic-7/tester-1/rep-no-app/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/rep-no-app/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1889,12 +1895,12 @@
            
            MOVE "tests/epic-7/tester-1/persist-app/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/persist-app/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1907,12 +1913,12 @@
            
            MOVE "tests/epic-7/tester-1/apply-success/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/apply-success/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1925,7 +1931,7 @@
            
            MOVE "tests/epic-7/tester-1/post-job-s-w-sal/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1938,12 +1944,12 @@
            
            MOVE "tests/epic-7/tester-1/browse-r2m/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/browse-r2m/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1956,12 +1962,12 @@
            
            MOVE "tests/epic-7/tester-1/job-menu-view-app-e/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/job-menu-view-app-e/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1974,7 +1980,7 @@
            
            MOVE "tests/epic-7/tester-1/post-job-des-lim/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -1987,17 +1993,17 @@
            
            MOVE "tests/epic-7/tester-1/apply-duplicate/application.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "application.txt" 
+           MOVE "Application.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/apply-duplicate/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/apply-duplicate/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2010,7 +2016,7 @@
            
            MOVE "tests/epic-7/tester-1/prst-pst-job-brws/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2023,12 +2029,12 @@
            
            MOVE "tests/epic-7/tester-1/dets-inv-inp/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/dets-inv-inp/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2041,12 +2047,12 @@
            
            MOVE "tests/epic-7/tester-1/samp-w7-rep/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/samp-w7-rep/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2059,12 +2065,12 @@
            
            MOVE "tests/epic-7/tester-1/rep-aft-app-in-sess/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/rep-aft-app-in-sess/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2077,7 +2083,7 @@
            
            MOVE "tests/epic-7/tester-1/p-j-blk-req-field/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2090,17 +2096,17 @@
            
            MOVE "tests/epic-7/tester-1/rep-listing-rem/application.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "application.txt" 
+           MOVE "Application.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/rep-listing-rem/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/rep-listing-rem/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2113,12 +2119,12 @@
            
            MOVE "tests/epic-7/tester-1/browse-100-jobs/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/browse-100-jobs/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2131,17 +2137,17 @@
            
            MOVE "tests/epic-7/tester-1/rep-multi-app/application.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "application.txt" 
+           MOVE "Application.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/rep-multi-app/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/rep-multi-app/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2154,12 +2160,12 @@
            
            MOVE "tests/epic-7/tester-1/browse-multi-jobs/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/browse-multi-jobs/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2172,7 +2178,7 @@
            
            MOVE "tests/epic-7/tester-1/post-job-t-long/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2185,7 +2191,7 @@
            
            MOVE "tests/epic-7/tester-1/job-menu-ops-disp/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2198,7 +2204,7 @@
            
            MOVE "tests/epic-7/tester-1/browse-empty/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2211,12 +2217,12 @@
            
            MOVE "tests/epic-7/tester-1/post-job-max-100/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/post-job-max-100/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2229,12 +2235,12 @@
            
            MOVE "tests/epic-7/tester-1/details-last-job/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/details-last-job/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2247,7 +2253,7 @@
            
            MOVE "tests/epic-7/tester-1/job-menu-header-fmt/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2260,12 +2266,12 @@
            
            MOVE "tests/epic-7/tester-1/app-dup-sme-sess/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/app-dup-sme-sess/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2278,12 +2284,12 @@
            
            MOVE "tests/epic-7/tester-1/dets-wo-sal/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/dets-wo-sal/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2296,12 +2302,12 @@
            
            MOVE "tests/epic-7/tester-1/apply-multiple-jobs/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/apply-multiple-jobs/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2314,7 +2320,7 @@
            
            MOVE "tests/epic-7/tester-1/job-menu-b2m/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2327,17 +2333,17 @@
            
            MOVE "tests/epic-7/tester-1/app-o-u-j-unaff/application.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "application.txt" 
+           MOVE "Application.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/app-o-u-j-unaff/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/app-o-u-j-unaff/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2350,7 +2356,7 @@
            
            MOVE "tests/epic-7/tester-1/job-menu-inv-option/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2363,12 +2369,12 @@
            
            MOVE "tests/epic-7/tester-1/io-inp-ends-in-d/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/io-inp-ends-in-d/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2381,12 +2387,12 @@
            
            MOVE "tests/epic-7/tester-1/details-ex-with-sal/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/details-ex-with-sal/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2399,12 +2405,12 @@
            
            MOVE "tests/epic-7/tester-1/dets-nonexis-num/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/dets-nonexis-num/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2417,17 +2423,17 @@
            
            MOVE "tests/epic-7/tester-1/rep-fil-by-usr/application.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "application.txt" 
+           MOVE "Application.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/rep-fil-by-usr/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/rep-fil-by-usr/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2440,17 +2446,17 @@
            
            MOVE "tests/epic-7/tester-1/rep-1-app/application.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "application.txt" 
+           MOVE "Application.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/rep-1-app/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/rep-1-app/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2463,12 +2469,12 @@
            
            MOVE "tests/epic-7/tester-1/io-inp-ends-in-b/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-7/tester-1/io-inp-ends-in-b/jobs.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "jobs.txt" 
+           MOVE "Jobs.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2677,12 +2683,12 @@
            
            MOVE "tests/epic-8/tester-2/neg-mess-y/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/neg-mess-y/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2695,12 +2701,12 @@
            
            MOVE "tests/epic-8/tester-2/len-201/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/len-201/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2713,12 +2719,12 @@
            
            MOVE "tests/epic-8/tester-2/len200-exact/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/len200-exact/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2731,12 +2737,12 @@
            
            MOVE "tests/epic-8/tester-2/neg-pnd-s2y/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/neg-pnd-s2y/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2749,12 +2755,12 @@
            
            MOVE "tests/epic-8/tester-2/spec-suc-sep-li/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/spec-suc-sep-li/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2767,12 +2773,12 @@
            
            MOVE "tests/epic-8/tester-2/l-usr-21-c-prx/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/l-usr-21-c-prx/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2785,12 +2791,12 @@
            
            MOVE "tests/epic-8/tester-2/len-5000/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/len-5000/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2803,12 +2809,12 @@
            
            MOVE "tests/epic-8/tester-2/eof-at-mess-m/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/eof-at-mess-m/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2821,12 +2827,12 @@
            
            MOVE "tests/epic-8/tester-2/len-500/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/len-500/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2839,12 +2845,12 @@
            
            MOVE "tests/epic-8/tester-2/eof-aft-s-n-mess/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/eof-aft-s-n-mess/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2857,12 +2863,12 @@
            
            MOVE "tests/epic-8/tester-2/l-usr-20-c/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/l-usr-20-c/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2875,12 +2881,12 @@
            
            MOVE "tests/epic-8/tester-2/neg-f-s-no-p-rec/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/neg-f-s-no-p-rec/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2893,12 +2899,12 @@
            
            MOVE "tests/epic-8/tester-2/neg-nt-conn/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/neg-nt-conn/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2911,12 +2917,12 @@
            
            MOVE "tests/epic-8/tester-2/neg-inv-m-inp/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/neg-inv-m-inp/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2929,12 +2935,12 @@
            
            MOVE "tests/epic-8/tester-2/neg-sndr-0-conn/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/neg-sndr-0-conn/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2947,12 +2953,12 @@
            
            MOVE "tests/epic-8/tester-2/eof-aft-recp-pt/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/eof-aft-recp-pt/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2965,12 +2971,12 @@
            
            MOVE "tests/epic-8/tester-2/neg-nonex-usr/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/neg-nonex-usr/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -2983,12 +2989,12 @@
            
            MOVE "tests/epic-8/tester-2/eof-aft-snd-s/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/eof-aft-snd-s/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -3001,12 +3007,12 @@
            
            MOVE "tests/epic-8/tester-2/neg-blank-recp/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/neg-blank-recp/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -3019,12 +3025,12 @@
            
            MOVE "tests/epic-8/tester-2/neg-pnd-sby/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/neg-pnd-sby/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -3037,12 +3043,12 @@
            
            MOVE "tests/epic-8/tester-2/l-usr-250-chrs/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/l-usr-250-chrs/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -3055,12 +3061,12 @@
            
            MOVE "tests/epic-8/tester-2/neg-rej-req/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/neg-rej-req/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
@@ -3073,17 +3079,352 @@
            
            MOVE "tests/epic-8/tester-2/emp-mess/connections.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "connections.txt" 
+           MOVE "Connections.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
            MOVE "tests/epic-8/tester-2/emp-mess/accounts.txt"
                TO WS-OVERRIDE-INITIAL-CONDITON.
-           MOVE "accounts.txt" 
+           MOVE "Accounts.txt" 
                TO WS-INITIAL-CONDITION.
            PERFORM MODIFY-INITIAL-CONDITON-FILE.
     
            PERFORM COUNTER-UPDATE.
     
+      *    =============================================================
+      
+           MOVE "tests/epic-9/tester-2/06-whitespace/"
+                  TO WS-FOLDER.
+           
+           MOVE "tests/epic-9/tester-2/06-whitespace/connections.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/06-whitespace/messages.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Messages.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/06-whitespace/profiles.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/06-whitespace/accounts.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Accounts.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+    
+           PERFORM COUNTER-UPDATE.
+    
+      *    =============================================================
+      
+           MOVE "tests/epic-9/tester-2/02-multi-msg/"
+                  TO WS-FOLDER.
+           
+           MOVE "tests/epic-9/tester-2/02-multi-msg/connections.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/02-multi-msg/messages.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Messages.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/02-multi-msg/profiles.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/02-multi-msg/accounts.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Accounts.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+    
+           PERFORM COUNTER-UPDATE.
+    
+      *    =============================================================
+      
+           MOVE "tests/epic-9/tester-2/12-leftover-char/"
+                  TO WS-FOLDER.
+           
+           MOVE "tests/epic-9/tester-2/12-leftover-char/connections.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/12-leftover-char/messages.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Messages.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/12-leftover-char/profiles.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/12-leftover-char/accounts.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Accounts.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+    
+           PERFORM COUNTER-UPDATE.
+    
+      *    =============================================================
+      
+           MOVE "tests/epic-9/tester-2/10-end-early/"
+                  TO WS-FOLDER.
+           
+           MOVE "tests/epic-9/tester-2/10-end-early/connections.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/10-end-early/messages.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Messages.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/10-end-early/profiles.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/10-end-early/accounts.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Accounts.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+    
+           PERFORM COUNTER-UPDATE.
+    
+      *    =============================================================
+      
+           MOVE "tests/epic-9/tester-2/01-1-msg/"
+                  TO WS-FOLDER.
+           
+           MOVE "tests/epic-9/tester-2/01-1-msg/connections.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/01-1-msg/messages.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Messages.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/01-1-msg/profiles.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/01-1-msg/accounts.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Accounts.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+    
+           PERFORM COUNTER-UPDATE.
+    
+      *    =============================================================
+      
+           MOVE "tests/epic-9/tester-2/07-no-messages/"
+                  TO WS-FOLDER.
+           
+           MOVE "tests/epic-9/tester-2/07-no-messages/connections.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/07-no-messages/messages.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Messages.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/07-no-messages/profiles.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/07-no-messages/accounts.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Accounts.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+    
+           PERFORM COUNTER-UPDATE.
+    
+      *    =============================================================
+      
+           MOVE "tests/epic-9/tester-2/08-inv-choice/"
+                  TO WS-FOLDER.
+           
+           MOVE "tests/epic-9/tester-2/08-inv-choice/connections.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/08-inv-choice/messages.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Messages.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/08-inv-choice/profiles.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/08-inv-choice/accounts.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Accounts.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+    
+           PERFORM COUNTER-UPDATE.
+    
+      *    =============================================================
+      
+           MOVE "tests/epic-9/tester-2/11-vw-mess-2x/"
+                  TO WS-FOLDER.
+           
+           MOVE "tests/epic-9/tester-2/11-vw-mess-2x/connections.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/11-vw-mess-2x/messages.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Messages.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/11-vw-mess-2x/profiles.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/11-vw-mess-2x/accounts.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Accounts.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+    
+           PERFORM COUNTER-UPDATE.
+    
+      *    =============================================================
+      
+           MOVE "tests/epic-9/tester-2/05-1-char-msg/"
+                  TO WS-FOLDER.
+           
+           MOVE "tests/epic-9/tester-2/05-1-char-msg/connections.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/05-1-char-msg/messages.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Messages.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/05-1-char-msg/profiles.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/05-1-char-msg/accounts.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Accounts.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+    
+           PERFORM COUNTER-UPDATE.
+    
+      *    =============================================================
+      
+           MOVE "tests/epic-9/tester-2/09-persistence/"
+                  TO WS-FOLDER.
+           
+           MOVE "tests/epic-9/tester-2/09-persistence/connections.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/09-persistence/messages.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Messages.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/09-persistence/profiles.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/09-persistence/accounts.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Accounts.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+    
+           PERFORM COUNTER-UPDATE.
+    
+      *    =============================================================
+      
+           MOVE "tests/epic-9/tester-2/03-multi-senders/"
+                  TO WS-FOLDER.
+           
+           MOVE "tests/epic-9/tester-2/03-multi-senders/connections.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/03-multi-senders/messages.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Messages.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/03-multi-senders/profiles.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/03-multi-senders/accounts.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Accounts.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+    
+           PERFORM COUNTER-UPDATE.
+    
+      *    =============================================================
+      
+           MOVE "tests/epic-9/tester-2/04-max-len-mss/"
+                  TO WS-FOLDER.
+           
+           MOVE "tests/epic-9/tester-2/04-max-len-mss/connections.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Connections.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/04-max-len-mss/messages.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Messages.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/04-max-len-mss/profiles.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Profiles.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+           MOVE "tests/epic-9/tester-2/04-max-len-mss/accounts.txt"
+               TO WS-OVERRIDE-INITIAL-CONDITON.
+           MOVE "Accounts.txt" 
+               TO WS-INITIAL-CONDITION.
+           PERFORM MODIFY-INITIAL-CONDITON-FILE.
+    
+           PERFORM COUNTER-UPDATE.
     
 
       *    ====================== END YOUR TESTS =======================

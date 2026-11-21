@@ -14,11 +14,20 @@ EXCLUDE_FOLDERS = {
 
 input_names = {
     
-    "accounts.txt","application.txt","connections.txt",
-    "jobs.txt","messages.txt","profiles.txt",
+    "accounts.txt":"Accounts.txt",
+    "application.txt":"Application.txt",
+    "connections.txt":"Connections.txt",
+    "jobs.txt":"Jobs.txt",
+    "messages.txt":"Messages.txt",
+    "profiles.txt":"Profiles.txt",
     
-    "Accounts.txt","Application.txt","Connections.txt",
-    "Jobs.txt","Messages.txt","Profiles.txt"}
+    "Accounts.txt":"Accounts.txt",
+    "Application.txt":"Application.txt",
+    "Connections.txt":"Connections.txt",
+    "Jobs.txt":"Jobs.txt",
+    "Messages.txt":"Messages.txt",
+    "Profiles.txt":"Profiles.txt"
+    }
 
 def modify_condition(inital_file,new_file):
     output_str = f"""
@@ -35,9 +44,9 @@ def create_test(directory):
     
     for file in directory.iterdir():
         # any inputs we need to modify
-        if file.is_file() and (file.name in input_names) and (file.name not in EXCLUDE_NAMES) :
+        if file.is_file() and (file.name in input_names) and (file.name not in EXCLUDE_NAMES):
             
-            mod_condition = modify_condition(file.name,file.relative_to(ROOT))
+            mod_condition = modify_condition( input_names[file.name],file.relative_to(ROOT))
             test_output += mod_condition
             
     test_output = f"""

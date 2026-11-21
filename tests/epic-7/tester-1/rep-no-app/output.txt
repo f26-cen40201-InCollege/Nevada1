@@ -34,8 +34,18 @@ Job ID: 0001
 Job Title: InCollege Tester
 Employer: InCollege
 Location: Tampa, Florida
+---
+Job ID: 0002
+Job Title: InCollege Developer
+Employer: InCollege
+Location: New York City, New York
+---
+Job ID: 0003
+Job Title: Construction Engineer
+Employer: Future Constructs
+Location: Atlanta, Georgia
 ------------------------------
-Total Applications: 1
+Total Applications: 3
 ------------------------------
 --- Job Search/Internship Menu ---
 1. Post a Job/Internship

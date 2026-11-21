@@ -9804,3 +9804,667 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
+==== TEST: tests/epic-9/tester-2/06-whitespace/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+2
+--- Your Messages ---
+From: profileuser2
+Message: HellothereHellothereHellothereHellothereHellothereHellothereHellothereHellothereHellothereH
+ellothereHellothereHellothereHellothereHellothereHellothereHellothereHellothereHellothereHellothereH
+ellothere
+Sent: 2026-11-21T20:17:31+00:00
+---------------------
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---
+==== TEST: tests/epic-9/tester-2/02-multi-msg/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+2
+--- Your Messages ---
+From: profileuser2
+Message: Hello, my name is Adam.
+Sent: 2026-11-21T19:45:52+00:00
+---
+From: profileuser2
+Message: Welcome to InCollege! Glad to meet you.
+Sent: 2026-11-21T19:45:52+00:00
+---------------------
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---
+==== TEST: tests/epic-9/tester-2/12-leftover-char/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+2
+--- Your Messages ---
+From: profileuser2
+Message: Hi! Thanks for reaching out today. I wanted to share a quick update on your request and mak
+e sure you have everything you need moving forward. Please let me know if any questions come up alon
+g 200char
+Sent: 2026-11-21T19:54:48+00:00
+---
+From: profileuser2
+Message: a
+Sent: 2026-11-21T19:54:48+00:00
+---------------------
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---
+==== TEST: tests/epic-9/tester-2/10-end-early/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+---END_OF_PROGRAM---
+==== TEST: tests/epic-9/tester-2/01-1-msg/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+2
+--- Your Messages ---
+From: profileuser2
+Message: How are you?
+Sent: 2026-11-09T01:34:06+00:00
+---------------------
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---
+==== TEST: tests/epic-9/tester-2/07-no-messages/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser4
+Please Enter Your password:
+Passw0rd4$
+You Have Successfully Logged In.
+Welcome, profileuser4!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+2
+--- Your Messages ---
+You have no messages at this time.
+---------------------
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---
+==== TEST: tests/epic-9/tester-2/08-inv-choice/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser4
+Please Enter Your password:
+Passw0rd4$
+You Have Successfully Logged In.
+Welcome, profileuser4!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+23
+Invalid Option, Try Again
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---
+==== TEST: tests/epic-9/tester-2/11-vw-mess-2x/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+2
+--- Your Messages ---
+From: profileuser2
+Message: I'm doing good.
+Sent: 2026-11-09T01:34:06+00:00
+---
+From: profileuser2
+Message: Welcome to InCollege! Glad we connected.
+Sent: 2026-11-20T01:01:50-05:00
+---
+From: profileuser3
+Message: Have you seen the latest internship listings?
+Sent: 2026-11-20T01:01:50-05:00
+---------------------
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+2
+--- Your Messages ---
+From: profileuser2
+Message: I'm doing good.
+Sent: 2026-11-09T01:34:06+00:00
+---
+From: profileuser2
+Message: Welcome to InCollege! Glad we connected.
+Sent: 2026-11-20T01:01:50-05:00
+---
+From: profileuser3
+Message: Have you seen the latest internship listings?
+Sent: 2026-11-20T01:01:50-05:00
+---------------------
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---
+==== TEST: tests/epic-9/tester-2/05-1-char-msg/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+2
+--- Your Messages ---
+From: profileuser2
+Message: a
+Sent: 2026-11-21T19:54:48+00:00
+---------------------
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---
+==== TEST: tests/epic-9/tester-2/09-persistence/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+2
+--- Your Messages ---
+From: profileuser2
+Message: I'm doing good.
+Sent: 2026-11-09T01:34:06+00:00
+---
+From: profileuser2
+Message: Welcome to InCollege! Glad we connected.
+Sent: 2026-11-20T01:01:50-05:00
+---
+From: profileuser3
+Message: Have you seen the latest internship listings?
+Sent: 2026-11-20T01:01:50-05:00
+---------------------
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+1
+Enter recipient's username (must be a connection):
+profileuser2
+Enter your message (max 200 chars):
+Persistence!
+Message sent to profileuser2 successfully!
+---------------------
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---
+==== TEST: tests/epic-9/tester-2/03-multi-senders/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+2
+--- Your Messages ---
+From: profileuser2
+Message: I'm doing good.
+Sent: 2026-11-09T01:34:06+00:00
+---
+From: profileuser2
+Message: Welcome to InCollege! Glad we connected.
+Sent: 2026-11-20T01:01:50-05:00
+---
+From: profileuser3
+Message: Have you seen the latest internship listings?
+Sent: 2026-11-20T01:01:50-05:00
+---------------------
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---
+==== TEST: tests/epic-9/tester-2/04-max-len-mss/
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+2
+--- Your Messages ---
+From: profileuser2
+Message: Hi! Thanks for reaching out today. I wanted to share a quick update on your request and mak
+e sure you have everything you need moving forward. Please let me know if any questions come up alon
+g 200char
+Sent: 2026-11-21T19:54:48+00:00
+---------------------
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---
