@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # made with ai to simply handle outputs
 
@@ -52,7 +53,7 @@ def create_test(directory):
     test_output = f"""
       *    =============================================================
       
-           MOVE "{directory.relative_to(ROOT)}/"
+           MOVE "{directory.relative_to(ROOT)}"
                   TO WS-FOLDER.
            {test_output}
     
@@ -64,6 +65,14 @@ def create_test(directory):
 
 
 def main():
+    try:
+        os.remove("final_output.txt")
+    except Exception as e:
+        print(e)
+        
+        
+    
+        
     # first step is to get an output file
     with open("final_output.txt","a+") as final_output:
         # iterate through each epic, tester, then the tests they wrote
@@ -78,7 +87,12 @@ def main():
                                     final_output.write(create_test(folder))
                                 except Exception as e:
                                     print(e)
-                        
+    
+    with open("test-main-constr.cob","w+") as cob_file:
+        cob_file.writelines(open("test-main-first-half.txt","r+").readlines())
+        cob_file.writelines(open("final_output.txt","r+").readlines())
+        cob_file.writelines(open("test-main-second-half.txt","r+").readlines())
+        
             
 if __name__ == "__main__":
     main()

@@ -31,19 +31,13 @@ ENTER YOUR CHOICE:
 Application Summary for TestUser
 ------------------------------
 Job ID: 0001
-Job Title: InCollege Tester
-Employer: InCollege
-Location: Tampa, Florida
+(This listing is not available.)
 ---
 Job ID: 0002
-Job Title: InCollege Developer
-Employer: InCollege
-Location: New York City, New York
+(This listing is not available.)
 ---
 Job ID: 0003
-Job Title: Construction Engineer
-Employer: Future Constructs
-Location: Atlanta, Georgia
+(This listing is not available.)
 ------------------------------
 Total Applications: 3
 ------------------------------

@@ -63,9 +63,7 @@ ENTER YOUR CHOICE:
 Application Summary for profileuser1
 ------------------------------
 Job ID: 0002
-Job Title: InCollege Developer
-Employer: InCollege
-Location: New York City, New York
+(This listing is not available.)
 ------------------------------
 Total Applications: 1
 ------------------------------

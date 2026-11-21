@@ -28,120 +28,33 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 2
 --- Available Job Listings ---
-1. InCollege Tester at InCollege (Tampa, Florida)
-2. InCollege Developer at InCollege (New York City, New York)
-3. Construction Engineer at Future Constructs (Atlanta, Georgia)
-4. InCollege Tester at InCollege (Tampa, Florida)
-5. E6-N06 Title at Emp (Tampa, FL)
-6. InCollege Tester at InCollege (Tampa, Florida)
-7. E6-R04 Title 1 at E6-R04 Employer (Tampa, FL)
-8. E6-P04 Writer at Words Inc (Remote)
-9. E6-P01 Software Intern at Tech Corp (Remote)
-10. E6-G03 Title 1 at E6-G03 Employer (Tampa, FL)
-11. E6-N01 Valid Title at Emp (Tampa, FL)
-12. E6-R04 Title 2 at E6-R04 Employer (Tampa, FL)
-13. E6-P05 First Job at Alpha (Tampa, FL)
-14. E6-P05 Second Job at Beta (Miami, FL)
-15. Data Analyst at DataSolutions (New York, NY)
-16. Software Intern at TechCorp (Remote)
-17. Software Intern at TechCorp (Remote)
-18. QA Engineer at QualityCo (Austin, TX)
-19. Software Intern at TechCorp (Remote)
-20. TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT at TechCorp (Remote)
-21. InCollege Tester at InCollege (Tampa, Florida)
-22. E6-N06 Title at Emp (Tampa, FL)
-23. InCollege Tester at InCollege (Tampa, Florida)
-24. E6-R04 Title 1 at E6-R04 Employer (Tampa, FL)
-25. E6-P04 Writer at Words Inc (Remote)
-26. E6-P01 Software Intern at Tech Corp (Remote)
-27. E6-G03 Title 1 at E6-G03 Employer (Tampa, FL)
-28. E6-N01 Valid Title at Emp (Tampa, FL)
-29. E6-R04 Title 2 at E6-R04 Employer (Tampa, FL)
-30. E6-P05 First Job at Alpha (Tampa, FL)
-31. E6-P05 Second Job at Beta (Miami, FL)
-32. Data Analyst at DataSolutions (New York, NY)
-33. Software Intern at TechCorp (Remote)
-34. Software Intern at TechCorp (Remote)
-35. QA Engineer at QualityCo (Austin, TX)
-36. Software Intern at TechCorp (Remote)
-37. TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT at TechCorp (Remote)
-38. InCollege Tester at InCollege (Tampa, Florida)
-39. E6-N06 Title at Emp (Tampa, FL)
-40. InCollege Tester at InCollege (Tampa, Florida)
-41. E6-R04 Title 1 at E6-R04 Employer (Tampa, FL)
-42. E6-P04 Writer at Words Inc (Remote)
-43. E6-P01 Software Intern at Tech Corp (Remote)
-44. E6-G03 Title 1 at E6-G03 Employer (Tampa, FL)
-45. E6-N01 Valid Title at Emp (Tampa, FL)
-46. E6-R04 Title 2 at E6-R04 Employer (Tampa, FL)
-47. E6-P05 First Job at Alpha (Tampa, FL)
-48. E6-P05 Second Job at Beta (Miami, FL)
-49. Data Analyst at DataSolutions (New York, NY)
+1. llege Tester                                  Test at  ()
+2. InCo at  ()
+3. llege Developer                               Help at  ()
+4. InCo at  ()
+5. truction Engineer                             Buil at  ()
+6. Futu at  ()
 -----------------------------
 Enter job number to view details, or 0 to go back:
 1
 --- Job Details ---
-Title: InCollege Tester
-Description: Testing testy code with a testy 'tude
-Employer: InCollege
-Location: Tampa, Florida
-Salary: $90000 - $100000
+Title: llege Tester                                  Test
+Description: ing testy code with a testy 'tude
+Employer:
+Location:
 -------------------
 1. Apply for this Job
 2. Back to Job List
 Enter Your Choice:
 1
-You've already applied to this job.
+Your application for llege Tester                                  Test at  has been submitted.
 --- Available Job Listings ---
-1. InCollege Tester at InCollege (Tampa, Florida)
-2. InCollege Developer at InCollege (New York City, New York)
-3. Construction Engineer at Future Constructs (Atlanta, Georgia)
-4. InCollege Tester at InCollege (Tampa, Florida)
-5. E6-N06 Title at Emp (Tampa, FL)
-6. InCollege Tester at InCollege (Tampa, Florida)
-7. E6-R04 Title 1 at E6-R04 Employer (Tampa, FL)
-8. E6-P04 Writer at Words Inc (Remote)
-9. E6-P01 Software Intern at Tech Corp (Remote)
-10. E6-G03 Title 1 at E6-G03 Employer (Tampa, FL)
-11. E6-N01 Valid Title at Emp (Tampa, FL)
-12. E6-R04 Title 2 at E6-R04 Employer (Tampa, FL)
-13. E6-P05 First Job at Alpha (Tampa, FL)
-14. E6-P05 Second Job at Beta (Miami, FL)
-15. Data Analyst at DataSolutions (New York, NY)
-16. Software Intern at TechCorp (Remote)
-17. Software Intern at TechCorp (Remote)
-18. QA Engineer at QualityCo (Austin, TX)
-19. Software Intern at TechCorp (Remote)
-20. TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT at TechCorp (Remote)
-21. InCollege Tester at InCollege (Tampa, Florida)
-22. E6-N06 Title at Emp (Tampa, FL)
-23. InCollege Tester at InCollege (Tampa, Florida)
-24. E6-R04 Title 1 at E6-R04 Employer (Tampa, FL)
-25. E6-P04 Writer at Words Inc (Remote)
-26. E6-P01 Software Intern at Tech Corp (Remote)
-27. E6-G03 Title 1 at E6-G03 Employer (Tampa, FL)
-28. E6-N01 Valid Title at Emp (Tampa, FL)
-29. E6-R04 Title 2 at E6-R04 Employer (Tampa, FL)
-30. E6-P05 First Job at Alpha (Tampa, FL)
-31. E6-P05 Second Job at Beta (Miami, FL)
-32. Data Analyst at DataSolutions (New York, NY)
-33. Software Intern at TechCorp (Remote)
-34. Software Intern at TechCorp (Remote)
-35. QA Engineer at QualityCo (Austin, TX)
-36. Software Intern at TechCorp (Remote)
-37. TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT at TechCorp (Remote)
-38. InCollege Tester at InCollege (Tampa, Florida)
-39. E6-N06 Title at Emp (Tampa, FL)
-40. InCollege Tester at InCollege (Tampa, Florida)
-41. E6-R04 Title 1 at E6-R04 Employer (Tampa, FL)
-42. E6-P04 Writer at Words Inc (Remote)
-43. E6-P01 Software Intern at Tech Corp (Remote)
-44. E6-G03 Title 1 at E6-G03 Employer (Tampa, FL)
-45. E6-N01 Valid Title at Emp (Tampa, FL)
-46. E6-R04 Title 2 at E6-R04 Employer (Tampa, FL)
-47. E6-P05 First Job at Alpha (Tampa, FL)
-48. E6-P05 Second Job at Beta (Miami, FL)
-49. Data Analyst at DataSolutions (New York, NY)
+1. llege Tester                                  Test at  ()
+2. InCo at  ()
+3. llege Developer                               Help at  ()
+4. InCo at  ()
+5. truction Engineer                             Buil at  ()
+6. Futu at  ()
 -----------------------------
 Enter job number to view details, or 0 to go back:
 0

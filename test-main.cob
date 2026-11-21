@@ -3567,6 +3567,18 @@
                     "Connections.txt"
                     "Connections-backup.txt" 
                     RETURNCODE.
+                CALL "COPY-FILE" USING 
+                    "Application.txt"
+                    "Application-backup.txt" 
+                    RETURNCODE.
+                CALL "COPY-FILE" USING 
+                    "Jobs.txt"
+                    "Jobs-backup.txt" 
+                    RETURNCODE.
+                CALL "COPY-FILE" USING 
+                    "Messages.txt"
+                    "Messages-backup.txt" 
+                    RETURNCODE.
 
            RESET-ORIGINAL-FILES.
                 move 0 to RETURNCODE.
@@ -3584,6 +3596,18 @@
                CALL "COPY-FILE" USING 
                    "Connections-backup.txt" 
                    "Connections.txt"
+                   RETURNCODE.
+               CALL "COPY-FILE" USING
+                   "Application-backup.txt" 
+                   "Application.txt"
+                   RETURNCODE.
+               CALL "COPY-FILE" USING
+                   "Jobs-backup.txt" 
+                   "Jobs.txt"
+                   RETURNCODE.
+               CALL "COPY-FILE" USING
+                   "Messages-backup.txt" 
+                   "Messages.txt"
                    RETURNCODE.
            
       *    ===================== Helper functions ======================

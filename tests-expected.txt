@@ -1,4 +1,4 @@
-==== TEST: tests/epic-1/tester-1/menus-pos-4/
+==== TEST: tests/epic-1/tester-1/menus-pos-4
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -24,7 +24,7 @@ Learn a New Skill:
 5. Networking Skills
 6. Go Back
 Enter your choice:
-==== TEST: tests/epic-1/tester-1/menus-pos-3/
+==== TEST: tests/epic-1/tester-1/menus-pos-3
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -50,7 +50,7 @@ Learn a New Skill:
 5. Networking Skills
 6. Go Back
 Enter your choice:
-==== TEST: tests/epic-1/tester-1/menus-pos-2/
+==== TEST: tests/epic-1/tester-1/menus-pos-2
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -74,7 +74,7 @@ Job search/internship is under construction.
 3. Learn a new skill
 4. Logout
 Enter your choice:
-==== TEST: tests/epic-1/tester-1/acc-creation-neg-2/
+==== TEST: tests/epic-1/tester-1/acc-creation-neg-2
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -94,7 +94,7 @@ Invalid Option, Try Again
 1. Log-In
 2. Create New Account
 Enter your choice:
-==== TEST: tests/epic-1/tester-1/menus-pos-1/
+==== TEST: tests/epic-1/tester-1/menus-pos-1
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -111,7 +111,7 @@ Welcome, IanKoratsky!
 3. Learn a new skill
 4. Logout
 Enter your choice:
-==== TEST: tests/epic-1/tester-1/acc-creation-neg-1/
+==== TEST: tests/epic-1/tester-1/acc-creation-neg-1
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -125,7 +125,7 @@ Password doesn't satisfy requirements, try again
 1. Log-In
 2. Create New Account
 Enter your choice:
-==== TEST: tests/epic-2/tester-1/persistence-restart/
+==== TEST: tests/epic-2/tester-1/persistence-restart
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -198,7 +198,7 @@ DONE
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/max-3-entries-edge/
+==== TEST: tests/epic-2/tester-1/max-3-entries-edge
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -351,7 +351,7 @@ Years: 2023-2023
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/prof-creation-neg-2/
+==== TEST: tests/epic-2/tester-1/prof-creation-neg-2
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -371,7 +371,7 @@ Invalid Option, Try Again
 1. Log-In
 2. Create New Account
 Enter your choice:
-==== TEST: tests/epic-2/tester-1/blank-univ-neg/
+==== TEST: tests/epic-2/tester-1/blank-univ-neg
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -443,7 +443,7 @@ About Me:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/gradyr-2025-bad-neg/
+==== TEST: tests/epic-2/tester-1/gradyr-2025-bad-neg
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -515,7 +515,7 @@ About Me:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/gradyr-high-ok-edge/
+==== TEST: tests/epic-2/tester-1/gradyr-high-ok-edge
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -584,7 +584,7 @@ About Me:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/blank-major-neg/
+==== TEST: tests/epic-2/tester-1/blank-major-neg
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -656,7 +656,7 @@ About Me:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/expdesc-101bad-edge/
+==== TEST: tests/epic-2/tester-1/expdesc-101bad-edge
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -740,7 +740,7 @@ Description: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/gradyr-2034-bad-neg/
+==== TEST: tests/epic-2/tester-1/gradyr-2034-bad-neg
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -812,7 +812,7 @@ About Me:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/aboutme-200ok-edge/
+==== TEST: tests/epic-2/tester-1/aboutme-200ok-edge
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -881,7 +881,7 @@ About Me: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/gradyr-nonnum-neg/
+==== TEST: tests/epic-2/tester-1/gradyr-nonnum-neg
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -953,7 +953,7 @@ About Me:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/gradyr-toolong-neg/
+==== TEST: tests/epic-2/tester-1/gradyr-toolong-neg
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1025,7 +1025,7 @@ About Me:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/blank-gradyear/
+==== TEST: tests/epic-2/tester-1/blank-gradyear
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1097,7 +1097,7 @@ About Me:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/edit-profile-pos/
+==== TEST: tests/epic-2/tester-1/edit-profile-pos
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1237,7 +1237,7 @@ Years: 2023-2027
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/gradyr-low-ok-edge/
+==== TEST: tests/epic-2/tester-1/gradyr-low-ok-edge
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1306,7 +1306,7 @@ About Me:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/expdesc-100ok-edge/
+==== TEST: tests/epic-2/tester-1/expdesc-100ok-edge
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1390,7 +1390,7 @@ Description: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/menus-neg-1/
+==== TEST: tests/epic-2/tester-1/menus-neg-1
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1410,7 +1410,7 @@ Invalid Option, Try Again
 1. Log-In
 2. Create New Account
 Enter your choice:
-==== TEST: tests/epic-2/tester-1/acc-creation-pos-1/
+==== TEST: tests/epic-2/tester-1/acc-creation-pos-1
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1424,7 +1424,7 @@ Account Created!
 1. Log-In
 2. Create New Account
 Enter your choice:
-==== TEST: tests/epic-2/tester-1/gradyr-tooshort-neg/
+==== TEST: tests/epic-2/tester-1/gradyr-tooshort-neg
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1496,7 +1496,7 @@ About Me:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/full-profile-pos/
+==== TEST: tests/epic-2/tester-1/full-profile-pos
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1592,7 +1592,7 @@ Years: 2023-2027
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/blank-firstname-neg/
+==== TEST: tests/epic-2/tester-1/blank-firstname-neg
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1664,7 +1664,7 @@ About Me:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/aboutme-201bad-edge/
+==== TEST: tests/epic-2/tester-1/aboutme-201bad-edge
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1733,7 +1733,7 @@ About Me: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-1/blank-lastname-neg/
+==== TEST: tests/epic-2/tester-1/blank-lastname-neg
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1805,7 +1805,7 @@ About Me:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-2/zero-optional-pos/
+==== TEST: tests/epic-2/tester-2/zero-optional-pos
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1874,7 +1874,7 @@ About Me:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-2/vw-no-profile-edge/
+==== TEST: tests/epic-2/tester-2/vw-no-profile-edge
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1912,7 +1912,7 @@ No profile has been created yet.
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-2/tester-2/two-users-check-pos/
+==== TEST: tests/epic-2/tester-2/two-users-check-pos
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -1981,7 +1981,7 @@ About Me: A future research chemist.
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-3/tester-1/wrong-letter-case/
+==== TEST: tests/epic-3/tester-1/wrong-letter-case
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -2037,7 +2037,7 @@ Education:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-3/tester-1/same-name/
+==== TEST: tests/epic-3/tester-1/same-name
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -2107,7 +2107,7 @@ Education:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-3/tester-1/search-persistence/
+==== TEST: tests/epic-3/tester-1/search-persistence
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -2206,7 +2206,7 @@ Education:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-3/tester-1/too-much-inputs/
+==== TEST: tests/epic-3/tester-1/too-much-inputs
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -2237,7 +2237,7 @@ Profile cannot be found
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-3/tester-1/profile-dne/
+==== TEST: tests/epic-3/tester-1/profile-dne
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -2268,7 +2268,7 @@ Profile cannot be found
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-3/tester-1/partial-name/
+==== TEST: tests/epic-3/tester-1/partial-name
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -2310,7 +2310,7 @@ Profile cannot be found
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-3/tester-1/whitespace/
+==== TEST: tests/epic-3/tester-1/whitespace
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -2380,7 +2380,7 @@ Education:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-3/tester-1/max-optionals/
+==== TEST: tests/epic-3/tester-1/max-optionals
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -2570,7 +2570,7 @@ Education:
 6. Logout
 Enter your choice:
 6
-==== TEST: tests/epic-3/tester-2/search-empty-query/
+==== TEST: tests/epic-3/tester-2/search-empty-query
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -2655,7 +2655,7 @@ No one by that name could be found.
 Enter your choice:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-3/tester-2/search-find-full/
+==== TEST: tests/epic-3/tester-2/search-find-full
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -2729,7 +2729,7 @@ DONE
 Enter your choice:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-3/tester-2/search-view-own/
+==== TEST: tests/epic-3/tester-2/search-view-own
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -2803,7 +2803,7 @@ DONE
 Enter your choice:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-3/tester-2/search-self/
+==== TEST: tests/epic-3/tester-2/search-self
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -2904,7 +2904,7 @@ Education:
 Enter your choice:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-3/tester-2/search-find-empty/
+==== TEST: tests/epic-3/tester-2/search-find-empty
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -2960,7 +2960,7 @@ DONE
 Enter your choice:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-3/tester-2/search-long-name/
+==== TEST: tests/epic-3/tester-2/search-long-name
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -3016,7 +3016,7 @@ DONE
 Enter your choice:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-3/tester-2/view-own-minimal/
+==== TEST: tests/epic-3/tester-2/view-own-minimal
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -3088,7 +3088,7 @@ About Me:
 Enter your choice:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-3/tester-2/view-own-full/
+==== TEST: tests/epic-3/tester-2/view-own-full
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -3187,7 +3187,7 @@ Education:
 Enter your choice:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-4/tester-1/mutual-requests/
+==== TEST: tests/epic-4/tester-1/mutual-requests
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -3210,8 +3210,24 @@ Please Enter Your password:
 Incorrect Username/Password, Please Try Again
 Please Enter Your username:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-4/tester-1/pending-empty/
-==== TEST: tests/epic-4/tester-1/pending-filter/
+==== TEST: tests/epic-4/tester-1/pending-empty
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+Incorrect Username/Password, Please Try Again
+Please Enter Your username:
+7
+Please Enter Your password:
+6
+Incorrect Username/Password, Please Try Again
+Please Enter Your username:
+==== TEST: tests/epic-4/tester-1/pending-filter
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -3244,7 +3260,7 @@ Pending Connection Requests:
 7. Pending Connection Requests
 Enter your choice:
 6
-==== TEST: tests/epic-4/tester-2/send-conn/
+==== TEST: tests/epic-4/tester-2/send-conn
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -3298,7 +3314,7 @@ You Are Already Connected With User
 7. Pending Connection Requests
 ENTER YOUR CHOICE:
 6
-==== TEST: tests/epic-4/tester-2/no-profile/
+==== TEST: tests/epic-4/tester-2/no-profile
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -3342,7 +3358,7 @@ Profile cannot be found
 7. Pending Connection Requests
 Enter your choice:
 6
-==== TEST: tests/epic-4/tester-2/duplicate-req/
+==== TEST: tests/epic-4/tester-2/duplicate-req
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -3405,7 +3421,7 @@ Request already sent
 7. Pending Connection Requests
 Enter your choice:
 6
-==== TEST: tests/epic-4/tester-2/send-self/
+==== TEST: tests/epic-4/tester-2/send-self
 Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -3469,7 +3485,7 @@ You cannot send a request to yourself.
 7. Pending Connection Requests
 Enter your choice:
 6
-==== TEST: tests/epic-4/tester-2/send-unconn/
+==== TEST: tests/epic-4/tester-2/send-unconn
 1Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -3532,7 +3548,7 @@ Connection request sent.
 7. Pending Connection Requests
 Enter your choice:
 6
-==== TEST: tests/epic-4/tester-2/request-not-acpt/
+==== TEST: tests/epic-4/tester-2/request-not-acpt
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -3587,7 +3603,7 @@ This User Already Sent a Request
 7. Pending Connection Requests
 ENTER YOUR CHOICE:
 6
-==== TEST: tests/epic-4/tester-2/multi-requests/
+==== TEST: tests/epic-4/tester-2/multi-requests
 1Welcome to InCollege!
 1. Log-In
 2. Create New Account
@@ -3650,7 +3666,7 @@ Connection request sent.
 7. Pending Connection Requests
 Enter your choice:
 6
-==== TEST: tests/epic-5/tester-1/mixed-ac-rej-net/
+==== TEST: tests/epic-5/tester-1/mixed-ac-rej-net
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -3721,7 +3737,7 @@ You have no pending connection requests at this time.
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-5/tester-2/rej-1-req/
+==== TEST: tests/epic-5/tester-2/rej-1-req
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -3786,7 +3802,7 @@ You have no pending connection requests at this time.
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-5/tester-2/acc-req-pers-p1/
+==== TEST: tests/epic-5/tester-2/acc-req-pers-p1
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -3827,7 +3843,7 @@ Connection request from profileuser2 accepted!
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-5/tester-2/rej-multi-req/
+==== TEST: tests/epic-5/tester-2/rej-multi-req
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -3898,7 +3914,7 @@ You have no pending connection requests at this time.
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-5/tester-2/accept-1-req/
+==== TEST: tests/epic-5/tester-2/accept-1-req
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -3963,7 +3979,7 @@ You have no pending connection requests at this time.
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-5/tester-2/acc-req-pers-p2/
+==== TEST: tests/epic-5/tester-2/acc-req-pers-p2
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4010,7 +4026,7 @@ Connected With: profileuser2 (University: University of Florida, Major: Physics)
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-5/tester-2/acc-multi-req/
+==== TEST: tests/epic-5/tester-2/acc-multi-req
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4082,7 +4098,7 @@ You have no pending connection requests at this time.
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-1/02-pos-new-job-d/
+==== TEST: tests/epic-6/tester-1/02-pos-new-job-d
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4117,7 +4133,7 @@ Enter Description (max 200 chars):
 Testing testy code with a testy 'tude
 Enter Employer Name:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-1/05-neg-new-job-s/
+==== TEST: tests/epic-6/tester-1/05-neg-new-job-s
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4160,7 +4176,7 @@ Enter Salary (optional, enter 'NONE' to skip):
 Salary Cannot Exceed 30 Characters, Try Again
 Enter Salary (optional, enter 'NONE' to skip):
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-1/01-neg-new-job-t/
+==== TEST: tests/epic-6/tester-1/01-neg-new-job-t
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4195,7 +4211,7 @@ Enter Job Title:
 Job Title Cannot Exceed 50 Characters, Try Again
 Enter Job Title:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-1/00-neg-new-job/
+==== TEST: tests/epic-6/tester-1/00-neg-new-job
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4229,7 +4245,7 @@ Invalid Option, Try Again
 3. Back to Main Menu
 ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-1/entry-exit-entry/
+==== TEST: tests/epic-6/tester-1/entry-exit-entry
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4273,7 +4289,7 @@ ENTER YOUR CHOICE:
 3. Back to Main Menu
 ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-1/04-neg-new-job-l/
+==== TEST: tests/epic-6/tester-1/04-neg-new-job-l
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4314,7 +4330,7 @@ azq2x3wsecdrvf6tvbnh  weeihrbty>><<<;;]
 Location Cannot Exceed 50 Characters, Try Again
 Enter Location:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-1/00-pos-new-job/
+==== TEST: tests/epic-6/tester-1/00-pos-new-job
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4345,7 +4361,7 @@ ENTER YOUR CHOICE:
 --- Post a New Job/Internship ---
 Enter Job Title:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-1/03-neg-new-job-e/
+==== TEST: tests/epic-6/tester-1/03-neg-new-job-e
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4384,7 +4400,7 @@ InCollege!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM<>?>.,,mnmbvcxzasdfghjkl
 Employer Name Cannot Exceed 50 Characters, Try Again
 Enter Employer Name:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-1/02-neg-new-job-d/
+==== TEST: tests/epic-6/tester-1/02-neg-new-job-d
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4420,7 +4436,7 @@ Testing testy code with a testy 'tude!@#$%^&*()_qwertyuiopQWERTYUIOPASDFGHJKLZXC
 sdfghjkl;'][poiuytrewq1azq2x3wsecdrvf6tvbnh  weeihrbty>><<<;;]
 Enter Employer Name:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-1/05-pos-new-job-s/
+==== TEST: tests/epic-6/tester-1/05-pos-new-job-s
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4466,7 +4482,7 @@ Job posted successfully!
 3. Back to Main Menu
 ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-1/01-pos-new-job-t/
+==== TEST: tests/epic-6/tester-1/01-pos-new-job-t
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4499,7 +4515,7 @@ Enter Job Title:
 InCollege Tester
 Enter Description (max 200 chars):
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-1/04-pos-new-job-l/
+==== TEST: tests/epic-6/tester-1/04-pos-new-job-l
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4538,7 +4554,7 @@ Enter Location:
 Tampa, Florida
 Enter Salary (optional, enter 'NONE' to skip):
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-1/03-pos-new-job-e/
+==== TEST: tests/epic-6/tester-1/03-pos-new-job-e
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4575,7 +4591,7 @@ Enter Employer Name:
 InCollege
 Enter Location:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-2/09-pers-r3-ln-only/
+==== TEST: tests/epic-6/tester-2/09-pers-r3-ln-only
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4614,7 +4630,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-2/03-desc-201-rej/
+==== TEST: tests/epic-6/tester-2/03-desc-201-rej
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4676,7 +4692,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-2/11-week6-sample-run/
+==== TEST: tests/epic-6/tester-2/11-week6-sample-run
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4728,7 +4744,7 @@ Browse Jobs/Internships is under construction.
 3. Back to Main Menu
 ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-2/07-pers-r1-usr1-p/
+==== TEST: tests/epic-6/tester-2/07-pers-r1-usr1-p
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4785,7 +4801,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-2/05-desc-exactly-200/
+==== TEST: tests/epic-6/tester-2/05-desc-exactly-200
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4843,7 +4859,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-2/04-post-salary-none/
+==== TEST: tests/epic-6/tester-2/04-post-salary-none
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4900,7 +4916,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-2/01-pend-nwk-p/
+==== TEST: tests/epic-6/tester-2/01-pend-nwk-p
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -4982,7 +4998,7 @@ Connected with: profileuser2
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-2/10-job-m-spec-wd/
+==== TEST: tests/epic-6/tester-2/10-job-m-spec-wd
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5021,7 +5037,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-2/02-blank-req-fds/
+==== TEST: tests/epic-6/tester-2/02-blank-req-fds
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5090,7 +5106,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-2/08-pers-r2-usr2-p/
+==== TEST: tests/epic-6/tester-2/08-pers-r2-usr2-p
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5147,7 +5163,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-6/tester-2/06-two-jobs-one-run/
+==== TEST: tests/epic-6/tester-2/06-two-jobs-one-run
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5222,7 +5238,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/prst-app-multi-user/
+==== TEST: tests/epic-7/tester-1/prst-app-multi-user
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5295,7 +5311,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/rep-ord-m-app/
+==== TEST: tests/epic-7/tester-1/rep-ord-m-app
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5357,7 +5373,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/browse-one-job/
+==== TEST: tests/epic-7/tester-1/browse-one-job
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5409,7 +5425,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/dets-inv-menu-op/
+==== TEST: tests/epic-7/tester-1/dets-inv-menu-op
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5493,7 +5509,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/post-job-sal-na/
+==== TEST: tests/epic-7/tester-1/post-job-sal-na
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5553,7 +5569,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/details-b2l/
+==== TEST: tests/epic-7/tester-1/details-b2l
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5625,7 +5641,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/rep-no-app/
+==== TEST: tests/epic-7/tester-1/rep-no-app
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5679,7 +5695,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/persist-app/
+==== TEST: tests/epic-7/tester-1/persist-app
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5770,7 +5786,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/apply-success/
+==== TEST: tests/epic-7/tester-1/apply-success
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5843,7 +5859,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/post-job-s-w-sal/
+==== TEST: tests/epic-7/tester-1/post-job-s-w-sal
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5903,7 +5919,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/browse-r2m/
+==== TEST: tests/epic-7/tester-1/browse-r2m
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -5956,7 +5972,7 @@ ENTER YOUR CHOICE:
 8. View My Network
 ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/job-menu-view-app-e/
+==== TEST: tests/epic-7/tester-1/job-menu-view-app-e
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -6010,7 +6026,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/post-job-des-lim/
+==== TEST: tests/epic-7/tester-1/post-job-des-lim
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -6076,7 +6092,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/apply-duplicate/
+==== TEST: tests/epic-7/tester-1/apply-duplicate
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -6149,7 +6165,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/prst-pst-job-brws/
+==== TEST: tests/epic-7/tester-1/prst-pst-job-brws
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -6209,7 +6225,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/dets-inv-inp/
+==== TEST: tests/epic-7/tester-1/dets-inv-inp
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -6303,7 +6319,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/samp-w7-rep/
+==== TEST: tests/epic-7/tester-1/samp-w7-rep
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -6416,7 +6432,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/rep-aft-app-in-sess/
+==== TEST: tests/epic-7/tester-1/rep-aft-app-in-sess
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -6505,7 +6521,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/p-j-blk-req-field/
+==== TEST: tests/epic-7/tester-1/p-j-blk-req-field
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -6568,7 +6584,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/rep-listing-rem/
+==== TEST: tests/epic-7/tester-1/rep-listing-rem
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -6628,7 +6644,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/browse-100-jobs/
+==== TEST: tests/epic-7/tester-1/browse-100-jobs
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -6893,7 +6909,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/rep-multi-app/
+==== TEST: tests/epic-7/tester-1/rep-multi-app
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -6960,7 +6976,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/browse-multi-jobs/
+==== TEST: tests/epic-7/tester-1/browse-multi-jobs
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7014,7 +7030,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/post-job-t-long/
+==== TEST: tests/epic-7/tester-1/post-job-t-long
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7077,7 +7093,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/job-menu-ops-disp/
+==== TEST: tests/epic-7/tester-1/job-menu-ops-disp
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7117,7 +7133,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/browse-empty/
+==== TEST: tests/epic-7/tester-1/browse-empty
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7181,7 +7197,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/post-job-max-100/
+==== TEST: tests/epic-7/tester-1/post-job-max-100
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7229,7 +7245,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/details-last-job/
+==== TEST: tests/epic-7/tester-1/details-last-job
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7301,7 +7317,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/job-menu-header-fmt/
+==== TEST: tests/epic-7/tester-1/job-menu-header-fmt
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7341,7 +7357,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/app-dup-sme-sess/
+==== TEST: tests/epic-7/tester-1/app-dup-sme-sess
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7450,7 +7466,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/dets-wo-sal/
+==== TEST: tests/epic-7/tester-1/dets-wo-sal
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7521,7 +7537,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/apply-multiple-jobs/
+==== TEST: tests/epic-7/tester-1/apply-multiple-jobs
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7658,7 +7674,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/job-menu-b2m/
+==== TEST: tests/epic-7/tester-1/job-menu-b2m
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7698,7 +7714,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/app-o-u-j-unaff/
+==== TEST: tests/epic-7/tester-1/app-o-u-j-unaff
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7771,7 +7787,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/job-menu-inv-option/
+==== TEST: tests/epic-7/tester-1/job-menu-inv-option
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7827,7 +7843,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/io-inp-ends-in-d/
+==== TEST: tests/epic-7/tester-1/io-inp-ends-in-d
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7874,7 +7890,7 @@ Salary: $25/hour
 2. Back to Job List
 Enter Your Choice:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/details-ex-with-sal/
+==== TEST: tests/epic-7/tester-1/details-ex-with-sal
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -7946,7 +7962,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/dets-nonexis-num/
+==== TEST: tests/epic-7/tester-1/dets-nonexis-num
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8016,7 +8032,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/rep-fil-by-usr/
+==== TEST: tests/epic-7/tester-1/rep-fil-by-usr
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8073,7 +8089,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/rep-1-app/
+==== TEST: tests/epic-7/tester-1/rep-1-app
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8130,7 +8146,7 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-7/tester-1/io-inp-ends-in-b/
+==== TEST: tests/epic-7/tester-1/io-inp-ends-in-b
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8166,7 +8182,7 @@ ENTER YOUR CHOICE:
 -----------------------------
 Enter job number to view details, or 0 to go back:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-1/empty-message/
+==== TEST: tests/epic-8/tester-1/empty-message
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8224,7 +8240,7 @@ Enter your choice:
 9. Messages
 ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-1/send-message/
+==== TEST: tests/epic-8/tester-1/send-message
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8282,7 +8298,7 @@ Enter your choice:
 9. Messages
 ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-1/whitespace/
+==== TEST: tests/epic-8/tester-1/whitespace
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8340,7 +8356,7 @@ Enter your choice:
 9. Messages
 ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-1/send-no-input/
+==== TEST: tests/epic-8/tester-1/send-no-input
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8380,7 +8396,7 @@ Enter recipient's username (must be a connection):
 profileuser2
 Enter your message (max 200 chars):
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-1/send-different/
+==== TEST: tests/epic-8/tester-1/send-different
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8449,7 +8465,7 @@ Enter your choice:
 9. Messages
 ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-1/send-multiple/
+==== TEST: tests/epic-8/tester-1/send-multiple
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8529,7 +8545,7 @@ Enter your choice:
 9. Messages
 ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-1/send-bidir/
+==== TEST: tests/epic-8/tester-1/send-bidir
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8587,7 +8603,7 @@ Enter your choice:
 9. Messages
 ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/neg-mess-y/
+==== TEST: tests/epic-8/tester-2/neg-mess-y
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8637,7 +8653,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/len-201/
+==== TEST: tests/epic-8/tester-2/len-201
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8702,7 +8718,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/len200-exact/
+==== TEST: tests/epic-8/tester-2/len200-exact
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8755,7 +8771,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/neg-pnd-s2y/
+==== TEST: tests/epic-8/tester-2/neg-pnd-s2y
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8805,7 +8821,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/spec-suc-sep-li/
+==== TEST: tests/epic-8/tester-2/spec-suc-sep-li
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8853,7 +8869,7 @@ Invalid Option, Try Again
 3. Back to Main Menu
 Enter your choice:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/l-usr-21-c-prx/
+==== TEST: tests/epic-8/tester-2/l-usr-21-c-prx
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8903,7 +8919,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/len-5000/
+==== TEST: tests/epic-8/tester-2/len-5000
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8968,7 +8984,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/eof-at-mess-m/
+==== TEST: tests/epic-8/tester-2/eof-at-mess-m
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -8997,7 +9013,7 @@ ENTER YOUR CHOICE:
 3. Back to Main Menu
 Enter your choice:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/len-500/
+==== TEST: tests/epic-8/tester-2/len-500
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9062,7 +9078,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/eof-aft-s-n-mess/
+==== TEST: tests/epic-8/tester-2/eof-aft-s-n-mess
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9093,7 +9109,7 @@ Enter your choice:
 1
 Enter recipient's username (must be a connection):
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/l-usr-20-c/
+==== TEST: tests/epic-8/tester-2/l-usr-20-c
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9145,7 +9161,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/neg-f-s-no-p-rec/
+==== TEST: tests/epic-8/tester-2/neg-f-s-no-p-rec
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9231,7 +9247,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/neg-nt-conn/
+==== TEST: tests/epic-8/tester-2/neg-nt-conn
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9281,7 +9297,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/neg-inv-m-inp/
+==== TEST: tests/epic-8/tester-2/neg-inv-m-inp
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9357,7 +9373,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/neg-sndr-0-conn/
+==== TEST: tests/epic-8/tester-2/neg-sndr-0-conn
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9416,7 +9432,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/eof-aft-recp-pt/
+==== TEST: tests/epic-8/tester-2/eof-aft-recp-pt
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9449,7 +9465,7 @@ Enter recipient's username (must be a connection):
 ConnectedUser
 Enter your message (max 200 chars):
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/neg-nonex-usr/
+==== TEST: tests/epic-8/tester-2/neg-nonex-usr
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9499,7 +9515,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/eof-aft-snd-s/
+==== TEST: tests/epic-8/tester-2/eof-aft-snd-s
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9539,7 +9555,7 @@ Message sent to ConnectedUser successfully!
 3. Back to Main Menu
 Enter your choice:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/neg-blank-recp/
+==== TEST: tests/epic-8/tester-2/neg-blank-recp
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9589,7 +9605,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/neg-pnd-sby/
+==== TEST: tests/epic-8/tester-2/neg-pnd-sby
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9639,7 +9655,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/l-usr-250-chrs/
+==== TEST: tests/epic-8/tester-2/l-usr-250-chrs
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9691,7 +9707,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/neg-rej-req/
+==== TEST: tests/epic-8/tester-2/neg-rej-req
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9741,7 +9757,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-8/tester-2/emp-mess/
+==== TEST: tests/epic-8/tester-2/emp-mess
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9804,7 +9820,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-9/tester-2/06-whitespace/
+==== TEST: tests/epic-9/tester-2/06-whitespace
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9858,7 +9874,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-9/tester-2/02-multi-msg/
+==== TEST: tests/epic-9/tester-2/02-multi-msg
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9914,7 +9930,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-9/tester-2/12-leftover-char/
+==== TEST: tests/epic-9/tester-2/12-leftover-char
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -9972,7 +9988,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-9/tester-2/10-end-early/
+==== TEST: tests/epic-9/tester-2/10-end-early
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -10001,7 +10017,7 @@ ENTER YOUR CHOICE:
 3. Back to Main Menu
 Enter your choice:
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-9/tester-2/01-1-msg/
+==== TEST: tests/epic-9/tester-2/01-1-msg
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -10053,7 +10069,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-9/tester-2/07-no-messages/
+==== TEST: tests/epic-9/tester-2/07-no-messages
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -10103,7 +10119,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-9/tester-2/08-inv-choice/
+==== TEST: tests/epic-9/tester-2/08-inv-choice
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -10151,7 +10167,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-9/tester-2/11-vw-mess-2x/
+==== TEST: tests/epic-9/tester-2/11-vw-mess-2x
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -10230,7 +10246,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-9/tester-2/05-1-char-msg/
+==== TEST: tests/epic-9/tester-2/05-1-char-msg
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -10282,7 +10298,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-9/tester-2/09-persistence/
+==== TEST: tests/epic-9/tester-2/09-persistence
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -10354,7 +10370,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-9/tester-2/03-multi-senders/
+==== TEST: tests/epic-9/tester-2/03-multi-senders
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT
@@ -10414,7 +10430,7 @@ Enter your choice:
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
-==== TEST: tests/epic-9/tester-2/04-max-len-mss/
+==== TEST: tests/epic-9/tester-2/04-max-len-mss
 WELCOME TO INCOLLEGE!
 1. LOG-IN
 2. CREATE NEW ACCOUNT

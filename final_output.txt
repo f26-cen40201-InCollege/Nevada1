@@ -1,7 +1,7 @@
 
       *    =============================================================
       
-           MOVE "tests/epic-1/tester-1/menus-pos-4/"
+           MOVE "tests/epic-1/tester-1/menus-pos-4"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-1/tester-1/menus-pos-4/accounts.txt"
@@ -14,7 +14,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-1/tester-1/menus-pos-3/"
+           MOVE "tests/epic-1/tester-1/menus-pos-3"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-1/tester-1/menus-pos-3/accounts.txt"
@@ -27,7 +27,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-1/tester-1/menus-pos-2/"
+           MOVE "tests/epic-1/tester-1/menus-pos-2"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-1/tester-1/menus-pos-2/accounts.txt"
@@ -40,7 +40,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-1/tester-1/acc-creation-neg-2/"
+           MOVE "tests/epic-1/tester-1/acc-creation-neg-2"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-1/tester-1/acc-creation-neg-2/accounts.txt"
@@ -53,7 +53,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-1/tester-1/menus-pos-1/"
+           MOVE "tests/epic-1/tester-1/menus-pos-1"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-1/tester-1/menus-pos-1/accounts.txt"
@@ -66,7 +66,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-1/tester-1/acc-creation-neg-1/"
+           MOVE "tests/epic-1/tester-1/acc-creation-neg-1"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-1/tester-1/acc-creation-neg-1/accounts.txt"
@@ -79,7 +79,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/persistence-restart/"
+           MOVE "tests/epic-2/tester-1/persistence-restart"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/persistence-restart/accounts.txt"
@@ -92,7 +92,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/max-3-entries-edge/"
+           MOVE "tests/epic-2/tester-1/max-3-entries-edge"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/max-3-entries-edge/accounts.txt"
@@ -105,7 +105,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/prof-creation-neg-2/"
+           MOVE "tests/epic-2/tester-1/prof-creation-neg-2"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/prof-creation-neg-2/accounts.txt"
@@ -118,7 +118,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/blank-univ-neg/"
+           MOVE "tests/epic-2/tester-1/blank-univ-neg"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/blank-univ-neg/accounts.txt"
@@ -131,7 +131,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/gradyr-2025-bad-neg/"
+           MOVE "tests/epic-2/tester-1/gradyr-2025-bad-neg"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/gradyr-2025-bad-neg/accounts.txt"
@@ -144,7 +144,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/gradyr-high-ok-edge/"
+           MOVE "tests/epic-2/tester-1/gradyr-high-ok-edge"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/gradyr-high-ok-edge/accounts.txt"
@@ -157,7 +157,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/blank-major-neg/"
+           MOVE "tests/epic-2/tester-1/blank-major-neg"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/blank-major-neg/accounts.txt"
@@ -170,7 +170,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/expdesc-101bad-edge/"
+           MOVE "tests/epic-2/tester-1/expdesc-101bad-edge"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/expdesc-101bad-edge/accounts.txt"
@@ -183,7 +183,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/gradyr-2034-bad-neg/"
+           MOVE "tests/epic-2/tester-1/gradyr-2034-bad-neg"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/gradyr-2034-bad-neg/accounts.txt"
@@ -196,7 +196,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/aboutme-200ok-edge/"
+           MOVE "tests/epic-2/tester-1/aboutme-200ok-edge"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/aboutme-200ok-edge/accounts.txt"
@@ -209,7 +209,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/gradyr-nonnum-neg/"
+           MOVE "tests/epic-2/tester-1/gradyr-nonnum-neg"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/gradyr-nonnum-neg/accounts.txt"
@@ -222,7 +222,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/gradyr-toolong-neg/"
+           MOVE "tests/epic-2/tester-1/gradyr-toolong-neg"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/gradyr-toolong-neg/accounts.txt"
@@ -235,7 +235,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/blank-gradyear/"
+           MOVE "tests/epic-2/tester-1/blank-gradyear"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/blank-gradyear/accounts.txt"
@@ -248,7 +248,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/edit-profile-pos/"
+           MOVE "tests/epic-2/tester-1/edit-profile-pos"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/edit-profile-pos/accounts.txt"
@@ -261,7 +261,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/gradyr-low-ok-edge/"
+           MOVE "tests/epic-2/tester-1/gradyr-low-ok-edge"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/gradyr-low-ok-edge/accounts.txt"
@@ -274,7 +274,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/expdesc-100ok-edge/"
+           MOVE "tests/epic-2/tester-1/expdesc-100ok-edge"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/expdesc-100ok-edge/accounts.txt"
@@ -287,7 +287,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/menus-neg-1/"
+           MOVE "tests/epic-2/tester-1/menus-neg-1"
                   TO WS-FOLDER.
            
     
@@ -295,7 +295,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/acc-creation-pos-1/"
+           MOVE "tests/epic-2/tester-1/acc-creation-pos-1"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/acc-creation-pos-1/accounts.txt"
@@ -308,7 +308,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/gradyr-tooshort-neg/"
+           MOVE "tests/epic-2/tester-1/gradyr-tooshort-neg"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/gradyr-tooshort-neg/accounts.txt"
@@ -321,7 +321,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/full-profile-pos/"
+           MOVE "tests/epic-2/tester-1/full-profile-pos"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/full-profile-pos/accounts.txt"
@@ -334,7 +334,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/blank-firstname-neg/"
+           MOVE "tests/epic-2/tester-1/blank-firstname-neg"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/blank-firstname-neg/accounts.txt"
@@ -347,7 +347,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/aboutme-201bad-edge/"
+           MOVE "tests/epic-2/tester-1/aboutme-201bad-edge"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/aboutme-201bad-edge/accounts.txt"
@@ -360,7 +360,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-1/blank-lastname-neg/"
+           MOVE "tests/epic-2/tester-1/blank-lastname-neg"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-1/blank-lastname-neg/accounts.txt"
@@ -373,7 +373,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-2/zero-optional-pos/"
+           MOVE "tests/epic-2/tester-2/zero-optional-pos"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-2/zero-optional-pos/accounts.txt"
@@ -386,7 +386,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-2/vw-no-profile-edge/"
+           MOVE "tests/epic-2/tester-2/vw-no-profile-edge"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-2/vw-no-profile-edge/accounts.txt"
@@ -399,7 +399,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-2/tester-2/two-users-check-pos/"
+           MOVE "tests/epic-2/tester-2/two-users-check-pos"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-2/tester-2/two-users-check-pos/accounts.txt"
@@ -412,7 +412,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-1/wrong-letter-case/"
+           MOVE "tests/epic-3/tester-1/wrong-letter-case"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-1/wrong-letter-case/profiles.txt"
@@ -430,7 +430,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-1/same-name/"
+           MOVE "tests/epic-3/tester-1/same-name"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-1/same-name/profiles.txt"
@@ -448,7 +448,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-1/search-persistence/"
+           MOVE "tests/epic-3/tester-1/search-persistence"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-1/search-persistence/profiles.txt"
@@ -466,7 +466,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-1/too-much-inputs/"
+           MOVE "tests/epic-3/tester-1/too-much-inputs"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-1/too-much-inputs/profiles.txt"
@@ -484,7 +484,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-1/profile-dne/"
+           MOVE "tests/epic-3/tester-1/profile-dne"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-1/profile-dne/profiles.txt"
@@ -502,7 +502,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-1/partial-name/"
+           MOVE "tests/epic-3/tester-1/partial-name"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-1/partial-name/profiles.txt"
@@ -520,7 +520,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-1/whitespace/"
+           MOVE "tests/epic-3/tester-1/whitespace"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-1/whitespace/profiles.txt"
@@ -538,7 +538,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-1/max-optionals/"
+           MOVE "tests/epic-3/tester-1/max-optionals"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-1/max-optionals/profiles.txt"
@@ -556,7 +556,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-2/search-empty-query/"
+           MOVE "tests/epic-3/tester-2/search-empty-query"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-2/search-empty-query/accounts.txt"
@@ -569,7 +569,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-2/search-find-full/"
+           MOVE "tests/epic-3/tester-2/search-find-full"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-2/search-find-full/accounts.txt"
@@ -582,7 +582,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-2/search-view-own/"
+           MOVE "tests/epic-3/tester-2/search-view-own"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-2/search-view-own/accounts.txt"
@@ -595,7 +595,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-2/search-self/"
+           MOVE "tests/epic-3/tester-2/search-self"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-2/search-self/accounts.txt"
@@ -608,7 +608,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-2/search-find-empty/"
+           MOVE "tests/epic-3/tester-2/search-find-empty"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-2/search-find-empty/accounts.txt"
@@ -621,7 +621,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-2/search-long-name/"
+           MOVE "tests/epic-3/tester-2/search-long-name"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-2/search-long-name/accounts.txt"
@@ -634,7 +634,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-2/view-own-minimal/"
+           MOVE "tests/epic-3/tester-2/view-own-minimal"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-2/view-own-minimal/accounts.txt"
@@ -647,7 +647,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-3/tester-2/view-own-full/"
+           MOVE "tests/epic-3/tester-2/view-own-full"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-3/tester-2/view-own-full/accounts.txt"
@@ -660,7 +660,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-4/tester-1/mutual-requests/"
+           MOVE "tests/epic-4/tester-1/mutual-requests"
                   TO WS-FOLDER.
            
     
@@ -668,7 +668,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-4/tester-1/pending-empty/"
+           MOVE "tests/epic-4/tester-1/pending-empty"
                   TO WS-FOLDER.
            
     
@@ -676,7 +676,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-4/tester-1/pending-filter/"
+           MOVE "tests/epic-4/tester-1/pending-filter"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-4/tester-1/pending-filter/connections.txt"
@@ -689,7 +689,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-4/tester-2/send-conn/"
+           MOVE "tests/epic-4/tester-2/send-conn"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-4/tester-2/send-conn/connections.txt"
@@ -712,7 +712,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-4/tester-2/no-profile/"
+           MOVE "tests/epic-4/tester-2/no-profile"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-4/tester-2/no-profile/connections.txt"
@@ -735,7 +735,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-4/tester-2/duplicate-req/"
+           MOVE "tests/epic-4/tester-2/duplicate-req"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-4/tester-2/duplicate-req/connections.txt"
@@ -758,7 +758,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-4/tester-2/send-self/"
+           MOVE "tests/epic-4/tester-2/send-self"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-4/tester-2/send-self/connections.txt"
@@ -781,7 +781,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-4/tester-2/send-unconn/"
+           MOVE "tests/epic-4/tester-2/send-unconn"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-4/tester-2/send-unconn/connections.txt"
@@ -804,7 +804,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-4/tester-2/request-not-acpt/"
+           MOVE "tests/epic-4/tester-2/request-not-acpt"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-4/tester-2/request-not-acpt/connections.txt"
@@ -827,7 +827,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-4/tester-2/multi-requests/"
+           MOVE "tests/epic-4/tester-2/multi-requests"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-4/tester-2/multi-requests/connections.txt"
@@ -850,7 +850,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-5/tester-1/mixed-ac-rej-net/"
+           MOVE "tests/epic-5/tester-1/mixed-ac-rej-net"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-5/tester-1/mixed-ac-rej-net/connections.txt"
@@ -873,7 +873,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-5/tester-2/rej-1-req/"
+           MOVE "tests/epic-5/tester-2/rej-1-req"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-5/tester-2/rej-1-req/connections.txt"
@@ -896,7 +896,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-5/tester-2/acc-req-pers-p1/"
+           MOVE "tests/epic-5/tester-2/acc-req-pers-p1"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-5/tester-2/acc-req-pers-p1/connections.txt"
@@ -919,7 +919,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-5/tester-2/rej-multi-req/"
+           MOVE "tests/epic-5/tester-2/rej-multi-req"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-5/tester-2/rej-multi-req/connections.txt"
@@ -942,7 +942,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-5/tester-2/accept-1-req/"
+           MOVE "tests/epic-5/tester-2/accept-1-req"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-5/tester-2/accept-1-req/connections.txt"
@@ -965,7 +965,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-5/tester-2/acc-req-pers-p2/"
+           MOVE "tests/epic-5/tester-2/acc-req-pers-p2"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-5/tester-2/acc-req-pers-p2/profiles.txt"
@@ -983,7 +983,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-5/tester-2/acc-multi-req/"
+           MOVE "tests/epic-5/tester-2/acc-multi-req"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-5/tester-2/acc-multi-req/connections.txt"
@@ -1006,7 +1006,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-1/02-pos-new-job-d/"
+           MOVE "tests/epic-6/tester-1/02-pos-new-job-d"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-1/02-pos-new-job-d/connections.txt"
@@ -1029,7 +1029,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-1/05-neg-new-job-s/"
+           MOVE "tests/epic-6/tester-1/05-neg-new-job-s"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-1/05-neg-new-job-s/connections.txt"
@@ -1052,7 +1052,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-1/01-neg-new-job-t/"
+           MOVE "tests/epic-6/tester-1/01-neg-new-job-t"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-1/01-neg-new-job-t/connections.txt"
@@ -1075,7 +1075,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-1/00-neg-new-job/"
+           MOVE "tests/epic-6/tester-1/00-neg-new-job"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-1/00-neg-new-job/connections.txt"
@@ -1098,7 +1098,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-1/entry-exit-entry/"
+           MOVE "tests/epic-6/tester-1/entry-exit-entry"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-1/entry-exit-entry/connections.txt"
@@ -1121,7 +1121,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-1/04-neg-new-job-l/"
+           MOVE "tests/epic-6/tester-1/04-neg-new-job-l"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-1/04-neg-new-job-l/connections.txt"
@@ -1144,7 +1144,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-1/00-pos-new-job/"
+           MOVE "tests/epic-6/tester-1/00-pos-new-job"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-1/00-pos-new-job/connections.txt"
@@ -1167,7 +1167,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-1/03-neg-new-job-e/"
+           MOVE "tests/epic-6/tester-1/03-neg-new-job-e"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-1/03-neg-new-job-e/connections.txt"
@@ -1190,7 +1190,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-1/02-neg-new-job-d/"
+           MOVE "tests/epic-6/tester-1/02-neg-new-job-d"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-1/02-neg-new-job-d/connections.txt"
@@ -1213,7 +1213,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-1/05-pos-new-job-s/"
+           MOVE "tests/epic-6/tester-1/05-pos-new-job-s"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-1/05-pos-new-job-s/connections.txt"
@@ -1236,7 +1236,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-1/01-pos-new-job-t/"
+           MOVE "tests/epic-6/tester-1/01-pos-new-job-t"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-1/01-pos-new-job-t/connections.txt"
@@ -1259,7 +1259,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-1/04-pos-new-job-l/"
+           MOVE "tests/epic-6/tester-1/04-pos-new-job-l"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-1/04-pos-new-job-l/connections.txt"
@@ -1282,7 +1282,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-1/03-pos-new-job-e/"
+           MOVE "tests/epic-6/tester-1/03-pos-new-job-e"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-1/03-pos-new-job-e/connections.txt"
@@ -1305,7 +1305,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-2/09-pers-r3-ln-only/"
+           MOVE "tests/epic-6/tester-2/09-pers-r3-ln-only"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-2/09-pers-r3-ln-only/accounts.txt"
@@ -1318,7 +1318,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-2/03-desc-201-rej/"
+           MOVE "tests/epic-6/tester-2/03-desc-201-rej"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-2/03-desc-201-rej/accounts.txt"
@@ -1336,7 +1336,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-2/11-week6-sample-run/"
+           MOVE "tests/epic-6/tester-2/11-week6-sample-run"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-2/11-week6-sample-run/accounts.txt"
@@ -1354,7 +1354,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-2/07-pers-r1-usr1-p/"
+           MOVE "tests/epic-6/tester-2/07-pers-r1-usr1-p"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-2/07-pers-r1-usr1-p/accounts.txt"
@@ -1372,7 +1372,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-2/05-desc-exactly-200/"
+           MOVE "tests/epic-6/tester-2/05-desc-exactly-200"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-2/05-desc-exactly-200/accounts.txt"
@@ -1390,7 +1390,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-2/04-post-salary-none/"
+           MOVE "tests/epic-6/tester-2/04-post-salary-none"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-2/04-post-salary-none/accounts.txt"
@@ -1408,7 +1408,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-2/01-pend-nwk-p/"
+           MOVE "tests/epic-6/tester-2/01-pend-nwk-p"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-2/01-pend-nwk-p/connections.txt"
@@ -1436,7 +1436,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-2/10-job-m-spec-wd/"
+           MOVE "tests/epic-6/tester-2/10-job-m-spec-wd"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-2/10-job-m-spec-wd/accounts.txt"
@@ -1454,7 +1454,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-2/02-blank-req-fds/"
+           MOVE "tests/epic-6/tester-2/02-blank-req-fds"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-2/02-blank-req-fds/accounts.txt"
@@ -1472,7 +1472,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-2/08-pers-r2-usr2-p/"
+           MOVE "tests/epic-6/tester-2/08-pers-r2-usr2-p"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-2/08-pers-r2-usr2-p/accounts.txt"
@@ -1485,7 +1485,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-6/tester-2/06-two-jobs-one-run/"
+           MOVE "tests/epic-6/tester-2/06-two-jobs-one-run"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-6/tester-2/06-two-jobs-one-run/accounts.txt"
@@ -1503,7 +1503,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/prst-app-multi-user/"
+           MOVE "tests/epic-7/tester-1/prst-app-multi-user"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/prst-app-multi-user/accounts.txt"
@@ -1521,7 +1521,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/rep-ord-m-app/"
+           MOVE "tests/epic-7/tester-1/rep-ord-m-app"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/rep-ord-m-app/application.txt"
@@ -1544,7 +1544,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/browse-one-job/"
+           MOVE "tests/epic-7/tester-1/browse-one-job"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/browse-one-job/accounts.txt"
@@ -1562,7 +1562,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/dets-inv-menu-op/"
+           MOVE "tests/epic-7/tester-1/dets-inv-menu-op"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/dets-inv-menu-op/accounts.txt"
@@ -1580,7 +1580,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/post-job-sal-na/"
+           MOVE "tests/epic-7/tester-1/post-job-sal-na"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/post-job-sal-na/accounts.txt"
@@ -1593,7 +1593,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/details-b2l/"
+           MOVE "tests/epic-7/tester-1/details-b2l"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/details-b2l/accounts.txt"
@@ -1611,7 +1611,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/rep-no-app/"
+           MOVE "tests/epic-7/tester-1/rep-no-app"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/rep-no-app/accounts.txt"
@@ -1629,7 +1629,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/persist-app/"
+           MOVE "tests/epic-7/tester-1/persist-app"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/persist-app/accounts.txt"
@@ -1647,7 +1647,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/apply-success/"
+           MOVE "tests/epic-7/tester-1/apply-success"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/apply-success/accounts.txt"
@@ -1665,7 +1665,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/post-job-s-w-sal/"
+           MOVE "tests/epic-7/tester-1/post-job-s-w-sal"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/post-job-s-w-sal/accounts.txt"
@@ -1678,7 +1678,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/browse-r2m/"
+           MOVE "tests/epic-7/tester-1/browse-r2m"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/browse-r2m/accounts.txt"
@@ -1696,7 +1696,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/job-menu-view-app-e/"
+           MOVE "tests/epic-7/tester-1/job-menu-view-app-e"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/job-menu-view-app-e/accounts.txt"
@@ -1714,7 +1714,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/post-job-des-lim/"
+           MOVE "tests/epic-7/tester-1/post-job-des-lim"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/post-job-des-lim/accounts.txt"
@@ -1727,7 +1727,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/apply-duplicate/"
+           MOVE "tests/epic-7/tester-1/apply-duplicate"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/apply-duplicate/application.txt"
@@ -1750,7 +1750,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/prst-pst-job-brws/"
+           MOVE "tests/epic-7/tester-1/prst-pst-job-brws"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/prst-pst-job-brws/accounts.txt"
@@ -1763,7 +1763,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/dets-inv-inp/"
+           MOVE "tests/epic-7/tester-1/dets-inv-inp"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/dets-inv-inp/accounts.txt"
@@ -1781,7 +1781,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/samp-w7-rep/"
+           MOVE "tests/epic-7/tester-1/samp-w7-rep"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/samp-w7-rep/accounts.txt"
@@ -1799,7 +1799,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/rep-aft-app-in-sess/"
+           MOVE "tests/epic-7/tester-1/rep-aft-app-in-sess"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/rep-aft-app-in-sess/accounts.txt"
@@ -1817,7 +1817,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/p-j-blk-req-field/"
+           MOVE "tests/epic-7/tester-1/p-j-blk-req-field"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/p-j-blk-req-field/accounts.txt"
@@ -1830,7 +1830,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/rep-listing-rem/"
+           MOVE "tests/epic-7/tester-1/rep-listing-rem"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/rep-listing-rem/application.txt"
@@ -1853,7 +1853,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/browse-100-jobs/"
+           MOVE "tests/epic-7/tester-1/browse-100-jobs"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/browse-100-jobs/accounts.txt"
@@ -1871,7 +1871,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/rep-multi-app/"
+           MOVE "tests/epic-7/tester-1/rep-multi-app"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/rep-multi-app/application.txt"
@@ -1894,7 +1894,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/browse-multi-jobs/"
+           MOVE "tests/epic-7/tester-1/browse-multi-jobs"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/browse-multi-jobs/accounts.txt"
@@ -1912,7 +1912,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/post-job-t-long/"
+           MOVE "tests/epic-7/tester-1/post-job-t-long"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/post-job-t-long/accounts.txt"
@@ -1925,7 +1925,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/job-menu-ops-disp/"
+           MOVE "tests/epic-7/tester-1/job-menu-ops-disp"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/job-menu-ops-disp/accounts.txt"
@@ -1938,7 +1938,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/browse-empty/"
+           MOVE "tests/epic-7/tester-1/browse-empty"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/browse-empty/accounts.txt"
@@ -1951,7 +1951,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/post-job-max-100/"
+           MOVE "tests/epic-7/tester-1/post-job-max-100"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/post-job-max-100/accounts.txt"
@@ -1969,7 +1969,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/details-last-job/"
+           MOVE "tests/epic-7/tester-1/details-last-job"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/details-last-job/accounts.txt"
@@ -1987,7 +1987,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/job-menu-header-fmt/"
+           MOVE "tests/epic-7/tester-1/job-menu-header-fmt"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/job-menu-header-fmt/accounts.txt"
@@ -2000,7 +2000,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/app-dup-sme-sess/"
+           MOVE "tests/epic-7/tester-1/app-dup-sme-sess"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/app-dup-sme-sess/accounts.txt"
@@ -2018,7 +2018,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/dets-wo-sal/"
+           MOVE "tests/epic-7/tester-1/dets-wo-sal"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/dets-wo-sal/accounts.txt"
@@ -2036,7 +2036,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/apply-multiple-jobs/"
+           MOVE "tests/epic-7/tester-1/apply-multiple-jobs"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/apply-multiple-jobs/accounts.txt"
@@ -2054,7 +2054,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/job-menu-b2m/"
+           MOVE "tests/epic-7/tester-1/job-menu-b2m"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/job-menu-b2m/accounts.txt"
@@ -2067,7 +2067,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/app-o-u-j-unaff/"
+           MOVE "tests/epic-7/tester-1/app-o-u-j-unaff"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/app-o-u-j-unaff/application.txt"
@@ -2090,7 +2090,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/job-menu-inv-option/"
+           MOVE "tests/epic-7/tester-1/job-menu-inv-option"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/job-menu-inv-option/accounts.txt"
@@ -2103,7 +2103,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/io-inp-ends-in-d/"
+           MOVE "tests/epic-7/tester-1/io-inp-ends-in-d"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/io-inp-ends-in-d/accounts.txt"
@@ -2121,7 +2121,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/details-ex-with-sal/"
+           MOVE "tests/epic-7/tester-1/details-ex-with-sal"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/details-ex-with-sal/accounts.txt"
@@ -2139,7 +2139,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/dets-nonexis-num/"
+           MOVE "tests/epic-7/tester-1/dets-nonexis-num"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/dets-nonexis-num/accounts.txt"
@@ -2157,7 +2157,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/rep-fil-by-usr/"
+           MOVE "tests/epic-7/tester-1/rep-fil-by-usr"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/rep-fil-by-usr/application.txt"
@@ -2180,7 +2180,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/rep-1-app/"
+           MOVE "tests/epic-7/tester-1/rep-1-app"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/rep-1-app/application.txt"
@@ -2203,7 +2203,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-7/tester-1/io-inp-ends-in-b/"
+           MOVE "tests/epic-7/tester-1/io-inp-ends-in-b"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-7/tester-1/io-inp-ends-in-b/accounts.txt"
@@ -2221,7 +2221,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-1/empty-message/"
+           MOVE "tests/epic-8/tester-1/empty-message"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-1/empty-message/Connections.txt"
@@ -2249,7 +2249,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-1/send-message/"
+           MOVE "tests/epic-8/tester-1/send-message"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-1/send-message/Connections.txt"
@@ -2277,7 +2277,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-1/whitespace/"
+           MOVE "tests/epic-8/tester-1/whitespace"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-1/whitespace/Connections.txt"
@@ -2305,7 +2305,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-1/send-no-input/"
+           MOVE "tests/epic-8/tester-1/send-no-input"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-1/send-no-input/Connections.txt"
@@ -2333,7 +2333,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-1/send-different/"
+           MOVE "tests/epic-8/tester-1/send-different"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-1/send-different/Connections.txt"
@@ -2361,7 +2361,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-1/send-multiple/"
+           MOVE "tests/epic-8/tester-1/send-multiple"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-1/send-multiple/Connections.txt"
@@ -2389,7 +2389,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-1/send-bidir/"
+           MOVE "tests/epic-8/tester-1/send-bidir"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-1/send-bidir/Connections.txt"
@@ -2417,7 +2417,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/neg-mess-y/"
+           MOVE "tests/epic-8/tester-2/neg-mess-y"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/neg-mess-y/connections.txt"
@@ -2435,7 +2435,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/len-201/"
+           MOVE "tests/epic-8/tester-2/len-201"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/len-201/connections.txt"
@@ -2453,7 +2453,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/len200-exact/"
+           MOVE "tests/epic-8/tester-2/len200-exact"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/len200-exact/connections.txt"
@@ -2471,7 +2471,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/neg-pnd-s2y/"
+           MOVE "tests/epic-8/tester-2/neg-pnd-s2y"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/neg-pnd-s2y/connections.txt"
@@ -2489,7 +2489,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/spec-suc-sep-li/"
+           MOVE "tests/epic-8/tester-2/spec-suc-sep-li"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/spec-suc-sep-li/connections.txt"
@@ -2507,7 +2507,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/l-usr-21-c-prx/"
+           MOVE "tests/epic-8/tester-2/l-usr-21-c-prx"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/l-usr-21-c-prx/connections.txt"
@@ -2525,7 +2525,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/len-5000/"
+           MOVE "tests/epic-8/tester-2/len-5000"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/len-5000/connections.txt"
@@ -2543,7 +2543,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/eof-at-mess-m/"
+           MOVE "tests/epic-8/tester-2/eof-at-mess-m"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/eof-at-mess-m/connections.txt"
@@ -2561,7 +2561,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/len-500/"
+           MOVE "tests/epic-8/tester-2/len-500"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/len-500/connections.txt"
@@ -2579,7 +2579,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/eof-aft-s-n-mess/"
+           MOVE "tests/epic-8/tester-2/eof-aft-s-n-mess"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/eof-aft-s-n-mess/connections.txt"
@@ -2597,7 +2597,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/l-usr-20-c/"
+           MOVE "tests/epic-8/tester-2/l-usr-20-c"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/l-usr-20-c/connections.txt"
@@ -2615,7 +2615,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/neg-f-s-no-p-rec/"
+           MOVE "tests/epic-8/tester-2/neg-f-s-no-p-rec"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/neg-f-s-no-p-rec/connections.txt"
@@ -2633,7 +2633,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/neg-nt-conn/"
+           MOVE "tests/epic-8/tester-2/neg-nt-conn"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/neg-nt-conn/connections.txt"
@@ -2651,7 +2651,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/neg-inv-m-inp/"
+           MOVE "tests/epic-8/tester-2/neg-inv-m-inp"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/neg-inv-m-inp/connections.txt"
@@ -2669,7 +2669,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/neg-sndr-0-conn/"
+           MOVE "tests/epic-8/tester-2/neg-sndr-0-conn"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/neg-sndr-0-conn/connections.txt"
@@ -2687,7 +2687,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/eof-aft-recp-pt/"
+           MOVE "tests/epic-8/tester-2/eof-aft-recp-pt"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/eof-aft-recp-pt/connections.txt"
@@ -2705,7 +2705,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/neg-nonex-usr/"
+           MOVE "tests/epic-8/tester-2/neg-nonex-usr"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/neg-nonex-usr/connections.txt"
@@ -2723,7 +2723,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/eof-aft-snd-s/"
+           MOVE "tests/epic-8/tester-2/eof-aft-snd-s"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/eof-aft-snd-s/connections.txt"
@@ -2741,7 +2741,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/neg-blank-recp/"
+           MOVE "tests/epic-8/tester-2/neg-blank-recp"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/neg-blank-recp/connections.txt"
@@ -2759,7 +2759,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/neg-pnd-sby/"
+           MOVE "tests/epic-8/tester-2/neg-pnd-sby"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/neg-pnd-sby/connections.txt"
@@ -2777,7 +2777,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/l-usr-250-chrs/"
+           MOVE "tests/epic-8/tester-2/l-usr-250-chrs"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/l-usr-250-chrs/connections.txt"
@@ -2795,7 +2795,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/neg-rej-req/"
+           MOVE "tests/epic-8/tester-2/neg-rej-req"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/neg-rej-req/connections.txt"
@@ -2813,7 +2813,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-8/tester-2/emp-mess/"
+           MOVE "tests/epic-8/tester-2/emp-mess"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-8/tester-2/emp-mess/connections.txt"
@@ -2831,7 +2831,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-9/tester-2/06-whitespace/"
+           MOVE "tests/epic-9/tester-2/06-whitespace"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-9/tester-2/06-whitespace/connections.txt"
@@ -2859,7 +2859,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-9/tester-2/02-multi-msg/"
+           MOVE "tests/epic-9/tester-2/02-multi-msg"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-9/tester-2/02-multi-msg/connections.txt"
@@ -2887,7 +2887,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-9/tester-2/12-leftover-char/"
+           MOVE "tests/epic-9/tester-2/12-leftover-char"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-9/tester-2/12-leftover-char/connections.txt"
@@ -2915,7 +2915,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-9/tester-2/10-end-early/"
+           MOVE "tests/epic-9/tester-2/10-end-early"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-9/tester-2/10-end-early/connections.txt"
@@ -2943,7 +2943,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-9/tester-2/01-1-msg/"
+           MOVE "tests/epic-9/tester-2/01-1-msg"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-9/tester-2/01-1-msg/connections.txt"
@@ -2971,7 +2971,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-9/tester-2/07-no-messages/"
+           MOVE "tests/epic-9/tester-2/07-no-messages"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-9/tester-2/07-no-messages/connections.txt"
@@ -2999,7 +2999,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-9/tester-2/08-inv-choice/"
+           MOVE "tests/epic-9/tester-2/08-inv-choice"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-9/tester-2/08-inv-choice/connections.txt"
@@ -3027,7 +3027,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-9/tester-2/11-vw-mess-2x/"
+           MOVE "tests/epic-9/tester-2/11-vw-mess-2x"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-9/tester-2/11-vw-mess-2x/connections.txt"
@@ -3055,7 +3055,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-9/tester-2/05-1-char-msg/"
+           MOVE "tests/epic-9/tester-2/05-1-char-msg"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-9/tester-2/05-1-char-msg/connections.txt"
@@ -3083,7 +3083,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-9/tester-2/09-persistence/"
+           MOVE "tests/epic-9/tester-2/09-persistence"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-9/tester-2/09-persistence/connections.txt"
@@ -3111,7 +3111,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-9/tester-2/03-multi-senders/"
+           MOVE "tests/epic-9/tester-2/03-multi-senders"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-9/tester-2/03-multi-senders/connections.txt"
@@ -3139,7 +3139,7 @@
     
       *    =============================================================
       
-           MOVE "tests/epic-9/tester-2/04-max-len-mss/"
+           MOVE "tests/epic-9/tester-2/04-max-len-mss"
                   TO WS-FOLDER.
            
            MOVE "tests/epic-9/tester-2/04-max-len-mss/connections.txt"
