@@ -26,7 +26,19 @@ ENTER YOUR CHOICE:
 3. Back to Main Menu
 Enter your choice:
 2
-View My Messages is under construction.
+--- Your Messages ---
+From: profileuser2
+Message: I'm doing good.
+Sent: 2026-11-09T01:34:06+00:00
+---
+From: profileuser2
+Message: Welcome to InCollege! Glad we connected.
+Sent: 2026-11-20T01:01:50-05:00
+---
+From: profileuser3
+Message: Have you seen the latest internship listings?
+Sent: 2026-11-20T01:01:50-05:00
+---------------------
 --- Messages Menu ---
 1. Send a New Message
 2. View My Messages
@@ -38,6 +50,7 @@ profileuser2
 Enter your message (max 200 chars):
 Hello, I am John.
 Message sent to profileuser2 successfully!
+---------------------
 --- Messages Menu ---
 1. Send a New Message
 2. View My Messages
@@ -49,6 +62,7 @@ profileuser2
 Enter your message (max 200 chars):
 How are you doing today?
 Message sent to profileuser2 successfully!
+---------------------
 --- Messages Menu ---
 1. Send a New Message
 2. View My Messages
@@ -60,6 +74,7 @@ profileuser2
 Enter your message (max 200 chars):
 Are you doing good?
 Message sent to profileuser2 successfully!
+---------------------
 --- Messages Menu ---
 1. Send a New Message
 2. View My Messages

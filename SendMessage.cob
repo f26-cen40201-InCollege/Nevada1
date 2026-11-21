@@ -157,3 +157,4 @@
                MOVE "---------------------" TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
            END-IF.
+           

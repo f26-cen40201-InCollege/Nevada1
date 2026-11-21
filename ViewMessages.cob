@@ -77,3 +77,4 @@
        MESSAGE-READ-ERROR.
            MOVE "Unable to read your messages." TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT.
+           

@@ -1,0 +1,22 @@
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+Incorrect Username/Password, Please Try Again
+Please Enter Your username:
+4
+Please Enter Your password:
+David Blake
+Incorrect Username/Password, Please Try Again
+Please Enter Your username:
+1
+Please Enter Your password:
+6
+Incorrect Username/Password, Please Try Again
+Please Enter Your username:
+---END_OF_PROGRAM---

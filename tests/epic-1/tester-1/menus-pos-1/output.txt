@@ -17,5 +17,6 @@ Welcome, IanKoratsky!
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---
