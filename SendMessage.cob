@@ -78,13 +78,14 @@
                    MOVE "Message content cannot be empty."
                        TO WS-OUTPUT-LINE
                    PERFORM WRITE-OUTPUT
-               WHEN WS-INPUT-LENGTH > 200
+               WHEN FUNCTION LENGTH(FUNCTION TRIM(
+                       WS-MESSAGE-RAW)) > 200
                    OR WS-INPUT-STAT NOT = "00"
                    MOVE "Message content exceeds 200 characters."
                        TO WS-OUTPUT-LINE
                    PERFORM WRITE-OUTPUT
                WHEN OTHER
-                   MOVE WS-MESSAGE-RAW TO WS-MESSAGE-TEXT
+                   MOVE FUNCTION TRIM(WS-MESSAGE-RAW) TO WS-MESSAGE-TEXT
                    PERFORM SAVE-MESSAGE
            END-EVALUATE.
 
@@ -157,4 +158,3 @@
                MOVE "---------------------" TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
            END-IF.
-           
