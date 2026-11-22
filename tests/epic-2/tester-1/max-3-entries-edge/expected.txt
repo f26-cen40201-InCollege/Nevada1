@@ -1,45 +1,51 @@
-Welcome to InCollege!
-1. Log-In
-2. Create New Account
-Enter your choice:
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
 2
-Please enter your username:
+Please Enter Your username:
 profileuser2
-Please enter your password:
+That USERNAME Is Already Taken, Please Try Again
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
 Passw0rd2$
-Account Created!
-1. Log-In
-2. Create New Account
-Enter your choice:
+Invalid Option, Try Again
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
 1
-Please enter your username:
+Please Enter Your username:
 profileuser2
-Please enter your password:
+Please Enter Your password:
 Passw0rd2$
-You have successfully logged in.
+You Have Successfully Logged In.
 Welcome, profileuser2!
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
-Enter your choice:
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
 1
 ---Create/Edit Profile---
 Enter First Name:
 Maria
 Enter Last Name:
 Lopez
-Enter university name:
+Enter University Name:
 University of Central Florida
-Enter the name of your major:
+Enter The Name Of Your Major:
 Mechanical Engineering
 Enter Graduation Year (YYYY):
 2028
-Enter About Me (optional):
+Enter About Me (Optional):
 
-Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
+Add Experience (Optional, Max 3 Entries).Enter 'DONE' To Finish Or Any Input To Continue):
 
 Experience #1 - Title:
 Design Intern
@@ -47,9 +53,9 @@ Experience #1 - Company/Organization:
 AutoWorks
 Exp #1 - Years:
 Summer 2025
-Exp #1 - Description (optional, max 100 chars):
+Exp #1 - Description (Optional, Max 100 Chars):
 Prototyped suspension components.
-Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
+Add Experience (Optional, Max 3 Entries).Enter 'DONE' To Finish Or Any Input To Continue):
 
 Experience #2 - Title:
 Research Assistant
@@ -57,9 +63,9 @@ Experience #2 - Company/Organization:
 University of Central Florida
 Exp #2 - Years:
 Jan 2026 - May 2026
-Exp #2 - Description (optional, max 100 chars):
+Exp #2 - Description (Optional, Max 100 Chars):
 
-Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
+Add Experience (Optional, Max 3 Entries).Enter 'DONE' To Finish Or Any Input To Continue):
 
 Experience #3 - Title:
 Manufacturing Co-op
@@ -67,86 +73,206 @@ Experience #3 - Company/Organization:
 Precision Parts Inc
 Exp #3 - Years:
 Summer 2026
-Exp #3 - Description (optional, max 100 chars):
+Exp #3 - Description (Optional, Max 100 Chars):
 Worked on the assembly line QA team.
-Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
+Add Education (Optional, Max 3 Entries). Enter 'DONE' To Finish Or Any Input To Continue):
 DONE
-Add Education (optional, max 3 entries. Enter 'DONE' to finish or any input to continue):
-
-Education #1 - Degree:
-Bachelor of Science
-Education #1 - University/College:
-University of Central Florida
-Education #1 - Years Attended:
-2024-2028
-Add Education (optional, max 3 entries. Enter 'DONE' to finish or any input to continue):
-
-Education #2 - Degree:
-Associate of Science
-Education #2 - University/College:
-Community College
-Education #2 - Years Attended:
-2022-2024
-Add Education (optional, max 3 entries. Enter 'DONE' to finish or any input to continue):
-
-Education #3 - Degree:
-Certificate in CAD Design
-Education #3 - University/College:
-Online Institute
-Education #3 - Years Attended:
-2023-2023
 ---Profile Created/Updated---
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
-Enter your choice:
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+
+Invalid Option, Try Again
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+Bachelor of Science
+Invalid Option, Try Again
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+University of Central Florida
+Invalid Option, Try Again
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+2024-2028
+Invalid Option, Try Again
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+
+Invalid Option, Try Again
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+Associate of Science
+Invalid Option, Try Again
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+Community College
+Invalid Option, Try Again
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+2022-2024
+Invalid Option, Try Again
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+
+Invalid Option, Try Again
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+Certificate in CAD Design
+Invalid Option, Try Again
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+Online Institute
+Invalid Option, Try Again
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+2023-2023
+Invalid Option, Try Again
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
 DONE
 Invalid Option, Try Again
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
-Enter your choice:
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
 2
---- Your Profile --
+==== Profile For Maria Lopez ====
 Name: Maria Lopez
 University: University of Central Florida
 Major: Mechanical Engineering
 Graduation Year: 2028
 About Me:
 Experience:
-Title: Design Intern
-Company: AutoWorks
-Dates: Summer 2025
-Description: Prototyped suspension components.
-Title: Research Assistant
-Company: University of Central Florida
-Dates: Jan 2026 - May 2026
-Description:
-Title: Manufacturing Co-op
-Company: Precision Parts Inc
-Dates: Summer 2026
-Description: Worked on the assembly line QA team.
-Education:
-Degree: Bachelor of Science
-University: University of Central Florida
-Years: 2024-2028
-Degree: Associate of Science
-University: Community College
-Years: 2022-2024
-Degree: Certificate in CAD Design
-University: Online Institute
-Years: 2023-2023
+ Title: Design Intern
+ Company: AutoWorks
+ Dates: Summer 2025
+ Description: Prototyped suspension components.
+ Title: Research Assistant
+ Company: University of Central Florida
+ Dates: Jan 2026 - May 2026
+ Description:
+ Title: Manufacturing Co-op
+ Company: Precision Parts Inc
+ Dates: Summer 2026
+ Description: Worked on the assembly line QA team.
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
-Enter your choice:
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
 6
+---END_OF_PROGRAM---

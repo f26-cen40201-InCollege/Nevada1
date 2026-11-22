@@ -27,13 +27,7 @@ ENTER YOUR CHOICE:
 Enter your choice:
 2
 --- Your Messages ---
-From: profileuser2
-Message: Hi! Thanks for reaching out today. I wanted to share a quick update on your request and make sure you have everything you need moving forward. Please let me know if any questions come up along 200char
-Sent: 2026-11-21T19:54:48+00:00
----
-From: profileuser2
-Message: a
-Sent: 2026-11-21T19:54:48+00:00
+You have no messages at this time.
 ---------------------
 --- Messages Menu ---
 1. Send a New Message

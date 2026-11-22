@@ -27,13 +27,7 @@ ENTER YOUR CHOICE:
 Enter your choice:
 2
 --- Your Messages ---
-From: profileuser2
-Message: Hello, my name is Adam.
-Sent: 2026-11-21T19:45:52+00:00
----
-From: profileuser2
-Message: Welcome to InCollege! Glad to meet you.
-Sent: 2026-11-21T19:45:52+00:00
+You have no messages at this time.
 ---------------------
 --- Messages Menu ---
 1. Send a New Message

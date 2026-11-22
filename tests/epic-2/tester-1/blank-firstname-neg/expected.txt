@@ -1,61 +1,70 @@
-Welcome to InCollege!
-1. Log-In
-2. Create New Account
-Enter your choice:
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
 2
-Please enter your username:
+Please Enter Your username:
 produser4
-Please enter your password:
+That USERNAME Is Already Taken, Please Try Again
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
 Passw0rd4$
-Account Created!
-1. Log-In
-2. Create New Account
-Enter your choice:
+Invalid Option, Try Again
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
 1
-Please enter your username:
+Please Enter Your username:
 produser4
-Please enter your password:
+Please Enter Your password:
 Passw0rd4$
-You have successfully logged in.
+You Have Successfully Logged In.
 Welcome, produser4!
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
-Enter your choice:
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
 1
 ---Create/Edit Profile---
 Enter First Name:
 
-First Name cannot be blank, try again
+First Name CANNOT Be Blank, Try Again
 Enter First Name:
 Rivera
 Enter Last Name:
 University of Florida
-Enter university name:
+Enter University Name:
 Physics
-Enter the name of your major:
+Enter The Name Of Your Major:
 Alex
 Enter Graduation Year (YYYY):
 2027
-Enter About Me (optional):
+Enter About Me (Optional):
 
-Add Experience (optional, max 3 entries.Enter 'DONE' to finish or any input to continue):
+Add Experience (Optional, Max 3 Entries).Enter 'DONE' To Finish Or Any Input To Continue):
 DONE
-Add Education (optional, max 3 entries. Enter 'DONE' to finish or any input to continue):
+Add Education (Optional, Max 3 Entries). Enter 'DONE' To Finish Or Any Input To Continue):
 DONE
 ---Profile Created/Updated---
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
-Enter your choice:
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
 2
---- Your Profile --
+==== Profile For Rivera University of Florid ====
 Name: Rivera University of Florid
 University: Physics
 Major: Alex
@@ -63,9 +72,13 @@ Graduation Year: 2027
 About Me:
 1. Create/Edit My Profile
 2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a new skill
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
 6. Logout
-Enter your choice:
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
 6
+---END_OF_PROGRAM---

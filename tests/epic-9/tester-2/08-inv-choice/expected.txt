@@ -4,11 +4,11 @@ WELCOME TO INCOLLEGE!
 ENTER YOUR CHOICE:
 1
 Please Enter Your username:
-profileuser4
+profileuser1
 Please Enter Your password:
-Passw0rd4$
+Passw0rd1$
 You Have Successfully Logged In.
-Welcome, profileuser4!
+Welcome, profileuser1!
 1. Create/Edit My Profile
 2. View My Profile
 3. Search For a job
@@ -25,8 +25,10 @@ ENTER YOUR CHOICE:
 2. View My Messages
 3. Back to Main Menu
 Enter your choice:
-23
-Invalid Option, Try Again
+2
+--- Your Messages ---
+You have no messages at this time.
+---------------------
 --- Messages Menu ---
 1. Send a New Message
 2. View My Messages

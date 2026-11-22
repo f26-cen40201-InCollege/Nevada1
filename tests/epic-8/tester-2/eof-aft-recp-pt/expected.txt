@@ -28,5 +28,10 @@ Enter your choice:
 1
 Enter recipient's username (must be a connection):
 ConnectedUser
-Enter your message (max 200 chars):
+You can only message users you are connected with.
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
 ---END_OF_PROGRAM---

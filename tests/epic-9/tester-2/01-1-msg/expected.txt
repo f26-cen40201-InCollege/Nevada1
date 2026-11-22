@@ -27,9 +27,7 @@ ENTER YOUR CHOICE:
 Enter your choice:
 2
 --- Your Messages ---
-From: profileuser2
-Message: How are you?
-Sent: 2026-11-09T01:34:06+00:00
+You have no messages at this time.
 ---------------------
 --- Messages Menu ---
 1. Send a New Message

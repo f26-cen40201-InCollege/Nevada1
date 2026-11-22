@@ -1,23 +1,26 @@
-Welcome to InCollege!                                                                               
-1. Log-In                                                                                           
-2. Create New Account                                                                               
-Enter your choice:                                                                                  
-1                                                                                                   
-Please enter your username:                                                                         
-IanKoratsky                                                                                         
-Please enter your password:                                                                         
-1234Abc!                                                                                            
-You have successfully logged in.                                                                    
-Welcome, IanKoratsky!                                                                               
-1. Search for a job                                                                                 
-2. Find someone you know                                                                            
-3. Learn a new skill                                                                                
-4. Logout                                                                                           
-Enter your choice:                                                                                  
-1                                                                                                   
-Job search/internship is under construction.                                                        
-1. Search for a job                                                                                 
-2. Find someone you know                                                                            
-3. Learn a new skill                                                                                
-4. Logout                                                                                           
-Enter your choice:
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+IanKoratsky
+Please Enter Your password:
+1234Abc!
+You Have Successfully Logged In.
+Welcome, IanKoratsky!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+1
+---Create/Edit Profile---
+Enter First Name:
+---Profile Created/Updated---
+---END_OF_PROGRAM---

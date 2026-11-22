@@ -17,6 +17,7 @@ Welcome, TestUser!
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 3
 --- Job Search/Internship Menu ---
@@ -30,19 +31,13 @@ ENTER YOUR CHOICE:
 Application Summary for TestUser
 ------------------------------
 Job ID: 0001
-Job Title: Software Intern
-Employer: TechCorp
-Location: New York, NY
+(This listing is not available.)
 ---
 Job ID: 0002
-Job Title: Data Analyst
-Employer: DataSolutions
-Location: Remote
+(This listing is not available.)
 ---
 Job ID: 0003
-Job Title: Marketing Specialist
-Employer: BrandInc
-Location: Chicago, IL
+(This listing is not available.)
 ------------------------------
 Total Applications: 3
 ------------------------------
@@ -61,6 +56,7 @@ ENTER YOUR CHOICE:
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---
