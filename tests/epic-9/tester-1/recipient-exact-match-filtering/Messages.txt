@@ -1,0 +1,4 @@
+anothersender       Jordan              2026-11-09T08:00:00+00:00WRONG CASE should not appear
+anothersender       jordan2             2026-11-09T08:05:00+00:00WRONG PREFIX should not appear
+jordan              anothersender       2026-11-09T08:10:00+00:00OUTGOING should not appear
+anothersender       jordan              2026-11-09T08:15:00+00:00This is the one visible message for jordan.

@@ -37,20 +37,21 @@ See [ROLE-TRACKER.md](docs/ROLE-TRACKER.md) for the owner of each role in every 
 | [ROLE-TRACKER.md](docs/ROLE-TRACKER.md) | The 10-sprint left-to-right role rotation. |
 | [GIT-ISSUES.md](docs/GIT-ISSUES.md) | Repository issue tracking, review evidence, sign-off, and final ZIP readiness. |
 | [EPIC Objectives](docs/epic-objectives/) | Scope, acceptance context, role ownership, and Git issue references for each Epic. |
+| [CI.md](docs/CI.md) | GitHub build checks and dependency vulnerability issues. |
 | `tests/` | Nested Epic, tester, and scenario directories for test inputs and expected outputs. |
 
 ## **DEVELOPMENT WORKFLOW**
 
 #### 1. Select the assigned Jira Feature, Task, or Bug for the active sprint.
 #### 2. Before changing code or tests, document the requirement, affected files, relevant procedure, and intended validation.
-#### 3. Implement the change and update or add focused tests in the appropriate test directory.
+#### 3. Implement the assigned feature; testers create application test cases in the appropriate test directories.
 #### 4. Build and run the affected COBOL program, recording the exact command and result in Jira.
 #### 5. Have the assigned Tester verify the acceptance criteria and attach test evidence.
 #### 6. Close the issue only when the implementation, testing, documentation, and any linked bug work are complete.
 
 ## **TESTING IMPLEMENTATION**
 
-The test suite uses nested directories organized by *Epic*, *Tester*, and *Scenario*. **COBOL** test inputs and expected outputs are processed sequentially.
+Assigned testers maintain the test suite in nested directories organized by *Epic*, *Tester*, and *Scenario*. **COBOL** test inputs and expected outputs are processed sequentially.
 
 In order to add and integrate new edge cases and testing features, utilize the following steps below:
 
@@ -66,6 +67,37 @@ Build and Run the primary COBOL program with:
 cobc -x -o InCollege InCollege.cob InCollege-Core.cob && ./InCollege
 ```
 
+To replay legacy test fixtures and identify stale `expected.txt` transcripts:
+
+```bash
+python3 refresh_test_expectations.py
+python3 refresh_test_expectations.py --epic epic-1
+```
+
+The command is a dry run by default. It recompiles a temporary executable, restores the
+checked-in application data after every scenario, and reports the first actual-versus-
+expected mismatch and the menus encountered. After reviewing mismatches as valid changes
+to the application rather than implementation regressions, refresh the fixtures explicitly:
+
+```bash
+python3 refresh_test_expectations.py --apply
+```
+
+Do not use `--apply` to hide implementation bugs or to replace a fixture whose scenario
+is not known to have changed.
+
 The `build test-main` and `run test-main` commands are also available as VS Code tasks for the test harness. See the project documentation before making changes, and provide references to the requirement, procedure, affected files, and validation evidence during every handoff.
+
+Build and run the supplied developer example in Docker from the repository root:
+
+```bash
+docker build --file .github/Dockerfile --tag incollege-ci .
+docker run --rm --network none \
+  --user "$(id -u):$(id -g)" \
+  --mount "type=bind,source=$PWD,target=/workspace" \
+  incollege-ci /usr/local/bin/InCollege
+```
+
+The application reads the checked-in input, account, and message files through the mounted working directory and writes `InCollege-Output.txt` there. The existing pipeline checks, evidence artifacts, legacy harness baseline, and live GitHub setup requirements are documented in [CI.md](docs/CI.md).
 
 </div>

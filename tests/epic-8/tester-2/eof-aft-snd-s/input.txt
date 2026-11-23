@@ -1,0 +1,7 @@
+1
+TestUser
+Passw0rd1!
+9
+1
+ConnectedUser
+Hi, this is a valid short message.

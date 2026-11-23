@@ -1,0 +1,82 @@
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+2
+Please Enter Your username:
+seconduser
+That USERNAME Is Already Taken, Please Try Again
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+SecondPas1$
+Invalid Option, Try Again
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+seconduser
+Please Enter Your password:
+SecondPas1$
+You Have Successfully Logged In.
+Welcome, seconduser!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+1
+---Create/Edit Profile---
+Enter First Name:
+Morgan
+Enter Last Name:
+Blake
+Enter University Name:
+University of Central Florida
+Enter The Name Of Your Major:
+Electrical Engineering
+Enter Graduation Year (YYYY):
+2026
+Enter About Me (Optional):
+Robotics enthusiast.
+Add Experience (Optional, Max 3 Entries).Enter 'DONE' To Finish Or Any Input To Continue):
+
+Experience #1 - Title:
+Research Assistant
+Experience #1 - Company/Organization:
+UCF Robotics Lab
+Exp #1 - Years:
+Fall 2025
+Exp #1 - Description (Optional, Max 100 Chars):
+Built sensor calibration tools.
+Add Experience (Optional, Max 3 Entries).Enter 'DONE' To Finish Or Any Input To Continue):
+DONE
+Add Education (Optional, Max 3 Entries). Enter 'DONE' To Finish Or Any Input To Continue):
+
+Education #1 - Degree:
+Bachelor of Science
+Education #1 - University/College:
+University of Central Florida
+Education #1 - Years Attended:
+2022-2026
+Add Education (Optional, Max 3 Entries). Enter 'DONE' To Finish Or Any Input To Continue):
+DONE
+---Profile Created/Updated---
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---

@@ -1,0 +1,370 @@
+
+
+      *    ====================== END YOUR TESTS =======================
+      *    =============================================================
+      *    =============================================================
+      *    =============================================================
+      *    =============================================================
+
+      *    Now we close everything, and print the results
+
+           PERFORM CLOSE-CONSOLIDATED-FILES.
+           DISPLAY "Total Tests Passed: " TotalTestsPassed.
+           DISPLAY "Total Tests Failed: " TotalTestsFailed.
+           STOP RUN.
+
+      *    =============================================================
+      *    =============================================================
+      *    ======================== PARAGRAPHS =========================
+      *    =============================================================
+      *    =============================================================
+           COUNTER-UPDATE.
+          
+      *    ======================= Test Headers ========================
+          
+      *    Helps with debugging our tests
+    
+               IF SHOW-HEADERS
+                   STRING 
+                       "==== TEST: "
+                       WS-FOLDER
+                       "===="
+                       DELIMITED BY SIZE 
+                       INTO WS-TEST-HEADER
+                   END-STRING
+                   WRITE OUTPUT-CONSOLIDATED-REC
+                       FROM WS-TEST-HEADER
+                   WRITE EXPECTED-CONSOLIDATED-REC
+                       FROM WS-TEST-HEADER
+               END-IF.
+    
+    
+      *    ==================== Input Output Copiers ===================
+        
+      *    These are used to rapidly copy our inputs and outputs to a
+      *    reusable set of riles
+    
+               MOVE "/input.txt" TO WS-PATH-SUFFIX.
+               PERFORM BUILD-TEST-PATH.
+               MOVE WS-BUILT-PATH TO WS-TEST-INPUT.
+    
+               MOVE "/output.txt" TO WS-PATH-SUFFIX.
+               PERFORM BUILD-TEST-PATH.
+               MOVE WS-BUILT-PATH TO WS-OUTPUT-FILE.
+    
+               MOVE "/expected.txt" TO WS-PATH-SUFFIX.
+               PERFORM BUILD-TEST-PATH.
+               MOVE WS-BUILT-PATH TO WS-EXPECTED-FILE.
+
+               MOVE "/accounts.txt" TO WS-PATH-SUFFIX.
+               PERFORM BUILD-TEST-PATH.
+               MOVE WS-BUILT-PATH TO WS-ACCOUNTS-FILE.
+    
+               CALL WS-TEST-CODE USING 
+                   WS-TEST-INPUT 
+                   WS-OUTPUT-FILE
+                   WS-ACCOUNTS-FILE.
+               PERFORM COPY-INPUT.
+           
+               PERFORM START-FILES.
+    
+      *    ============================ Loop ===========================
+    
+               PERFORM UNTIL WS-OUTPUT-END AND WS-EXPECTED-END
+    
+      *    This allows us to tst if a file is shorter than the other
+                   IF NOT WS-OUTPUT-END
+                       PERFORM READ-OUTPUT
+                   END-IF
+    
+                   IF NOT WS-EXPECTED-END
+                       PERFORM READ-EXPECTED
+                   END-IF
+    
+      *        This allows us to test if a line mismatches
+    
+                   IF NOT WS-OUTPUT-END AND NOT WS-EXPECTED-END          
+                       IF WS-OUTPUT-LINE NOT = WS-EXPECTED-LINE
+                           MOVE "Y" TO WS-MISMATCH
+                       END-IF
+                   ELSE
+                       IF WS-OUTPUT-EOF NOT = WS-EXPECTED-EOF
+                           MOVE "Y" TO WS-MISMATCH
+                       END-IF
+                   END-IF
+                   
+               END-PERFORM.
+    
+      *        Case counter
+    
+               IF MISMATCH-FOUND OR WS-OUTPUT-EOF NOT = WS-EXPECTED-EOF
+                   ADD 1 TO TotalTestsFailed
+               ELSE
+                   ADD 1 TO TotalTestsPassed
+               END-IF.
+    
+      *        Clear vars and files
+               PERFORM CLOSE-FILES.
+               IF WS-SKIP-RESET = "N"
+                   PERFORM RESET-ORIGINAL-FILES
+               ELSE
+                   MOVE "N" TO WS-SKIP-RESET
+               END-IF.
+               MOVE "N" TO WS-MISMATCH.
+               MOVE "N" TO WS-OUTPUT-EOF.
+               MOVE "N" TO WS-EXPECTED-EOF.
+               MOVE SPACES TO WS-OUTPUT-LINE.
+               MOVE SPACES TO WS-EXPECTED-LINE.
+               MOVE SPACES TO WS-TEST-INPUT.
+               MOVE SPACES TO WS-OUTPUT-FILE.
+               MOVE SPACES TO WS-EXPECTED-FILE.
+
+      *    Here we set any oringal files needed to 
+           SET-ORIGINAL-FILES.
+                move 0 to RETURNCODE.
+
+      *    Now we set backups of any files that we use, such as accounts
+      *    This allows us to change the file we need to mutate on the
+      *    The fly before a test
+      *    To set up a standard, just copy the below into both the
+      *    Set and rest vars
+                CALL "COPY-FILE" USING 
+                    "Accounts.txt"
+                    "Accounts-backup.txt" 
+                    RETURNCODE.
+                CALL "COPY-FILE" USING 
+                    "Profiles.txt"
+                    "Profiles-backup.txt" 
+                    RETURNCODE.
+                CALL "COPY-FILE" USING 
+                    "Connections.txt"
+                    "Connections-backup.txt" 
+                    RETURNCODE.
+                CALL "COPY-FILE" USING 
+                    "Application.txt"
+                    "Application-backup.txt" 
+                    RETURNCODE.
+                CALL "COPY-FILE" USING 
+                    "Jobs.txt"
+                    "Jobs-backup.txt" 
+                    RETURNCODE.
+                CALL "COPY-FILE" USING 
+                    "Messages.txt"
+                    "Messages-backup.txt" 
+                    RETURNCODE.
+
+           RESET-ORIGINAL-FILES.
+                move 0 to RETURNCODE.
+     
+      *    Now we reset any files that we use, such as accounts
+
+               CALL "COPY-FILE" USING 
+                   "Accounts-backup.txt" 
+                   "Accounts.txt"
+                   RETURNCODE.
+               CALL "COPY-FILE" USING 
+                   "Profiles-backup.txt" 
+                   "Profiles.txt"
+                   RETURNCODE.
+               CALL "COPY-FILE" USING 
+                   "Connections-backup.txt" 
+                   "Connections.txt"
+                   RETURNCODE.
+               CALL "COPY-FILE" USING
+                   "Application-backup.txt" 
+                   "Application.txt"
+                   RETURNCODE.
+               CALL "COPY-FILE" USING
+                   "Jobs-backup.txt" 
+                   "Jobs.txt"
+                   RETURNCODE.
+               CALL "COPY-FILE" USING
+                   "Messages-backup.txt" 
+                   "Messages.txt"
+                   RETURNCODE.
+           
+      *    ===================== Helper functions ======================
+
+           BUILD-TEST-PATH.
+               MOVE SPACES TO WS-BUILT-PATH.
+               STRING WS-FOLDER delimited by space
+                   WS-PATH-SUFFIX delimited by space
+                 INTO WS-BUILT-PATH
+                 ON overflow
+                   DISPLAY "err building path" WS-PATH-SUFFIX
+               END-STRING.
+    
+           MODIFY-INITIAL-CONDITON-FILE.
+               
+               MOVE WS-OVERRIDE-INITIAL-CONDITON TO WS-PATH-SUFFIX.
+               PERFORM BUILD-TEST-PATH.
+               MOVE WS-BUILT-PATH TO WS-OVERRIDE-INITIAL-CONDITON-FILE.
+    
+    
+               CALL "COPY-FILE" USING 
+                   WS-OVERRIDE-INITIAL-CONDITON-FILE
+                   WS-INITIAL-CONDITION
+                   RETURNCODE.
+          
+           COPY-INPUT.
+    
+               MOVE "N" TO WS-INPUT-EOF.
+           
+               OPEN INPUT TEST-INPUT-FILE.
+               IF WS-TEST-INPUT-STAT NOT = "00"
+                   DISPLAY "ERR"
+                   STOP RUN
+               END-IF.
+    
+               PERFORM UNTIL WS-INPUT-END
+                    READ TEST-INPUT-FILE INTO WS-INPUT-LINE
+                         AT END
+                              MOVE "Y" TO WS-INPUT-EOF
+                         NOT AT END
+                              WRITE TEST-INPUT-CONSOLIDATED-REC
+                                FROM WS-INPUT-LINE
+                    END-READ
+               END-PERFORM
+    
+               CLOSE TEST-INPUT-FILE.
+    
+           VERIFY-FILE-OPEN.
+               IF WS-CHECK-STAT NOT = "00"
+                   DISPLAY "ERROR OPENING" WS-CHECK-NAME
+                   DISPLAY "FILE STATUS: " WS-CHECK-STAT
+                   STOP RUN
+               END-IF.
+    
+           READ-EXPECTED.
+               READ EXPECTED-FILE INTO WS-EXPECTED-LINE
+                   AT END
+                       MOVE "Y" TO WS-EXPECTED-EOF
+                       MOVE SPACES TO WS-EXPECTED-LINE
+                   NOT AT END
+                       WRITE EXPECTED-CONSOLIDATED-REC
+                           FROM WS-EXPECTED-LINE
+               END-READ.
+    
+           READ-OUTPUT.
+               READ OUTPUT-FILE INTO WS-OUTPUT-LINE
+                   AT END
+                       MOVE "Y" TO WS-OUTPUT-EOF
+                       MOVE SPACES TO WS-OUTPUT-LINE
+                   NOT AT END
+                       WRITE OUTPUT-CONSOLIDATED-REC
+                           FROM WS-OUTPUT-LINE
+               END-READ.
+    
+    
+           START-FILES.
+    
+               OPEN INPUT  OUTPUT-FILE.
+               MOVE WS-OUTPUT-STAT TO WS-CHECK-STAT.
+               MOVE WS-OUTPUT-FILE TO WS-CHECK-NAME.
+               PERFORM VERIFY-FILE-OPEN.
+               
+               OPEN INPUT  EXPECTED-FILE.
+               MOVE WS-EXPECTED-STAT TO WS-CHECK-STAT.
+               MOVE WS-EXPECTED-FILE TO WS-CHECK-NAME.
+               PERFORM VERIFY-FILE-OPEN.
+    
+    
+           START-CONSOLIDATE-FILES.
+    
+      *        This ensures that we can submit all the tests
+               IF FINAL-OUTPUT
+                   MOVE "InCollege-Input.txt" 
+                       TO WS-TEST-INPUT-CONSOLIDATED
+                   MOVE "InCollege-Output.txt" 
+                       TO WS-OUTPUT-FILE-CONSOLIDATED
+               END-IF.
+    
+      *        If it's false, they get sent to the test files
+    
+               OPEN OUTPUT  OUTPUT-FILE-CONSOLIDATED.
+               MOVE WS-OUTPUT-STAT-CONSOLIDATED TO WS-CHECK-STAT.
+               MOVE WS-OUTPUT-FILE-CONSOLIDATED TO WS-CHECK-NAME.
+               PERFORM VERIFY-FILE-OPEN.
+               
+               OPEN OUTPUT  EXPECTED-FILE-CONSOLIDATED.
+               MOVE WS-EXPECTED-STAT-CONSOLIDATED TO WS-CHECK-STAT.
+               MOVE WS-EXPECTED-FILE-CONSOLIDATED TO WS-CHECK-NAME.
+               PERFORM VERIFY-FILE-OPEN.
+    
+               OPEN OUTPUT  TEST-INPUT-CONSOLIDATED.
+               MOVE WS-TEST-INPUT-CONSOLIDATED-STAT TO WS-CHECK-STAT.
+               MOVE WS-TEST-INPUT-CONSOLIDATED TO WS-CHECK-NAME.
+               PERFORM VERIFY-FILE-OPEN.
+    
+    
+           CLOSE-FILES.
+               CLOSE OUTPUT-FILE.
+               CLOSE EXPECTED-FILE.
+    
+           T2-RUN.
+               MOVE "jobs.txt" TO WS-OVERRIDE-INITIAL-CONDITON.
+               MOVE "Jobs.txt" TO WS-INITIAL-CONDITION.
+               PERFORM MODIFY-INITIAL-CONDITON-FILE.
+               PERFORM T2-RUN-CONTINUE.
+
+           T2-RUN-CONTINUE.
+               PERFORM COUNTER-UPDATE.
+               PERFORM T2-VERIFY-JOBS.
+
+           T2-VERIFY-JOBS.
+      *        Jobs.txt as saved by the program vs expected-jobs.txt.
+               MOVE "expected-jobs.txt" TO WS-PATH-SUFFIX.
+               PERFORM BUILD-TEST-PATH.
+               MOVE WS-BUILT-PATH TO WS-JOBS-EXP-PATH.
+
+               MOVE "N" TO WS-JOBS-MISMATCH.
+               MOVE "N" TO WS-JOBS-ACT-EOF.
+               MOVE "N" TO WS-JOBS-EXP-EOF.
+
+               OPEN INPUT JOBS-ACTUAL-FILE.
+               OPEN INPUT JOBS-EXPECTED-FILE.
+
+               PERFORM UNTIL WS-JOBS-ACT-END AND WS-JOBS-EXP-END
+                   IF NOT WS-JOBS-ACT-END
+                       READ JOBS-ACTUAL-FILE INTO WS-JOBS-ACT-LINE
+                           AT END
+                               MOVE "Y" TO WS-JOBS-ACT-EOF
+                               MOVE SPACES TO WS-JOBS-ACT-LINE
+                       END-READ
+                   END-IF
+
+                   IF NOT WS-JOBS-EXP-END
+                       READ JOBS-EXPECTED-FILE INTO WS-JOBS-EXP-LINE
+                           AT END
+                               MOVE "Y" TO WS-JOBS-EXP-EOF
+                               MOVE SPACES TO WS-JOBS-EXP-LINE
+                       END-READ
+                   END-IF
+
+      *            Different record counts, or a record that differs
+                   IF WS-JOBS-ACT-EOF NOT = WS-JOBS-EXP-EOF
+                       MOVE "Y" TO WS-JOBS-MISMATCH
+                   ELSE
+                       IF NOT WS-JOBS-ACT-END
+                           IF WS-JOBS-ACT-LINE NOT = WS-JOBS-EXP-LINE
+                               MOVE "Y" TO WS-JOBS-MISMATCH
+                           END-IF
+                       END-IF
+                   END-IF
+               END-PERFORM.
+
+               CLOSE JOBS-ACTUAL-FILE.
+               CLOSE JOBS-EXPECTED-FILE.
+
+               IF JOBS-MISMATCH-FOUND
+                   ADD 1 TO TotalTestsFailed
+                   DISPLAY "JOBS.TXT MISMATCH: " WS-FOLDER
+               ELSE
+                   ADD 1 TO TotalTestsPassed
+               END-IF.
+
+           CLOSE-CONSOLIDATED-FILES.
+               CLOSE OUTPUT-FILE-CONSOLIDATED.
+               CLOSE EXPECTED-FILE-CONSOLIDATED.
+               CLOSE TEST-INPUT-CONSOLIDATED.
+           

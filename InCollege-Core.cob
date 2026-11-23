@@ -1,4 +1,3 @@
-
        IDENTIFICATION DIVISION.
        PROGRAM-ID. INCOLLEGE-CORE IS INITIAL PROGRAM.
        DATE-WRITTEN. 9/3/2026.
@@ -34,10 +33,16 @@
                ORGANIZATION IS LINE SEQUENTIAL
                FILE STATUS IS WS-APPS-STAT.
 
+           SELECT OPTIONAL MESSAGES-FILE ASSIGN TO "Messages.txt"
+               ORGANIZATION IS LINE SEQUENTIAL
+               FILE STATUS IS WS-MESSAGES-STAT.
+
        DATA DIVISION.
        FILE SECTION.
-       FD IN-FILE.
-       01 INPUT-LINE    PIC X(250).
+       FD IN-FILE
+           RECORD IS VARYING IN SIZE FROM 0 TO 4096
+           DEPENDING ON WS-INPUT-LENGTH.
+       01 INPUT-LINE    PIC X(4096).
 
        FD OUTPUT-FILE.
        01 OUTPUT-LINE   PIC X(250).
@@ -91,11 +96,20 @@
        FD APPLICATIONS-FILE.
        01 APPLICATION-INST.
            05 APP-USER        PIC X(20).
-           05 APP-JOB-ID      PIC 9(4). 
+           05 APP-JOB-ID      PIC 9(4).
+
+      *    EPIC 8 MESSAGE FILE: APPEND ONLY, NO IN-MEMORY LIMIT
+       FD MESSAGES-FILE.
+       01 MESSAGE-INSTANCE.
+           05 MSG-SENDER      PIC X(20).
+           05 MSG-RECIPIENT   PIC X(20).
+           05 MSG-TIMESTAMP   PIC X(25).
+           05 MSG-CONTENT     PIC X(200).
 
        WORKING-STORAGE SECTION.
 
        01 WS-INPUT-STAT     PIC XX.
+       01 WS-INPUT-LENGTH   BINARY-LONG.
        01 WS-OUTPUT-STAT    PIC XX.
          01 WS-CONNECTIONS-STAT PIC XX.
 
@@ -210,7 +224,7 @@
        01 WS-PROFILE-2-IDX PIC 9(2) VALUE 0.
        01 WS-ANOTHER-USER-SEARCH     PIC X(20).
 
-       
+
 
        01 WS-EXP-IDX       PIC 9       VALUE 0.
        01 WS-EDU-IDX       PIC 9       VALUE 0.
@@ -279,6 +293,25 @@
        01 WS-LOOKUP-JOB-IDX    PIC 9(3)    VALUE 0.
        01 WS-FOUND-JOB-IDX     PIC 9(3)    VALUE 0.
 
+
+      *    EPIC 8 WS SECTION
+       01 WS-MESSAGES-STAT PIC XX.
+       01 WS-MESSAGES-DONE PIC X VALUE "N".
+       01 WS-MESSAGE-USER  PIC X(20).
+       01 WS-MESSAGE-RAW   PIC X(4096).
+       01 WS-MESSAGE-TEXT  PIC X(200).
+       01 WS-MESSAGE-LEN   PIC 9(4).
+       01 WS-MESSAGE-CONN  PIC X VALUE "N".
+       01 WS-MESSAGE-IDX   BINARY-LONG.
+       01 WS-MESSAGE-SAVED PIC X VALUE "N".
+       01 WS-SENT-DATE     PIC X(21).
+
+      *    EPIC 9: RESET ON EVERY INBOX VISIT.
+       01 WS-MESSAGES-EOF    PIC X VALUE "N".
+       01 WS-MESSAGES-FOUND  PIC X VALUE "N".
+       01 WS-MESSAGES-FAILED PIC X VALUE "N".
+       01 WS-MESSAGE-FILE-INFO PIC X(16).
+       01 WS-MESSAGE-PATH-STAT BINARY-LONG.
 
        LINKAGE SECTION.
        01  LS-INPUT   PIC X(100).
@@ -702,6 +735,8 @@
            PERFORM WRITE-OUTPUT
            MOVE "8. View My Network" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
+           MOVE "9. Messages" TO WS-OUTPUT-LINE
+           PERFORM WRITE-OUTPUT
            MOVE "ENTER YOUR CHOICE:" TO WS-OUTPUT-LINE
            PERFORM WRITE-OUTPUT
 
@@ -725,6 +760,8 @@
                        PERFORM VIEW-PENDING-REQUESTS
                    WHEN "8"
                        PERFORM VIEW-MY-NETWORK
+                   WHEN "9"
+                       PERFORM MESSAGES-MENU
                    WHEN OTHER
                        MOVE "Invalid Option, Try Again"
                            TO WS-OUTPUT-LINE
@@ -836,7 +873,7 @@
             ELSE
                 PERFORM DISPLAY-PROFILE
                 PERFORM CONNECTION-ACTION
-            END-IF. 
+            END-IF.
 
        CONNECTION-ACTION.
             MOVE "1. Send Connection Request" TO WS-OUTPUT-LINE
@@ -913,7 +950,7 @@
                         END-IF
                     END-IF
                 END-IF
-                
+
             END-PERFORM
 
             IF NOT CONNECTION-FOUND
@@ -1009,7 +1046,7 @@
                    PERFORM WRITE-OUTPUT
                END-IF
            END-PERFORM
-           
+
 
            IF WS-CONNECTION-FOUND = "N"
                MOVE SPACES TO WS-OUTPUT-LINE
@@ -1064,7 +1101,7 @@
            STRING "Connection request from "
                FUNCTION TRIM(WS-TARGET-USERNAME) " accepted!"
                DELIMITED BY SIZE INTO WS-OUTPUT-LINE
-           PERFORM WRITE-OUTPUT.    
+           PERFORM WRITE-OUTPUT.
 
        REJECT-REQUEST.
            MOVE "R" TO WS-REQ-STATUS(WS-REQUEST-IDX)
@@ -1087,11 +1124,11 @@
                MOVE "No Profile Has Been Created Yet."
                    TO WS-OUTPUT-LINE
                PERFORM WRITE-OUTPUT
-           ELSE 
+           ELSE
                MOVE WS-PROFILE-IDX TO WS-FOUND-INDEX
                PERFORM DISPLAY-PROFILE
            END-IF.
-        
+
         DISPLAY-PROFILE.
             MOVE SPACES TO WS-OUTPUT-LINE
             STRING "==== Profile For "
@@ -1351,6 +1388,9 @@
        GET-EXPERIENCE.
            MOVE "N" TO WS-VALID-RESPONSE
            MOVE 0 TO WS-PROF-EXP-CNT(WS-FOUND-INDEX)
+           INITIALIZE WS-PROF-EXP-INST(WS-FOUND-INDEX, 1)
+                      WS-PROF-EXP-INST(WS-FOUND-INDEX, 2)
+                      WS-PROF-EXP-INST(WS-FOUND-INDEX, 3)
            PERFORM UNTIL VALIDATED OR (WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                    >= 3) OR END-OF-INPUT
                MOVE SPACES TO WS-OUTPUT-LINE
@@ -1383,7 +1423,7 @@
                                MOVE "Title Cannot Be Blank, Try Again"
                                    TO WS-OUTPUT-LINE
                                PERFORM WRITE-OUTPUT
-                               SUBTRACT 1 FROM 
+                               SUBTRACT 1 FROM
                                    WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                                EXIT PERFORM CYCLE
                            END-IF
@@ -1405,7 +1445,7 @@
                                MOVE "Company Cannot Be Blank, Try Again"
                                    TO WS-OUTPUT-LINE
                                PERFORM WRITE-OUTPUT
-                               SUBTRACT 1 FROM 
+                               SUBTRACT 1 FROM
                                    WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                                EXIT PERFORM CYCLE
                            END-IF
@@ -1426,6 +1466,11 @@
                                MOVE "Years Cannot Be Blank, Try Again"
                                    TO WS-OUTPUT-LINE
                                PERFORM WRITE-OUTPUT
+                               MOVE SPACES TO
+                                   WS-PROF-EXP-INST(WS-FOUND-INDEX,
+                                       WS-EXP-IDX)
+                               SUBTRACT 1 FROM
+                                   WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                                SUBTRACT 1 FROM
                                    WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                                EXIT PERFORM CYCLE
@@ -1451,6 +1496,9 @@
        GET-EDUCATION.
            MOVE "N" TO WS-VALID-RESPONSE
            MOVE 0 TO WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+           INITIALIZE WS-PROF-TOTAL-EDU(WS-FOUND-INDEX, 1)
+                      WS-PROF-TOTAL-EDU(WS-FOUND-INDEX, 2)
+                      WS-PROF-TOTAL-EDU(WS-FOUND-INDEX, 3)
            PERFORM UNTIL VALIDATED OR (WS-PROF-EDU-CNT(WS-FOUND-INDEX)
                    >= 3) OR END-OF-INPUT
                MOVE SPACES TO WS-OUTPUT-LINE
@@ -1539,6 +1587,11 @@
                          "Years Attended Blank, Try Again"
                                        TO WS-OUTPUT-LINE
                                    PERFORM WRITE-OUTPUT
+                                   MOVE SPACES TO
+                                       WS-PROF-TOTAL-EDU(WS-FOUND-INDEX,
+                                           WS-EDU-IDX)
+                               SUBTRACT 1 FROM
+                                   WS-PROF-EDU-CNT(WS-FOUND-INDEX)
                                    SUBTRACT 1 FROM
                                        WS-PROF-EDU-CNT(WS-FOUND-INDEX)
                                    EXIT PERFORM CYCLE
@@ -1553,3 +1606,6 @@
          COPY "BrowseJobs.cob".
          COPY "ApplyJobs.cob".
          COPY "ViewApplications.cob".
+         COPY "SendMessage.cob".
+         COPY "ViewMessages.cob".
+         

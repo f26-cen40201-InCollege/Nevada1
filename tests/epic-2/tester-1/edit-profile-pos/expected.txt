@@ -1,0 +1,155 @@
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+2
+Please Enter Your username:
+profileuser1
+That USERNAME Is Already Taken, Please Try Again
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+Passw0rd1$
+Invalid Option, Try Again
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser1
+Please Enter Your password:
+Passw0rd1$
+You Have Successfully Logged In.
+Welcome, profileuser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+1
+---Create/Edit Profile---
+Enter First Name:
+John
+Enter Last Name:
+Doe
+Enter University Name:
+University of South Florida
+Enter The Name Of Your Major:
+Computer Science
+Enter Graduation Year (YYYY):
+2027
+Enter About Me (Optional):
+Enthusiastic developer who loves solving problems.
+Add Experience (Optional, Max 3 Entries).Enter 'DONE' To Finish Or Any Input To Continue):
+
+Experience #1 - Title:
+Software Intern
+Experience #1 - Company/Organization:
+Tech Corp
+Exp #1 - Years:
+Summer 2024
+Exp #1 - Description (Optional, Max 100 Chars):
+Built internal tools for QA automation.
+Add Experience (Optional, Max 3 Entries).Enter 'DONE' To Finish Or Any Input To Continue):
+DONE
+Add Education (Optional, Max 3 Entries). Enter 'DONE' To Finish Or Any Input To Continue):
+
+Education #1 - Degree:
+Bachelor of Science
+Education #1 - University/College:
+University of South Florida
+Education #1 - Years Attended:
+2023-2027
+Add Education (Optional, Max 3 Entries). Enter 'DONE' To Finish Or Any Input To Continue):
+DONE
+---Profile Created/Updated---
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+1
+---Create/Edit Profile---
+Enter First Name:
+John
+Enter Last Name:
+Smith
+Enter University Name:
+University of South Florida
+Enter The Name Of Your Major:
+Computer Science
+Enter Graduation Year (YYYY):
+2027
+Enter About Me (Optional):
+Enthusiastic developer who loves solving problems and mentoring others.
+Add Experience (Optional, Max 3 Entries).Enter 'DONE' To Finish Or Any Input To Continue):
+
+Experience #1 - Title:
+Teaching Assistant
+Experience #1 - Company/Organization:
+University of South Florida
+Exp #1 - Years:
+Fall 2025
+Exp #1 - Description (Optional, Max 100 Chars):
+Helped run lab sections for 40 students.
+Add Experience (Optional, Max 3 Entries).Enter 'DONE' To Finish Or Any Input To Continue):
+DONE
+Add Education (Optional, Max 3 Entries). Enter 'DONE' To Finish Or Any Input To Continue):
+
+Education #1 - Degree:
+Bachelor of Science
+Education #1 - University/College:
+University of South Florida
+Education #1 - Years Attended:
+2023-2027
+Add Education (Optional, Max 3 Entries). Enter 'DONE' To Finish Or Any Input To Continue):
+DONE
+---Profile Created/Updated---
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+2
+==== Profile For John Smith ====
+Name: John Smith
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2027
+About Me: Enthusiastic developer who loves solving problems and mentoring others.
+Experience:
+ Title: Teaching Assistant
+ Company: University of South Florida
+ Dates: Fall 2025
+ Description: Helped run lab sections for 40 students.
+Education:
+ Degree: Bachelor of Science
+ University: University of South Florida
+ Years: 2023-2027
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---

@@ -1,0 +1,2 @@
+oldcontact          receiverperson      2026-11-05T10:00:00+00:00Welcome back! Hope the semester is going well.
+senderperson        receiverperson      2026-11-20T09:30:00+00:00Got the assignment done, check it when you can.

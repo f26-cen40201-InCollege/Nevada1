@@ -1,0 +1,2 @@
+abruptuser          TestPass1
+quickmsgsender      TestPass2
