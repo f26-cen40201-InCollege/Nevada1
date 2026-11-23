@@ -1608,3 +1608,4 @@
          COPY "ViewApplications.cob".
          COPY "SendMessage.cob".
          COPY "ViewMessages.cob".
+         
