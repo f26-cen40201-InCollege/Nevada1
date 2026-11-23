@@ -1,0 +1,59 @@
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+inboxowner
+Please Enter Your password:
+TestPass1
+You Have Successfully Logged In.
+Welcome, inboxowner!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+2
+--- Your Messages ---
+From: firstfriend
+Message: First message, sent earliest.
+Sent: 2026-11-08T08:00:00+00:00
+---
+From: secondfriend
+Message: Second message, from a US timezone.
+Sent: 2026-11-09T14:30:00-05:00
+---
+From: thirdfriend
+Message: Third message, sent most recently.
+Sent: 2026-11-10T22:45:00+05:30
+---------------------
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---

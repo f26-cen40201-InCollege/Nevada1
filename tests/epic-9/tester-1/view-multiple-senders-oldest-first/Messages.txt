@@ -1,0 +1,3 @@
+firstfriend         inboxowner          2026-11-08T08:00:00+00:00First message, sent earliest.
+secondfriend        inboxowner          2026-11-09T14:30:00-05:00Second message, from a US timezone.
+thirdfriend         inboxowner          2026-11-10T22:45:00+05:30Third message, sent most recently.
