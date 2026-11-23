@@ -17,16 +17,11 @@ Welcome, profileuser1!
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 7
 --- Pending Connection Requests ---
-Request from: profileuser2
-1. Accept
-2. Reject
-Enter your choice for profileuser2:
-1
-Connection request from profileuser2 accepted!
------------------------------------
+You have no pending connection requests at this time.
 1. Create/Edit My Profile
 2. View My Profile
 3. Search For a job
@@ -35,6 +30,12 @@ Connection request from profileuser2 accepted!
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
+1
+---Create/Edit Profile---
+Enter First Name:
 6
+Enter Last Name:
+---Profile Created/Updated---
 ---END_OF_PROGRAM---

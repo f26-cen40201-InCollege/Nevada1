@@ -17,6 +17,7 @@ Welcome, TestUser!
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 3
 --- Job Search/Internship Menu ---
@@ -34,6 +35,7 @@ ENTER YOUR CHOICE:
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---

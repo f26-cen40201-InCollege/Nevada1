@@ -17,6 +17,7 @@ Welcome, profileuser1!
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 7
 --- Pending Connection Requests ---
@@ -29,10 +30,13 @@ You have no pending connection requests at this time.
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 8
 --- Your Network ---
-Connected With: profileuser2 (University: University of Florida, Major: Physics)
+Connected with: profileuser2 (University: University of Florida, Major: Physics)
+Connected with: profileuser3 (University: University of Texas, Major: Electrical Engineering)
+--------------------
 1. Create/Edit My Profile
 2. View My Profile
 3. Search For a job
@@ -41,6 +45,7 @@ Connected With: profileuser2 (University: University of Florida, Major: Physics)
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---

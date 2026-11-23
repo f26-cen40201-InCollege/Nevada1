@@ -17,12 +17,14 @@ Welcome, profileuser1!
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 3
----Job Search/Internship Menu ---
+--- Job Search/Internship Menu ---
 1. Post a Job/Internship
 2. Browse Jobs/Internships
-3. Back to Main Menu
+3. View My Applications
+4. Back to Main Menu
 ENTER YOUR CHOICE:
 1
 --- Post a New Job/Internship ---
@@ -38,8 +40,10 @@ Enter Salary (optional, enter 'NONE' to skip):
 65,000.00
 Job posted successfully!
 ----------------------------------
+--- Job Search/Internship Menu ---
 1. Post a Job/Internship
 2. Browse Jobs/Internships
-3. Back to Main Menu
+3. View My Applications
+4. Back to Main Menu
 ENTER YOUR CHOICE:
 ---END_OF_PROGRAM---

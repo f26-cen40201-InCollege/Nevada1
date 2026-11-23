@@ -17,6 +17,7 @@ Welcome, TestUser!
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 3
 --- Job Search/Internship Menu ---
@@ -27,27 +28,32 @@ ENTER YOUR CHOICE:
 ENTER YOUR CHOICE:
 2
 --- Available Job Listings ---
-1. Software Intern at TechCorp (New York, NY)
-2. Data Analyst at DataSolutions (Remote)
-3. Marketing Specialist at BrandInc (Chicago, IL)
+1. llege Tester                                  Test at  ()
+2. InCo at  ()
+3. llege Developer                               Help at  ()
+4. InCo at  ()
+5. truction Engineer                             Buil at  ()
+6. Futu at  ()
 -----------------------------
 Enter job number to view details, or 0 to go back:
 1
 --- Job Details ---
-Title: Software Intern
-Description: Develop tools for internal testing and automation.
-Employer: TechCorp
-Location: New York, NY
-Salary: $25/hour
+Title: llege Tester                                  Test
+Description: ing testy code with a testy 'tude
+Employer:
+Location:
 -------------------
 1. Apply for this Job
 2. Back to Job List
 Enter Your Choice:
 2
 --- Available Job Listings ---
-1. Software Intern at TechCorp (New York, NY)
-2. Data Analyst at DataSolutions (Remote)
-3. Marketing Specialist at BrandInc (Chicago, IL)
+1. llege Tester                                  Test at  ()
+2. InCo at  ()
+3. llege Developer                               Help at  ()
+4. InCo at  ()
+5. truction Engineer                             Buil at  ()
+6. Futu at  ()
 -----------------------------
 Enter job number to view details, or 0 to go back:
 0
@@ -66,6 +72,7 @@ ENTER YOUR CHOICE:
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---

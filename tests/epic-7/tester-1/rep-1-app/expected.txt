@@ -17,6 +17,7 @@ Welcome, TestUser!
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 3
 --- Job Search/Internship Menu ---
@@ -30,11 +31,15 @@ ENTER YOUR CHOICE:
 Application Summary for TestUser
 ------------------------------
 Job ID: 0001
-Job Title: Software Intern
-Employer: TechCorp
-Location: New York, NY
+(This listing is not available.)
+---
+Job ID: 0002
+(This listing is not available.)
+---
+Job ID: 0003
+(This listing is not available.)
 ------------------------------
-Total Applications: 1
+Total Applications: 3
 ------------------------------
 --- Job Search/Internship Menu ---
 1. Post a Job/Internship
@@ -51,6 +56,7 @@ ENTER YOUR CHOICE:
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---

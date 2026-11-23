@@ -44,19 +44,19 @@
       *    These are used to rapidly copy our inputs and outputs to a
       *    reusable set of riles
     
-               MOVE "input.txt" TO WS-PATH-SUFFIX.
+               MOVE "/input.txt" TO WS-PATH-SUFFIX.
                PERFORM BUILD-TEST-PATH.
                MOVE WS-BUILT-PATH TO WS-TEST-INPUT.
     
-               MOVE "output.txt" TO WS-PATH-SUFFIX.
+               MOVE "/output.txt" TO WS-PATH-SUFFIX.
                PERFORM BUILD-TEST-PATH.
                MOVE WS-BUILT-PATH TO WS-OUTPUT-FILE.
     
-               MOVE "expected.txt" TO WS-PATH-SUFFIX.
+               MOVE "/expected.txt" TO WS-PATH-SUFFIX.
                PERFORM BUILD-TEST-PATH.
                MOVE WS-BUILT-PATH TO WS-EXPECTED-FILE.
 
-               MOVE "accounts.txt" TO WS-PATH-SUFFIX.
+               MOVE "/accounts.txt" TO WS-PATH-SUFFIX.
                PERFORM BUILD-TEST-PATH.
                MOVE WS-BUILT-PATH TO WS-ACCOUNTS-FILE.
     

@@ -17,42 +17,7 @@ Welcome, profileuser1!
 6. Logout
 7. Pending Connection Requests
 8. View My Network
-ENTER YOUR CHOICE:
-7
---- Pending Connection Requests ---
-Request from: profileuser2
-1. Accept
-2. Reject
-Enter your choice for profileuser2:
-2
-Connection request from profileuser2 rejected!
-Request from: profileuser3
-1. Accept
-2. Reject
-Enter your choice for profileuser3:
-2
-Connection request from profileuser3 rejected!
------------------------------------
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
-ENTER YOUR CHOICE:
-8
---- Your Network ---
-You have no connections in your network at this time.
-1. Create/Edit My Profile
-2. View My Profile
-3. Search For a job
-4. Search For someone you know
-5. Learn a New Skill
-6. Logout
-7. Pending Connection Requests
-8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 7
 --- Pending Connection Requests ---
@@ -65,6 +30,69 @@ You have no pending connection requests at this time.
 6. Logout
 7. Pending Connection Requests
 8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+2
+==== Profile For John Doe ====
+Name: John Doe
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2027
+About Me: Enthusiastic developer who loves solving problems.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+2
+==== Profile For John Doe ====
+Name: John Doe
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2027
+About Me: Enthusiastic developer who loves solving problems.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+8
+--- Your Network ---
+Connected with: profileuser2 (University: University of Florida, Major: Physics)
+Connected with: profileuser3 (University: University of Texas, Major: Electrical Engineering)
+--------------------
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+7
+--- Pending Connection Requests ---
+You have no pending connection requests at this time.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 6
 ---END_OF_PROGRAM---

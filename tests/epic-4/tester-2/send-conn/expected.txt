@@ -16,10 +16,12 @@ Welcome, profileuser1!
 5. Learn a New Skill
 6. Logout
 7. Pending Connection Requests
+8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 7
-Pending Connection Requests:
-- profileuser3
+--- Pending Connection Requests ---
+You have no pending connection requests at this time.
 1. Create/Edit My Profile
 2. View My Profile
 3. Search For a job
@@ -27,21 +29,13 @@ Pending Connection Requests:
 5. Learn a New Skill
 6. Logout
 7. Pending Connection Requests
+8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
 4
 Enter Full Name:
 Adam Smith
-==== Profile For Adam Smith ====
-Name: Adam Smith
-University: University of Florida
-Major: Physics
-Graduation Year: 2030
-About Me: Enthusiastic physist who loves solving problems.
-1. Send Connection Request
-2. Return to Main Menu
-ENTER YOUR CHOICE:
-1
-You Are Already Connected With User
+Profile Cannot Be Found
 1. Create/Edit My Profile
 2. View My Profile
 3. Search For a job
@@ -49,5 +43,13 @@ You Are Already Connected With User
 5. Learn a New Skill
 6. Logout
 7. Pending Connection Requests
+8. View My Network
+9. Messages
 ENTER YOUR CHOICE:
+1
+---Create/Edit Profile---
+Enter First Name:
 6
+Enter Last Name:
+---Profile Created/Updated---
+---END_OF_PROGRAM---
