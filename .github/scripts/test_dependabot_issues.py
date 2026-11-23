@@ -1,8 +1,8 @@
 """Offline checks for alert issue deduplication, pagination, and failures."""
 import io, json, unittest
 import dependabot_issues as sync
-from contextlib import redirect_stdout
-from unittest.mock import Mock, patch
+from contextlib import redirect_stderr, redirect_stdout
+from unittest.mock import Mock, mock_open, patch
 from urllib.error import HTTPError
 
 def alert(number=1):
@@ -18,11 +18,11 @@ def alert(number=1):
     }
 
 class MirrorTests(unittest.TestCase):
-    def run_sync(self, alerts, issues):
+    def run_sync(self, alerts, issues, branch="main"):
         api = Mock()
         api.paginate.side_effect = [alerts, issues]
         with redirect_stdout(io.StringIO()):
-            created = sync.mirror_alerts(api, 42)
+            created = sync.mirror_alerts(api, 42, branch)
         return created, api
 
     def test_creates_issue_with_evidence_and_no_patch(self):
@@ -33,7 +33,7 @@ class MirrorTests(unittest.TestCase):
         self.assertIn("<!-- incollege-dependabot-alert:1 -->", body)
         self.assertIn("First patched version: `2`", body)
         self.assertIn("/PR-RESOLVE", body)
-        self.assertIn("<!-- incollege-main-pr:42 -->", body)
+        self.assertIn("<!-- incollege-pr:42 -->", body)
 
     def test_open_and_closed_issues_prevent_duplicates(self):
         for state in ("open", "closed"):
@@ -42,13 +42,21 @@ class MirrorTests(unittest.TestCase):
                 self.assertEqual(created, 0)
                 api.create_issue.assert_not_called()
                 if state == "open":
-                    self.assertIn("<!-- incollege-main-pr:42 -->", api.request.call_args.args[1]["body"])
+                    self.assertIn("<!-- incollege-pr:42 -->", api.request.call_args.args[1]["body"])
                 else:
                     api.request.assert_not_called()
 
     def test_pull_request_marker_does_not_suppress_issue(self):
         created, _ = self.run_sync([alert()], [{"pull_request": {}, "body": "<!-- incollege-dependabot-alert:1 -->"}])
         self.assertEqual(created, 1)
+
+    def test_develop_pr_is_recorded_and_legacy_main_marker_is_not_duplicated(self):
+        _, api = self.run_sync([alert()], [], branch="develop")
+        self.assertIn("targeting develop", api.create_issue.call_args.args[1])
+        issue = {"number": 10, "state": "open", "body":
+                 "<!-- incollege-dependabot-alert:1 -->\n<!-- incollege-main-pr:42 -->"}
+        _, api = self.run_sync([alert()], [issue])
+        api.request.assert_not_called()
 
     def test_duplicate_alert_does_not_create_two_issues(self):
         created, api = self.run_sync([alert(), alert()], [{"body": None}])
@@ -65,7 +73,7 @@ class MirrorTests(unittest.TestCase):
         api.paginate.side_effect = [[alert()], []]
         api.create_issue.side_effect = RuntimeError("denied")
         with self.assertRaisesRegex(RuntimeError, "denied"):
-            sync.mirror_alerts(api, 42)
+            sync.mirror_alerts(api, 42, "main")
 
     def test_no_patched_version(self):
         item = alert()
@@ -73,39 +81,95 @@ class MirrorTests(unittest.TestCase):
         _, api = self.run_sync([item], [])
         self.assertIn("not available", api.create_issue.call_args.args[1])
 
-class MainPullRequestTests(unittest.TestCase):
+class TargetPullRequestTests(unittest.TestCase):
     def setUp(self):
         self.api = Mock(repository_url="https://api.github.com/repos/org/repo")
         self.pull = {"number": 42, "state": "open", "base": {"ref": "main"}}
         self.event = {"action": "opened", "pull_request": self.pull.copy()}
         self.api.request.return_value = (self.pull.copy(), None)
 
-    def test_accepts_open_main_pr_after_api_recheck(self):
-        self.assertEqual(sync.main_pull_request(self.api, self.event, "pull_request_target"), 42)
+    def test_accepts_open_allowed_pr_after_api_recheck(self):
+        for branch in ("main", "develop"):
+            with self.subTest(branch=branch):
+                pull = {**self.pull, "base": {"ref": branch}}
+                self.api.request.return_value = (pull, None)
+                event = {"action": "opened", "pull_request": pull}
+                self.assertEqual(sync.target_pull_request(self.api, event, "pull_request_target"), (42, branch))
 
-    def test_rejects_feature_or_develop_events(self):
-        for event_name, base in (("push", "main"), ("pull_request_target", "develop")):
+    def test_rejects_non_pr_or_other_target_events(self):
+        for event_name, base in (("push", "main"), ("pull_request_target", "feature")):
             with self.subTest(event_name=event_name, base=base):
                 event = {"action": "opened", "pull_request": {**self.pull, "base": {"ref": base}}}
                 with self.assertRaises(ValueError):
-                    sync.main_pull_request(self.api, event, event_name)
+                    sync.target_pull_request(self.api, event, event_name)
 
     def test_rejects_pr_retargeted_or_closed_before_sync(self):
         for current in ({**self.pull, "state": "closed"}, {**self.pull, "base": {"ref": "develop"}}):
             with self.subTest(current=current):
                 self.api.request.return_value = (current, None)
                 with self.assertRaises(ValueError):
-                    sync.main_pull_request(self.api, self.event, "pull_request_target")
+                    sync.target_pull_request(self.api, self.event, "pull_request_target")
 
-    def test_resolution_requires_linked_open_main_pr(self):
+    def test_resolution_requires_linked_open_allowed_pr(self):
         import resolve_dependabot_issue as resolver
         issue = {"body": "<!-- incollege-main-pr:42 -->"}
-        self.assertEqual(resolver.require_linked_main_pull_request(self.api, issue), 42)
+        self.assertEqual(resolver.require_linked_pull_request(self.api, issue), (42, "main"))
         self.api.request.return_value = ({**self.pull, "state": "closed"}, None)
         with self.assertRaises(ValueError):
-            resolver.require_linked_main_pull_request(self.api, issue)
+            resolver.require_linked_pull_request(self.api, issue)
         with self.assertRaises(ValueError):
-            resolver.require_linked_main_pull_request(self.api, {"body": "no link"})
+            resolver.require_linked_pull_request(self.api, {"body": "no link"})
+        self.api.request.return_value = ({**self.pull, "base": {"ref": "feature"}}, None)
+        with self.assertRaises(ValueError):
+            resolver.require_linked_pull_request(self.api, issue)
+
+class SyncIntegrationTests(unittest.TestCase):
+    @staticmethod
+    def response(payload):
+        response = Mock()
+        response.read.return_value = json.dumps(payload).encode()
+        response.headers = {}
+        response.__enter__ = Mock(return_value=response)
+        response.__exit__ = Mock(return_value=False)
+        return response
+
+    def test_open_pr_mirrors_alert_with_separate_scoped_tokens(self):
+        for branch in ("develop", "main"):
+            with self.subTest(branch=branch):
+                pull = {"number": 42, "state": "open", "base": {"ref": branch}}
+                event = {"action": "opened", "pull_request": pull}
+                env = {"GITHUB_TOKEN": "workflow-token", "DEPENDABOT_ALERTS_TOKEN": "alert-token",
+                       "GITHUB_REPOSITORY": "org/repo", "GITHUB_EVENT_NAME": "pull_request_target",
+                       "GITHUB_EVENT_PATH": "event.json"}
+                responses = [self.response(pull), self.response([alert()]),
+                             self.response([]), self.response({"number": 10})]
+                with patch.dict(sync.os.environ, env, clear=True), \
+                     patch("builtins.open", mock_open(read_data=json.dumps(event))), \
+                     patch.object(sync, "open_api_request", side_effect=responses) as opened, \
+                     redirect_stdout(io.StringIO()):
+                    self.assertEqual(sync.main(), 0)
+                requests = [call.args[0] for call in opened.call_args_list]
+                self.assertEqual([request.get_method() for request in requests], ["GET", "GET", "GET", "POST"])
+                self.assertEqual([request.get_header("Authorization") for request in requests],
+                                 ["Bearer workflow-token", "Bearer alert-token",
+                                  "Bearer workflow-token", "Bearer workflow-token"])
+                self.assertIn(f"targeting {branch}", json.loads(requests[-1].data)["body"])
+
+    def test_denied_alert_read_fails_before_issue_writes(self):
+        pull = {"number": 42, "state": "open", "base": {"ref": "main"}}
+        event = {"action": "opened", "pull_request": pull}
+        env = {"GITHUB_TOKEN": "workflow-token", "GITHUB_REPOSITORY": "org/repo",
+               "GITHUB_EVENT_NAME": "pull_request_target", "GITHUB_EVENT_PATH": "event.json"}
+        error = HTTPError("https://api.github.com/repos/org/repo/dependabot/alerts", 403,
+                          "denied", {}, io.BytesIO(b'{"message":"Resource not accessible"}'))
+        stderr = io.StringIO()
+        with patch.dict(sync.os.environ, env, clear=True), \
+             patch("builtins.open", mock_open(read_data=json.dumps(event))), \
+             patch.object(sync, "open_api_request", side_effect=[self.response(pull), error]) as opened, \
+             redirect_stderr(stderr):
+            self.assertEqual(sync.main(), 1)
+        self.assertEqual(opened.call_count, 2)
+        self.assertIn("GET /repos/org/repo/dependabot/alerts returned HTTP 403", stderr.getvalue())
 
 class APITests(unittest.TestCase):
     def setUp(self):
@@ -130,8 +194,45 @@ class APITests(unittest.TestCase):
 
     def test_http_error_is_an_error_not_an_empty_scan(self):
         with patch.object(sync, "open_api_request", side_effect=HTTPError("https://api.github.com", 403, "denied", {}, None)):
-            with self.assertRaisesRegex(RuntimeError, "HTTP 403"):
+            with self.assertRaisesRegex(RuntimeError, "GET /repos/org/repo/issues returned HTTP 403"):
                 self.api.request("https://api.github.com/repos/org/repo/issues")
+
+    def test_alert_token_is_used_only_for_alert_reads(self):
+        api = sync.GitHubAPI("workflow-token", "org/repo", alerts_token="alert-token")
+        response = Mock()
+        response.read.return_value = b"[]"
+        response.headers = {}
+        response.__enter__ = Mock(return_value=response)
+        response.__exit__ = Mock(return_value=False)
+        with patch.object(sync, "open_api_request", return_value=response) as opened:
+            api.request(api.repository_url + "/dependabot/alerts?state=open")
+            api.request(api.repository_url + "/dependabot/alerts/1")
+            api.request(api.repository_url + "/issues", {"title": "issue"})
+            api.request(api.repository_url + "/dependabot/alerts/1", {}, method="PATCH")
+        auth = [call.args[0].get_header("Authorization") for call in opened.call_args_list]
+        self.assertEqual(auth, ["Bearer alert-token", "Bearer alert-token",
+                                "Bearer workflow-token", "Bearer workflow-token"])
+
+    def test_alert_reads_use_workflow_token_when_optional_token_is_absent(self):
+        response = Mock()
+        response.read.return_value = b"[]"
+        response.headers = {}
+        response.__enter__ = Mock(return_value=response)
+        response.__exit__ = Mock(return_value=False)
+        with patch.object(sync, "open_api_request", return_value=response) as opened:
+            self.api.request(self.api.repository_url + "/dependabot/alerts")
+        self.assertEqual(opened.call_args.args[0].get_header("Authorization"), "Bearer test-token")
+
+    def test_alert_403_reports_endpoint_and_redacts_token(self):
+        api = sync.GitHubAPI("workflow-token", "org/repo", alerts_token="alert-token")
+        body = io.BytesIO(b'{"message":"Forbidden: alert-token"}')
+        error = HTTPError(api.repository_url + "/dependabot/alerts", 403, "denied", {}, body)
+        with patch.object(sync, "open_api_request", side_effect=error):
+            with self.assertRaises(RuntimeError) as caught:
+                api.request(api.repository_url + "/dependabot/alerts")
+        self.assertIn("GET /repos/org/repo/dependabot/alerts returned HTTP 403", str(caught.exception))
+        self.assertIn("DEPENDABOT_ALERTS_TOKEN", str(caught.exception))
+        self.assertNotIn("alert-token", str(caught.exception))
 
     def test_link_header_and_authentication(self):
         response = Mock()

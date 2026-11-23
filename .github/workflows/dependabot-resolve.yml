@@ -21,7 +21,6 @@ jobs:
     runs-on: ubuntu-22.04
     timeout-minutes: 10
     permissions:
-      actions: write
       contents: write
       issues: write
       pull-requests: write
@@ -31,9 +30,10 @@ jobs:
         with:
           ref: main
           persist-credentials: false
-      - name: Prepare a draft fix and rerun the pipeline
+      - name: Prepare a draft fix
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          DEPENDABOT_ALERTS_TOKEN: ${{ secrets.DEPENDABOT_ALERTS_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_API_URL: ${{ github.api_url }}
           GITHUB_EVENT_PATH: ${{ github.event_path }}

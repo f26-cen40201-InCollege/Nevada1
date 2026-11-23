@@ -2,17 +2,18 @@ name: Dependabot issues
 
 on:
   pull_request_target:
-    branches: [main]
+    branches: [develop, main]
     types: [opened, reopened, synchronize, edited]
 
 permissions: {}
 concurrency:
   group: dependabot-issues
   cancel-in-progress: false
+  queue: max
 
 jobs:
   mirror-alerts:
-    if: github.event.pull_request.state == 'open' && github.event.pull_request.base.ref == 'main'
+    if: github.event.pull_request.state == 'open'
     runs-on: ubuntu-22.04
     timeout-minutes: 10
     permissions:
@@ -25,9 +26,10 @@ jobs:
         with:
           ref: main
           persist-credentials: false
-      - name: Mirror open alerts for the main pull request
+      - name: Mirror open alerts for the pull request
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          DEPENDABOT_ALERTS_TOKEN: ${{ secrets.DEPENDABOT_ALERTS_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_API_URL: ${{ github.api_url }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}

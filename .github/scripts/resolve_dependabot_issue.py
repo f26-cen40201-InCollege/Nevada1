@@ -4,7 +4,7 @@
 import base64, json, os, re, sys
 from pathlib import PurePosixPath
 from urllib.parse import quote, urlencode
-from dependabot_issues import GitHubAPI, PR_MARKER
+from dependabot_issues import GitHubAPI, PR_MARKER, TARGET_BRANCHES
 
 COMMAND = "/PR-RESOLVE"
 MARKER = re.compile(r"<!-- incollege-dependabot-alert:(\d+) -->")
@@ -62,7 +62,7 @@ def issue_alert_number(issue):
         raise ValueError("This issue is not linked to one Dependabot alert.")
     return int(matches[0])
 
-def apply_action_update(api, alert, default_branch):
+def apply_action_update(api, alert, target_branch):
     vulnerability = alert.get("security_vulnerability") or {}
     dependency = alert.get("dependency") or {}
     package = (dependency.get("package") or {}).get("name", "")
@@ -85,7 +85,7 @@ def apply_action_update(api, alert, default_branch):
     if patched is None or in_range(patched_value, version_range) is not False:
         raise ValueError("The advisory has no supported first patched version.")
 
-    query = urlencode({"ref": default_branch})
+    query = urlencode({"ref": target_branch})
     content_url = api_url(api, f"contents/{quote(manifest, safe='/')}?{query}")
     document, _ = api.request(content_url)
     try:
@@ -142,9 +142,9 @@ def apply_action_update(api, alert, default_branch):
     if changed == 0:
         raise ValueError("No vulnerable action reference matching this alert remains in the manifest.")
 
-    ref_data, _ = api.request(api_url(api, f"git/ref/heads/{quote(default_branch, safe='/')}"))
+    ref_data, _ = api.request(api_url(api, f"git/ref/heads/{quote(target_branch, safe='/')}"))
     base_sha = ref_data["object"]["sha"]
-    branch_name = f"bot/dependabot-alert-{alert['number']}"
+    branch_name = f"bot/dependabot-alert-{alert['number']}-{target_branch}"
     api.request(api_url(api, "git/refs"), {"ref": f"refs/heads/{branch_name}", "sha": base_sha}, method="POST")
 
     existing, _ = api.request(api_url(api, f"contents/{quote(manifest, safe='/')}?{urlencode({'ref': branch_name})}"))
@@ -155,32 +155,29 @@ def apply_action_update(api, alert, default_branch):
     }, method="PUT")
     return branch_name, changed
 
-def dispatch_pipeline(api, branch_name):
-    api.request(api_url(api, "actions/workflows/tests.yml/dispatches"), {"ref": branch_name}, method="POST")
-
 def comment(api, issue_number, body):
     api.request(api_url(api, f"issues/{issue_number}/comments"), {"body": body}, method="POST")
 
-def existing_open_pull_request(api, branch_name, default_branch):
+def existing_open_pull_request(api, branch_name, target_branch):
     repository_owner = api.repository_url.rsplit("/", 2)[-2]
     query = urlencode({
         "state": "open",
         "head": f"{repository_owner}:{branch_name}",
-        "base": default_branch,
+        "base": target_branch,
         "per_page": "100",
     })
     pull_requests = api.paginate(f"pulls?{query}")
     return pull_requests[0] if pull_requests else None
 
-def require_linked_main_pull_request(api, issue):
-    """Require a main PR that was associated with this issue by the sync."""
+def require_linked_pull_request(api, issue):
+    """Require an allowed open PR that was associated with this issue by the sync."""
     numbers = {int(number) for number in PR_MARKER.findall(issue.get("body") or "")}
     for number in sorted(numbers):
         pull, _ = api.request(api_url(api, f"pulls/{number}"))
-        if (pull.get("number") == number and pull.get("state") == "open"
-                and (pull.get("base") or {}).get("ref") == "main"):
-            return number
-    raise ValueError("A linked pull request targeting main must still be open.")
+        branch = (pull.get("base") or {}).get("ref")
+        if pull.get("number") == number and pull.get("state") == "open" and branch in TARGET_BRANCHES:
+            return number, branch
+    raise ValueError("A linked pull request targeting develop or main must still be open.")
 
 def resolve(api, event):
     issue = event.get("issue") or {}
@@ -204,56 +201,59 @@ def resolve(api, event):
         raise ValueError("The command author needs write access to the repository.")
 
     alert_number = issue_alert_number(issue)
-    require_linked_main_pull_request(api, issue)
+    _, target_branch = require_linked_pull_request(api, issue)
     alert, _ = api.request(api_url(api, f"dependabot/alerts/{alert_number}"))
     if alert.get("number") != alert_number or alert.get("state") != "open":
         raise ValueError("The linked Dependabot alert is no longer open.")
 
-    default_branch = "main"
-    branch_name = f"bot/dependabot-alert-{alert_number}"
-    existing = existing_open_pull_request(api, branch_name, default_branch)
+    branch_name = f"bot/dependabot-alert-{alert_number}-{target_branch}"
+    existing = existing_open_pull_request(api, branch_name, target_branch)
+    if not existing:
+        # Find draft PRs created before branch names included their target.
+        existing = existing_open_pull_request(api, f"bot/dependabot-alert-{alert_number}", target_branch)
     if existing:
-        dispatch_pipeline(api, branch_name)
         comment(
             api, issue_number,
-            f"Reran the build pipeline for existing draft pull request "
-            f"#{existing['number']}: {existing['html_url']}. It will not be merged automatically.",
+            f"Existing draft pull request #{existing['number']}: {existing['html_url']}. "
+            "Review its checks and rerun them from the pull request if needed. It will not be merged automatically.",
         )
-        print(f"Redispatched the pipeline for existing draft PR #{existing['number']}.")
+        print(f"Found existing draft PR #{existing['number']}.")
         return
 
-    branch_name, updated_count = apply_action_update(api, alert, default_branch)
+    branch_name, updated_count = apply_action_update(api, alert, target_branch)
     ghsa_id = (alert.get("security_advisory") or {}).get("ghsa_id", "Dependabot")
     package = (alert.get("dependency") or {}).get("package", {}).get("name", "dependency")
     pull_request, _ = api.request(api_url(api, "pulls"), {
         "title": f"fix: update {package} for {ghsa_id}"[:240],
         "head": branch_name,
-        "base": default_branch,
+        "base": target_branch,
         "draft": True,
         "body": (
             f"This draft updates {package} to the first patched version for "
             f"Dependabot alert #{alert_number} ({ghsa_id}).\n\n"
             f"Requested with {COMMAND} on issue #{issue_number}. "
-            "The pipeline is dispatched for this branch. Review before merging."
+            "Review the pull request checks before merging; GitHub may require approval to run them."
         ),
     }, method="POST")
-    dispatch_pipeline(api, branch_name)
     comment(
         api,
         issue_number,
         f"Created draft pull request #{pull_request['number']} for {updated_count} "
         f"vulnerable action reference(s): {pull_request['html_url']}. "
-        f"The build pipeline has been dispatched for branch {branch_name}. "
+        "Review the pull request checks; GitHub may require approval to run them. "
         "The pull request will not be merged automatically.",
     )
-    print(f"Created draft PR #{pull_request['number']} and dispatched the build pipeline.")
+    print(f"Created draft PR #{pull_request['number']}.")
 
 def main():
     try:
         event = read_event(os.environ["GITHUB_EVENT_PATH"])
         token = os.environ["GITHUB_TOKEN"]
         repository = os.environ["GITHUB_REPOSITORY"]
-        api = GitHubAPI(token, repository, os.environ.get("GITHUB_API_URL", "https://api.github.com"))
+        api = GitHubAPI(
+            token, repository, os.environ.get("GITHUB_API_URL", "https://api.github.com"),
+            alerts_token=os.environ.get("DEPENDABOT_ALERTS_TOKEN"),
+        )
         resolve(api, event)
     except (KeyError, ValueError, RuntimeError, TypeError) as error:
         print(f"Dependabot issue command failed: {error}", file=sys.stderr)
@@ -266,7 +266,7 @@ def main():
                     os.environ.get("GITHUB_REPOSITORY", ""),
                     os.environ.get("GITHUB_API_URL", "https://api.github.com"),
                 )
-                comment(api, issue_number, f"Resolution stopped: {error} Check for an existing draft PR or bot/dependabot-alert-{issue_number} branch before retrying. The bot never merges.")
+                comment(api, issue_number, f"Resolution stopped: {error} Check for an existing draft PR or Dependabot bot branch before retrying. The bot never merges.")
         except (KeyError, ValueError, RuntimeError, TypeError):
             pass
         return 1
