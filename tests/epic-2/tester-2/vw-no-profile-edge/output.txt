@@ -1,0 +1,47 @@
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+2
+Please Enter Your username:
+viewonlyuser
+That USERNAME Is Already Taken, Please Try Again
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+Passw0rd9$
+Invalid Option, Try Again
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+viewonlyuser
+Please Enter Your password:
+Passw0rd9$
+You Have Successfully Logged In.
+Welcome, viewonlyuser!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+2
+No Profile Has Been Created Yet.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---

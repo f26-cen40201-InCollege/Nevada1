@@ -1,0 +1,14 @@
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+2
+Please Enter Your username:
+IanKoratsky1
+Please Enter Your Password:
+1234abc!
+Password Doesn't Satisfy Requirements, Try Again
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+---END_OF_PROGRAM---

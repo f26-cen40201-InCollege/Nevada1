@@ -1,0 +1,81 @@
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+2
+Please Enter Your username:
+produser5
+That USERNAME Is Already Taken, Please Try Again
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+Passw0rd5$
+Invalid Option, Try Again
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+produser5
+Please Enter Your password:
+Passw0rd5$
+You Have Successfully Logged In.
+Welcome, produser5!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+1
+---Create/Edit Profile---
+Enter First Name:
+Priya
+Enter Last Name:
+Shah
+Enter University Name:
+University of Central Florida
+Enter The Name Of Your Major:
+Chemistry
+Enter Graduation Year (YYYY):
+2030
+Enter About Me (Optional):
+A future research chemist.
+Add Experience (Optional, Max 3 Entries).Enter 'DONE' To Finish Or Any Input To Continue):
+DONE
+Add Education (Optional, Max 3 Entries). Enter 'DONE' To Finish Or Any Input To Continue):
+DONE
+---Profile Created/Updated---
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+2
+==== Profile For Priya Shah ====
+Name: Priya Shah
+University: University of Central Florida
+Major: Chemistry
+Graduation Year: 2030
+About Me: A future research chemist.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---

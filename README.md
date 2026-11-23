@@ -67,10 +67,37 @@ Build and Run the primary COBOL program with:
 cobc -x -o InCollege InCollege.cob InCollege-Core.cob && ./InCollege
 ```
 
+To replay legacy test fixtures and identify stale `expected.txt` transcripts:
+
+```bash
+python3 refresh_test_expectations.py
+python3 refresh_test_expectations.py --epic epic-1
+```
+
+The command is a dry run by default. It recompiles a temporary executable, restores the
+checked-in application data after every scenario, and reports the first actual-versus-
+expected mismatch and the menus encountered. After reviewing mismatches as valid changes
+to the application rather than implementation regressions, refresh the fixtures explicitly:
+
+```bash
+python3 refresh_test_expectations.py --apply
+```
+
+Do not use `--apply` to hide implementation bugs or to replace a fixture whose scenario
+is not known to have changed.
+
 The `build test-main` and `run test-main` commands are also available as VS Code tasks for the test harness. See the project documentation before making changes, and provide references to the requirement, procedure, affected files, and validation evidence during every handoff.
 
-## **EPIC 8: SEND MESSAGES**
+Build and run the supplied developer example in Docker from the repository root:
 
-Select `9. Messages` to send up to 200 characters to an accepted connection. `View My Messages` remains under construction. Input comes from `InCollege-Input.txt`; messages persist in `Messages.txt`, and screen output is preserved in `InCollege-Output.txt`. See [EPIC-8.md](docs/epic-objectives/EPIC-8.md) for requirements.
+```bash
+docker build --file .github/Dockerfile --tag incollege-ci .
+docker run --rm --network none \
+  --user "$(id -u):$(id -g)" \
+  --mount "type=bind,source=$PWD,target=/workspace" \
+  incollege-ci /usr/local/bin/InCollege
+```
+
+The application reads the checked-in input, account, and message files through the mounted working directory and writes `InCollege-Output.txt` there. The existing pipeline checks, evidence artifacts, legacy harness baseline, and live GitHub setup requirements are documented in [CI.md](docs/CI.md).
 
 </div>

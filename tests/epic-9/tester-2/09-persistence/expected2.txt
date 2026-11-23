@@ -1,0 +1,59 @@
+WELCOME TO INCOLLEGE!
+1. LOG-IN
+2. CREATE NEW ACCOUNT
+ENTER YOUR CHOICE:
+1
+Please Enter Your username:
+profileuser2
+Please Enter Your password:
+Passw0rd2$
+You Have Successfully Logged In.
+Welcome, profileuser2!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+9
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+2
+--- Your Messages ---
+From: profileuser1
+Message: Hello
+Sent: 2026-11-09T01:31:53+00:00
+---
+From: profileuser1
+Message: How are you?
+Sent: 2026-11-09T01:33:28+00:00
+---
+From: profileuser1
+Message: Persistence!
+Sent: 2026-11-21T20:29:29+00:00
+---------------------
+--- Messages Menu ---
+1. Send a New Message
+2. View My Messages
+3. Back to Main Menu
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search For a job
+4. Search For someone you know
+5. Learn a New Skill
+6. Logout
+7. Pending Connection Requests
+8. View My Network
+9. Messages
+ENTER YOUR CHOICE:
+6
+---END_OF_PROGRAM---
