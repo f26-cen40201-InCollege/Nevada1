@@ -1388,6 +1388,9 @@
        GET-EXPERIENCE.
            MOVE "N" TO WS-VALID-RESPONSE
            MOVE 0 TO WS-PROF-EXP-CNT(WS-FOUND-INDEX)
+           INITIALIZE WS-PROF-EXP-INST(WS-FOUND-INDEX, 1)
+                      WS-PROF-EXP-INST(WS-FOUND-INDEX, 2)
+                      WS-PROF-EXP-INST(WS-FOUND-INDEX, 3)
            PERFORM UNTIL VALIDATED OR (WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                    >= 3) OR END-OF-INPUT
                MOVE SPACES TO WS-OUTPUT-LINE
@@ -1463,6 +1466,11 @@
                                MOVE "Years Cannot Be Blank, Try Again"
                                    TO WS-OUTPUT-LINE
                                PERFORM WRITE-OUTPUT
+                               MOVE SPACES TO
+                                   WS-PROF-EXP-INST(WS-FOUND-INDEX,
+                                       WS-EXP-IDX)
+                               SUBTRACT 1 FROM
+                                   WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                                SUBTRACT 1 FROM
                                    WS-PROF-EXP-CNT(WS-FOUND-INDEX)
                                EXIT PERFORM CYCLE
@@ -1488,6 +1496,9 @@
        GET-EDUCATION.
            MOVE "N" TO WS-VALID-RESPONSE
            MOVE 0 TO WS-PROF-EDU-CNT(WS-FOUND-INDEX)
+           INITIALIZE WS-PROF-TOTAL-EDU(WS-FOUND-INDEX, 1)
+                      WS-PROF-TOTAL-EDU(WS-FOUND-INDEX, 2)
+                      WS-PROF-TOTAL-EDU(WS-FOUND-INDEX, 3)
            PERFORM UNTIL VALIDATED OR (WS-PROF-EDU-CNT(WS-FOUND-INDEX)
                    >= 3) OR END-OF-INPUT
                MOVE SPACES TO WS-OUTPUT-LINE
@@ -1576,6 +1587,11 @@
                          "Years Attended Blank, Try Again"
                                        TO WS-OUTPUT-LINE
                                    PERFORM WRITE-OUTPUT
+                                   MOVE SPACES TO
+                                       WS-PROF-TOTAL-EDU(WS-FOUND-INDEX,
+                                           WS-EDU-IDX)
+                               SUBTRACT 1 FROM
+                                   WS-PROF-EDU-CNT(WS-FOUND-INDEX)
                                    SUBTRACT 1 FROM
                                        WS-PROF-EDU-CNT(WS-FOUND-INDEX)
                                    EXIT PERFORM CYCLE

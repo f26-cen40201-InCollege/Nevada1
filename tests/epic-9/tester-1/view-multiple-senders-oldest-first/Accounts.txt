@@ -1,0 +1,4 @@
+inboxowner          TestPass1
+firstfriend         TestPass2
+secondfriend        TestPass3
+thirdfriend         TestPass4
